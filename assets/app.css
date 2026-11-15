@@ -310,3 +310,9 @@ button.cal-day.selected { background: var(--accent); border-color: var(--accent)
 table.earn td, table.earn th { vertical-align: top; white-space: nowrap; }
 table.earn td:last-child { white-space: normal; min-width: 160px; }
 .card[hidden] { display: none !important; }
+
+/* 4·5면 상세: 논리 따라가기 */
+ol.logic { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; counter-reset: lg; }
+ol.logic li { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: start; }
+ol.logic .step { font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 6px; text-align: center; }
+.d-block.counter { border-color: var(--hot-line); }

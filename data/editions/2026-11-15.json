@@ -1,2431 +1,2811 @@
 {
  "date": "2026-11-15",
- "issue": 2,
- "sample": true,
- "window": "11.14 05:00 – 11.15 05:00",
- "lead": "AI 투자 사이클 논쟁과 금리 경로가 동시에 시장을 흔든 한 주의 끝",
- "stats": {
-  "priority": 31,
-  "chats": 116,
-  "messages": "1,284"
- },
+ "sample": false,
+ "full": true,
+ "lead": "젠슨 황 없는 엔비디아의 첫 실적(17일)과 앤트로픽 상장(19일)이 한 주에 몰린 가운데, 매파로 돌아선 연준과 비트코인 급락이 위험 선호를 시험하고 있다.",
+ "published": "14:17",
  "hot": [
   {
-   "id": "h1",
-   "title": "AI 투자 사이클 논쟁 재점화, 엔비디아 실적이 분수령",
-   "summary": "수요가 견조하다는 쪽과 설비투자에 비해 매출이 늦다는 쪽이 맞섰다.",
-   "channels": 18,
-   "priority": 11,
    "tickers": [
-    "NVDA",
+    "NVDA"
+   ],
+   "detail": {
+    "numbers": [
+     {
+      "label": "종가",
+      "value": "162.85",
+      "note": "미국 정규장 마감"
+     },
+     {
+      "label": "전일 대비",
+      "value": "-2.01%",
+      "note": ""
+     },
+     {
+      "label": "시가총액",
+      "value": "3.92조 달러",
+      "note": ""
+     },
+     {
+      "label": "선행 PER",
+      "value": "10.34배",
+      "note": "현재 PER 20.59배"
+     },
+     {
+      "label": "거래량",
+      "value": "평소의 2.60배",
+      "note": "최근 평균 대비"
+     },
+     {
+      "label": "1주 수익률",
+      "value": "-12.75%",
+      "note": ""
+     },
+     {
+      "label": "연초 이후",
+      "value": "-12.68%",
+      "note": ""
+     },
+     {
+      "label": "52주 고점 대비",
+      "value": "-33.09%",
+      "note": ""
+     },
+     {
+      "label": "RSI(14)",
+      "value": "24.86",
+      "note": "70 이상 과열 · 30 이하 침체"
+     },
+     {
+      "label": "목표주가 평균",
+      "value": "286.12",
+      "note": "애널리스트 평균"
+     },
+     {
+      "label": "다음 실적",
+      "value": "11.17 장후",
+      "note": ""
+     },
+     {
+      "label": "복귀 청원 서명",
+      "value": "12만 명 이상",
+      "note": "현직 6,000명·전직 1,000명·주주 6만6,000명 참여 (텔레그램 채널 보도)"
+     },
+     {
+      "label": "서학개미 순매수",
+      "value": "약 4,800억 원",
+      "note": "스캔들 기간 엔비디아 순매수 (텔레그램 채널 보도)"
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "text": "일시적 충격이라며 저가 매수에 나서거나, 오픈AI 올트먼처럼 복귀 가능성을 거론한다.",
+      "who": "소수의견, 급등일보 외"
+     },
+     {
+      "label": "신중",
+      "text": "고객사가 AMD·구글 칩으로 옮기고, 보수적인 임시 경영진이 고객 금융 지원을 줄일 수 있다고 본다.",
+      "who": "딘스티커, 하나증권 중국전략 외"
+     },
+     {
+      "label": "중립",
+      "text": "2027년 상반기 주문은 대체로 확정돼 단기 영향은 제한적이고, 11/17 실적·가이던스가 분수령이라고 본다.",
+      "who": "하나증권 중국전략, 석학들의 마켓 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "딘스티커 Dean's Ticker",
+      "time": "21:19",
+      "text": "한 CSP 고객이 AMD·구글 칩 사용을 검토 중이라는 단독 글. 임시 CEO의 과제는 고객 이탈을 막는 것이라는 요지."
+     },
+     {
+      "channel": "하나 중국/신흥국 전략 김경환",
+      "time": "18:23",
+      "text": "대만 기관들은 서버 공급망 단기 영향은 제한적이고 장기적으로 규격 변화가 관건이라고 봤다는 대만경제일보 요약."
+     }
+    ],
+    "summary": [
+     "11월 12일 이사회가 창업자 젠슨 황의 즉각 사임을 발표했다. 사임 배경으로 개인 행실 문제와, 상대 여성(앨리스 황)이 중국 정보기관과 연관됐다는 의혹이 거론되지만 수사·공시로 확정된 내용은 아니다.",
+     "임시 CEO는 2013년부터 재무를 맡아 온 콜레트 크레스 CFO. 보수적인 재무통이라 고객사에 대한 투자·신용 지원이 줄 수 있다는 관측과 함께, 한 클라우드 고객이 AMD·구글 칩을 검토한다는 보도가 나왔다.",
+     "주가는 11.9~13 한 주 -12.75%, 52주 고점 대비 -33%. 반면 같은 주 AMD(+18.93%)·브로드컴(+18.16%)은 크게 올랐다.",
+     "복귀 청원 서명은 12만 명을 넘었고(텔레그램 보도), 엔비디아 주식 20억 달러 이상을 가진 투자자 2명이 복귀를 요구했다. 의회 증언 일정은 채널마다 11월 18일·12월 1일로 엇갈린다."
+    ],
+    "charts": [
+     {
+      "title": "11.9~13 한 주 주가 등락",
+      "type": "bar",
+      "unit": "%",
+      "points": [
+       {
+        "label": "NVDA",
+        "value": -12.75,
+        "hi": true
+       },
+       {
+        "label": "AMD",
+        "value": 18.93
+       },
+       {
+        "label": "AVGO",
+        "value": 18.16
+       },
+       {
+        "label": "MU",
+        "value": 12.8
+       },
+       {
+        "label": "TSM",
+        "value": 6.2
+       }
+      ],
+      "source": "Finviz",
+      "note": "경영 공백 속 엔비디아만 빠지고 경쟁·공급망 종목은 올랐다."
+     }
+    ],
+    "checks": [
+     {
+      "item": "사임과 임시 CEO",
+      "value": "12일 이사회 발표, 크레스 CFO가 임시 CEO",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (연수르 해외주식)"
+       },
+       {
+        "name": "텔레그램 채널 (하나증권 중국전략)"
+       },
+       {
+        "name": "24/7 Wall St. (승계 후보 분석)",
+        "url": "https://247wallst.com/investing/2026/11/09/does-nvidia-cfo-colette-kress-take-over-if-jensen-huang-leaves/"
+       },
+       {
+        "name": "Tom's Hardware 젠슨 황 기사 모음",
+        "url": "https://www.tomshardware.com/tag/jensen-huang"
+       }
+      ],
+      "verdict": "대체로 일치"
+     },
+     {
+      "item": "주간 하락률",
+      "value": "-12.75% (11.9~13)",
+      "sources": [
+       {
+        "name": "Finviz (11.15 새벽 수집)"
+       },
+       {
+        "name": "텔레그램 채널 (퀄리티기업연구소)"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "다음 실적 발표",
+      "value": "11.17(현지) 장 마감 후 = 한국 18일 새벽",
+      "sources": [
+       {
+        "name": "Finviz (11.15 새벽 수집)"
+       },
+       {
+        "name": "텔레그램 채널 (연수르 해외주식)"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "의회 증언 날짜",
+      "value": "11.18 하원 공동 청문회 vs 12.1 비공개 증언 소환",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (급등일보)"
+       },
+       {
+        "name": "텔레그램 채널 (연수르 해외주식)"
+       }
+      ],
+      "verdict": "엇갈림"
+     },
+     {
+      "item": "중국 정보기관 연루 의혹",
+      "value": "대만 언론 보도와 미 정보당국 관련 보도가 있으나 미 법무부는 결론을 내지 않았다고 밝힘",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (미국 주식 인사이더)"
+       },
+       {
+        "name": "IBTimes",
+        "url": "https://www.ibtimes.com/nvidia-jensen-huang-succession-plan-investigation-3809602"
+       }
+      ],
+      "verdict": "확인 안 됨"
+     }
+    ],
+    "background": "엔비디아는 젠슨 황 한 사람에게 제품 로드맵과 고객 관계, 공급망 협상이 집중된 회사였다. 뚜렷한 2인자가 없다는 지적이 이전부터 있었고, 고객사 지분 투자·구매 보증 같은 \"AI 순환 금융\"도 창업자 판단에 기대 왔다.",
+    "watch": [
+     "11.17(현지) 장 마감 후 3분기 실적과 데이터센터 가이던스",
+     "차기 CEO 선임과 이사회 개편",
+     "의회 증언 일정 확정",
+     "주요 고객사의 칩 다변화 발표"
+    ],
+    "related": [
+     {
+      "source": "Tom's Hardware",
+      "title": "젠슨 황 관련 보도 모음(이사회·의회 소환)",
+      "url": "https://www.tomshardware.com/tag/jensen-huang",
+      "note": "사임 전후 보도 흐름"
+     },
+     {
+      "source": "24/7 Wall St.",
+      "title": "크레스 CFO가 CEO를 맡을 수 있나",
+      "url": "https://247wallst.com/investing/2026/11/09/does-nvidia-cfo-colette-kress-take-over-if-jensen-huang-leaves/",
+      "note": "승계 후보와 크레스의 이력"
+     }
+    ],
+    "sources": [
+     {
+      "name": "딘스티커 Dean's Ticker",
+      "meta": "11.14 21:19 · 조회 9,304",
+      "url": "https://t.me/d_ticker/4154"
+     },
+     {
+      "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+      "meta": "11.14 22:35 · 조회 7,189",
+      "url": "https://t.me/insidertracking/69281"
+     },
+     {
+      "name": "그로쓰리서치(Growth Research) [독립리서치]",
+      "meta": "11.14 19:21 · 조회 2,902",
+      "url": "https://t.me/growthresearch/31225"
+     },
+     {
+      "name": "Pluto Research",
+      "meta": "11.14 14:50 · 조회 2,666",
+      "url": "https://t.me/hedgehara/49858"
+     },
+     {
+      "name": "회색인간의 매크로 + 투자",
+      "meta": "11.15 12:12 · 조회 1,300",
+      "url": "https://t.me/mistergray_11/25298"
+     },
+     {
+      "name": "요약하는 고잉",
+      "meta": "11.14 14:21 · 조회 12,665",
+      "url": "https://t.me/one_going/4514"
+     }
+    ],
+    "numbersSource": "Finviz · 2026-11-15 새벽 수집 / 아래쪽 수치는 조사 기자 확인(각 줄 설명에 출처)"
+   },
+   "title": "젠슨 황 엔비디아 CEO 사임 후폭풍",
+   "summary": "엔비디아 이사회가 12일 젠슨 황의 즉각 사임을 발표하고 콜레트 크레스 CFO를 임시 CEO로 세웠다. 주가는 한 주 12.75% 내려 시가총액 4조 달러 아래로 밀렸고, 17일(현지) 실적이 첫 시험대다.",
+   "confidence": "confirmed",
+   "id": "h1",
+   "kicker": "1면 핫이슈 · TOP 1"
+  },
+  {
+   "tickers": [],
+   "detail": {
+    "numbers": [
+     {
+      "label": "WTI",
+      "value": "$88.56",
+      "note": "전일 대비 -0.20% · 2026-11-13 기준"
+     },
+     {
+      "label": "브렌트",
+      "value": "$95.84",
+      "note": "전일 대비 +0.02% · 2026-11-13 기준"
+     },
+     {
+      "label": "이란 미사일 보유 추정",
+      "value": "1,500~2,500기",
+      "note": "WSJ가 전한 미 정보당국 추정 (텔레그램 채널 인용)"
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "text": "종전이 가까워지면 미국 LNG 기자재 업체 등이 수혜를 볼 수 있다는 시각.",
+      "who": "메리츠증권 인용 채널"
+     },
+     {
+      "label": "신중",
+      "text": "이란이 휴전 조건 수락을 먼저 요구해 협상이 난항이고, 에너지 가격 부담이 이어진다는 시각.",
+      "who": "루팡, 홍명수인사이트 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "도널드 J. 트럼프 대통령",
+      "time": "21:30",
+      "text": "로이터 단독: 이란·후티의 새 도발이 없으면 추가 공습을 보류할 수 있다는 트럼프 발언 전달."
+     }
+    ],
+    "summary": [
+     "로이터는 14일 소식통 3명을 인용해, 트럼프 대통령이 국가안보 회의 뒤 \"새 도발이 없으면 공습을 보류할 수 있다\"고 말했다고 보도했다. 최종 결정은 아니다.",
+     "앞서 10일에도 트럼프는 역내 국가들의 요청을 들어 새 공습을 당분간 미루겠다고 했고, 호르무즈 해협 해상 봉쇄는 유지한다고 밝혔다.",
+     "사우디·튀르키예는 공격 재개 자제를 요청했고 이스라엘은 추가 작전을 압박 중이다. 세 번째 항공모함이 곧 중동에 들어간다(텔레그램 채널 정리).",
+     "이란은 미국이 공습을 위협하는 한 핵사찰 재개 협상은 없다고 국제원자력기구에 통보했다는 AP 보도가 나와, 휴전 협상은 여전히 막혀 있다."
+    ],
+    "checks": [
+     {
+      "item": "추가 공습 보류 시사",
+      "value": "10일 공개 발언, 14일 참모 대상 발언(로이터)",
+      "sources": [
+       {
+        "name": "Al-Monitor(로이터)",
+        "url": "https://al-monitor.com/originals/2026/11/trump-says-he-will-hold-fresh-iran-strikes-now"
+       },
+       {
+        "name": "Gulf Today",
+        "url": "https://gulftoday.ae/news/2026/11/10/trump-says-he-will-hold-off-on-fresh-iran-strikes-for-now"
+       },
+       {
+        "name": "텔레그램 채널 (도널드 J. 트럼프 대통령)"
+       },
+       {
+        "name": "텔레그램 채널 (루팡)"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "해상 봉쇄 유지",
+      "value": "호르무즈 해협 봉쇄는 당분간 유지",
+      "sources": [
+       {
+        "name": "Gulf Today",
+        "url": "https://gulftoday.ae/news/2026/11/10/trump-says-he-will-hold-off-on-fresh-iran-strikes-for-now"
+       },
+       {
+        "name": "텔레그램 채널 (홍명수인사이트)"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "이란의 핵 협상 거부",
+      "value": "휴전 조건 수락 전에는 핵 프로그램 논의 거부(AP)",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (석학들의 마켓)"
+       },
+       {
+        "name": "텔레그램 채널 (미국 주식 인사이더)"
+       }
+      ],
+      "verdict": "단일 출처"
+     },
+     {
+      "item": "이란 해군의 유조선 기뢰 피격 주장",
+      "value": "14일 주장, 독립 확인 안 됨",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (홍명수인사이트)"
+       }
+      ],
+      "verdict": "확인 안 됨"
+     }
+    ],
+    "background": "미·이란 전쟁은 봄에 시작돼 호르무즈 해협 통제를 둘러싼 공방으로 이어졌다. 공습이 이어지는 동안 에너지 가격이 오르며 미국 물가와 연준 금리 경로에도 영향을 주고 있다.",
+    "watch": [
+     "새 도발 여부와 공습 재개 결정",
+     "11.18~19 APEC 선전 미·중·러 회동에서 이란 논의",
+     "호르무즈 해협 통항과 유가"
+    ],
+    "related": [
+     {
+      "source": "Al-Monitor (로이터)",
+      "title": "트럼프, 이란 새 공습 당분간 보류",
+      "url": "https://al-monitor.com/originals/2026/11/trump-says-he-will-hold-fresh-iran-strikes-now",
+      "note": "10일 발언과 역내 국가 요청"
+     }
+    ],
+    "sources": [
+     {
+      "name": "루팡",
+      "meta": "11.14 21:09 · 조회 14,989",
+      "url": "https://t.me/bornlupin/21154"
+     },
+     {
+      "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+      "meta": "11.14 20:41 · 조회 8,378",
+      "url": "https://t.me/insidertracking/69277"
+     },
+     {
+      "name": "그로쓰리서치(Growth Research) [독립리서치]",
+      "meta": "11.14 19:21 · 조회 2,902",
+      "url": "https://t.me/growthresearch/31225"
+     },
+     {
+      "name": "도널드 J. 트럼프 대통령",
+      "meta": "11.14 21:30 · 조회 1,376",
+      "url": "https://t.me/goddessTTF/87082"
+     },
+     {
+      "name": "하나 중국/신흥국 전략 김경환",
+      "meta": "11.14 20:43 · 조회 14,440",
+      "url": "https://t.me/HANAchina/72131"
+     },
+     {
+      "name": "급등일보 미국주식🇺🇸 속보·매크로·리서치",
+      "meta": "11.14 16:03 · 조회 5,503",
+      "url": "https://t.me/FastStockNewsUSA/24472"
+     },
+     {
+      "name": "YM리서치",
+      "meta": "11.14 20:48 · 조회 3,945",
+      "url": "https://t.me/ym_research/6543"
+     }
+    ],
+    "numbersSource": "시장 지표 · 2026-11-15 새벽 수집 / 아래쪽 수치는 조사 기자 확인(각 줄 설명에 출처)"
+   },
+   "title": "트럼프, 이란 추가 공습 보류 시사",
+   "summary": "트럼프 대통령이 이란·후티의 새 도발이 없으면 추가 공습을 보류할 수 있다고 참모들에게 말했다(로이터). 해상 봉쇄는 유지되고, 이란은 휴전 조건 수락 전 핵 협상은 없다는 입장이다.",
+   "confidence": "confirmed",
+   "id": "h2",
+   "kicker": "1면 핫이슈 · TOP 2"
+  },
+  {
+   "tickers": [],
+   "detail": {
+    "views": [
+     {
+      "label": "낙관",
+      "text": "기업용 AI 매출과 대규모 자금 조달, 높은 매출총이익률이면 2028년 흑자 전환이 가능하다는 계산이 돈다.",
+      "who": "Tech 채널, 하나증권 중국전략 외"
+     },
+     {
+      "label": "신중",
+      "text": "상장 첫날부터 내부자 매도가 가능하고, 신규 상장주는 급등 뒤 오래 쉬는 경향이 있다는 경고.",
+      "who": "소수의견 외"
+     },
+     {
+      "label": "중립",
+      "text": "엔비디아 실적과 함께 AI 투자 신뢰를 시험하는 이벤트이며, 유통 주식이 적어 지수 충격은 작다는 분석.",
+      "who": "석학들의 마켓, 하나증권 중국전략 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "하나 중국/신흥국 전략 김경환",
+      "time": "23:32",
+      "text": "초과청약 6배, 주당 70~78달러에 8.25억 주, 공개시장과 사모를 합쳐 최대 904억 달러 조달 계획이라는 대만 공상시보 요약."
+     }
+    ],
+    "summary": [
+     "공모가는 18일 확정, 19일 거래 시작이 목표다. 공모 범위 상단이면 약 644억 달러, 사모 배정 260억 달러를 더하면 900억 달러 안팎의 초대형 조달이다.",
+     "AMD·브로드컴·구글·마이크론·마이크로소프트·엔비디아·TSMC 7곳이 의결권 없는 주식을 공모가로 사기로 했다. 개인 배정은 약 20%로 보통(5~10%)보다 크다.",
+     "증권신고서 숫자(텔레그램 채널 인용): 올해 3분기 누적 매출 332억 달러, 컴퓨팅 비용 188억 달러. 앞으로 12개월 컴퓨팅 지출 예정액은 707억 달러다.",
+     "초과청약 6배는 대만 언론 보도이고, 미국 보도는 \"범위 안에서 장부가 채워졌다\" 정도로 전한다. 상장 첫날 내부자 매도가 가능하다는 점도 변수로 꼽힌다."
+    ],
+    "numbers": [
+     {
+      "label": "공모가 범위",
+      "value": "70~78달러",
+      "note": "정정 증권신고서(11.10)"
+     },
+     {
+      "label": "공모 주식 수",
+      "value": "8억2,500만 주",
+      "note": "신주 8억140만 + 구주 2,360만"
+     },
+     {
+      "label": "공모 금액(상단)",
+      "value": "약 644억 달러",
+      "note": "초과배정 1억2,375만 주 별도"
+     },
+     {
+      "label": "사모 배정",
+      "value": "260억 달러",
+      "note": "7개 기술 기업, 공모가와 같은 값"
+     },
+     {
+      "label": "기업가치(완전 희석)",
+      "value": "1.26조~1.41조 달러",
+      "note": "5월 비상장 평가 9,650억 달러"
+     },
+     {
+      "label": "개인 배정",
+      "value": "약 20%",
+      "note": "보통 5~10%"
+     },
+     {
+      "label": "공모가 확정 / 상장",
+      "value": "11.18 / 11.19",
+      "note": "나스닥 글로벌 셀렉트, 티커 ANT"
+     },
+     {
+      "label": "유통 주식 비율",
+      "value": "약 5%",
+      "note": "지수 편입 충격은 작다는 분석 (텔레그램 채널)"
+     }
+    ],
+    "charts": [
+     {
+      "title": "증권신고서 3분기 누적 실적 (텔레그램 채널 인용)",
+      "type": "bar",
+      "unit": "억 달러",
+      "points": [
+       {
+        "label": "매출",
+        "value": 332,
+        "hi": true
+       },
+       {
+        "label": "컴퓨팅",
+        "value": 188
+       },
+       {
+        "label": "인건비",
+        "value": 49
+       },
+       {
+        "label": "영업·마케팅",
+        "value": 55
+       },
+       {
+        "label": "기타 운영",
+        "value": 53
+       }
+      ],
+      "source": "텔레그램 채널(Tech 분석)이 인용한 증권신고서 — 원문 대조 전",
+      "note": "매출에서 컴퓨팅 비용 비중이 가장 크다."
+     }
+    ],
+    "checks": [
+     {
+      "item": "공모가 범위·주식 수",
+      "value": "70~78달러, 8억2,500만 주",
+      "sources": [
+       {
+        "name": "Decrypt",
+        "url": "https://decrypt.co/382939/anthropic-sets-ipo-price-range-at-70-to-78-valuing-company-at-up-to-1-4-trillion?amp=1"
+       },
+       {
+        "name": "RTTNews",
+        "url": "https://www.rttnews.com/3712632/anthropic-sets-ipo-price-range-at-70-78-per-share-launches-roadshow.aspx?type=bn"
+       },
+       {
+        "name": "텔레그램 채널 (하나증권 중국전략)"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "상장일",
+      "value": "18일 가격 확정, 19일 거래 시작(CNBC 보도 인용)",
+      "sources": [
+       {
+        "name": "The Next Web",
+        "url": "https://thenextweb.com/news/anthropic-ipo-terms-1-4-trillion-valuation"
+       },
+       {
+        "name": "Decrypt",
+        "url": "https://decrypt.co/382939/anthropic-sets-ipo-price-range-at-70-to-78-valuing-company-at-up-to-1-4-trillion?amp=1"
+       },
+       {
+        "name": "텔레그램 채널 (소수의견)"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "사모 배정 참여사",
+      "value": "AMD·브로드컴·구글·마이크론·MS·엔비디아·TSMC, 260억 달러",
+      "sources": [
+       {
+        "name": "Beyond Tomorrow",
+        "url": "https://beyondtmrw.org/article/anthropic-s-ipo-pitch-lands-at-70-78-as-trillion-dollar-talk-cools"
+       },
+       {
+        "name": "Decrypt",
+        "url": "https://decrypt.co/382939/anthropic-sets-ipo-price-range-at-70-to-78-valuing-company-at-up-to-1-4-trillion?amp=1"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "기업가치",
+      "value": "완전 희석 1.26조~1.41조 달러",
+      "sources": [
+       {
+        "name": "Latin Times",
+        "url": "https://latintimes.com/anthropic-ipo-valuation-share-price-601150"
+       },
+       {
+        "name": "The Next Web",
+        "url": "https://thenextweb.com/news/anthropic-ipo-terms-1-4-trillion-valuation"
+       }
+      ],
+      "verdict": "대체로 일치"
+     },
+     {
+      "item": "초과청약 6배",
+      "value": "대만 공상시보 보도. 미국 보도는 \"범위 안에서 장부 충족\" 수준",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (하나증권 중국전략)"
+       },
+       {
+        "name": "Beyond Tomorrow",
+        "url": "https://beyondtmrw.org/article/anthropic-s-ipo-pitch-lands-at-70-78-as-trillion-dollar-talk-cools"
+       }
+      ],
+      "verdict": "엇갈림"
+     }
+    ],
+    "background": "앤트로픽은 10월 26일 증권신고서를 공개하고 11월 10일 가격 범위를 정해 로드쇼를 시작했다. 상장 직전 엔비디아 사태로 AI 투자 심리가 흔들려, 이번 상장이 AI 기업 가치에 대한 시장의 판단을 보여 줄 시험대로 꼽힌다.",
+    "watch": [
+     "11.18 공모가 확정(범위 상단·하단 여부)",
+     "11.19 상장 첫날 주가와 거래량",
+     "내부자 매도 물량",
+     "사모 참여 7개사와의 협력 공시"
+    ],
+    "related": [
+     {
+      "source": "Decrypt",
+      "title": "앤트로픽, 공모가 70~78달러·기업가치 최대 1.4조 달러",
+      "url": "https://decrypt.co/382939/anthropic-sets-ipo-price-range-at-70-to-78-valuing-company-at-up-to-1-4-trillion?amp=1",
+      "note": "공모 조건과 사모 배정"
+     },
+     {
+      "source": "The Next Web",
+      "title": "앤트로픽 IPO, 최대 644억 달러 조달",
+      "url": "https://thenextweb.com/news/anthropic-ipo-terms-1-4-trillion-valuation",
+      "note": "주요 투자자와 일정"
+     }
+    ],
+    "sources": [
+     {
+      "name": "한투증권 미국/중국전략 정정영",
+      "meta": "11.14 16:55 · 조회 8,814",
+      "url": "https://t.me/G2strategy/34458"
+     },
+     {
+      "name": "요약하는 고잉",
+      "meta": "11.15 09:28 · 조회 7,951",
+      "url": "https://t.me/one_going/4515"
+     },
+     {
+      "name": "HS아카데미 대표 이효석",
+      "meta": "11.14 16:12 · 조회 6,216",
+      "url": "https://t.me/HS_academy/11119"
+     },
+     {
+      "name": "TNBfolio",
+      "meta": "11.15 00:26 · 조회 5,595",
+      "url": "https://t.me/TNBfolio/72001"
+     },
+     {
+      "name": "시황맨의 주식이야기",
+      "meta": "11.15 06:40 · 조회 3,906",
+      "url": "https://t.me/shmstory/9220"
+     },
+     {
+      "name": "하나 중국/신흥국 전략 김경환",
+      "meta": "11.14 21:54 · 조회 2,451",
+      "url": "https://t.me/HANAchina/72133"
+     }
+    ]
+   },
+   "title": "앤트로픽 19일 나스닥 상장, 최대 644억 달러 공모",
+   "summary": "앤트로픽이 주당 70~78달러에 8억2,500만 주를 팔아 19일 나스닥(티커 ANT)에 상장한다. 7개 기술 기업이 따로 260억 달러어치를 같은 값에 사기로 했다.",
+   "confidence": "confirmed",
+   "id": "h3",
+   "kicker": "1면 핫이슈 · TOP 3"
+  },
+  {
+   "tickers": [],
+   "detail": {
+    "numbers": [
+     {
+      "label": "WTI",
+      "value": "$88.56",
+      "note": "전일 대비 -0.20% · 2026-11-13 기준"
+     },
+     {
+      "label": "브렌트",
+      "value": "$95.84",
+      "note": "전일 대비 +0.02% · 2026-11-13 기준"
+     },
+     {
+      "label": "천연가스",
+      "value": "$3.23",
+      "note": "전일 대비 -3.29% · 2026-11-13 기준"
+     },
+     {
+      "label": "IEA 공급 초과 (10월)",
+      "value": "하루 약 200만 배럴",
+      "note": "가디언 보도 인용 (텔레그램)"
+     },
+     {
+      "label": "IEA 4분기 전망",
+      "value": "하루 약 170만 배럴 과잉",
+      "note": "11.13 보고서 (텔레그램)"
+     },
+     {
+      "label": "OPEC+ 10월 생산",
+      "value": "전쟁 전의 97%",
+      "note": ""
+     },
+     {
+      "label": "TTF 가스 12월물",
+      "value": "90.95유로/MWh",
+      "note": "-1.42% (11.13)"
+     },
+     {
+      "label": "미국 디젤",
+      "value": "갤런당 6달러 하회",
+      "note": "9월 이후 처음 (GasBuddy)"
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "text": "전쟁이 길어져도 유가 상방은 제한적이고 종전되면 크게 내릴 수 있다는 공급과잉 콜.",
+      "who": "선진짱 주식공부방"
+     },
+     {
+      "label": "신중",
+      "text": "공급 과잉인데도 유가가 생각보다 안 내리고 천연가스는 오른다며 에너지발 물가가 끝나지 않았다는 시각.",
+      "who": "홍명수인사이트, 소수의견"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "선진짱 주식공부방",
+      "time": "10:05",
+      "text": "가디언 보도 인용: 걸프 수출이 빠르게 회복돼 지난달 공급이 수요를 하루 약 200만 배럴 웃돌았다는 IEA 판단."
+     }
+    ],
+    "summary": [
+     "IEA는 지난달 세계 원유 공급이 수요를 하루 약 200만 배럴 웃돌았고, 4분기에도 하루 약 170만 배럴 공급 과잉을 예상했다(13일 월간 보고서, 텔레그램 채널 인용). 두 숫자는 기간이 달라 서로 어긋나지 않는다.",
+     "10월 OPEC+ 생산은 전쟁 전의 97%까지 회복됐다. 다만 중동→아시아 원유 운임은 역대 최고 수준에 가깝다.",
+     "13일 종가 WTI 88.56달러, 브렌트 95.84달러로 1주 새 각각 2.5% 내렸지만, 천연가스는 1주 7.7% 올랐다.",
+     "미국 디젤 가격은 9월 이후 처음 갤런당 6달러 아래로 내려왔다(GasBuddy). 이란 해군의 유조선 피격 주장은 확인되지 않았다."
+    ],
+    "charts": [
+     {
+      "title": "원자재 1주 등락 (11.13 종가)",
+      "type": "bar",
+      "unit": "%",
+      "points": [
+       {
+        "label": "WTI",
+        "value": -2.5
+       },
+       {
+        "label": "브렌트",
+        "value": -2.52
+       },
+       {
+        "label": "천연가스",
+        "value": 7.74,
+        "hi": true
+       },
+       {
+        "label": "금",
+        "value": -4.63
+       },
+       {
+        "label": "구리",
+        "value": -2.23
+       }
+      ],
+      "source": "야후 파이낸스 시세",
+      "note": "공급 과잉에도 유가 하락폭은 작고 가스는 올랐다."
+     }
+    ],
+    "checks": [
+     {
+      "item": "IEA 공급 과잉",
+      "value": "10월 실적 하루 200만 배럴, 4분기 전망 170만 배럴 (기간 차이)",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (선진짱 주식공부방)"
+       },
+       {
+        "name": "텔레그램 채널 (홍명수인사이트)"
+       },
+       {
+        "name": "IEA 11월 월간 보고서 안내",
+        "url": "https://www.iea.org/events/oil-market-report-november-2026"
+       }
+      ],
+      "verdict": "대체로 일치"
+     },
+     {
+      "item": "유가 종가",
+      "value": "WTI 88.56, 브렌트 95.84 (11.13)",
+      "sources": [
+       {
+        "name": "야후 파이낸스 시세 (11.15 수집)"
+       },
+       {
+        "name": "텔레그램 채널 (홍명수인사이트)"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "유조선 기뢰 피격",
+      "value": "이란 해군 주장, 독립 확인 안 됨",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (홍명수인사이트)"
+       }
+      ],
+      "verdict": "확인 안 됨"
+     }
+    ],
+    "background": "이란 전쟁과 호르무즈 해협 봉쇄로 올해 유가가 크게 올랐고, 에너지 비용이 미국 물가를 밀어 올리며 연준의 인상 근거가 됐다. 공급 과잉이 굳어지면 물가와 금리 경로에도 숨통이 트일 수 있다.",
+    "watch": [
+     "이란 공습 보류 지속 여부",
+     "중동→아시아 운임",
+     "다음 IEA·OPEC 월간 보고서(12월)"
+    ],
+    "related": [
+     {
+      "source": "IEA",
+      "title": "원유 시장 보고서 2026년 11월",
+      "url": "https://www.iea.org/events/oil-market-report-november-2026",
+      "note": "보고서 원문 안내"
+     }
+    ],
+    "sources": [
+     {
+      "name": "선진짱 주식공부방",
+      "meta": "11.15 10:08 · 조회 6,700",
+      "url": "https://t.me/sunstudy1111/139350"
+     },
+     {
+      "name": "그로쓰리서치(Growth Research) [독립리서치]",
+      "meta": "11.14 19:21 · 조회 2,902",
+      "url": "https://t.me/growthresearch/31225"
+     },
+     {
+      "name": "회색인간의 매크로 + 투자",
+      "meta": "11.15 10:57 · 조회 1,477",
+      "url": "https://t.me/mistergray_11/25296"
+     },
+     {
+      "name": "도널드 J. 트럼프 대통령",
+      "meta": "11.15 01:05 · 조회 812",
+      "url": "https://t.me/goddessTTF/87086"
+     },
+     {
+      "name": "한투증권 미국/중국전략 정정영",
+      "meta": "11.15 08:32 · 조회 21,279",
+      "url": "https://t.me/G2strategy/34464"
+     },
+     {
+      "name": "급등일보 미국주식🇺🇸 속보·매크로·리서치",
+      "meta": "11.15 10:09 · 조회 1,724",
+      "url": "https://t.me/FastStockNewsUSA/24485"
+     }
+    ],
+    "numbersSource": "시장 지표 · 2026-11-15 새벽 수집 / 아래쪽 수치는 조사 기자 확인(각 줄 설명에 출처)"
+   },
+   "title": "IEA \"원유 공급이 수요 초과\"…유가는 버텨",
+   "summary": "IEA는 걸프 수출이 빠르게 회복돼 이란 전쟁 뒤 처음으로 원유 공급이 수요를 넘었다고 밝혔다. 그러나 운임과 천연가스가 오르며 유가는 주간 2%대 하락에 그쳤다.",
+   "confidence": "partial",
+   "id": "h4",
+   "kicker": "1면 핫이슈 · TOP 4"
+  },
+  {
+   "tickers": [],
+   "detail": {
+    "views": [
+     {
+      "label": "기타",
+      "text": "시험 제도와 감독이 기술을 못 따라간다는 지적과 함께, 수능 등 다른 시험도 위험하다는 우려가 나왔다.",
+      "who": "뺀지뤼의 SKLab, 여러 시황 채널"
+     },
+     {
+      "label": "기타",
+      "text": "지능이 물처럼 싸지는 시대의 신호라며 지식보다 창의성의 가치가 오른다는 해석.",
+      "who": "Pluto Research"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "뺀지뤼의 SKLab.(스크랩)",
+      "time": "13:13",
+      "text": "세무사 시험 수석 합격자의 AI 부정행위 의혹이 사실로 확인됐다는 조선일보 보도 공유와 냉소적 반응."
+     },
+     {
+      "channel": "Pluto Research",
+      "time": "12:47",
+      "text": "이번 사태는 물처럼 싼 지능의 시대가 온다는 뜻이며, 지식은 숏·창의성은 롱이 메가트렌드가 될 수 있다는 해석."
+     }
+    ],
+    "summary": [
+     "조선일보는 15일 세무사 자격시험 수석 합격자의 AI 부정행위 의혹이 사실로 확인됐다고 보도했다. 당사자는 처음엔 의혹을 부인했다.",
+     "방식은 AI 안경이라는 이야기와, 옷에 단 초소형 카메라로 문제를 찍어 AI가 푼 답을 초소형 이어폰으로 받았다는 이야기가 함께 돈다. 구체적 방식은 공식 발표로 확인되지 않았다.",
+     "올해 들어 토익(6월)과 국가기술자격시험에서 AI 안경 부정행위가 잇따라 적발됐고, 한국산업인력공단은 국정감사에서 \"AI 인스펙터\" 감독직을 신설하겠다고 밝혔다.",
+     "한 유튜버가 AI 안경으로 수능 수학 30문항을 풀어 5문항만 틀렸다는 영상도 화제가 됐다."
+    ],
+    "checks": [
+     {
+      "item": "수석 합격자 부정행위 확인",
+      "value": "15일 보도",
+      "sources": [
+       {
+        "name": "조선일보",
+        "url": "https://www.chosun.com/national/labor/2026/11/15/J2BRRAJ4RFGFHBZU4537ENJX3I/"
+       },
+       {
+        "name": "텔레그램 채널 (뺀지뤼의 SKLab)"
+       }
+      ],
+      "verdict": "단일 출처"
+     },
+     {
+      "item": "부정행위 방식",
+      "value": "AI 안경 vs 초소형 카메라·이어폰, 확정 안 됨",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (Pluto Research)"
+       },
+       {
+        "name": "텔레그램 채널 (여러 시황 채널)"
+       }
+      ],
+      "verdict": "엇갈림"
+     },
+     {
+      "item": "국가시험 AI 안경 적발과 대응",
+      "value": "국가기술자격시험 적발, 산업인력공단 \"AI 인스펙터\" 신설 계획",
+      "sources": [
+       {
+        "name": "SBS Biz",
+        "url": "https://biz.sbs.co.kr/amp/article/20000341848"
+       },
+       {
+        "name": "파이낸셜뉴스",
+        "url": "https://www.fnnews.com/news/202606100728543326"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "토익 첫 AI 글라스 적발",
+      "value": "5월 시험에서 2건 적발",
+      "sources": [
+       {
+        "name": "쿠키뉴스",
+        "url": "https://www.kukinews.com/article/print/kuk202606090142"
+       },
+       {
+        "name": "SBS Biz",
+        "url": "https://biz.sbs.co.kr/amp/article/20000315816"
+       }
+      ],
+      "verdict": "일치"
+     }
+    ],
+    "background": "카메라·마이크를 단 AI 안경이 5월 국내에 정식 출시된 뒤 시험장 부정행위가 잇따랐다. 일반 안경과 겉모습이 비슷해 감독관이 눈으로 가려내기 어렵다는 점이 문제로 꼽힌다.",
+    "watch": [
+     "합격 취소 등 후속 처분",
+     "수능 등 주요 시험의 전자기기 감독 지침",
+     "산업인력공단 \"AI 인스펙터\" 도입 시점"
+    ],
+    "related": [
+     {
+      "source": "조선일보",
+      "title": "세무사 수석 합격자 AI 부정행위 사실로",
+      "url": "https://www.chosun.com/national/labor/2026/11/15/J2BRRAJ4RFGFHBZU4537ENJX3I/",
+      "note": "원 보도"
+     },
+     {
+      "source": "SBS Biz",
+      "title": "시험장 AI 안경 부정행위 5건, 공단의 대책",
+      "url": "https://biz.sbs.co.kr/amp/article/20000341848",
+      "note": "감독 대책 배경"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Pluto Research",
+      "meta": "11.15 12:47 · 조회 2,723",
+      "url": "https://t.me/hedgehara/49879"
+     },
+     {
+      "name": "딘스티커 Dean's Ticker",
+      "meta": "11.15 09:56 · 조회 2,041",
+      "url": "https://t.me/d_ticker/4158"
+     },
+     {
+      "name": "지식 책꽂이 (이대호 기자)",
+      "meta": "11.15 10:52 · 조회 1,254",
+      "url": "https://t.me/knowledge_to_wealth/9049"
+     },
+     {
+      "name": "습관이 부자를 만든다. 🧘",
+      "meta": "11.14 15:28 · 조회 3,930",
+      "url": "https://t.me/habit4117/87978"
+     },
+     {
+      "name": "재야의 고수들",
+      "meta": "11.14 15:28 · 조회 3,146",
+      "url": "https://t.me/gaoshoukorea/65736"
+     },
+     {
+      "name": "이지스스트레티지 리서치",
+      "meta": "11.15 09:38 · 조회 2,673",
+      "url": "https://t.me/jeilstock/47273"
+     },
+     {
+      "name": "변창호 코인사관학교 BCH",
+      "meta": "11.15 09:51 · 조회 2,023",
+      "url": "https://t.me/BChoSN/33516"
+     },
+     {
+      "name": "IH Research",
+      "meta": "11.15 10:53 · 조회 1,219",
+      "url": "https://t.me/ihresearch/5093"
+     }
+    ]
+   },
+   "title": "세무사 시험 수석 합격자 AI 부정행위 확인",
+   "summary": "세무사 자격시험 수석 합격자의 AI 부정행위 의혹이 사실로 확인됐다는 보도가 나왔다. 다음 주 수능을 앞두고 AI 안경·초소형 기기 감독 대책에 관심이 쏠린다.",
+   "confidence": "partial",
+   "id": "h5",
+   "kicker": "1면 핫이슈 · TOP 5"
+  },
+  {
+   "tickers": [],
+   "detail": {
+    "numbers": [
+     {
+      "label": "비트코인",
+      "value": "$65,009",
+      "note": "전일 대비 -4.75% · 2026-11-15 기준"
+     },
+     {
+      "label": "이더리움",
+      "value": "$1,819",
+      "note": "전일 대비 -5.64% · 2026-11-15 기준"
+     },
+     {
+      "label": "저점 (바이낸스)",
+      "value": "62,929달러",
+      "note": "15일 10:03 (텔레그램 코인 속보)"
+     },
+     {
+      "label": "24시간 강제 청산",
+      "value": "21.6억 달러",
+      "note": "15일 11:17 기준 (06:19엔 16.8억)"
+     },
+     {
+      "label": "김치 프리미엄",
+      "value": "4.0%",
+      "note": "15일 06:12"
+     },
+     {
+      "label": "스트래티지(MSTR) 주간",
+      "value": "-13.43%",
+      "note": "Finviz"
+     }
+    ],
+    "views": [
+     {
+      "label": "신중",
+      "text": "달러·금리에 민감한 자산이라 긴축 가속 국면에서 추가 하락을 각오해야 한다는 쪽.",
+      "who": "소수의견, 요약하는 고잉 외"
+     },
+     {
+      "label": "중립",
+      "text": "뚜렷한 악재보다 선물 롱 포지션의 연쇄 청산이 낙폭을 키웠다는 분석.",
+      "who": "요약하는 고잉, COINNESS"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "요약하는 고잉",
+      "time": "09:28",
+      "text": "하락 이유 정리: 롱 포지션 연쇄 청산, 앤트로픽 상장 앞 자금 이동, 스트래티지 MSCI 편출, 반도체 하락에 따른 증거금 매도."
+     },
+     {
+      "channel": "COINNESS News Feed (코인니스)",
+      "time": "06:19",
+      "text": "지난 1시간 6.01억 달러, 24시간 16.8억 달러 규모 선물 포지션 강제 청산 속보(15일 06:19)."
+     }
+    ],
+    "summary": [
+     "바이낸스 기준 15일 오전 10시 저점 62,929달러. 14일 밤 6만6천 달러가 깨진 뒤 15일 새벽부터 1천 달러 단위로 차례로 내려갔다.",
+     "24시간 강제 청산은 15일 06시 16.8억 달러, 11시 21.6억 달러로 불어났다. 1주 전(9일)에는 7만4천 달러 아래로 내려가며 롱 청산이 10억 달러를 넘었었다.",
+     "하락 이유로는 선물 레버리지 연쇄 청산, 연준 추가 인상 전망과 달러 강세, 비트코인 ETF 5거래일 연속 순유출, 스트래티지의 MSCI 지수 편출, 앤트로픽 상장 앞 자금 이동이 거론된다.",
+     "공포·탐욕 지수는 10까지 떨어졌고, 업비트 김치 프리미엄은 4.0%로 국내 가격이 더 높게 유지됐다."
+    ],
+    "charts": [
+     {
+      "title": "1주 수익률 비교 (11.15 기준)",
+      "type": "bar",
+      "unit": "%",
+      "points": [
+       {
+        "label": "비트코인",
+        "value": -13.74,
+        "hi": true
+       },
+       {
+        "label": "이더리움",
+        "value": -14.71
+       },
+       {
+        "label": "금",
+        "value": -4.63
+       },
+       {
+        "label": "은",
+        "value": -5.35
+       },
+       {
+        "label": "나스닥",
+        "value": 2.27
+       }
+      ],
+      "source": "야후 파이낸스 시세",
+      "note": "주식이 오른 주에 코인·귀금속이 함께 빠졌다."
+     }
+    ],
+    "checks": [
+     {
+      "item": "6만3천 달러 하회",
+      "value": "15일 오전 62,929달러 저점",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (COINNESS)"
+       },
+       {
+        "name": "야후 파이낸스 시세 (11.15 수집)"
+       }
+      ],
+      "verdict": "대체로 일치"
+     },
+     {
+      "item": "청산 규모",
+      "value": "06시 16.8억 → 11시 21.6억 달러(24시간 누적, 시점 차이)",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (COINNESS)"
+       },
+       {
+        "name": "텔레그램 채널 (요약하는 고잉)"
+       }
+      ],
+      "verdict": "대체로 일치"
+     },
+     {
+      "item": "1주 전 상황",
+      "value": "9일 7만4천 달러 하회, 롱 청산 10억 달러 초과, ETF 순유출",
+      "sources": [
+       {
+        "name": "The Block",
+        "url": "https://theblock.co/news/markets/2026-11-09-bitcoin-loses-50-week-moving-average-as-24-hour-crypto-long-liquidations-top-1-billion-436102"
+       }
+      ],
+      "verdict": "단일 출처"
+     },
+     {
+      "item": "하락 원인",
+      "value": "레버리지 청산·금리·ETF 유출·MSCI 편출·자금 이동이 함께 거론, 단일 원인 없음",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (요약하는 고잉)"
+       },
+       {
+        "name": "텔레그램 채널 (소수의견)"
+       }
+      ],
+      "verdict": "엇갈림"
+     }
+    ],
+    "background": "비트코인은 10월 21일 이후 20% 넘게 내렸다. 최근 1년 사이 고위험 레버리지가 늘어 거시 뉴스 하나에도 청산이 커지는 구조라는 분석이 나온다.",
+    "watch": [
+     "6만 달러 지지 여부",
+     "비트코인 현물 ETF 자금 흐름",
+     "11.19 FOMC 의사록과 달러"
+    ],
+    "related": [
+     {
+      "source": "The Block",
+      "title": "비트코인 50주 이동평균 이탈, 롱 청산 10억 달러",
+      "url": "https://theblock.co/news/markets/2026-11-09-bitcoin-loses-50-week-moving-average-as-24-hour-crypto-long-liquidations-top-1-billion-436102",
+      "note": "1주 전 하락 시작 국면"
+     }
+    ],
+    "sources": [
+     {
+      "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+      "meta": "11.15 09:44 · 조회 3,735",
+      "url": "https://t.me/insidertracking/69309"
+     },
+     {
+      "name": "도널드 J. 트럼프 대통령",
+      "meta": "11.15 07:21 · 조회 809",
+      "url": "https://t.me/goddessTTF/87102"
+     },
+     {
+      "name": "요약하는 고잉",
+      "meta": "11.15 09:28 · 조회 7,951",
+      "url": "https://t.me/one_going/4515"
+     },
+     {
+      "name": "변창호 코인사관학교 BCH",
+      "meta": "11.14 23:02 · 조회 2,743",
+      "url": "https://t.me/BChoSN/33489"
+     },
+     {
+      "name": "IH Research",
+      "meta": "11.14 23:26 · 조회 2,158",
+      "url": "https://t.me/ihresearch/5090"
+     },
+     {
+      "name": "COINNESS News Feed (코인니스)",
+      "meta": "11.14 17:38 · 조회 1,575",
+      "url": "https://t.me/coinnesskr/238103"
+     }
+    ],
+    "numbersSource": "시장 지표 · 2026-11-15 새벽 수집 / 아래쪽 수치는 조사 기자 확인(각 줄 설명에 출처)"
+   },
+   "title": "비트코인 6만3천 달러 붕괴, 하루 20억 달러대 청산",
+   "summary": "비트코인이 주말 사이 6만3천 달러 아래까지 밀렸다가 6만4천~6만5천 달러로 반등했다. 선물 롱 포지션이 연쇄 청산되며 하루 청산 규모가 20억 달러를 넘었다.",
+   "confidence": "confirmed",
+   "id": "h6",
+   "kicker": "1면 핫이슈 · TOP 6"
+  },
+  {
+   "tickers": [
     "AMD"
    ],
-   "confidence": "confirmed",
-   "kicker": "1면 핫이슈 · TOP 1",
    "detail": {
-    "summary": [
-     "AI 투자 사이클 논쟁 재점화 관련 글이 18개 채널에서 나왔고, 그중 1순위 채널이 11곳이었다.",
-     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
-     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
-    ],
     "numbers": [
      {
+      "label": "필라델피아 반도체",
+      "value": "10,146",
+      "note": "전일 대비 -3.43% · 2026-11-13 기준"
+     },
+     {
       "label": "종가",
-      "value": "182.40",
-      "note": "미국 정규장 마감 기준"
+      "value": "534.06",
+      "note": "미국 정규장 마감"
      },
      {
       "label": "전일 대비",
-      "value": "+2.8%",
-      "note": "최근 5거래일 중 최대 상승"
-     },
-     {
-      "label": "거래량",
-      "value": "1.6배",
-      "note": "20일 평균 대비"
+      "value": "-8.75%",
+      "note": ""
      },
      {
       "label": "시가총액",
-      "value": "4.4조 달러",
+      "value": "8,759억 달러",
       "note": ""
      },
      {
       "label": "선행 PER",
-      "value": "31.2배",
-      "note": "업종 평균 24배"
+      "value": "29.97배",
+      "note": "현재 PER 116.08배"
+     },
+     {
+      "label": "거래량",
+      "value": "평소의 2.04배",
+      "note": "최근 평균 대비"
+     },
+     {
+      "label": "1주 수익률",
+      "value": "+18.93%",
+      "note": ""
+     },
+     {
+      "label": "연초 이후",
+      "value": "+149.37%",
+      "note": ""
+     },
+     {
+      "label": "52주 고점 대비",
+      "value": "-18.90%",
+      "note": ""
+     },
+     {
+      "label": "RSI(14)",
+      "value": "50.36",
+      "note": "70 이상 과열 · 30 이하 침체"
+     },
+     {
+      "label": "목표주가 평균",
+      "value": "660.94",
+      "note": "애널리스트 평균"
      },
      {
       "label": "다음 실적",
-      "value": "11.19 (수)",
-      "note": "장 마감 후 발표"
-     }
-    ],
-    "numbersSource": "Finviz (예시)",
-    "timeline": [
-     {
-      "label": "05시",
-      "count": 8
+      "value": "11.3 장후",
+      "note": ""
      },
      {
-      "label": "06시",
-      "count": 6
+      "label": "시스코 EPS 서프라이즈",
+      "value": "+5.6%",
+      "note": "Finviz 실적 자료"
      },
      {
-      "label": "07시",
-      "count": 12
+      "label": "시스코 매출 서프라이즈",
+      "value": "+2.2%",
+      "note": "Finviz 실적 자료"
      },
      {
-      "label": "08시",
-      "count": 13
+      "label": "시스코 비GAAP 매출총이익률",
+      "value": "65.6% (-250bp)",
+      "note": "텔레그램 채널(연수르 해외주식)"
      },
      {
-      "label": "09시",
-      "count": 20
-     },
-     {
-      "label": "10시",
-      "count": 19
-     },
-     {
-      "label": "11시",
-      "count": 23
-     },
-     {
-      "label": "12시",
-      "count": 21
-     },
-     {
-      "label": "13시",
-      "count": 19
-     },
-     {
-      "label": "14시",
-      "count": 16
-     },
-     {
-      "label": "15시",
-      "count": 10
-     },
-     {
-      "label": "16시",
-      "count": 7
-     },
-     {
-      "label": "17시",
-      "count": 7
-     },
-     {
-      "label": "18시",
-      "count": 4
-     },
-     {
-      "label": "19시",
-      "count": 3
-     },
-     {
-      "label": "20시",
-      "count": 3
-     },
-     {
-      "label": "21시",
-      "count": 5
-     },
-     {
-      "label": "22시",
-      "count": 5
-     },
-     {
-      "label": "23시",
-      "count": 5
-     },
-     {
-      "label": "00시",
-      "count": 2
-     },
-     {
-      "label": "01시",
-      "count": 5
-     },
-     {
-      "label": "02시",
-      "count": 4
-     },
-     {
-      "label": "03시",
-      "count": 2
-     },
-     {
-      "label": "04시",
-      "count": 3
+      "label": "필라델피아 반도체 (13일 / 주간)",
+      "value": "-3.43% / +8.05%",
+      "note": "야후 파이낸스"
      }
     ],
     "views": [
      {
       "label": "낙관",
-      "count": 9,
-      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
-      "who": "채널 A, 채널 C 외"
+      "text": "엔비디아 공백으로 고객과 돈이 AMD·구글·브로드컴으로 옮겨 간다는 시각.",
+      "who": "딘스티커, 퀄리티기업연구소 외"
      },
      {
       "label": "신중",
-      "count": 6,
-      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
-      "who": "채널 B, 채널 F 외"
-     },
-     {
-      "label": "중립",
-      "count": 3,
-      "text": "다음 발표를 보고 판단하자는 쪽이다.",
-      "who": "채널 D 외"
+      "text": "호실적에도 마진·주문 둔화로 파는 실적 후 매도 패턴, AI 투자 재검토 압박이 커진다는 시각.",
+      "who": "연수르 해외주식 외"
      }
     ],
     "excerpts": [
      {
-      "channel": "채널 A (1순위)",
-      "time": "06:38",
-      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
+      "channel": "연수르 해외주식",
+      "time": "11:31",
+      "text": "하락 업종 상위: 컴퓨터 하드웨어 -4.4%, 통신장비 -4.3%, 반도체 -3.2%. 시스코 -6.2%, 브로드컴 -4.8%."
      },
      {
-      "channel": "채널 B (1순위)",
-      "time": "01:12",
-      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
-     },
-     {
-      "channel": "채널 E",
-      "time": "전날 23:40",
-      "text": "해외 리포트 요약을 공유했다."
+      "channel": "퀄리티기업연구소",
+      "time": "22:33",
+      "text": "11.9~13 주간 나스닥100 상승률 1·2위는 AMD +18.93%, 브로드컴 +18.16%."
      }
     ],
-    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
-    "watch": [
-     "이번 주 실적 발표와 가이던스",
-     "주요 고객사의 설비투자 발언",
-     "관련 ETF 자금 흐름"
-    ],
-    "sources": [
-     {
-      "name": "채널 A",
-      "meta": "1순위 · 06:38",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 B",
-      "meta": "1순위 · 01:12",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 E",
-      "meta": "기타 · 전날 23:40",
-      "url": "https://t.me/"
-     }
-    ],
-    "related": [
-     {
-      "source": "Finviz 뉴스",
-      "title": "관련 헤드라인 (예시)",
-      "url": "https://finviz.com/",
-      "note": "텔레그램에 없던 사실을 보강"
-     },
-     {
-      "source": "웹 검색",
-      "title": "관련 기사 (예시)",
-      "url": "https://www.google.com/",
-      "note": "공식 발표 확인"
-     }
-    ]
-   }
-  },
-  {
-   "id": "h2",
-   "title": "연준 12월 인하 기대 후퇴, 장기금리 반등",
-   "summary": "고용·물가 지표 뒤 인하 확률을 낮춰 잡는 해석이 늘었다.",
-   "channels": 15,
-   "priority": 9,
-   "tickers": [
-    "TLT"
-   ],
-   "confidence": "confirmed",
-   "kicker": "1면 핫이슈 · TOP 2",
-   "detail": {
     "summary": [
-     "연준 12월 인하 기대 후퇴 관련 글이 15개 채널에서 나왔고, 그중 1순위 채널이 9곳이었다.",
-     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
-     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
+     "시스코는 EPS·매출이 모두 예상을 넘었지만(EPS +5.6%, 매출 +2.2%) 매출총이익률이 65.6%로 2.5%p 낮아지고 제품 주문 증가율이 35%→21%로 둔화되며 6.24% 내렸다.",
+     "델은 H800 제한 칩을 단 서버가 상하이로 들어갔다는 블룸버그 보도와 UBS 투자의견 하향이 겹쳐 7.18% 하락했다.",
+     "AMD는 주간 +18.93%로 나스닥100 1위였지만 13일 하루는 -8.75%. 엔비디아 고객 이탈 기대로 오른 뒤 차익 실현이 나왔다.",
+     "필라델피아 반도체지수는 13일 -3.43%였지만 주간으로는 +8.05%로, 엔비디아만 빠진 차별화 장세였다."
     ],
-    "numbers": [
+    "charts": [
      {
-      "label": "종가",
-      "value": "182.40",
-      "note": "미국 정규장 마감 기준"
-     },
-     {
-      "label": "전일 대비",
-      "value": "+2.8%",
-      "note": "최근 5거래일 중 최대 상승"
-     },
-     {
-      "label": "거래량",
-      "value": "1.6배",
-      "note": "20일 평균 대비"
-     },
-     {
-      "label": "시가총액",
-      "value": "4.4조 달러",
-      "note": ""
-     },
-     {
-      "label": "선행 PER",
-      "value": "31.2배",
-      "note": "업종 평균 24배"
-     },
-     {
-      "label": "다음 실적",
-      "value": "11.19 (수)",
-      "note": "장 마감 후 발표"
+      "title": "13일 하루 등락",
+      "type": "bar",
+      "unit": "%",
+      "points": [
+       {
+        "label": "AMD",
+        "value": -8.75
+       },
+       {
+        "label": "DELL",
+        "value": -7.18
+       },
+       {
+        "label": "CSCO",
+        "value": -6.24,
+        "hi": true
+       },
+       {
+        "label": "AVGO",
+        "value": -4.76
+       },
+       {
+        "label": "SKHY",
+        "value": -4.3
+       },
+       {
+        "label": "NVDA",
+        "value": -2.01
+       }
+      ],
+      "source": "Finviz",
+      "note": "실적이 좋았던 시스코도 마진 우려에 크게 빠졌다."
      }
     ],
-    "numbersSource": "Finviz (예시)",
-    "timeline": [
+    "checks": [
      {
-      "label": "05시",
-      "count": 4
+      "item": "시스코 실적과 주가",
+      "value": "EPS +5.6%·매출 +2.2% 서프라이즈, 주가 -6.24%",
+      "sources": [
+       {
+        "name": "Finviz (11.15 새벽 수집)"
+       },
+       {
+        "name": "텔레그램 채널 (연수르 해외주식)"
+       }
+      ],
+      "verdict": "일치"
      },
      {
-      "label": "06시",
-      "count": 6
+      "item": "AMD·브로드컴 주간 상승",
+      "value": "+18.93% / +18.16%",
+      "sources": [
+       {
+        "name": "Finviz (11.15 새벽 수집)"
+       },
+       {
+        "name": "텔레그램 채널 (퀄리티기업연구소)"
+       }
+      ],
+      "verdict": "일치"
      },
      {
-      "label": "07시",
-      "count": 8
-     },
-     {
-      "label": "08시",
-      "count": 11
-     },
-     {
-      "label": "09시",
-      "count": 14
-     },
-     {
-      "label": "10시",
-      "count": 19
-     },
-     {
-      "label": "11시",
-      "count": 20
-     },
-     {
-      "label": "12시",
-      "count": 22
-     },
-     {
-      "label": "13시",
-      "count": 19
-     },
-     {
-      "label": "14시",
-      "count": 17
-     },
-     {
-      "label": "15시",
-      "count": 14
-     },
-     {
-      "label": "16시",
-      "count": 9
-     },
-     {
-      "label": "17시",
-      "count": 9
-     },
-     {
-      "label": "18시",
-      "count": 5
-     },
-     {
-      "label": "19시",
-      "count": 6
-     },
-     {
-      "label": "20시",
-      "count": 6
-     },
-     {
-      "label": "21시",
-      "count": 3
-     },
-     {
-      "label": "22시",
-      "count": 5
-     },
-     {
-      "label": "23시",
-      "count": 5
-     },
-     {
-      "label": "00시",
-      "count": 4
-     },
-     {
-      "label": "01시",
-      "count": 2
-     },
-     {
-      "label": "02시",
-      "count": 3
-     },
-     {
-      "label": "03시",
-      "count": 4
-     },
-     {
-      "label": "04시",
-      "count": 3
+      "item": "델 하락 이유",
+      "value": "H800 서버 상하이 반입 보도 + UBS 하향",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (연수르 해외주식)"
+       },
+       {
+        "name": "텔레그램 채널 (습관이 부자를 만든다)"
+       }
+      ],
+      "verdict": "단일 출처"
      }
     ],
-    "views": [
-     {
-      "label": "낙관",
-      "count": 7,
-      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
-      "who": "채널 A, 채널 C 외"
-     },
-     {
-      "label": "신중",
-      "count": 5,
-      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
-      "who": "채널 B, 채널 F 외"
-     },
-     {
-      "label": "중립",
-      "count": 3,
-      "text": "다음 발표를 보고 판단하자는 쪽이다.",
-      "who": "채널 D 외"
-     }
-    ],
-    "excerpts": [
-     {
-      "channel": "채널 A (1순위)",
-      "time": "06:38",
-      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
-     },
-     {
-      "channel": "채널 B (1순위)",
-      "time": "01:12",
-      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
-     },
-     {
-      "channel": "채널 E",
-      "time": "전날 23:40",
-      "text": "해외 리포트 요약을 공유했다."
-     }
-    ],
-    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
+    "background": "AI 인프라 투자 비용이 커지면서 네트워크 장비·서버 업체는 매출이 늘어도 메모리 등 원가 상승으로 마진이 줄고 있다. 투자자들은 숫자보다 마진과 주문 추세를 더 엄격하게 보고 있다.",
     "watch": [
-     "이번 주 실적 발표와 가이던스",
-     "주요 고객사의 설비투자 발언",
-     "관련 ETF 자금 흐름"
-    ],
-    "sources": [
-     {
-      "name": "채널 A",
-      "meta": "1순위 · 06:38",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 B",
-      "meta": "1순위 · 01:12",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 E",
-      "meta": "기타 · 전날 23:40",
-      "url": "https://t.me/"
-     }
+     "11.17 엔비디아 실적",
+     "11.24 델 실적",
+     "12.9 브로드컴 실적"
     ],
     "related": [
      {
-      "source": "Finviz 뉴스",
-      "title": "관련 헤드라인 (예시)",
-      "url": "https://finviz.com/",
-      "note": "텔레그램에 없던 사실을 보강"
+      "source": "Finviz",
+      "title": "시스코 종목 정보",
+      "url": "https://finviz.com/quote.ashx?t=CSCO",
+      "note": "실적·주가 수치"
      },
      {
-      "source": "웹 검색",
-      "title": "관련 기사 (예시)",
-      "url": "https://www.google.com/",
-      "note": "공식 발표 확인"
+      "source": "Finviz",
+      "title": "AMD 종목 정보",
+      "url": "https://finviz.com/quote.ashx?t=AMD",
+      "note": "주간 등락과 밸류에이션"
      }
-    ]
-   }
-  },
-  {
-   "id": "h3",
-   "title": "스타십 회수 성공에 우주 테마 동반 강세",
-   "summary": "발사 비용 하락 기대가 위성·발사체 종목으로 번졌다.",
-   "channels": 12,
-   "priority": 8,
-   "tickers": [
-    "RKLB",
-    "ASTS"
-   ],
-   "confidence": "confirmed",
-   "kicker": "1면 핫이슈 · TOP 3",
-   "detail": {
-    "summary": [
-     "스타십 회수 성공에 우주 테마 동반 강세 관련 글이 12개 채널에서 나왔고, 그중 1순위 채널이 8곳이었다.",
-     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
-     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
-    ],
-    "numbers": [
-     {
-      "label": "종가",
-      "value": "182.40",
-      "note": "미국 정규장 마감 기준"
-     },
-     {
-      "label": "전일 대비",
-      "value": "+2.8%",
-      "note": "최근 5거래일 중 최대 상승"
-     },
-     {
-      "label": "거래량",
-      "value": "1.6배",
-      "note": "20일 평균 대비"
-     },
-     {
-      "label": "시가총액",
-      "value": "4.4조 달러",
-      "note": ""
-     },
-     {
-      "label": "선행 PER",
-      "value": "31.2배",
-      "note": "업종 평균 24배"
-     },
-     {
-      "label": "다음 실적",
-      "value": "11.19 (수)",
-      "note": "장 마감 후 발표"
-     }
-    ],
-    "numbersSource": "Finviz (예시)",
-    "timeline": [
-     {
-      "label": "05시",
-      "count": 4
-     },
-     {
-      "label": "06시",
-      "count": 6
-     },
-     {
-      "label": "07시",
-      "count": 8
-     },
-     {
-      "label": "08시",
-      "count": 7
-     },
-     {
-      "label": "09시",
-      "count": 12
-     },
-     {
-      "label": "10시",
-      "count": 15
-     },
-     {
-      "label": "11시",
-      "count": 19
-     },
-     {
-      "label": "12시",
-      "count": 19
-     },
-     {
-      "label": "13시",
-      "count": 20
-     },
-     {
-      "label": "14시",
-      "count": 20
-     },
-     {
-      "label": "15시",
-      "count": 19
-     },
-     {
-      "label": "16시",
-      "count": 13
-     },
-     {
-      "label": "17시",
-      "count": 11
-     },
-     {
-      "label": "18시",
-      "count": 7
-     },
-     {
-      "label": "19시",
-      "count": 7
-     },
-     {
-      "label": "20시",
-      "count": 6
-     },
-     {
-      "label": "21시",
-      "count": 4
-     },
-     {
-      "label": "22시",
-      "count": 6
-     },
-     {
-      "label": "23시",
-      "count": 2
-     },
-     {
-      "label": "00시",
-      "count": 5
-     },
-     {
-      "label": "01시",
-      "count": 5
-     },
-     {
-      "label": "02시",
-      "count": 2
-     },
-     {
-      "label": "03시",
-      "count": 4
-     },
-     {
-      "label": "04시",
-      "count": 4
-     }
-    ],
-    "views": [
-     {
-      "label": "낙관",
-      "count": 6,
-      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
-      "who": "채널 A, 채널 C 외"
-     },
-     {
-      "label": "신중",
-      "count": 4,
-      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
-      "who": "채널 B, 채널 F 외"
-     },
-     {
-      "label": "중립",
-      "count": 2,
-      "text": "다음 발표를 보고 판단하자는 쪽이다.",
-      "who": "채널 D 외"
-     }
-    ],
-    "excerpts": [
-     {
-      "channel": "채널 A (1순위)",
-      "time": "06:38",
-      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
-     },
-     {
-      "channel": "채널 B (1순위)",
-      "time": "01:12",
-      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
-     },
-     {
-      "channel": "채널 E",
-      "time": "전날 23:40",
-      "text": "해외 리포트 요약을 공유했다."
-     }
-    ],
-    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
-    "watch": [
-     "이번 주 실적 발표와 가이던스",
-     "주요 고객사의 설비투자 발언",
-     "관련 ETF 자금 흐름"
     ],
     "sources": [
      {
-      "name": "채널 A",
-      "meta": "1순위 · 06:38",
-      "url": "https://t.me/"
+      "name": "딘스티커 Dean's Ticker",
+      "meta": "11.14 21:19 · 조회 9,304",
+      "url": "https://t.me/d_ticker/4154"
      },
      {
-      "name": "채널 B",
-      "meta": "1순위 · 01:12",
-      "url": "https://t.me/"
+      "name": "그로쓰리서치(Growth Research) [독립리서치]",
+      "meta": "11.14 19:21 · 조회 2,902",
+      "url": "https://t.me/growthresearch/31225"
      },
      {
-      "name": "채널 E",
-      "meta": "기타 · 전날 23:40",
-      "url": "https://t.me/"
+      "name": "회색인간의 매크로 + 투자",
+      "meta": "11.15 12:12 · 조회 1,300",
+      "url": "https://t.me/mistergray_11/25298"
+     },
+     {
+      "name": "TNBfolio",
+      "meta": "11.15 00:26 · 조회 5,595",
+      "url": "https://t.me/TNBfolio/72001"
+     },
+     {
+      "name": "IH Research",
+      "meta": "11.15 09:16 · 조회 1,268",
+      "url": "https://t.me/ihresearch/5092"
+     },
+     {
+      "name": "서화백의 그림놀이 🚀",
+      "meta": "11.14 23:04 · 조회 1,188",
+      "url": "https://t.me/easobi/17231"
+     },
+     {
+      "name": "퀄리티기업연구소",
+      "meta": "11.14 22:33 · 조회 331",
+      "url": "https://t.me/QualityInvestingLaboratory/21677"
+     },
+     {
+      "name": "연수르 해외주식",
+      "meta": "11.15 11:31 · 조회 240",
+      "url": "https://t.me/yeonsour/5986"
      }
     ],
-    "related": [
-     {
-      "source": "Finviz 뉴스",
-      "title": "관련 헤드라인 (예시)",
-      "url": "https://finviz.com/",
-      "note": "텔레그램에 없던 사실을 보강"
-     },
-     {
-      "source": "웹 검색",
-      "title": "관련 기사 (예시)",
-      "url": "https://www.google.com/",
-      "note": "공식 발표 확인"
-     }
-    ]
-   }
-  },
-  {
-   "paid": {
-    "source": "한경 프리미엄9",
-    "url": "https://www.hankyung.com/premium9",
-    "title": "유가 관련 프리미엄 기사 (예시)"
+    "numbersSource": "Finviz · 시장 지표 · 2026-11-15 새벽 수집 / 아래쪽 수치는 조사 기자 확인(각 줄 설명에 출처)"
    },
-   "id": "h4",
-   "title": "원유 공급과잉 전망에 유가 약세",
-   "summary": "내년 공급이 수요를 앞선다는 기관 전망이 잇따라 인용됐다.",
-   "channels": 9,
-   "priority": 5,
-   "tickers": [
-    "XOM",
-    "USO"
-   ],
-   "confidence": "partial",
-   "kicker": "1면 핫이슈 · TOP 4",
-   "detail": {
-    "summary": [
-     "내년 공급이 수요를 앞선다는 기관 전망이 잇따라 인용됐다."
-    ]
-   }
-  },
-  {
-   "id": "h5",
-   "title": "대만 반도체 밸류체인 실적 점검",
-   "summary": "파운드리·패키징 업체 월간 매출로 AI 수요를 가늠했다.",
-   "channels": 8,
-   "priority": 6,
-   "tickers": [
-    "TSM"
-   ],
+   "title": "AI 하드웨어주 급락, 시스코는 호실적에도 -6%",
+   "summary": "13일 미국 증시에서 컴퓨터 하드웨어(-4.4%)·통신장비(-4.3%)·반도체(-3.2%)가 하락 업종 상위였다. 주간으로는 AMD·브로드컴이 18%대 올라 엔비디아 공백의 반사 수혜 기대가 컸다.",
    "confidence": "confirmed",
-   "kicker": "1면 핫이슈 · TOP 5",
-   "detail": {
-    "summary": [
-     "대만 반도체 밸류체인 실적 점검 관련 글이 8개 채널에서 나왔고, 그중 1순위 채널이 6곳이었다.",
-     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
-     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
-    ],
-    "numbers": [
-     {
-      "label": "종가",
-      "value": "182.40",
-      "note": "미국 정규장 마감 기준"
-     },
-     {
-      "label": "전일 대비",
-      "value": "+2.8%",
-      "note": "최근 5거래일 중 최대 상승"
-     },
-     {
-      "label": "거래량",
-      "value": "1.6배",
-      "note": "20일 평균 대비"
-     },
-     {
-      "label": "시가총액",
-      "value": "4.4조 달러",
-      "note": ""
-     },
-     {
-      "label": "선행 PER",
-      "value": "31.2배",
-      "note": "업종 평균 24배"
-     },
-     {
-      "label": "다음 실적",
-      "value": "11.19 (수)",
-      "note": "장 마감 후 발표"
-     }
-    ],
-    "numbersSource": "Finviz (예시)",
-    "timeline": [
-     {
-      "label": "05시",
-      "count": 4
-     },
-     {
-      "label": "06시",
-      "count": 5
-     },
-     {
-      "label": "07시",
-      "count": 4
-     },
-     {
-      "label": "08시",
-      "count": 5
-     },
-     {
-      "label": "09시",
-      "count": 6
-     },
-     {
-      "label": "10시",
-      "count": 10
-     },
-     {
-      "label": "11시",
-      "count": 10
-     },
-     {
-      "label": "12시",
-      "count": 13
-     },
-     {
-      "label": "13시",
-      "count": 17
-     },
-     {
-      "label": "14시",
-      "count": 20
-     },
-     {
-      "label": "15시",
-      "count": 21
-     },
-     {
-      "label": "16시",
-      "count": 20
-     },
-     {
-      "label": "17시",
-      "count": 16
-     },
-     {
-      "label": "18시",
-      "count": 14
-     },
-     {
-      "label": "19시",
-      "count": 10
-     },
-     {
-      "label": "20시",
-      "count": 8
-     },
-     {
-      "label": "21시",
-      "count": 5
-     },
-     {
-      "label": "22시",
-      "count": 3
-     },
-     {
-      "label": "23시",
-      "count": 3
-     },
-     {
-      "label": "00시",
-      "count": 4
-     },
-     {
-      "label": "01시",
-      "count": 3
-     },
-     {
-      "label": "02시",
-      "count": 4
-     },
-     {
-      "label": "03시",
-      "count": 5
-     },
-     {
-      "label": "04시",
-      "count": 3
-     }
-    ],
-    "views": [
-     {
-      "label": "낙관",
-      "count": 4,
-      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
-      "who": "채널 A, 채널 C 외"
-     },
-     {
-      "label": "신중",
-      "count": 2,
-      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
-      "who": "채널 B, 채널 F 외"
-     },
-     {
-      "label": "중립",
-      "count": 2,
-      "text": "다음 발표를 보고 판단하자는 쪽이다.",
-      "who": "채널 D 외"
-     }
-    ],
-    "excerpts": [
-     {
-      "channel": "채널 A (1순위)",
-      "time": "06:38",
-      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
-     },
-     {
-      "channel": "채널 B (1순위)",
-      "time": "01:12",
-      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
-     },
-     {
-      "channel": "채널 E",
-      "time": "전날 23:40",
-      "text": "해외 리포트 요약을 공유했다."
-     }
-    ],
-    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
-    "watch": [
-     "이번 주 실적 발표와 가이던스",
-     "주요 고객사의 설비투자 발언",
-     "관련 ETF 자금 흐름"
-    ],
-    "sources": [
-     {
-      "name": "채널 A",
-      "meta": "1순위 · 06:38",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 B",
-      "meta": "1순위 · 01:12",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 E",
-      "meta": "기타 · 전날 23:40",
-      "url": "https://t.me/"
-     }
-    ],
-    "related": [
-     {
-      "source": "Finviz 뉴스",
-      "title": "관련 헤드라인 (예시)",
-      "url": "https://finviz.com/",
-      "note": "텔레그램에 없던 사실을 보강"
-     },
-     {
-      "source": "웹 검색",
-      "title": "관련 기사 (예시)",
-      "url": "https://www.google.com/",
-      "note": "공식 발표 확인"
-     }
-    ]
-   }
-  },
-  {
-   "id": "h6",
-   "title": "증권사 2027년 자산시장 전망 잇따라",
-   "summary": "주식 비중 확대와 달러 약세를 기본 시나리오로 둔 곳이 많았다.",
-   "channels": 7,
-   "priority": 5,
-   "tickers": [],
-   "confidence": "partial",
-   "kicker": "1면 핫이슈 · TOP 6",
-   "detail": {
-    "summary": [
-     "증권사 2027년 자산시장 전망 잇따라 관련 글이 7개 채널에서 나왔고, 그중 1순위 채널이 5곳이었다.",
-     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
-     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
-    ],
-    "numbers": [
-     {
-      "label": "언급 채널",
-      "value": "7",
-      "note": "1순위 5"
-     },
-     {
-      "label": "주식 비중 확대 의견",
-      "value": "5곳",
-      "note": "전망을 낸 7곳 중"
-     }
-    ],
-    "numbersSource": "Finviz (예시)",
-    "timeline": [
-     {
-      "label": "05시",
-      "count": 5
-     },
-     {
-      "label": "06시",
-      "count": 4
-     },
-     {
-      "label": "07시",
-      "count": 5
-     },
-     {
-      "label": "08시",
-      "count": 6
-     },
-     {
-      "label": "09시",
-      "count": 4
-     },
-     {
-      "label": "10시",
-      "count": 6
-     },
-     {
-      "label": "11시",
-      "count": 10
-     },
-     {
-      "label": "12시",
-      "count": 12
-     },
-     {
-      "label": "13시",
-      "count": 15
-     },
-     {
-      "label": "14시",
-      "count": 17
-     },
-     {
-      "label": "15시",
-      "count": 20
-     },
-     {
-      "label": "16시",
-      "count": 23
-     },
-     {
-      "label": "17시",
-      "count": 19
-     },
-     {
-      "label": "18시",
-      "count": 17
-     },
-     {
-      "label": "19시",
-      "count": 16
-     },
-     {
-      "label": "20시",
-      "count": 11
-     },
-     {
-      "label": "21시",
-      "count": 7
-     },
-     {
-      "label": "22시",
-      "count": 5
-     },
-     {
-      "label": "23시",
-      "count": 6
-     },
-     {
-      "label": "00시",
-      "count": 3
-     },
-     {
-      "label": "01시",
-      "count": 3
-     },
-     {
-      "label": "02시",
-      "count": 4
-     },
-     {
-      "label": "03시",
-      "count": 5
-     },
-     {
-      "label": "04시",
-      "count": 3
-     }
-    ],
-    "views": [
-     {
-      "label": "낙관",
-      "count": 3,
-      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
-      "who": "채널 A, 채널 C 외"
-     },
-     {
-      "label": "신중",
-      "count": 2,
-      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
-      "who": "채널 B, 채널 F 외"
-     },
-     {
-      "label": "중립",
-      "count": 2,
-      "text": "다음 발표를 보고 판단하자는 쪽이다.",
-      "who": "채널 D 외"
-     }
-    ],
-    "excerpts": [
-     {
-      "channel": "채널 A (1순위)",
-      "time": "06:38",
-      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
-     },
-     {
-      "channel": "채널 B (1순위)",
-      "time": "01:12",
-      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
-     },
-     {
-      "channel": "채널 E",
-      "time": "전날 23:40",
-      "text": "해외 리포트 요약을 공유했다."
-     }
-    ],
-    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
-    "watch": [
-     "이번 주 실적 발표와 가이던스",
-     "주요 고객사의 설비투자 발언",
-     "관련 ETF 자금 흐름"
-    ],
-    "sources": [
-     {
-      "name": "채널 A",
-      "meta": "1순위 · 06:38",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 B",
-      "meta": "1순위 · 01:12",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 E",
-      "meta": "기타 · 전날 23:40",
-      "url": "https://t.me/"
-     }
-    ],
-    "related": [
-     {
-      "source": "Finviz 뉴스",
-      "title": "관련 헤드라인 (예시)",
-      "url": "https://finviz.com/",
-      "note": "텔레그램에 없던 사실을 보강"
-     },
-     {
-      "source": "웹 검색",
-      "title": "관련 기사 (예시)",
-      "url": "https://www.google.com/",
-      "note": "공식 발표 확인"
-     }
-    ]
-   }
-  },
-  {
    "id": "h7",
-   "title": "비트코인 급락 뒤 변동성 확대",
-   "summary": "레버리지 청산 규모와 현물 ETF 자금 흐름이 함께 언급됐다.",
-   "channels": 7,
-   "priority": 3,
-   "tickers": [
-    "IBIT",
-    "MSTR"
-   ],
-   "confidence": "partial",
-   "kicker": "1면 핫이슈 · TOP 7",
+   "kicker": "1면 핫이슈 · TOP 7"
+  },
+  {
+   "tickers": [],
    "detail": {
-    "summary": [
-     "비트코인 급락 뒤 변동성 확대 관련 글이 7개 채널에서 나왔고, 그중 1순위 채널이 3곳이었다.",
-     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
-     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
-    ],
-    "numbers": [
-     {
-      "label": "종가",
-      "value": "182.40",
-      "note": "미국 정규장 마감 기준"
-     },
-     {
-      "label": "전일 대비",
-      "value": "+2.8%",
-      "note": "최근 5거래일 중 최대 상승"
-     },
-     {
-      "label": "거래량",
-      "value": "1.6배",
-      "note": "20일 평균 대비"
-     },
-     {
-      "label": "시가총액",
-      "value": "4.4조 달러",
-      "note": ""
-     },
-     {
-      "label": "선행 PER",
-      "value": "31.2배",
-      "note": "업종 평균 24배"
-     },
-     {
-      "label": "다음 실적",
-      "value": "11.19 (수)",
-      "note": "장 마감 후 발표"
-     }
-    ],
-    "numbersSource": "Finviz (예시)",
-    "timeline": [
-     {
-      "label": "05시",
-      "count": 2
-     },
-     {
-      "label": "06시",
-      "count": 4
-     },
-     {
-      "label": "07시",
-      "count": 4
-     },
-     {
-      "label": "08시",
-      "count": 4
-     },
-     {
-      "label": "09시",
-      "count": 3
-     },
-     {
-      "label": "10시",
-      "count": 6
-     },
-     {
-      "label": "11시",
-      "count": 7
-     },
-     {
-      "label": "12시",
-      "count": 8
-     },
-     {
-      "label": "13시",
-      "count": 11
-     },
-     {
-      "label": "14시",
-      "count": 13
-     },
-     {
-      "label": "15시",
-      "count": 16
-     },
-     {
-      "label": "16시",
-      "count": 20
-     },
-     {
-      "label": "17시",
-      "count": 22
-     },
-     {
-      "label": "18시",
-      "count": 19
-     },
-     {
-      "label": "19시",
-      "count": 19
-     },
-     {
-      "label": "20시",
-      "count": 13
-     },
-     {
-      "label": "21시",
-      "count": 10
-     },
-     {
-      "label": "22시",
-      "count": 6
-     },
-     {
-      "label": "23시",
-      "count": 8
-     },
-     {
-      "label": "00시",
-      "count": 6
-     },
-     {
-      "label": "01시",
-      "count": 6
-     },
-     {
-      "label": "02시",
-      "count": 4
-     },
-     {
-      "label": "03시",
-      "count": 2
-     },
-     {
-      "label": "04시",
-      "count": 3
-     }
-    ],
     "views": [
      {
       "label": "낙관",
-      "count": 3,
-      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
-      "who": "채널 A, 채널 C 외"
+      "text": "상단부까지 재사용하면 발사 비용이 크게 내려가 위성 수와 위성용 반도체 수요가 함께 는다는 분석.",
+      "who": "그로쓰리서치, 한투증권 로보틱스 외"
      },
      {
       "label": "신중",
-      "count": 2,
-      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
-      "who": "채널 B, 채널 F 외"
-     },
-     {
-      "label": "중립",
-      "count": 2,
-      "text": "다음 발표를 보고 판단하자는 쪽이다.",
-      "who": "채널 D 외"
+      "text": "1단 부스터 회수는 실패해 두 단을 함께 회수하는 완전 재사용은 아직 남았다는 지적.",
+      "who": "루팡 외"
      }
     ],
     "excerpts": [
      {
-      "channel": "채널 A (1순위)",
-      "time": "06:38",
-      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
+      "channel": "그로쓰리서치(Growth Research) [독립리서치]",
+      "time": "10:50",
+      "text": "상단부가 고도 약 266km에서 지구를 14바퀴 돌고 22시간 32분 비행한 뒤 처음으로 회수됐다는 정리."
      },
      {
-      "channel": "채널 B (1순위)",
-      "time": "01:12",
-      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
-     },
-     {
-      "channel": "채널 E",
-      "time": "전날 23:40",
-      "text": "해외 리포트 요약을 공유했다."
+      "channel": "[한투증권 로보틱스 | 최건]",
+      "time": "07:21",
+      "text": "궤도 비행 후 발사탑으로 받아낸 첫 사례이자 부스터와 상단부를 모두 포획 대상으로 삼은 첫 시도였다는 소개."
      }
     ],
-    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
+    "summary": [
+     "여러 채널에 따르면 상단부(Ship 42)는 고도 약 260~266km에서 지구를 14바퀴 돌며 22시간 넘게 비행한 뒤 텍사스 스타베이스로 돌아와 발사탑 \"메카질라\"에 포획됐다. 궤도 비행을 마친 상단부를 회수한 첫 사례다.",
+     "비행 중 차세대 스타링크 위성 26기를 배치했다는 보도가 함께 나왔다.",
+     "1단 슈퍼헤비 부스터는 엔진이 일찍 꺼져 멕시코만에 떨어져 폭발했다. 스페이스X가 목표로 한 \"궤도 발사체 첫 완전 회수\"는 이루지 못했다.",
+     "스페이스X는 사전에 이 비행에서 두 단을 모두 포획하겠다고 밝혔고, 상단부는 약 22시간 뒤 돌아오는 계획이었다. 결과는 공식 발표 대조 전이라 \"일부 확인\"으로 표시한다."
+    ],
+    "numbers": [
+     {
+      "label": "비행 시간",
+      "value": "약 22시간 32분",
+      "note": "텔레그램 채널(그로쓰리서치)"
+     },
+     {
+      "label": "궤도 고도",
+      "value": "약 260~266km",
+      "note": "채널마다 표기 차이"
+     },
+     {
+      "label": "지구 궤도 회전",
+      "value": "14바퀴",
+      "note": ""
+     },
+     {
+      "label": "배치 위성",
+      "value": "스타링크 V3 26기",
+      "note": ""
+     },
+     {
+      "label": "스타십 높이 / 지름",
+      "value": "124m / 9m",
+      "note": "팰컨9는 70m / 3.7m"
+     },
+     {
+      "label": "부스터 포획 이력",
+      "value": "3회 (이번 전까지)",
+      "note": "상단부 포획은 이번이 처음"
+     }
+    ],
+    "checks": [
+     {
+      "item": "15차 비행 계획",
+      "value": "11.13 발사 목표, 부스터·상단부 모두 포획 시도, 상단부 약 22시간 뒤 귀환",
+      "sources": [
+       {
+        "name": "MarketScale",
+        "url": "https://www.marketscale.com/industries/transportation/spacex-starship-flight-15-november-13-dual-catch"
+       },
+       {
+        "name": "Nature World News",
+        "url": "https://www.natureworldnews.com/articles/73810/00261111/spacex-targets-friday-13th-first-attempt-catch-both-starship-stages-its-texas-tower.htm"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "상단부 포획 성공",
+      "value": "14일(현지) 성공",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (그로쓰리서치)"
+       },
+       {
+        "name": "텔레그램 채널 (한투증권 로보틱스)"
+       },
+       {
+        "name": "텔레그램 채널 (루팡)"
+       }
+      ],
+      "verdict": "단일 출처"
+     },
+     {
+      "item": "부스터 회수 실패",
+      "value": "엔진 조기 정지 뒤 멕시코만 추락·폭발",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (그로쓰리서치)"
+       },
+       {
+        "name": "텔레그램 채널 (우주방산AI로봇 아카이브)"
+       }
+      ],
+      "verdict": "단일 출처"
+     }
+    ],
+    "background": "스페이스X는 2024년 10월 처음 부스터를 발사탑으로 포획했고, 9월 14차 비행에서 처음 궤도에 올랐다. 상단부까지 재사용하면 발사 비용과 준비 기간이 크게 줄어 스타링크·달 착륙선 계획의 전제가 된다.",
     "watch": [
-     "이번 주 실적 발표와 가이던스",
-     "주요 고객사의 설비투자 발언",
-     "관련 ETF 자금 흐름"
-    ],
-    "sources": [
-     {
-      "name": "채널 A",
-      "meta": "1순위 · 06:38",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 B",
-      "meta": "1순위 · 01:12",
-      "url": "https://t.me/"
-     },
-     {
-      "name": "채널 E",
-      "meta": "기타 · 전날 23:40",
-      "url": "https://t.me/"
-     }
+     "스페이스X 공식 비행 결과 발표",
+     "상단부 재비행(2027년 초 목표)",
+     "스페이스X 주가(6월 상장)와 우주 관련주 반응"
     ],
     "related": [
      {
-      "source": "Finviz 뉴스",
-      "title": "관련 헤드라인 (예시)",
-      "url": "https://finviz.com/",
-      "note": "텔레그램에 없던 사실을 보강"
+      "source": "MarketScale",
+      "title": "스타십 15차, 두 단 동시 포획 시도",
+      "url": "https://www.marketscale.com/industries/transportation/spacex-starship-flight-15-november-13-dual-catch",
+      "note": "비행 계획과 14차 결과"
      },
      {
-      "source": "웹 검색",
-      "title": "관련 기사 (예시)",
-      "url": "https://www.google.com/",
-      "note": "공식 발표 확인"
+      "source": "SpaceNexus",
+      "title": "상단부 포획이 바꾸는 것",
+      "url": "https://spacenexus.us/blog/starship-flight-15-ship-catch-what-it-means",
+      "note": "재사용의 의미"
+     }
+    ],
+    "sources": [
+     {
+      "name": "루팡",
+      "meta": "11.15 08:07 · 조회 7,970",
+      "url": "https://t.me/bornlupin/21155"
+     },
+     {
+      "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+      "meta": "11.15 07:41 · 조회 4,341",
+      "url": "https://t.me/insidertracking/69283"
+     },
+     {
+      "name": "그로쓰리서치(Growth Research) [독립리서치]",
+      "meta": "11.15 10:50 · 조회 1,665",
+      "url": "https://t.me/growthresearch/31228"
+     },
+     {
+      "name": "TIME ACT!VE ETF",
+      "meta": "11.15 09:11 · 조회 653",
+      "url": "https://t.me/activeetf/1517"
+     },
+     {
+      "name": "습관이 부자를 만든다. 🧘",
+      "meta": "11.14 14:05 · 조회 3,734",
+      "url": "https://t.me/habit4117/87971"
+     },
+     {
+      "name": "HS아카데미 대표 이효석",
+      "meta": "11.15 09:25 · 조회 3,503",
+      "url": "https://t.me/HS_academy/11120"
+     },
+     {
+      "name": "[하나증권 ETF] 박승진",
+      "meta": "11.14 16:44 · 조회 1,885",
+      "url": "https://t.me/globaletfi/22682"
+     },
+     {
+      "name": "서화백의 그림놀이 🚀",
+      "meta": "11.14 15:05 · 조회 1,384",
+      "url": "https://t.me/easobi/17229"
      }
     ]
-   }
+   },
+   "title": "스페이스X, 스타십 상단부 첫 발사탑 회수",
+   "summary": "스타십 15차 비행에서 궤도를 돈 상단부를 발사탑 로봇팔로 붙잡는 데 처음 성공했다는 보도다. 1단 부스터 회수는 실패해 두 단 동시 회수는 다음으로 미뤄졌다.",
+   "confidence": "partial",
+   "id": "h8",
+   "kicker": "1면 핫이슈 · TOP 8"
+  },
+  {
+   "tickers": [],
+   "detail": {
+    "views": [
+     {
+      "label": "신중",
+      "text": "데이터센터 규제를 내건 주지사 당선과 주민투표 결과로 2028년 이후 프로젝트가 늦어질 수 있다는 분석.",
+      "who": "석학들의 마켓, SK증권"
+     },
+     {
+      "label": "기타",
+      "text": "선거가 끝나자 연준 위원들의 매파 발언이 쏟아졌다는 관찰.",
+      "who": "소수의견 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+      "time": "08:12",
+      "text": "알래스카 주지사 선거에서 1998년 이후 처음 민주당 후보가 당선, 내년 1월부터 민주당 주지사 30곳."
+     },
+     {
+      "channel": "석학들의 마켓 (인)사이트 PRO",
+      "time": "11:01",
+      "text": "데이터센터 규제 강화를 공약한 후보들이 텍사스·조지아·오하이오 주지사로 당선됐다는 트렌드포스 분석 요약."
+     }
+    ],
+    "summary": [
+     "11월 3일 중간선거에서 민주당이 상원 다수를 확정했다. NBC 집계로 민주 54석·공화 44석에 알래스카·미시시피가 남았고, 알래스카에서는 메리 펠톨라 승리 보도가 나왔다.",
+     "민주당은 1990년 이후 처음으로 텍사스 주지사를 차지했고, 알래스카 주지사도 1998년 이후 처음 민주당 후보가 이겼다는 보도다.",
+     "데이터센터 규제가 주요 쟁점이었다. 선거 직후 데이터센터 모라토리엄 우려로 세계 AI주가 흔들렸고, 코스피는 하루 5.3% 급락했다.",
+     "함께 치러진 지역 데이터센터 주민투표 41건 가운데 40건에서 개발 제한 쪽이 이겼다는 분석(SK증권)과, 규제를 공약한 후보들이 텍사스·조지아·오하이오 주지사로 당선됐다는 분석(트렌드포스)이 나왔다."
+    ],
+    "numbers": [
+     {
+      "label": "상원 (NBC 집계)",
+      "value": "민주 54 · 공화 44",
+      "note": "알래스카·미시시피 미정 시점"
+     },
+     {
+      "label": "데이터센터 주민투표",
+      "value": "41건 중 40건 제한 승리",
+      "note": "SK증권 (텔레그램)"
+     },
+     {
+      "label": "선거 직후 코스피",
+      "value": "-5.3% (하루)",
+      "note": "AP 보도"
+     }
+    ],
+    "checks": [
+     {
+      "item": "민주당 상원 다수",
+      "value": "54석 확보, 2곳 미정(당시)",
+      "sources": [
+       {
+        "name": "NBC New York",
+        "url": "https://www.nbcnewyork.com/elections/election-day-after-2026-midterms-congress-results-live-updates/6567448/"
+       },
+       {
+        "name": "AP (카오소드 게재)",
+        "url": "https://www.khaosodenglish.com/news/international/2026/11/04/democrats-win-us-senate-ending-republican-dominance-by-harnessing-voters-frustration-with-trump/"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "최종 상원 의석",
+      "value": "텔레그램 채널은 56석 확보로 전함(알래스카 승리 반영), 미시시피 결과 확인 필요",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (도널드 J. 트럼프 대통령)"
+       },
+       {
+        "name": "CBS News",
+        "url": "https://www.cbsnews.com/news/2026-midterm-election-results-where-democrats-won/"
+       }
+      ],
+      "verdict": "엇갈림"
+     },
+     {
+      "item": "텍사스 주지사",
+      "value": "민주당, 1990년 이후 처음",
+      "sources": [
+       {
+        "name": "CBS News",
+        "url": "https://www.cbsnews.com/news/2026-midterm-election-results-where-democrats-won/"
+       },
+       {
+        "name": "텔레그램 채널 (석학들의 마켓)"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "데이터센터 우려와 코스피 급락",
+      "value": "모라토리엄 우려로 AI주 약세, 코스피 -5.3%",
+      "sources": [
+       {
+        "name": "AP (클릭온디트로이트 게재)",
+        "url": "https://www.clickondetroit.com/news/politics/2026/11/05/the-latest-alaskans-wait-for-more-votes-in-us-senate-and-governors-races/"
+       }
+      ],
+      "verdict": "단일 출처"
+     }
+    ],
+    "background": "데이터센터 전력·용수 부담과 전기요금 상승이 지역 쟁점이 되면서, 세제 혜택 위주였던 주 정책이 규제 쪽으로 돌아서고 있다. 하이퍼스케일러가 지을 데이터센터의 절반 이상이 규제 위험이 큰 주에 몰려 있다는 분석도 있다.",
+    "watch": [
+     "미시시피 상원 최종 결과",
+     "새 주지사 취임(2027년 1월) 뒤 데이터센터 정책",
+     "의회의 데이터센터 관련 입법"
+    ],
+    "related": [
+     {
+      "source": "CBS News",
+      "title": "2026 중간선거, 민주당이 크게 이긴 곳",
+      "url": "https://www.cbsnews.com/news/2026-midterm-election-results-where-democrats-won/",
+      "note": "주별 결과와 데이터센터 쟁점"
+     }
+    ],
+    "sources": [
+     {
+      "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+      "meta": "11.15 08:12 · 조회 4,835",
+      "url": "https://t.me/insidertracking/69306"
+     },
+     {
+      "name": "도널드 J. 트럼프 대통령",
+      "meta": "11.15 10:00 · 조회 1,130",
+      "url": "https://t.me/goddessTTF/87107"
+     },
+     {
+      "name": "SK증권 Research",
+      "meta": "11.14 21:06 · 조회 475",
+      "url": "https://t.me/sksresearch/9465"
+     },
+     {
+      "name": "석학들의 마켓 (인)사이트 PRO",
+      "meta": "11.15 11:01 · 조회 138",
+      "url": "https://t.me/getfeed/155161"
+     }
+    ]
+   },
+   "title": "중간선거 후폭풍: 민주당 상원 장악·데이터센터 규제",
+   "summary": "민주당이 상원 다수를 확정하고 텍사스 주지사까지 가져갔다. 데이터센터 규제가 쟁점이 되며 지역 주민투표 41건 중 40건에서 개발 제한 쪽이 이겼다는 분석이 나왔다.",
+   "confidence": "confirmed",
+   "id": "h9",
+   "kicker": "1면 핫이슈 · TOP 9"
+  },
+  {
+   "tickers": [],
+   "detail": {
+    "excerpts": [
+     {
+      "channel": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+      "time": "19:15",
+      "text": "뉴욕타임스 보도: 러시아가 아부다비 협상 문서에서 1997년 이후 NATO 가입국의 병력 철수 등을 요구."
+     }
+    ],
+    "summary": [
+     "젤렌스키는 미국 협상팀이 돈바스 미점령 지역 철수를 대가로 나토 가입을 허용하는 방안을 물었다고 밝혔다. 미국 정부는 이를 공식 확인하지 않았다(BBC 인용, 텔레그램 채널).",
+     "10월 보도된 미국 구상은 반대로 우크라이나가 나토 가입을 포기하는 대신 EU 가입·투자와 돈바스 비무장지대를 받는 내용이어서, 미국 입장이 바뀐 것인지 해석이 엇갈린다.",
+     "뉴욕타임스는 러시아가 10일 아부다비 협상 문서에서 1997년 이후 나토 가입국의 나토 병력 철수, 우크라이나 군사 지원 중단, 영·프 핵우산 제한을 요구했다고 보도했다.",
+     "다음 주 APEC 계기 미·중·러 회동에서 이 문제가 다뤄질지 주목된다."
+    ],
+    "checks": [
+     {
+      "item": "미국의 돈바스-나토 연계 제안",
+      "value": "젤렌스키 발언, 미국 미확인",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (미국 주식 인사이더)"
+       },
+       {
+        "name": "텔레그램 채널 (BBC 인용 채널)"
+       }
+      ],
+      "verdict": "단일 출처"
+     },
+     {
+      "item": "10월 미국 구상",
+      "value": "나토 포기 + EU 가입·투자 + 돈바스 비무장지대",
+      "sources": [
+       {
+        "name": "Kyiv Post",
+        "url": "https://www.kyivpost.com/post/87977"
+       },
+       {
+        "name": "Kyiv Post",
+        "url": "https://www.kyivpost.com/post/88404"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "러시아 요구 문서",
+      "value": "1997년 이후 가입국 병력 철수 등(뉴욕타임스)",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (미국 주식 인사이더)"
+       }
+      ],
+      "verdict": "단일 출처"
+     }
+    ],
+    "background": "러시아는 돈바스(도네츠크·루한스크)의 대부분을 점령하고 있고, 남은 지역 처리가 협상의 가장 어려운 쟁점이다. 우크라이나는 나토 5조 수준의 안전 보장을 요구해 왔다.",
+    "watch": [
+     "11.18~19 APEC 계기 미·중·러 회동",
+     "미국 정부의 공식 입장",
+     "3자 협상 재개 일정"
+    ],
+    "related": [
+     {
+      "source": "Kyiv Post",
+      "title": "미국 구상: 나토 포기 대신 EU 가입·투자",
+      "url": "https://www.kyivpost.com/post/87977",
+      "note": "10월 보도된 이전 구상"
+     }
+    ],
+    "sources": [
+     {
+      "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+      "meta": "11.14 19:15 · 조회 5,210",
+      "url": "https://t.me/insidertracking/69268"
+     },
+     {
+      "name": "도널드 J. 트럼프 대통령",
+      "meta": "11.15 13:13 · 조회 302",
+      "url": "https://t.me/goddessTTF/87116"
+     },
+     {
+      "name": "급등일보 미국주식🇺🇸 속보·매크로·리서치",
+      "meta": "11.14 16:03 · 조회 8,424",
+      "url": "https://t.me/FastStockNewsUSA/24473"
+     },
+     {
+      "name": "하나 중국/신흥국 전략 김경환",
+      "meta": "11.14 19:06 · 조회 2,798",
+      "url": "https://t.me/HANAchina/72126"
+     },
+     {
+      "name": "서화백의 그림놀이 🚀",
+      "meta": "11.14 19:04 · 조회 1,294",
+      "url": "https://t.me/easobi/17230"
+     },
+     {
+      "name": "한투증권 미국/중국전략 정정영",
+      "meta": "11.14 22:54 · 조회 1,255",
+      "url": "https://t.me/G2strategy/34462"
+     },
+     {
+      "name": "인상주의 투자 인생 업그레이드노트",
+      "meta": "11.14 20:51 · 조회 934",
+      "url": "https://t.me/insangnism/29582"
+     },
+     {
+      "name": "석학들의 마켓 (인)사이트 PRO",
+      "meta": "11.15 13:18 · 조회 71",
+      "url": "https://t.me/getfeed/155177"
+     }
+    ]
+   },
+   "title": "우크라이나 종전 협상: 돈바스-나토 연계안 논란",
+   "summary": "젤렌스키 대통령은 미국이 처음으로 돈바스 미점령지 철수를 조건으로 나토 가입 방안을 물어왔다고 밝혔지만 영토 양보는 없다고 했다. 러시아는 1997년 이후 나토 가입국에서 병력 철수를 요구했다는 보도다.",
+   "confidence": "partial",
+   "id": "h10",
+   "kicker": "1면 핫이슈 · TOP 10"
+  },
+  {
+   "tickers": [],
+   "detail": {
+    "excerpts": [
+     {
+      "channel": "도널드 J. 트럼프 대통령",
+      "time": "01:39",
+      "text": "교통부 설명: 통신선 교체 작업 중 새 장비가 연결을 과도하게 시도해 관제망에 과부하가 걸렸다는 요지."
+     }
+    ],
+    "summary": [
+     "관제 시스템이 약 45분 불안정해지자 FAA는 동부시간 오후 3시 45분께 전국 이륙 중단을 내렸고, 약 4시간 뒤 오후 8시 15분 해제했다. 9·11 이후 두 번째 전국 단위 이륙 중단이다.",
+     "미국 항로관제센터 22곳 중 17곳이 영향을 받았고, 지연·결항은 약 7천 편(플라이트어웨어 집계)에 달했다. 항공기·승무원 재배치 문제로 주말까지 결항이 이어졌다.",
+     "교통부는 L3해리스가 구리선을 광섬유로 바꾸는 작업 중 새 장비가 4~5초마다 1천 번 넘게 연결을 시도해 관제망에 과부하가 걸렸다고 설명했다.",
+     "FAA 청장은 \"백업의 백업이 없다\"고 했고, 교통장관은 수십 년 된 관제 장비 교체 예산을 의회에 촉구했다. 아직 공식 발표 원문 대조 전이라 \"일부 확인\"으로 표시한다."
+    ],
+    "numbers": [
+     {
+      "label": "이륙 중단 시간",
+      "value": "약 4시간 (15:45~20:15 ET)",
+      "note": ""
+     },
+     {
+      "label": "영향 받은 항로관제센터",
+      "value": "22곳 중 17곳",
+      "note": ""
+     },
+     {
+      "label": "지연·결항",
+      "value": "약 7천 편",
+      "note": "플라이트어웨어 집계"
+     }
+    ],
+    "checks": [
+     {
+      "item": "이륙 중단 시간과 원인",
+      "value": "약 4시간, 통신 장비 과부하",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (도널드 J. 트럼프 대통령)"
+       },
+       {
+        "name": "텔레그램 채널 (미국 주식 인사이더)"
+       },
+       {
+        "name": "텔레그램 채널 (홍명수인사이트)"
+       }
+      ],
+      "verdict": "단일 출처"
+     },
+     {
+      "item": "지연·결항 규모",
+      "value": "약 7천 편",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (연수르 해외주식)"
+       }
+      ],
+      "verdict": "단일 출처"
+     }
+    ],
+    "background": "미국 관제 시스템은 1980년대 통신망을 유지 보수하며 쓰고 있어, 현대화 예산이 오랫동안 쟁점이었다. 이번 장애는 일상 유지 작업 중 일어나 시스템의 취약성을 드러냈다.",
+    "watch": [
+     "교통부·FAA 사고 조사 결과",
+     "관제 현대화 예산 법안",
+     "항공주(AAL·DAL·UAL) 실적 영향"
+    ],
+    "sources": [
+     {
+      "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+      "meta": "11.14 17:35 · 조회 6,332",
+      "url": "https://t.me/insidertracking/69267"
+     },
+     {
+      "name": "딘스티커 Dean's Ticker",
+      "meta": "11.14 16:16 · 조회 3,235",
+      "url": "https://t.me/d_ticker/4151"
+     },
+     {
+      "name": "도널드 J. 트럼프 대통령",
+      "meta": "11.15 07:13 · 조회 815",
+      "url": "https://t.me/goddessTTF/87101"
+     },
+     {
+      "name": "[DAOL퀀트 김경훈] 탑다운 전략",
+      "meta": "11.14 13:30 · 조회 1,447",
+      "url": "https://t.me/toptownquant/13908"
+     },
+     {
+      "name": "연수르 해외주식",
+      "meta": "11.15 11:31 · 조회 409",
+      "url": "https://t.me/yeonsour/5983"
+     }
+    ]
+   },
+   "title": "FAA 전국 이륙 중단, 관제 통신망 과부하",
+   "summary": "13일(현지) 미국 항공관제 통신망이 흔들리며 FAA가 약 4시간 동안 전국 이륙을 멈췄다. 통신선 교체 작업 중 새 장비가 연결을 과도하게 시도한 것이 원인으로 지목됐다.",
+   "confidence": "partial",
+   "id": "h11",
+   "kicker": "1면 핫이슈 · TOP 11"
   }
  ],
  "macro": {
   "indicators": [
    {
     "label": "미 10년물",
-    "value": "4.38%",
-    "change": "+0.06%p"
+    "value": "5.15%",
+    "change": "+0.05%p"
    },
    {
     "label": "달러인덱스",
-    "value": "106.2",
-    "change": "+0.3%"
-   },
-   {
-    "label": "WTI 유가",
-    "value": "67.8달러",
-    "change": "-1.4%"
+    "value": "103.41",
+    "change": "+0.23%"
    },
    {
     "label": "원/달러",
-    "value": "1,412원",
-    "change": "+4.5원"
+    "value": "1,336.20",
+    "change": "+0.18%"
+   },
+   {
+    "label": "S&P 500",
+    "value": "7,561.67",
+    "change": "-0.40%"
+   },
+   {
+    "label": "나스닥",
+    "value": "25,136",
+    "change": "-0.91%"
+   },
+   {
+    "label": "VIX",
+    "value": "19.30",
+    "change": "+3.21%"
+   },
+   {
+    "label": "WTI",
+    "value": "$88.56",
+    "change": "-0.20%"
+   },
+   {
+    "label": "금",
+    "value": "$3,886.30",
+    "change": "+0.03%"
+   },
+   {
+    "label": "비트코인",
+    "value": "$65,009",
+    "change": "-4.75%"
+   },
+   {
+    "label": "코스피",
+    "value": "5,290.53",
+    "change": "-0.98%"
    }
   ],
   "items": [
    {
-    "id": "m1",
+    "detail": {
+     "numbers": [
+      {
+       "label": "미 10년물",
+       "value": "5.15%",
+       "note": "전일 대비 +0.05%p · 2026-11-13 기준"
+      },
+      {
+       "label": "미 5년물",
+       "value": "4.98%",
+       "note": "전일 대비 +0.04%p · 2026-11-13 기준"
+      },
+      {
+       "label": "미 3개월물",
+       "value": "4.12%",
+       "note": "전일 대비 -0.01%p · 2026-11-13 기준"
+      },
+      {
+       "label": "달러인덱스",
+       "value": "103.41",
+       "note": "전일 대비 +0.23% · 2026-11-13 기준"
+      },
+      {
+       "label": "기준금리",
+       "value": "3.75~4.00%",
+       "note": "9월 인상 뒤 10월 동결(10대 2)"
+      },
+      {
+       "label": "2027년 인상 기대",
+       "value": "1회 → 2.4회",
+       "note": "지금부터 총 3.4회 반영 (텔레그램 채널)"
+      },
+      {
+       "label": "9월 PCE / 근원 PCE",
+       "value": "3.6% / 3.1%",
+       "note": "제퍼슨 부의장 연설"
+      },
+      {
+       "label": "10월 근원 PCE 추정",
+       "value": "약 3.3%",
+       "note": "PIMCO 추정"
+      }
+     ],
+     "summary": [
+      "연준은 9월 0.25%p 올려 기준금리를 3.75~4.00%로 만든 뒤 10월에는 10대 2로 동결했다. 쿡 이사와 해맥 총재는 인상을 주장하며 반대했다.",
+      "월러 이사는 12월 0.25%p 인상에 기울어 있고, 근원 CPI가 석 달 연속 0.3% 이상이면 0.5%p도 검토해야 한다고 말했다. 콜린스 총재도 연내 추가 인상을 지지했다.",
+      "로건 총재는 최소 두 번 더 올려 4.50%(상단)에 닿아야 경제에 제약이 걸린다고 했고, 해맥 총재는 \"작게, 자주\"를 강조했다(텔레그램 채널 정리).",
+      "반대로 베센트 재무장관은 지금 물가 압력이 에너지 공급 충격이라며 인상하지 말라고 주장해 정부와 연준의 시각이 엇갈린다."
+     ],
+     "charts": [
+      {
+       "title": "미 국채 금리 1주 변화",
+       "type": "bar",
+       "unit": "%p",
+       "points": [
+        {
+         "label": "3개월",
+         "value": 0.12
+        },
+        {
+         "label": "5년",
+         "value": 0.33,
+         "hi": true
+        },
+        {
+         "label": "10년",
+         "value": 0.29
+        },
+        {
+         "label": "30년",
+         "value": 0.22
+        }
+       ],
+       "source": "야후 파이낸스 시세 (11.13 종가)",
+       "note": "중기물 금리가 가장 크게 올랐다."
+      }
+     ],
+     "checks": [
+      {
+       "item": "현재 기준금리와 10월 결정",
+       "value": "3.75~4.00%, 10월 동결 10대 2(쿡·해맥 반대)",
+       "sources": [
+        {
+         "name": "Stock Analysis",
+         "url": "https://stockanalysis.com/news/fed-waller-december-rate-hike-half-point/"
+        },
+        {
+         "name": "investingLive",
+         "url": "https://investinglive.com/central-banks/fed-s-collins-backs-another-rate-hike-by-year-end-flags-three-inflation-pressures/"
+        },
+        {
+         "name": "텔레그램 채널 (미국 주식 인사이더)"
+        }
+       ],
+       "verdict": "일치"
+      },
+      {
+       "item": "월러의 50bp 언급",
+       "value": "근원 CPI 석 달 연속 0.3% 이상이면 12월 50bp 검토",
+       "sources": [
+        {
+         "name": "Stock Analysis",
+         "url": "https://stockanalysis.com/news/fed-waller-december-rate-hike-half-point/"
+        },
+        {
+         "name": "텔레그램 채널 (하나증권 해외채권)"
+        }
+       ],
+       "verdict": "일치"
+      },
+      {
+       "item": "10월 CPI",
+       "value": "예상보다 높음, 12월 인상 근거 강화",
+       "sources": [
+        {
+         "name": "PIMCO",
+         "url": "https://www.pimco.com/ae/en/insights/inflation-is-sticky-but-this-isnt-2022-all-over-again"
+        },
+        {
+         "name": "텔레그램 채널 (하나 중국/신흥국 전략)"
+        }
+       ],
+       "verdict": "일치"
+      },
+      {
+       "item": "12월 FOMC 날짜",
+       "value": "12.8~9",
+       "sources": [
+        {
+         "name": "Stock Analysis",
+         "url": "https://stockanalysis.com/news/fed-waller-december-rate-hike-half-point/"
+        }
+       ],
+       "verdict": "단일 출처"
+      }
+     ],
+     "background": "이란 전쟁발 에너지 비용, 관세, AI 투자 붐이 함께 물가를 밀어 올리면서 연준은 2025년의 인하 국면에서 올해 인상 국면으로 돌아섰다.",
+     "watch": [
+      "11.19(목) 04:00 10월 FOMC 의사록",
+      "12월 초 11월 고용·CPI",
+      "12.8~9 FOMC"
+     ],
+     "related": [
+      {
+       "source": "Stock Analysis",
+       "title": "월러, 12월 인상 지지·물가 뜨거우면 50bp",
+       "url": "https://stockanalysis.com/news/fed-waller-december-rate-hike-half-point/",
+       "note": "10월 결정과 반대표"
+      },
+      {
+       "source": "PIMCO",
+       "title": "물가는 끈적하지만 2022년과는 다르다",
+       "url": "https://www.pimco.com/ae/en/insights/inflation-is-sticky-but-this-isnt-2022-all-over-again",
+       "note": "12월·1월 인상 전망"
+      }
+     ],
+     "sources": [
+      {
+       "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+       "meta": "11.14 17:35 · 조회 6,332",
+       "url": "https://t.me/insidertracking/69267"
+      },
+      {
+       "name": "요약하는 고잉",
+       "meta": "11.15 09:28 · 조회 7,951",
+       "url": "https://t.me/one_going/4515"
+      },
+      {
+       "name": "재야의 고수들",
+       "meta": "11.14 18:21 · 조회 3,460",
+       "url": "https://t.me/gaoshoukorea/65737"
+      },
+      {
+       "name": "양파농장",
+       "meta": "11.14 15:59 · 조회 2,724",
+       "url": "https://t.me/Onionfarmer/18451"
+      },
+      {
+       "name": "하나 중국/신흥국 전략 김경환",
+       "meta": "11.14 13:54 · 조회 2,384",
+       "url": "https://t.me/HANAchina/72113"
+      },
+      {
+       "name": "YIELD & SPREAD",
+       "meta": "11.14 13:40 · 조회 1,830",
+       "url": "https://t.me/yieldnspread/6781"
+      }
+     ],
+     "numbersSource": "시장 지표 · 2026-11-15 새벽 수집 / 아래쪽 수치는 조사 기자 확인(각 줄 설명에 출처)"
+    },
+    "title": "연준, 12월 인상 무게…50bp 논쟁까지",
+    "summary": "10월 CPI가 예상보다 높게 나온 뒤 연준 인사 대부분이 추가 인상 쪽으로 기울었다. 월러 이사는 근원 물가가 계속 뜨거우면 12월 50bp도 고려해야 한다고 했다.",
+    "confidence": "confirmed",
+    "read": "시장은 12월 인상을 사실상 기정사실로 보고 2027년 인상 횟수 기대를 1회에서 2.4회로 올렸다. 단기물 금리와 달러가 오르며 성장주·코인에 부담이 되고 있다.",
+    "next": "11.19(목) 04:00 10월 FOMC 의사록 · 12.8~9 FOMC",
     "category": "금리·연준",
-    "title": "12월 인하 기대 후퇴",
-    "now": "고용·물가 지표 뒤 연준 인사들의 발언이 신중해졌다.",
-    "read": "장기금리 반등이 성장주 밸류에이션에 부담이라는 시각이 많았다.",
-    "next": "11.20 FOMC 의사록",
-    "confidence": "confirmed",
-    "channels": 11,
-    "kicker": "2면 매크로 · 금리·연준",
+    "now": "10월 CPI가 예상보다 높게 나온 뒤 연준 인사 대부분이 추가 인상 쪽으로 기울었다. 월러 이사는 근원 물가가 계속 뜨거우면 12월 50bp도 고려해야 한다고 했다.",
+    "id": "m1",
+    "kicker": "2면 매크로 · 금리·연준"
+   },
+   {
     "detail": {
      "summary": [
-      "고용·물가 지표 뒤 연준 인사들의 발언이 신중해졌다.",
-      "장기금리 반등이 성장주 밸류에이션에 부담이라는 시각이 많았다.",
-      "다음 일정: 11.20 FOMC 의사록"
+      "제퍼슨 부의장: 주가 상승의 상당 부분이 신기술 열기 덕분이며, 자산 효과가 소비를, 데이터센터 투자가 기업 투자를 끌어올린다.",
+      "메모리처럼 AI와 다른 제품이 함께 쓰는 부품에서 이미 가격 압력이 나타났다. 2020~2025년 노동생산성 증가율은 평균 2.2%로 직전 경기순환(1.5%)보다 높았다.",
+      "굴스비 총재는 AI를 물가 문제로 봤고, 콜린스 총재도 AI 설비투자를 물가 위험 요인으로 꼽았다.",
+      "바킨 총재와 보우먼 부의장은 AI 투자가 기대에 못 미치면 주가 급락과 소비 위축으로 이어질 수 있다고 짚었다."
      ],
      "numbers": [
       {
-       "label": "미 10년물",
-       "value": "4.38%",
-       "note": "전일 대비 +0.06%p"
-      },
-      {
-       "label": "달러인덱스",
-       "value": "106.2",
-       "note": "전일 대비 +0.3%"
-      },
-      {
-       "label": "WTI 유가",
-       "value": "67.8달러",
-       "note": "전일 대비 -1.4%"
+       "label": "노동생산성 증가율",
+       "value": "2020~25년 2.2%",
+       "note": "직전 순환 1.5% (제퍼슨)"
       }
      ],
-     "numbersSource": "공식 발표·시장 데이터 (예시)",
-     "timeline": [
+     "checks": [
       {
-       "label": "05시",
-       "count": 4
+       "item": "AI가 물가 요인이라는 연준 시각",
+       "value": "제퍼슨·굴스비·콜린스가 같은 방향 발언",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (하나증권 해외채권)"
+        },
+        {
+         "name": "Newsquawk (굴스비)",
+         "url": "https://www.newsquawk.com/headlines/feds-collins-says-tightening-monetary-policy-will-help-return-inflation-to-2"
+        },
+        {
+         "name": "investingLive (콜린스)",
+         "url": "https://investinglive.com/central-banks/fed-s-collins-backs-another-rate-hike-by-year-end-flags-three-inflation-pressures/"
+        }
+       ],
+       "verdict": "대체로 일치"
       },
       {
-       "label": "06시",
-       "count": 3
-      },
-      {
-       "label": "07시",
-       "count": 2
-      },
-      {
-       "label": "08시",
-       "count": 5
-      },
-      {
-       "label": "09시",
-       "count": 5
-      },
-      {
-       "label": "10시",
-       "count": 7
-      },
-      {
-       "label": "11시",
-       "count": 10
-      },
-      {
-       "label": "12시",
-       "count": 15
-      },
-      {
-       "label": "13시",
-       "count": 20
-      },
-      {
-       "label": "14시",
-       "count": 20
-      },
-      {
-       "label": "15시",
-       "count": 23
-      },
-      {
-       "label": "16시",
-       "count": 22
-      },
-      {
-       "label": "17시",
-       "count": 17
-      },
-      {
-       "label": "18시",
-       "count": 13
-      },
-      {
-       "label": "19시",
-       "count": 10
-      },
-      {
-       "label": "20시",
-       "count": 9
-      },
-      {
-       "label": "21시",
-       "count": 6
-      },
-      {
-       "label": "22시",
-       "count": 6
-      },
-      {
-       "label": "23시",
-       "count": 6
-      },
-      {
-       "label": "00시",
-       "count": 4
-      },
-      {
-       "label": "01시",
-       "count": 4
-      },
-      {
-       "label": "02시",
-       "count": 2
-      },
-      {
-       "label": "03시",
-       "count": 2
-      },
-      {
-       "label": "04시",
-       "count": 5
+       "item": "생산성 숫자",
+       "value": "2.2% vs 1.5%",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (하나증권 해외채권)"
+        }
+       ],
+       "verdict": "단일 출처"
       }
      ],
-     "views": [
-      {
-       "label": "다수 의견",
-       "count": 7,
-       "text": "장기금리 반등이 성장주 밸류에이션에 부담이라는 시각이 많았다.",
-       "who": "채널 A, 채널 G 외"
-      },
-      {
-       "label": "소수 의견",
-       "count": 3,
-       "text": "시장이 지나치게 앞서 간다는 반론.",
-       "who": "채널 H 외"
-      }
-     ],
-     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
+     "background": "중립금리는 경기를 부양하지도 누르지도 않는 금리 수준이다. AI로 투자 수요가 늘고 저축이 줄면 이 수준이 올라가, 같은 기준금리라도 덜 긴축적이 된다.",
      "watch": [
-      "11.20 FOMC 의사록",
-      "관련 당국자 발언",
-      "시장 기대치 변화"
-     ],
-     "sources": [
-      {
-       "name": "채널 A",
-       "meta": "1순위 · 05:40",
-       "url": "https://t.me/"
-      },
-      {
-       "name": "채널 G",
-       "meta": "기타 · 02:15",
-       "url": "https://t.me/"
-      }
+      "12월 FOMC 점도표의 장기 금리 전망",
+      "메모리 가격 추이",
+      "빅테크 설비투자 계획"
      ],
      "related": [
       {
-       "source": "공식 발표",
-       "title": "관련 통계 발표 (예시)",
-       "url": "https://www.google.com/",
-       "note": ""
+       "source": "investingLive",
+       "title": "콜린스, 연내 추가 인상 지지·물가 압력 세 가지",
+       "url": "https://investinglive.com/central-banks/fed-s-collins-backs-another-rate-hike-by-year-end-flags-three-inflation-pressures/",
+       "note": "AI 설비투자를 물가 요인으로 언급"
+      }
+     ],
+     "sources": [
+      {
+       "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+       "meta": "11.14 17:35 · 조회 6,332",
+       "url": "https://t.me/insidertracking/69267"
+      },
+      {
+       "name": "YIELD & SPREAD",
+       "meta": "11.14 13:40 · 조회 1,830",
+       "url": "https://t.me/yieldnspread/6781"
+      },
+      {
+       "name": "[하나증권 해외채권] 허성우",
+       "meta": "11.15 13:09 · 조회 108",
+       "url": "https://t.me/deandatbond/2114"
       }
      ]
-    }
-   },
-   {
+    },
+    "title": "AI 붐이 물가·중립금리를 끌어올린다",
+    "summary": "제퍼슨 부의장은 13일 연설에서 AI 투자가 수요를 키우고 메모리 같은 부품 가격을 올리고 있으며, 생산성이 오르면 중립금리도 높아질 수 있다고 말했다.",
+    "confidence": "confirmed",
+    "read": "중립금리가 오르면 지금 금리도 생각보다 덜 긴축적이라는 뜻이어서, 추가 인상 논리를 받쳐 준다. AI 투자가 기대에 못 미치면 주가·소비가 함께 꺾일 위험도 연준이 함께 짚었다.",
+    "next": "12.8~9 FOMC 경제전망",
+    "category": "물가·성장",
+    "now": "제퍼슨 부의장은 13일 연설에서 AI 투자가 수요를 키우고 메모리 같은 부품 가격을 올리고 있으며, 생산성이 오르면 중립금리도 높아질 수 있다고 말했다.",
     "id": "m2",
-    "category": "환율",
-    "title": "원/달러 고점 논쟁",
-    "now": "달러 강세가 이어지며 원화 약세 구간이 길어졌다.",
-    "read": "수출주에는 우호적이지만 외국인 수급에는 부담이라는 해석이 갈렸다.",
-    "next": "12.1 수출입 동향",
-    "confidence": "confirmed",
-    "channels": 10,
-    "kicker": "2면 매크로 · 환율",
-    "detail": {
-     "summary": [
-      "달러 강세가 이어지며 원화 약세 구간이 길어졌다.",
-      "수출주에는 우호적이지만 외국인 수급에는 부담이라는 해석이 갈렸다.",
-      "다음 일정: 12.1 수출입 동향"
-     ],
-     "numbers": [
-      {
-       "label": "미 10년물",
-       "value": "4.38%",
-       "note": "전일 대비 +0.06%p"
-      },
-      {
-       "label": "달러인덱스",
-       "value": "106.2",
-       "note": "전일 대비 +0.3%"
-      },
-      {
-       "label": "WTI 유가",
-       "value": "67.8달러",
-       "note": "전일 대비 -1.4%"
-      }
-     ],
-     "numbersSource": "공식 발표·시장 데이터 (예시)",
-     "timeline": [
-      {
-       "label": "05시",
-       "count": 2
-      },
-      {
-       "label": "06시",
-       "count": 2
-      },
-      {
-       "label": "07시",
-       "count": 4
-      },
-      {
-       "label": "08시",
-       "count": 5
-      },
-      {
-       "label": "09시",
-       "count": 4
-      },
-      {
-       "label": "10시",
-       "count": 6
-      },
-      {
-       "label": "11시",
-       "count": 10
-      },
-      {
-       "label": "12시",
-       "count": 15
-      },
-      {
-       "label": "13시",
-       "count": 17
-      },
-      {
-       "label": "14시",
-       "count": 21
-      },
-      {
-       "label": "15시",
-       "count": 22
-      },
-      {
-       "label": "16시",
-       "count": 19
-      },
-      {
-       "label": "17시",
-       "count": 18
-      },
-      {
-       "label": "18시",
-       "count": 14
-      },
-      {
-       "label": "19시",
-       "count": 11
-      },
-      {
-       "label": "20시",
-       "count": 10
-      },
-      {
-       "label": "21시",
-       "count": 4
-      },
-      {
-       "label": "22시",
-       "count": 3
-      },
-      {
-       "label": "23시",
-       "count": 6
-      },
-      {
-       "label": "00시",
-       "count": 3
-      },
-      {
-       "label": "01시",
-       "count": 2
-      },
-      {
-       "label": "02시",
-       "count": 3
-      },
-      {
-       "label": "03시",
-       "count": 3
-      },
-      {
-       "label": "04시",
-       "count": 5
-      }
-     ],
-     "views": [
-      {
-       "label": "다수 의견",
-       "count": 7,
-       "text": "수출주에는 우호적이지만 외국인 수급에는 부담이라는 해석이 갈렸다.",
-       "who": "채널 A, 채널 G 외"
-      },
-      {
-       "label": "소수 의견",
-       "count": 3,
-       "text": "시장이 지나치게 앞서 간다는 반론.",
-       "who": "채널 H 외"
-      }
-     ],
-     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
-     "watch": [
-      "12.1 수출입 동향",
-      "관련 당국자 발언",
-      "시장 기대치 변화"
-     ],
-     "sources": [
-      {
-       "name": "채널 A",
-       "meta": "1순위 · 05:40",
-       "url": "https://t.me/"
-      },
-      {
-       "name": "채널 G",
-       "meta": "기타 · 02:15",
-       "url": "https://t.me/"
-      }
-     ],
-     "related": [
-      {
-       "source": "공식 발표",
-       "title": "관련 통계 발표 (예시)",
-       "url": "https://www.google.com/",
-       "note": ""
-      }
-     ]
-    }
+    "kicker": "2면 매크로 · 물가·성장"
    },
    {
+    "category": "달러·환율",
+    "title": "엔화 160엔 턱밑, 달러 강세에 원화는 버텨",
+    "now": "달러인덱스가 한 주 새 1.1% 오르고 엔/달러는 159.9엔까지 올랐다. 원/달러는 1,336원으로 1주 전보다 1.9% 내렸다(원화 강세).",
+    "read": "연준 인상 기대가 달러를 밀어 올리는 가운데 원화는 반도체 이익 상향과 외국인 자금에 버티는 모습이다. 엔화 160엔은 일본 당국 개입 경계선으로 거론된다.",
+    "next": "11.19 04:00 10월 FOMC 의사록",
+    "confidence": "partial",
+    "detail": {
+     "numbers": [
+      {
+       "label": "달러인덱스",
+       "value": "103.41",
+       "note": "전일 대비 +0.23% · 2026-11-13 기준"
+      },
+      {
+       "label": "엔/달러",
+       "value": "159.88",
+       "note": "전일 대비 +0.09% · 2026-11-13 기준"
+      },
+      {
+       "label": "원/달러",
+       "value": "1,336.20",
+       "note": "전일 대비 +0.18% · 2026-11-15 기준"
+      },
+      {
+       "label": "유로/달러",
+       "value": "1.11",
+       "note": "전일 대비 -0.41% · 2026-11-13 기준"
+      }
+     ],
+     "summary": [
+      "달러인덱스 103.41(1주 +1.09%), 엔/달러 159.88엔(1주 +1.51%), 유로/달러 1.105(1주 -1.59%)로 달러가 주요 통화에 강했다.",
+      "원/달러는 1,336.2원으로 1주 전보다 1.94% 내려 원화만 거꾸로 강해졌다.",
+      "텔레그램에서는 달러·금리 상승이 유동성에 부담이라는 경계가 많았다.",
+      "엔화 약세가 160엔을 넘을지, 일본 당국이 개입할지는 확인된 정보가 없다."
+     ],
+     "checks": [
+      {
+       "item": "주요 환율 종가",
+       "value": "달러인덱스 103.41, 엔/달러 159.88, 원/달러 1,336.2, 유로/달러 1.105",
+       "sources": [
+        {
+         "name": "야후 파이낸스 시세 (새벽 수집)"
+        }
+       ],
+       "verdict": "단일 출처"
+      },
+      {
+       "item": "달러·금리 상승이 유동성 부담이라는 시각",
+       "value": "긴축 가속 반영으로 달러·금리가 오르며 위험자산 부담이 커졌다는 채널 의견",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (소수의견)"
+        }
+       ],
+       "verdict": "단일 출처"
+      }
+     ],
+     "watch": [
+      "11.19 04:00 10월 FOMC 의사록",
+      "12.8~9 FOMC"
+     ],
+     "background": "연준이 9월 인상 뒤 추가 인상을 예고하면서 미국 금리가 주요국보다 높게 유지될 것이라는 기대가 달러를 받치고 있다.",
+     "sources": [
+      {
+       "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+       "meta": "11.14 17:35 · 조회 6,332",
+       "url": "https://t.me/insidertracking/69267"
+      }
+     ],
+     "numbersSource": "시장 지표 · 2026-11-15 새벽 수집"
+    },
     "id": "m3",
-    "category": "유가·원자재",
-    "title": "공급과잉 전망과 감산 사이",
-    "now": "내년 공급이 수요를 앞선다는 기관 전망이 이어졌다.",
-    "read": "산유국 추가 감산 여부가 다음 변수라는 데 의견이 모였다.",
-    "next": "11.30 산유국 회의",
-    "confidence": "partial",
-    "channels": 9,
-    "kicker": "2면 매크로 · 유가·원자재",
+    "kicker": "2면 매크로 · 달러·환율"
+   },
+   {
     "detail": {
      "summary": [
-      "내년 공급이 수요를 앞선다는 기관 전망이 이어졌다.",
-      "산유국 추가 감산 여부가 다음 변수라는 데 의견이 모였다.",
-      "다음 일정: 11.30 산유국 회의"
+      "크렘린은 19일 3자 회동을 예고했고, 중국 외교부는 4일 관련국과 소통 중이라고 처음 확인했다. 트럼프도 8일 두 정상을 만날 것으로 본다고 말했다.",
+      "트럼프는 비핵화와 이란 전쟁 종식을 의제로 꼽았고, 러시아는 우크라이나 종전 논의를 원한다는 보도가 있다. 반면 텔레그램 채널은 우크라이나 전쟁이 의제에서 빠진다는 보도도 전해 엇갈린다.",
+      "일론 머스크가 트럼프의 중국 방문에 동행한다. 미국은 반도체 수출통제는 협상 대상이 아니라고 밝혔다는 보도다.",
+      "한편 중국 AI 모델에서 수출 통제 대상인 블랙웰과 일치하는 흔적이 나왔다는 보도, 제한 칩(H800)을 단 서버가 상하이로 들어갔다는 블룸버그 보도로 수출통제 강화 우려도 커졌다."
      ],
-     "numbers": [
+     "checks": [
       {
-       "label": "미 10년물",
-       "value": "4.38%",
-       "note": "전일 대비 +0.06%p"
+       "item": "APEC 일정",
+       "value": "11.18~19 중국 선전",
+       "sources": [
+        {
+         "name": "Kyiv Independent",
+         "url": "https://kyivindependent.com/kremlin-signals-possible-three-way-meeting-at-apec-summit-between-putin-trump-xi/"
+        },
+        {
+         "name": "Economist.kg",
+         "url": "https://economist.kg/en/china-confirms-talks-xi-trump-putin.md"
+        }
+       ],
+       "verdict": "일치"
       },
       {
-       "label": "달러인덱스",
-       "value": "106.2",
-       "note": "전일 대비 +0.3%"
+       "item": "3자 회동 추진",
+       "value": "중국 외교부 소통 확인(4일), 트럼프 회동 예상(8일), 형식·의제 미정",
+       "sources": [
+        {
+         "name": "Economist.kg",
+         "url": "https://economist.kg/en/china-confirms-talks-xi-trump-putin.md"
+        },
+        {
+         "name": "TRT World",
+         "url": "https://trtworld.com/article/669beffd0c88"
+        },
+        {
+         "name": "텔레그램 채널 (미국 주식 인사이더)"
+        }
+       ],
+       "verdict": "일치"
       },
       {
-       "label": "WTI 유가",
-       "value": "67.8달러",
-       "note": "전일 대비 -1.4%"
+       "item": "의제",
+       "value": "이란 종전·비핵화(트럼프) vs 우크라이나 의제 제외 보도",
+       "sources": [
+        {
+         "name": "bdnews24",
+         "url": "https://bdnews24.com/world/w2mxjiwtyv"
+        },
+        {
+         "name": "텔레그램 채널 (그로쓰리서치)"
+        }
+       ],
+       "verdict": "엇갈림"
       }
      ],
-     "numbersSource": "공식 발표·시장 데이터 (예시)",
-     "timeline": [
-      {
-       "label": "05시",
-       "count": 2
-      },
-      {
-       "label": "06시",
-       "count": 3
-      },
-      {
-       "label": "07시",
-       "count": 3
-      },
-      {
-       "label": "08시",
-       "count": 6
-      },
-      {
-       "label": "09시",
-       "count": 6
-      },
-      {
-       "label": "10시",
-       "count": 9
-      },
-      {
-       "label": "11시",
-       "count": 9
-      },
-      {
-       "label": "12시",
-       "count": 14
-      },
-      {
-       "label": "13시",
-       "count": 19
-      },
-      {
-       "label": "14시",
-       "count": 21
-      },
-      {
-       "label": "15시",
-       "count": 23
-      },
-      {
-       "label": "16시",
-       "count": 22
-      },
-      {
-       "label": "17시",
-       "count": 17
-      },
-      {
-       "label": "18시",
-       "count": 12
-      },
-      {
-       "label": "19시",
-       "count": 12
-      },
-      {
-       "label": "20시",
-       "count": 6
-      },
-      {
-       "label": "21시",
-       "count": 4
-      },
-      {
-       "label": "22시",
-       "count": 6
-      },
-      {
-       "label": "23시",
-       "count": 5
-      },
-      {
-       "label": "00시",
-       "count": 5
-      },
-      {
-       "label": "01시",
-       "count": 5
-      },
-      {
-       "label": "02시",
-       "count": 2
-      },
-      {
-       "label": "03시",
-       "count": 2
-      },
-      {
-       "label": "04시",
-       "count": 2
-      }
-     ],
-     "views": [
-      {
-       "label": "다수 의견",
-       "count": 7,
-       "text": "산유국 추가 감산 여부가 다음 변수라는 데 의견이 모였다.",
-       "who": "채널 A, 채널 G 외"
-      },
-      {
-       "label": "소수 의견",
-       "count": 3,
-       "text": "시장이 지나치게 앞서 간다는 반론.",
-       "who": "채널 H 외"
-      }
-     ],
-     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
+     "background": "트럼프는 올해 시진핑과 여러 차례 만났고, 중국은 3자 회동에 미온적이라는 분석도 있다. 러시아에는 고립을 벗는 상징적 성과가 될 수 있다.",
      "watch": [
-      "11.30 산유국 회의",
-      "관련 당국자 발언",
-      "시장 기대치 변화"
-     ],
-     "sources": [
-      {
-       "name": "채널 A",
-       "meta": "1순위 · 05:40",
-       "url": "https://t.me/"
-      },
-      {
-       "name": "채널 G",
-       "meta": "기타 · 02:15",
-       "url": "https://t.me/"
-      }
+      "11.18~19 3자 회동 성사 여부",
+      "미·중 무역 합의 이행과 희토류",
+      "대중 AI 칩 수출통제 조치"
      ],
      "related": [
       {
-       "source": "공식 발표",
-       "title": "관련 통계 발표 (예시)",
-       "url": "https://www.google.com/",
-       "note": ""
+       "source": "알자지라",
+       "title": "트럼프-시진핑-푸틴 회동이 뜻하는 것과 아닌 것",
+       "url": "https://www.aljazeera.com/amp/news/2026/11/6/what-a-trump-xi-putin-summit-would-mean-and-what-it-wouldnt",
+       "note": "회동의 의미와 한계"
       }
-     ]
-    }
-   },
-   {
-    "id": "m4",
-    "category": "채권·크레딧",
-    "title": "회사채 스프레드 소폭 확대",
-    "now": "기술 기업의 대규모 채권 발행이 잇따랐다.",
-    "read": "AI 설비투자 자금 조달이 크레딧 부담으로 번질지 지켜본다는 의견.",
-    "next": "대형 발행 일정",
-    "confidence": "partial",
-    "channels": 8,
-    "kicker": "2면 매크로 · 채권·크레딧",
-    "detail": {
-     "summary": [
-      "기술 기업의 대규모 채권 발행이 잇따랐다.",
-      "AI 설비투자 자금 조달이 크레딧 부담으로 번질지 지켜본다는 의견.",
-      "다음 일정: 대형 발행 일정"
-     ],
-     "numbers": [
-      {
-       "label": "미 10년물",
-       "value": "4.38%",
-       "note": "전일 대비 +0.06%p"
-      },
-      {
-       "label": "달러인덱스",
-       "value": "106.2",
-       "note": "전일 대비 +0.3%"
-      },
-      {
-       "label": "WTI 유가",
-       "value": "67.8달러",
-       "note": "전일 대비 -1.4%"
-      }
-     ],
-     "numbersSource": "공식 발표·시장 데이터 (예시)",
-     "timeline": [
-      {
-       "label": "05시",
-       "count": 4
-      },
-      {
-       "label": "06시",
-       "count": 4
-      },
-      {
-       "label": "07시",
-       "count": 5
-      },
-      {
-       "label": "08시",
-       "count": 4
-      },
-      {
-       "label": "09시",
-       "count": 7
-      },
-      {
-       "label": "10시",
-       "count": 10
-      },
-      {
-       "label": "11시",
-       "count": 13
-      },
-      {
-       "label": "12시",
-       "count": 13
-      },
-      {
-       "label": "13시",
-       "count": 19
-      },
-      {
-       "label": "14시",
-       "count": 21
-      },
-      {
-       "label": "15시",
-       "count": 22
-      },
-      {
-       "label": "16시",
-       "count": 22
-      },
-      {
-       "label": "17시",
-       "count": 18
-      },
-      {
-       "label": "18시",
-       "count": 14
-      },
-      {
-       "label": "19시",
-       "count": 13
-      },
-      {
-       "label": "20시",
-       "count": 9
-      },
-      {
-       "label": "21시",
-       "count": 5
-      },
-      {
-       "label": "22시",
-       "count": 4
-      },
-      {
-       "label": "23시",
-       "count": 4
-      },
-      {
-       "label": "00시",
-       "count": 2
-      },
-      {
-       "label": "01시",
-       "count": 4
-      },
-      {
-       "label": "02시",
-       "count": 4
-      },
-      {
-       "label": "03시",
-       "count": 3
-      },
-      {
-       "label": "04시",
-       "count": 5
-      }
-     ],
-     "views": [
-      {
-       "label": "다수 의견",
-       "count": 7,
-       "text": "AI 설비투자 자금 조달이 크레딧 부담으로 번질지 지켜본다는 의견.",
-       "who": "채널 A, 채널 G 외"
-      },
-      {
-       "label": "소수 의견",
-       "count": 3,
-       "text": "시장이 지나치게 앞서 간다는 반론.",
-       "who": "채널 H 외"
-      }
-     ],
-     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
-     "watch": [
-      "대형 발행 일정",
-      "관련 당국자 발언",
-      "시장 기대치 변화"
      ],
      "sources": [
       {
-       "name": "채널 A",
-       "meta": "1순위 · 05:40",
-       "url": "https://t.me/"
+       "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+       "meta": "11.14 22:35 · 조회 7,189",
+       "url": "https://t.me/insidertracking/69281"
       },
       {
-       "name": "채널 G",
-       "meta": "기타 · 02:15",
-       "url": "https://t.me/"
-      }
-     ],
-     "related": [
+       "name": "도널드 J. 트럼프 대통령",
+       "meta": "11.15 07:31 · 조회 964",
+       "url": "https://t.me/goddessTTF/87105"
+      },
       {
-       "source": "공식 발표",
-       "title": "관련 통계 발표 (예시)",
-       "url": "https://www.google.com/",
-       "note": ""
+       "name": "급등일보 미국주식🇺🇸 속보·매크로·리서치",
+       "meta": "11.14 16:03 · 조회 8,424",
+       "url": "https://t.me/FastStockNewsUSA/24473"
+      },
+      {
+       "name": "HS아카데미 대표 이효석",
+       "meta": "11.14 16:12 · 조회 6,216",
+       "url": "https://t.me/HS_academy/11119"
+      },
+      {
+       "name": "TNBfolio",
+       "meta": "11.15 00:26 · 조회 5,595",
+       "url": "https://t.me/TNBfolio/72001"
+      },
+      {
+       "name": "습관이 부자를 만든다. 🧘",
+       "meta": "11.14 14:11 · 조회 3,743",
+       "url": "https://t.me/habit4117/87974"
+      },
+      {
+       "name": "하나 중국/신흥국 전략 김경환",
+       "meta": "11.14 15:37 · 조회 2,439",
+       "url": "https://t.me/HANAchina/72115"
       }
      ]
-    }
-   },
-   {
-    "id": "m5",
-    "category": "경기지표",
-    "title": "소비 둔화 신호 엇갈려",
-    "now": "카드 지출은 견조하지만 저소득층 연체율이 올랐다.",
-    "read": "둔화 속도가 느려 연착륙 시나리오가 유지된다는 쪽이 우세.",
-    "next": "11.17 소매판매",
+    },
+    "title": "APEC 선전, 사상 첫 미·중·러 정상 회동 주목",
+    "summary": "18~19일 중국 선전 APEC 정상회의를 계기로 트럼프·시진핑·푸틴 3자 회동이 추진되고 있다. 중국 외교부도 관련국과 소통 중이라고 확인했다.",
     "confidence": "confirmed",
-    "channels": 7,
-    "kicker": "2면 매크로 · 경기지표",
-    "detail": {
-     "summary": [
-      "카드 지출은 견조하지만 저소득층 연체율이 올랐다.",
-      "둔화 속도가 느려 연착륙 시나리오가 유지된다는 쪽이 우세.",
-      "다음 일정: 11.17 소매판매"
-     ],
-     "numbers": [
-      {
-       "label": "미 10년물",
-       "value": "4.38%",
-       "note": "전일 대비 +0.06%p"
-      },
-      {
-       "label": "달러인덱스",
-       "value": "106.2",
-       "note": "전일 대비 +0.3%"
-      },
-      {
-       "label": "WTI 유가",
-       "value": "67.8달러",
-       "note": "전일 대비 -1.4%"
-      }
-     ],
-     "numbersSource": "공식 발표·시장 데이터 (예시)",
-     "timeline": [
-      {
-       "label": "05시",
-       "count": 4
-      },
-      {
-       "label": "06시",
-       "count": 4
-      },
-      {
-       "label": "07시",
-       "count": 5
-      },
-      {
-       "label": "08시",
-       "count": 6
-      },
-      {
-       "label": "09시",
-       "count": 7
-      },
-      {
-       "label": "10시",
-       "count": 7
-      },
-      {
-       "label": "11시",
-       "count": 13
-      },
-      {
-       "label": "12시",
-       "count": 14
-      },
-      {
-       "label": "13시",
-       "count": 17
-      },
-      {
-       "label": "14시",
-       "count": 19
-      },
-      {
-       "label": "15시",
-       "count": 22
-      },
-      {
-       "label": "16시",
-       "count": 19
-      },
-      {
-       "label": "17시",
-       "count": 17
-      },
-      {
-       "label": "18시",
-       "count": 15
-      },
-      {
-       "label": "19시",
-       "count": 12
-      },
-      {
-       "label": "20시",
-       "count": 9
-      },
-      {
-       "label": "21시",
-       "count": 4
-      },
-      {
-       "label": "22시",
-       "count": 3
-      },
-      {
-       "label": "23시",
-       "count": 3
-      },
-      {
-       "label": "00시",
-       "count": 4
-      },
-      {
-       "label": "01시",
-       "count": 5
-      },
-      {
-       "label": "02시",
-       "count": 5
-      },
-      {
-       "label": "03시",
-       "count": 5
-      },
-      {
-       "label": "04시",
-       "count": 4
-      }
-     ],
-     "views": [
-      {
-       "label": "다수 의견",
-       "count": 7,
-       "text": "둔화 속도가 느려 연착륙 시나리오가 유지된다는 쪽이 우세.",
-       "who": "채널 A, 채널 G 외"
-      },
-      {
-       "label": "소수 의견",
-       "count": 3,
-       "text": "시장이 지나치게 앞서 간다는 반론.",
-       "who": "채널 H 외"
-      }
-     ],
-     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
-     "watch": [
-      "11.17 소매판매",
-      "관련 당국자 발언",
-      "시장 기대치 변화"
-     ],
-     "sources": [
-      {
-       "name": "채널 A",
-       "meta": "1순위 · 05:40",
-       "url": "https://t.me/"
-      },
-      {
-       "name": "채널 G",
-       "meta": "기타 · 02:15",
-       "url": "https://t.me/"
-      }
-     ],
-     "related": [
-      {
-       "source": "공식 발표",
-       "title": "관련 통계 발표 (예시)",
-       "url": "https://www.google.com/",
-       "note": ""
-      }
-     ]
-    }
+    "read": "이란·우크라이나 전쟁과 미·중 무역 합의 이행이 함께 걸린 자리여서 원유·방산·반도체 수출통제에 영향을 줄 수 있다. 다만 의제와 형식이 정해지지 않아 기대보다 상징에 그칠 수 있다는 분석도 있다.",
+    "next": "11.18~19 APEC 선전 정상회의",
+    "category": "미·중·지정학",
+    "now": "18~19일 중국 선전 APEC 정상회의를 계기로 트럼프·시진핑·푸틴 3자 회동이 추진되고 있다. 중국 외교부도 관련국과 소통 중이라고 확인했다.",
+    "id": "m4",
+    "kicker": "2면 매크로 · 미·중·지정학"
    },
    {
-    "id": "m6",
-    "category": "정책·관세",
-    "title": "반도체 품목 관세 일정 주목",
-    "now": "주요국과의 관세 협상 시한이 다가왔다.",
-    "read": "장비·소재 품목 포함 여부에 따라 업종별 영향이 갈린다는 분석.",
-    "next": "협상 시한",
-    "confidence": "partial",
-    "channels": 6,
-    "kicker": "2면 매크로 · 정책·관세",
     "detail": {
-     "summary": [
-      "주요국과의 관세 협상 시한이 다가왔다.",
-      "장비·소재 품목 포함 여부에 따라 업종별 영향이 갈린다는 분석.",
-      "다음 일정: 협상 시한"
-     ],
      "numbers": [
       {
-       "label": "미 10년물",
-       "value": "4.38%",
-       "note": "전일 대비 +0.06%p"
+       "label": "코스피",
+       "value": "5,290.53",
+       "note": "전일 대비 -0.98% · 2026-11-13 기준"
       },
       {
-       "label": "달러인덱스",
-       "value": "106.2",
-       "note": "전일 대비 +0.3%"
+       "label": "코스닥",
+       "value": "699.66",
+       "note": "전일 대비 +0.45% · 2026-11-13 기준"
       },
       {
-       "label": "WTI 유가",
-       "value": "67.8달러",
-       "note": "전일 대비 -1.4%"
+       "label": "원/달러",
+       "value": "1,336.20",
+       "note": "전일 대비 +0.18% · 2026-11-15 기준"
+      },
+      {
+       "label": "코스피 PBR",
+       "value": "1.74배",
+       "note": "미국 5.67배·대만 5.55배·일본 2.03배"
+      },
+      {
+       "label": "삼성·SK하이닉스 신용융자",
+       "value": "6조9,669억 원 (27.2%)",
+       "note": ""
+      },
+      {
+       "label": "반도체 ETF 유입 (지난주)",
+       "value": "3,348억 원",
+       "note": "3주 만에 최대"
+      },
+      {
+       "label": "코스닥 ETF 유입 (지난주)",
+       "value": "9,380억 원",
+       "note": ""
       }
      ],
-     "numbersSource": "공식 발표·시장 데이터 (예시)",
-     "timeline": [
+     "summary": [
+      "12개월 선행 EPS의 1개월 변화율은 한국 +7.1%로 대만(+3.6%)·일본(+1.7%)·미국(+0.9%)보다 컸고, 중국(-1.8%)은 하향됐다.",
+      "2027년 영업이익 증가율 전망은 전체 +45.6%, 반도체 +60%, 반도체 제외 +10.8%로 반도체 의존이 크다.",
+      "삼성전자·SK하이닉스 신용융자 잔고는 6조9,669억 원으로 전체의 27.2%. 지난주 반도체 ETF로 3,348억 원, 코스닥 ETF로 9,380억 원이 들어왔다.",
+      "13일 자본시장 간담회에서 대통령이 적대적 M&A를 막는 제도의 전수조사를 지시했고, 유통주식 10% 미만 상장사 퇴출 등 상장유지 요건 강화가 검토된다."
+     ],
+     "charts": [
       {
-       "label": "05시",
-       "count": 4
-      },
-      {
-       "label": "06시",
-       "count": 5
-      },
-      {
-       "label": "07시",
-       "count": 5
-      },
-      {
-       "label": "08시",
-       "count": 6
-      },
-      {
-       "label": "09시",
-       "count": 5
-      },
-      {
-       "label": "10시",
-       "count": 10
-      },
-      {
-       "label": "11시",
-       "count": 11
-      },
-      {
-       "label": "12시",
-       "count": 15
-      },
-      {
-       "label": "13시",
-       "count": 19
-      },
-      {
-       "label": "14시",
-       "count": 22
-      },
-      {
-       "label": "15시",
-       "count": 21
-      },
-      {
-       "label": "16시",
-       "count": 20
-      },
-      {
-       "label": "17시",
-       "count": 19
-      },
-      {
-       "label": "18시",
-       "count": 15
-      },
-      {
-       "label": "19시",
-       "count": 12
-      },
-      {
-       "label": "20시",
-       "count": 7
-      },
-      {
-       "label": "21시",
-       "count": 8
-      },
-      {
-       "label": "22시",
-       "count": 3
-      },
-      {
-       "label": "23시",
-       "count": 5
-      },
-      {
-       "label": "00시",
-       "count": 3
-      },
-      {
-       "label": "01시",
-       "count": 2
-      },
-      {
-       "label": "02시",
-       "count": 4
-      },
-      {
-       "label": "03시",
-       "count": 2
-      },
-      {
-       "label": "04시",
-       "count": 2
+       "title": "1개월 이익 전망 변화 (12개월 선행 EPS)",
+       "type": "bar",
+       "unit": "%",
+       "points": [
+        {
+         "label": "한국",
+         "value": 7.1,
+         "hi": true
+        },
+        {
+         "label": "대만",
+         "value": 3.6
+        },
+        {
+         "label": "일본",
+         "value": 1.7
+        },
+        {
+         "label": "미국",
+         "value": 0.9
+        },
+        {
+         "label": "독일",
+         "value": -0.8
+        },
+        {
+         "label": "중국",
+         "value": -1.8
+        }
+       ],
+       "source": "미래에셋증권 주간 이익동향 (텔레그램 채널)",
+       "note": "한국의 이익 전망 상향 폭이 가장 컸다."
       }
      ],
-     "views": [
+     "checks": [
       {
-       "label": "다수 의견",
-       "count": 7,
-       "text": "장비·소재 품목 포함 여부에 따라 업종별 영향이 갈린다는 분석.",
-       "who": "채널 A, 채널 G 외"
+       "item": "이익 전망 상향 폭",
+       "value": "한국 +7.1% 1위",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (미래에셋증권 전략/퀀트)"
+        },
+        {
+         "name": "텔레그램 채널 (회색인간의 매크로)"
+        }
+       ],
+       "verdict": "단일 출처"
       },
       {
-       "label": "소수 의견",
-       "count": 3,
-       "text": "시장이 지나치게 앞서 간다는 반론.",
-       "who": "채널 H 외"
+       "item": "지수 수치",
+       "value": "코스피 5,290.53(주간 +4.56%), 코스닥 699.66(+8.60%), 원/달러 1,336.2",
+       "sources": [
+        {
+         "name": "야후 파이낸스 시세 (11.15 수집)"
+        }
+       ],
+       "verdict": "단일 출처"
+      },
+      {
+       "item": "선거 직후 급락과 반등",
+       "value": "4일 코스피 -5.3% 뒤 주간 반등",
+       "sources": [
+        {
+         "name": "AP (클릭온디트로이트 게재)",
+         "url": "https://www.clickondetroit.com/news/politics/2026/11/05/the-latest-alaskans-wait-for-more-votes-in-us-senate-and-governors-races/"
+        },
+        {
+         "name": "야후 파이낸스 시세 (11.15 수집)"
+        }
+       ],
+       "verdict": "대체로 일치"
+      },
+      {
+       "item": "자본시장 간담회",
+       "value": "적대적 M&A 제도 전수조사 지시, 분산요건 강화 검토",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (회색인간의 매크로)"
+        },
+        {
+         "name": "텔레그램 채널 (석학들의 마켓)"
+        }
+       ],
+       "verdict": "단일 출처"
       }
      ],
-     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
+     "background": "반도체 호황으로 한국 연간 수출이 1조 달러에 다가서고 있다. 코스피는 이익 증가에 비해 PBR이 여전히 주요국보다 낮아, 지배구조 개선 정책이 재평가 재료로 거론된다.",
      "watch": [
-      "협상 시한",
-      "관련 당국자 발언",
-      "시장 기대치 변화"
-     ],
-     "sources": [
-      {
-       "name": "채널 A",
-       "meta": "1순위 · 05:40",
-       "url": "https://t.me/"
-      },
-      {
-       "name": "채널 G",
-       "meta": "기타 · 02:15",
-       "url": "https://t.me/"
-      }
+      "11.17 엔비디아 실적 뒤 반도체주",
+      "11월 1~20일 수출",
+      "상장유지 요건 개편안 발표"
      ],
      "related": [
       {
-       "source": "공식 발표",
-       "title": "관련 통계 발표 (예시)",
-       "url": "https://www.google.com/",
-       "note": ""
+       "source": "AP",
+       "title": "중간선거 뒤 데이터센터 우려에 코스피 5.3% 급락",
+       "url": "https://www.clickondetroit.com/news/politics/2026/11/05/the-latest-alaskans-wait-for-more-votes-in-us-senate-and-governors-races/",
+       "note": "선거 직후 시장 반응"
       }
-     ]
-    }
+     ],
+     "sources": [
+      {
+       "name": "IT의 신 이형수",
+       "meta": "11.14 18:34 · 조회 5,015",
+       "url": "https://t.me/hslpartners/9797"
+      },
+      {
+       "name": "[미래에셋증권 전략/퀀트 유명간]",
+       "meta": "11.14 15:15 · 조회 3,156",
+       "url": "https://t.me/eqmirae/3307"
+      },
+      {
+       "name": "회색인간의 매크로 + 투자",
+       "meta": "11.14 19:58 · 조회 2,281",
+       "url": "https://t.me/mistergray_11/25295"
+      },
+      {
+       "name": "IH Research",
+       "meta": "11.14 17:37 · 조회 3,829",
+       "url": "https://t.me/ihresearch/5089"
+      },
+      {
+       "name": "서화백의 그림놀이 🚀",
+       "meta": "11.14 15:05 · 조회 1,384",
+       "url": "https://t.me/easobi/17229"
+      },
+      {
+       "name": "유진투자증권 ETF/파생 강송철",
+       "meta": "11.15 12:30 · 조회 411",
+       "url": "https://t.me/buykkang/3931"
+      },
+      {
+       "name": "허재환 유진증권 전략",
+       "meta": "11.15 12:32 · 조회 332",
+       "url": "https://t.me/huhjae/4640"
+      },
+      {
+       "name": "퀄리티기업연구소",
+       "meta": "11.14 22:33 · 조회 331",
+       "url": "https://t.me/QualityInvestingLaboratory/21677"
+      }
+     ],
+     "numbersSource": "시장 지표 · 2026-11-15 새벽 수집 / 아래쪽 수치는 조사 기자 확인(각 줄 설명에 출처)"
+    },
+    "title": "한국 이익 전망 상향 1위, 빚투는 반도체 쏠림",
+    "summary": "최근 한 달 한국 기업의 이익 전망 상향 폭이 주요국 가운데 가장 컸다(+7.1%). 코스피는 주간 4.6% 올랐지만 신용융자는 삼성전자·SK하이닉스에 27%가 몰려 있다.",
+    "confidence": "confirmed",
+    "read": "반도체 이익이 지수를 끌고 있어 엔비디아 실적과 미국 AI주 흐름에 그대로 노출돼 있다. 레버리지가 몰린 만큼 급락 땐 반대매매가 변동성을 키울 수 있다.",
+    "next": "다음 주 11월 1~20일 수출",
+    "category": "한국 경제",
+    "now": "최근 한 달 한국 기업의 이익 전망 상향 폭이 주요국 가운데 가장 컸다(+7.1%). 코스피는 주간 4.6% 올랐지만 신용융자는 삼성전자·SK하이닉스에 27%가 몰려 있다.",
+    "id": "m5",
+    "kicker": "2면 매크로 · 한국 경제"
    }
   ]
  },
@@ -2433,1702 +2813,1671 @@
   "ranking": [
    {
     "name": "엔비디아",
-    "telegram": 35,
-    "x": 7
+    "telegram": 86,
+    "x": 0
    },
    {
-    "name": "테슬라",
-    "telegram": 19,
-    "x": 8
+    "name": "앤트로픽",
+    "telegram": 39,
+    "x": 0
+   },
+   {
+    "name": "스페이스X",
+    "telegram": 23,
+    "x": 0
+   },
+   {
+    "name": "AMD",
+    "telegram": 21,
+    "x": 0
    },
    {
     "name": "삼성전자",
     "telegram": 21,
-    "x": 2
+    "x": 0
    },
    {
-    "name": "스페이스X",
-    "telegram": 12,
-    "x": 7
+    "name": "SK하이닉스",
+    "telegram": 17,
+    "x": 0
    },
    {
     "name": "TSMC",
-    "telegram": 13,
-    "x": 2
+    "telegram": 15,
+    "x": 0
    },
    {
-    "name": "마이크로소프트",
+    "name": "브로드컴",
+    "telegram": 10,
+    "x": 0
+   },
+   {
+    "name": "코어위브",
     "telegram": 9,
-    "x": 3
+    "x": 0
+   },
+   {
+    "name": "테슬라",
+    "telegram": 8,
+    "x": 0
    }
   ],
   "cards": [
    {
-    "id": "c1",
     "name": "엔비디아",
-    "title": "엔비디아",
     "ticker": "NVDA",
-    "telegram": 35,
-    "x": 7,
-    "metrics": {
-     "price": "182.40",
-     "change": "+2.8%",
-     "earnings": "11.19"
-    },
-    "what": "실적 발표를 앞두고 데이터센터 매출 기대치와 공급 상황이 주로 언급됐다.",
-    "kicker": "3면 기업",
-    "channels": 35,
+    "what": "젠슨 황 사임 뒤 한 주 동안 12.75% 내리며 시가총액 4조 달러 아래로 밀렸다. 11월 17일(현지) 장 마감 후 실적이 경영 공백 이후 첫 시험대다.",
     "detail": {
      "summary": [
-      "실적 발표를 앞두고 데이터센터 매출 기대치와 공급 상황이 주로 언급됐다.",
-      "고객사 설비투자가 내년에도 유지되는가",
-      "차세대 제품 출하 속도",
-      "수출 규제가 중국 매출에 주는 영향"
+      "사임 발표(11.12) 뒤 주간 -12.75%, 고점 대비 약 -33%까지 내렸다.",
+      "임시 CEO는 콜레트 크레스 CFO. 고객 이탈과 금융 지원 축소 우려가 쟁점이다.",
+      "실적 발표는 한국 시간 18일 새벽. 데이터센터 매출과 가이던스가 AI 관련주 방향을 가를 변수로 꼽힌다."
+     ],
+     "watch": [
+      "11.17(현지) 장 마감 후 3분기 실적과 가이던스",
+      "차기 CEO 선임",
+      "의회 증언 일정"
+     ],
+     "sources": [
+      {
+       "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+       "meta": "11.14 20:39 · 조회 6,500",
+       "url": "https://t.me/insidertracking/69276"
+      },
+      {
+       "name": "🗽엄브렐라(Umbrella Research) 리서치+ 네프콘 옆집부자형 since 2020",
+       "meta": "11.14 20:25 · 조회 940",
+       "url": "https://t.me/umbrellaresearch/43359"
+      },
+      {
+       "name": "하나 중국/신흥국 전략 김경환",
+       "meta": "11.15 11:55 · 조회 812",
+       "url": "https://t.me/HANAchina/72151"
+      },
+      {
+       "name": "베가스풍류객 미국주식 이야기",
+       "meta": "11.15 11:21 · 조회 99",
+       "url": "https://t.me/vegastooza/1077"
+      }
      ],
      "numbers": [
       {
        "label": "종가",
-       "value": "182.40",
+       "value": "162.85",
+       "note": "미국 정규장 마감"
+      },
+      {
+       "label": "전일 대비",
+       "value": "-2.01%",
        "note": ""
       },
       {
-       "label": "등락",
-       "value": "+2.8%",
-       "note": "전일 대비"
-      },
-      {
-       "label": "52주 범위",
-       "value": "예시 범위",
+       "label": "시가총액",
+       "value": "3.92조 달러",
        "note": ""
       },
       {
        "label": "선행 PER",
-       "value": "28.4배",
+       "value": "10.34배",
+       "note": "현재 PER 20.59배"
+      },
+      {
+       "label": "거래량",
+       "value": "평소의 2.60배",
+       "note": "최근 평균 대비"
+      },
+      {
+       "label": "1주 수익률",
+       "value": "-12.75%",
        "note": ""
+      },
+      {
+       "label": "연초 이후",
+       "value": "-12.68%",
+       "note": ""
+      },
+      {
+       "label": "52주 고점 대비",
+       "value": "-33.09%",
+       "note": ""
+      },
+      {
+       "label": "RSI(14)",
+       "value": "24.86",
+       "note": "70 이상 과열 · 30 이하 침체"
       },
       {
        "label": "목표주가 평균",
-       "value": "+18%",
-       "note": "현재가 대비 여력"
+       "value": "286.12",
+       "note": "애널리스트 평균"
       },
       {
        "label": "다음 실적",
-       "value": "11.19",
+       "value": "11.17 장후",
        "note": ""
       }
      ],
-     "numbersSource": "Finviz (예시)",
-     "timeline": [
-      {
-       "label": "05시",
-       "count": 4
-      },
-      {
-       "label": "06시",
-       "count": 4
-      },
-      {
-       "label": "07시",
-       "count": 6
-      },
-      {
-       "label": "08시",
-       "count": 7
-      },
-      {
-       "label": "09시",
-       "count": 11
-      },
-      {
-       "label": "10시",
-       "count": 16
-      },
-      {
-       "label": "11시",
-       "count": 16
-      },
-      {
-       "label": "12시",
-       "count": 20
-      },
-      {
-       "label": "13시",
-       "count": 22
-      },
-      {
-       "label": "14시",
-       "count": 19
-      },
-      {
-       "label": "15시",
-       "count": 17
-      },
-      {
-       "label": "16시",
-       "count": 16
-      },
-      {
-       "label": "17시",
-       "count": 13
-      },
-      {
-       "label": "18시",
-       "count": 7
-      },
-      {
-       "label": "19시",
-       "count": 5
-      },
-      {
-       "label": "20시",
-       "count": 7
-      },
-      {
-       "label": "21시",
-       "count": 3
-      },
-      {
-       "label": "22시",
-       "count": 4
-      },
-      {
-       "label": "23시",
-       "count": 4
-      },
-      {
-       "label": "00시",
-       "count": 4
-      },
-      {
-       "label": "01시",
-       "count": 5
-      },
-      {
-       "label": "02시",
-       "count": 5
-      },
-      {
-       "label": "03시",
-       "count": 4
-      },
-      {
-       "label": "04시",
-       "count": 5
-      }
-     ],
-     "views": [
-      {
-       "label": "텔레그램",
-       "count": 35,
-       "text": "리서치 채널은 실적과 수급 위주로 다뤘다.",
-       "who": "채널 A, 채널 C 외"
-      },
-      {
-       "label": "X",
-       "count": 7,
-       "text": "해외 계정은 경영진 발언과 제품 일정에 집중했다.",
-       "who": "팔로우 중인 계정 외"
-      }
-     ],
-     "watch": [
-      "11.19 실적 발표",
-      "경쟁사 발표",
-      "수급 변화"
-     ],
-     "sources": [
-      {
-       "name": "채널 A",
-       "meta": "1순위 · 04:50",
-       "url": "https://t.me/"
-      },
-      {
-       "name": "X 게시글",
-       "meta": "팔로잉 · 02:30",
-       "url": "https://t.me/"
-      }
-     ]
+     "numbersSource": "Finviz · 2026-11-15 새벽 수집"
+    },
+    "id": "c1",
+    "kicker": "3면 기업",
+    "title": "엔비디아",
+    "telegram": 86,
+    "x": 0,
+    "metrics": {
+     "price": "162.85",
+     "change": "-2.01%",
+     "earnings": "11.17 장후"
     }
    },
    {
+    "name": "AMD",
+    "ticker": "AMD",
+    "what": "엔비디아 공백의 반사 수혜 기대에 한 주 18.93% 올라 나스닥100 상승률 1위였지만, 13일 하루는 8.75% 내렸다.",
+    "detail": {
+     "summary": [
+      "주간 +18.93%로 엔비디아와 수익률 격차가 상장 이래 최대로 벌어졌다는 분석이 나왔다.",
+      "개인투자자들은 \"왕이 떠나고 여왕의 시대\"라는 서사를 붙였다.",
+      "다만 엔비디아가 해 오던 고객 금융 지원을 AMD가 대신할 수 있을지는 의문이라는 지적도 있다."
+     ],
+     "watch": [
+      "엔비디아 고객사의 칩 다변화 발표 여부",
+      "앤트로픽 사모 배정(AMD 참여) 이후 협력 소식"
+     ],
+     "sources": [
+      {
+       "name": "딘스티커 Dean's Ticker",
+       "meta": "11.14 21:19 · 조회 9,304",
+       "url": "https://t.me/d_ticker/4154"
+      },
+      {
+       "name": "TNBfolio",
+       "meta": "11.15 00:26 · 조회 5,595",
+       "url": "https://t.me/TNBfolio/72001"
+      },
+      {
+       "name": "IH Research",
+       "meta": "11.15 09:16 · 조회 1,268",
+       "url": "https://t.me/ihresearch/5092"
+      },
+      {
+       "name": "서화백의 그림놀이 🚀",
+       "meta": "11.14 23:04 · 조회 1,188",
+       "url": "https://t.me/easobi/17231"
+      },
+      {
+       "name": "퀄리티기업연구소",
+       "meta": "11.14 22:33 · 조회 331",
+       "url": "https://t.me/QualityInvestingLaboratory/21677"
+      },
+      {
+       "name": "연수르 해외주식",
+       "meta": "11.15 11:31 · 조회 222",
+       "url": "https://t.me/yeonsour/5984"
+      }
+     ],
+     "numbers": [
+      {
+       "label": "종가",
+       "value": "534.06",
+       "note": "미국 정규장 마감"
+      },
+      {
+       "label": "전일 대비",
+       "value": "-8.75%",
+       "note": ""
+      },
+      {
+       "label": "시가총액",
+       "value": "8,759억 달러",
+       "note": ""
+      },
+      {
+       "label": "선행 PER",
+       "value": "29.97배",
+       "note": "현재 PER 116.08배"
+      },
+      {
+       "label": "거래량",
+       "value": "평소의 2.04배",
+       "note": "최근 평균 대비"
+      },
+      {
+       "label": "1주 수익률",
+       "value": "+18.93%",
+       "note": ""
+      },
+      {
+       "label": "연초 이후",
+       "value": "+149.37%",
+       "note": ""
+      },
+      {
+       "label": "52주 고점 대비",
+       "value": "-18.90%",
+       "note": ""
+      },
+      {
+       "label": "RSI(14)",
+       "value": "50.36",
+       "note": "70 이상 과열 · 30 이하 침체"
+      },
+      {
+       "label": "목표주가 평균",
+       "value": "660.94",
+       "note": "애널리스트 평균"
+      },
+      {
+       "label": "다음 실적",
+       "value": "11.3 장후",
+       "note": ""
+      }
+     ],
+     "numbersSource": "Finviz · 2026-11-15 새벽 수집"
+    },
     "id": "c2",
-    "name": "테슬라",
-    "title": "테슬라",
-    "ticker": "TSLA",
-    "telegram": 19,
-    "x": 8,
-    "metrics": {
-     "price": "342.10",
-     "change": "-1.2%",
-     "earnings": "1.28"
-    },
-    "what": "자율주행 서비스 확대 계획과 로봇 사업 일정이 화제였다.",
     "kicker": "3면 기업",
-    "channels": 19,
-    "detail": {
-     "summary": [
-      "자율주행 서비스 확대 계획과 로봇 사업 일정이 화제였다.",
-      "로보택시 운행 지역 확대 일정",
-      "차량 판매 둔화와 가격 정책",
-      "로봇 사업의 실제 매출 시점"
-     ],
-     "numbers": [
-      {
-       "label": "종가",
-       "value": "342.10",
-       "note": ""
-      },
-      {
-       "label": "등락",
-       "value": "-1.2%",
-       "note": "전일 대비"
-      },
-      {
-       "label": "52주 범위",
-       "value": "예시 범위",
-       "note": ""
-      },
-      {
-       "label": "선행 PER",
-       "value": "28.4배",
-       "note": ""
-      },
-      {
-       "label": "목표주가 평균",
-       "value": "+18%",
-       "note": "현재가 대비 여력"
-      },
-      {
-       "label": "다음 실적",
-       "value": "1.28",
-       "note": ""
-      }
-     ],
-     "numbersSource": "Finviz (예시)",
-     "timeline": [
-      {
-       "label": "05시",
-       "count": 3
-      },
-      {
-       "label": "06시",
-       "count": 5
-      },
-      {
-       "label": "07시",
-       "count": 5
-      },
-      {
-       "label": "08시",
-       "count": 9
-      },
-      {
-       "label": "09시",
-       "count": 10
-      },
-      {
-       "label": "10시",
-       "count": 15
-      },
-      {
-       "label": "11시",
-       "count": 20
-      },
-      {
-       "label": "12시",
-       "count": 20
-      },
-      {
-       "label": "13시",
-       "count": 23
-      },
-      {
-       "label": "14시",
-       "count": 21
-      },
-      {
-       "label": "15시",
-       "count": 18
-      },
-      {
-       "label": "16시",
-       "count": 15
-      },
-      {
-       "label": "17시",
-       "count": 11
-      },
-      {
-       "label": "18시",
-       "count": 7
-      },
-      {
-       "label": "19시",
-       "count": 8
-      },
-      {
-       "label": "20시",
-       "count": 4
-      },
-      {
-       "label": "21시",
-       "count": 6
-      },
-      {
-       "label": "22시",
-       "count": 5
-      },
-      {
-       "label": "23시",
-       "count": 2
-      },
-      {
-       "label": "00시",
-       "count": 3
-      },
-      {
-       "label": "01시",
-       "count": 3
-      },
-      {
-       "label": "02시",
-       "count": 5
-      },
-      {
-       "label": "03시",
-       "count": 2
-      },
-      {
-       "label": "04시",
-       "count": 4
-      }
-     ],
-     "views": [
-      {
-       "label": "텔레그램",
-       "count": 19,
-       "text": "리서치 채널은 실적과 수급 위주로 다뤘다.",
-       "who": "채널 A, 채널 C 외"
-      },
-      {
-       "label": "X",
-       "count": 8,
-       "text": "해외 계정은 경영진 발언과 제품 일정에 집중했다.",
-       "who": "팔로우 중인 계정 외"
-      }
-     ],
-     "watch": [
-      "1.28 실적 발표",
-      "경쟁사 발표",
-      "수급 변화"
-     ],
-     "sources": [
-      {
-       "name": "채널 A",
-       "meta": "1순위 · 04:50",
-       "url": "https://t.me/"
-      },
-      {
-       "name": "X 게시글",
-       "meta": "팔로잉 · 02:30",
-       "url": "https://t.me/"
-      }
-     ]
+    "title": "AMD",
+    "telegram": 21,
+    "x": 0,
+    "metrics": {
+     "price": "534.06",
+     "change": "-8.75%",
+     "earnings": "11.3 장후"
     }
    },
    {
-    "id": "c3",
-    "name": "삼성전자",
-    "title": "삼성전자",
-    "ticker": "005930",
-    "telegram": 21,
-    "x": 2,
-    "metrics": {
-     "price": "61,200원",
-     "change": "+1.5%",
-     "earnings": "1.8"
-    },
-    "what": "고대역폭 메모리 공급 계약과 메모리 가격 반등 여부가 거론됐다.",
-    "kicker": "3면 기업",
-    "channels": 21,
+    "name": "브로드컴",
+    "ticker": "AVGO",
+    "what": "주간 18.16% 올라 나스닥100 상승률 2위였지만 13일에는 AI 하드웨어 동반 약세에 4.76% 내렸다. 맞춤형 칩(ASIC) 수요 확대 기대가 이어진다.",
     "detail": {
      "summary": [
-      "고대역폭 메모리 공급 계약과 메모리 가격 반등 여부가 거론됐다.",
-      "고대역폭 메모리 납품 확대",
-      "범용 메모리 가격 흐름",
-      "파운드리 수주 소식"
+      "대만 기관들은 클라우드 기업의 ASIC 투자 확대로 브로드컴 생태계 수혜를 거론했다.",
+      "다음 실적은 12월 9일(현지) 장 마감 후로 잡혀 있다(Finviz)."
+     ],
+     "watch": [
+      "12.9 실적 발표"
+     ],
+     "sources": [
+      {
+       "name": "TNBfolio",
+       "meta": "11.15 00:26 · 조회 5,595",
+       "url": "https://t.me/TNBfolio/72001"
+      },
+      {
+       "name": "IH Research",
+       "meta": "11.15 09:16 · 조회 1,268",
+       "url": "https://t.me/ihresearch/5092"
+      },
+      {
+       "name": "서화백의 그림놀이 🚀",
+       "meta": "11.14 23:04 · 조회 1,188",
+       "url": "https://t.me/easobi/17231"
+      },
+      {
+       "name": "퀄리티기업연구소",
+       "meta": "11.14 22:33 · 조회 331",
+       "url": "https://t.me/QualityInvestingLaboratory/21677"
+      },
+      {
+       "name": "연수르 해외주식",
+       "meta": "11.15 11:31 · 조회 222",
+       "url": "https://t.me/yeonsour/5984"
+      }
      ],
      "numbers": [
       {
        "label": "종가",
-       "value": "61,200원",
+       "value": "347.01",
+       "note": "미국 정규장 마감"
+      },
+      {
+       "label": "전일 대비",
+       "value": "-4.76%",
        "note": ""
       },
       {
-       "label": "등락",
-       "value": "+1.5%",
-       "note": "전일 대비"
-      },
-      {
-       "label": "52주 범위",
-       "value": "예시 범위",
+       "label": "시가총액",
+       "value": "1.66조 달러",
        "note": ""
       },
       {
        "label": "선행 PER",
-       "value": "28.4배",
+       "value": "17.96배",
+       "note": "현재 PER 44.30배"
+      },
+      {
+       "label": "거래량",
+       "value": "평소의 1.26배",
+       "note": "최근 평균 대비"
+      },
+      {
+       "label": "1주 수익률",
+       "value": "+18.16%",
        "note": ""
+      },
+      {
+       "label": "연초 이후",
+       "value": "+0.26%",
+       "note": ""
+      },
+      {
+       "label": "52주 고점 대비",
+       "value": "-29.90%",
+       "note": ""
+      },
+      {
+       "label": "RSI(14)",
+       "value": "53.19",
+       "note": "70 이상 과열 · 30 이하 침체"
       },
       {
        "label": "목표주가 평균",
-       "value": "+18%",
-       "note": "현재가 대비 여력"
+       "value": "526.19",
+       "note": "애널리스트 평균"
       },
       {
        "label": "다음 실적",
-       "value": "1.8",
+       "value": "12.9 장후",
        "note": ""
       }
      ],
-     "numbersSource": "Finviz (예시)",
-     "timeline": [
-      {
-       "label": "05시",
-       "count": 6
-      },
-      {
-       "label": "06시",
-       "count": 3
-      },
-      {
-       "label": "07시",
-       "count": 7
-      },
-      {
-       "label": "08시",
-       "count": 8
-      },
-      {
-       "label": "09시",
-       "count": 13
-      },
-      {
-       "label": "10시",
-       "count": 14
-      },
-      {
-       "label": "11시",
-       "count": 20
-      },
-      {
-       "label": "12시",
-       "count": 19
-      },
-      {
-       "label": "13시",
-       "count": 23
-      },
-      {
-       "label": "14시",
-       "count": 20
-      },
-      {
-       "label": "15시",
-       "count": 17
-      },
-      {
-       "label": "16시",
-       "count": 14
-      },
-      {
-       "label": "17시",
-       "count": 11
-      },
-      {
-       "label": "18시",
-       "count": 6
-      },
-      {
-       "label": "19시",
-       "count": 5
-      },
-      {
-       "label": "20시",
-       "count": 3
-      },
-      {
-       "label": "21시",
-       "count": 2
-      },
-      {
-       "label": "22시",
-       "count": 2
-      },
-      {
-       "label": "23시",
-       "count": 2
-      },
-      {
-       "label": "00시",
-       "count": 3
-      },
-      {
-       "label": "01시",
-       "count": 5
-      },
-      {
-       "label": "02시",
-       "count": 3
-      },
-      {
-       "label": "03시",
-       "count": 5
-      },
-      {
-       "label": "04시",
-       "count": 5
-      }
-     ],
-     "views": [
-      {
-       "label": "텔레그램",
-       "count": 21,
-       "text": "리서치 채널은 실적과 수급 위주로 다뤘다.",
-       "who": "채널 A, 채널 C 외"
-      },
-      {
-       "label": "X",
-       "count": 2,
-       "text": "해외 계정은 경영진 발언과 제품 일정에 집중했다.",
-       "who": "팔로우 중인 계정 외"
-      }
+     "numbersSource": "Finviz · 2026-11-15 새벽 수집"
+    },
+    "id": "c3",
+    "kicker": "3면 기업",
+    "title": "브로드컴",
+    "telegram": 10,
+    "x": 0,
+    "metrics": {
+     "price": "347.01",
+     "change": "-4.76%",
+     "earnings": "12.9 장후"
+    }
+   },
+   {
+    "name": "코어위브",
+    "ticker": "CRWV",
+    "what": "메타와의 계약을 담보로 40억 달러 대출을 추진한다. 목표 조달 금리 약 7.5%로, 자사 무담보채 수익률(약 16%)의 절반 이하다.",
+    "detail": {
+     "summary": [
+      "AA등급 메타의 신용을 빌려 자체 신용 위험을 우회하는 구조라는 해석이다.",
+      "올가을 AI 자금 조달 우려로 무담보채 가격이 급락했던 터라 조달 비용이 핵심 변수다."
      ],
      "watch": [
-      "1.8 실적 발표",
-      "경쟁사 발표",
-      "수급 변화"
+      "대출 확정 여부와 금리"
      ],
      "sources": [
       {
-       "name": "채널 A",
-       "meta": "1순위 · 04:50",
-       "url": "https://t.me/"
+       "name": "딘스티커 Dean's Ticker",
+       "meta": "11.14 22:13 · 조회 3,127",
+       "url": "https://t.me/d_ticker/4155"
       },
       {
-       "name": "X 게시글",
-       "meta": "팔로잉 · 02:30",
-       "url": "https://t.me/"
+       "name": "테크밸리 Insight",
+       "meta": "11.14 22:58 · 조회 1,367",
+       "url": "https://t.me/triple_stock/17472"
+      },
+      {
+       "name": "서화백의 그림놀이 🚀",
+       "meta": "11.14 19:04 · 조회 1,294",
+       "url": "https://t.me/easobi/17230"
+      },
+      {
+       "name": "퀄리티기업연구소",
+       "meta": "11.14 22:33 · 조회 263",
+       "url": "https://t.me/QualityInvestingLaboratory/21676"
       }
-     ]
+     ],
+     "numbers": [
+      {
+       "label": "종가",
+       "value": "53.13",
+       "note": "미국 정규장 마감"
+      },
+      {
+       "label": "전일 대비",
+       "value": "-6.13%",
+       "note": ""
+      },
+      {
+       "label": "시가총액",
+       "value": "292억 달러",
+       "note": ""
+      },
+      {
+       "label": "거래량",
+       "value": "평소의 1.80배",
+       "note": "최근 평균 대비"
+      },
+      {
+       "label": "1주 수익률",
+       "value": "+14.50%",
+       "note": ""
+      },
+      {
+       "label": "연초 이후",
+       "value": "-25.81%",
+       "note": ""
+      },
+      {
+       "label": "52주 고점 대비",
+       "value": "-61.57%",
+       "note": ""
+      },
+      {
+       "label": "RSI(14)",
+       "value": "43.11",
+       "note": "70 이상 과열 · 30 이하 침체"
+      },
+      {
+       "label": "목표주가 평균",
+       "value": "114.13",
+       "note": "애널리스트 평균"
+      },
+      {
+       "label": "다음 실적",
+       "value": "11.10 장후",
+       "note": ""
+      }
+     ],
+     "numbersSource": "Finviz · 2026-11-15 새벽 수집"
+    },
+    "id": "c4",
+    "kicker": "3면 기업",
+    "title": "코어위브",
+    "telegram": 9,
+    "x": 0,
+    "metrics": {
+     "price": "53.13",
+     "change": "-6.13%",
+     "earnings": "11.10 장후"
+    }
+   },
+   {
+    "name": "시스코",
+    "ticker": "CSCO",
+    "what": "EPS와 매출이 모두 예상을 넘었지만(EPS +5.6%, 매출 +2.2%) 매출총이익률 하락과 주문 증가율 둔화로 실적 다음 날 6.24% 내렸다.",
+    "detail": {
+     "summary": [
+      "AI 네트워킹 장비 비중이 커지고 메모리 원가가 오르며 마진이 깎였다는 분석이다.",
+      "제품 주문 증가율은 전 분기 35%에서 21%로 둔화됐다고 텔레그램 채널이 전했다."
+     ],
+     "watch": [
+      "다음 분기 가이던스 이행 여부"
+     ],
+     "sources": [
+      {
+       "name": "연수르 해외주식",
+       "meta": "11.15 11:31 · 조회 240",
+       "url": "https://t.me/yeonsour/5986"
+      }
+     ],
+     "numbers": [
+      {
+       "label": "종가",
+       "value": "95.64",
+       "note": "미국 정규장 마감"
+      },
+      {
+       "label": "전일 대비",
+       "value": "-6.24%",
+       "note": ""
+      },
+      {
+       "label": "시가총액",
+       "value": "3,765억 달러",
+       "note": ""
+      },
+      {
+       "label": "선행 PER",
+       "value": "16.09배",
+       "note": "현재 PER 25.49배"
+      },
+      {
+       "label": "거래량",
+       "value": "평소의 1.54배",
+       "note": "최근 평균 대비"
+      },
+      {
+       "label": "1주 수익률",
+       "value": "+1.91%",
+       "note": ""
+      },
+      {
+       "label": "연초 이후",
+       "value": "+24.16%",
+       "note": ""
+      },
+      {
+       "label": "52주 고점 대비",
+       "value": "-26.64%",
+       "note": ""
+      },
+      {
+       "label": "RSI(14)",
+       "value": "37.06",
+       "note": "70 이상 과열 · 30 이하 침체"
+      },
+      {
+       "label": "목표주가 평균",
+       "value": "131.48",
+       "note": "애널리스트 평균"
+      },
+      {
+       "label": "다음 실적",
+       "value": "11.12 장후",
+       "note": ""
+      }
+     ],
+     "numbersSource": "Finviz · 2026-11-15 새벽 수집"
+    },
+    "id": "c5",
+    "kicker": "3면 기업",
+    "title": "시스코",
+    "telegram": 8,
+    "x": 0,
+    "metrics": {
+     "price": "95.64",
+     "change": "-6.24%",
+     "earnings": "11.12 장후"
+    }
+   },
+   {
+    "name": "테슬라",
+    "ticker": "TSLA",
+    "what": "핸들 없는 2인승 무인차 사이버캡의 개인 예약을 초청 방식으로 열었다. 시작가 2만9,990달러, 첫 인도는 12월 예정이다.",
+    "detail": {
+     "summary": [
+      "테슬라에서 가장 싼 모델이 될 전망이다.",
+      "규제 당국 조사 등 자율주행 상용화의 규제 변수가 남아 있다는 지적이 나왔다."
+     ],
+     "watch": [
+      "12월 첫 인도",
+      "규제 당국 조사 진행"
+     ],
+     "sources": [
+      {
+       "name": "습관이 부자를 만든다. 🧘",
+       "meta": "11.15 11:02 · 조회 1,891",
+       "url": "https://t.me/habit4117/87997"
+      },
+      {
+       "name": "하나 중국/신흥국 전략 김경환",
+       "meta": "11.14 21:52 · 조회 1,824",
+       "url": "https://t.me/HANAchina/72132"
+      },
+      {
+       "name": "서화백의 그림놀이 🚀",
+       "meta": "11.14 23:04 · 조회 1,188",
+       "url": "https://t.me/easobi/17231"
+      }
+     ],
+     "numbers": [
+      {
+       "label": "종가",
+       "value": "390.22",
+       "note": "미국 정규장 마감"
+      },
+      {
+       "label": "전일 대비",
+       "value": "-1.82%",
+       "note": ""
+      },
+      {
+       "label": "시가총액",
+       "value": "1.54조 달러",
+       "note": ""
+      },
+      {
+       "label": "선행 PER",
+       "value": "193.45배",
+       "note": "현재 PER 429.24배"
+      },
+      {
+       "label": "거래량",
+       "value": "평소의 0.86배",
+       "note": "최근 평균 대비"
+      },
+      {
+       "label": "1주 수익률",
+       "value": "+8.93%",
+       "note": ""
+      },
+      {
+       "label": "연초 이후",
+       "value": "-13.23%",
+       "note": ""
+      },
+      {
+       "label": "52주 고점 대비",
+       "value": "-21.77%",
+       "note": ""
+      },
+      {
+       "label": "RSI(14)",
+       "value": "53.54",
+       "note": "70 이상 과열 · 30 이하 침체"
+      },
+      {
+       "label": "목표주가 평균",
+       "value": "423.70",
+       "note": "애널리스트 평균"
+      },
+      {
+       "label": "다음 실적",
+       "value": "10.21 장후",
+       "note": ""
+      }
+     ],
+     "numbersSource": "Finviz · 2026-11-15 새벽 수집"
+    },
+    "id": "c6",
+    "kicker": "3면 기업",
+    "title": "테슬라",
+    "telegram": 8,
+    "x": 0,
+    "metrics": {
+     "price": "390.22",
+     "change": "-1.82%",
+     "earnings": "10.21 장후"
     }
    }
   ]
  },
  "social": {
   "debate": {
-   "id": "d1",
-   "title": "AI 데이터센터 투자, 거품인가 이제 시작인가",
-   "kicker": "4면 오늘의 논쟁",
-   "confidence": "rumor",
+   "title": "젠슨 황 퇴진, AI 버블 붕괴 신호인가 저가 매수 기회인가",
+   "confidence": "partial",
    "signals": [
-    "X 언급 급증",
-    "레딧 인기글 3건",
-    "유튜브 요약 2건",
-    "텔레그램 9개 채널"
+    "엔비디아 주간 -12.75%",
+    "AMD·브로드컴 +18%대",
+    "버리 하락 베팅 보도"
    ],
    "positions": [
     {
-     "label": "A · 거품론",
-     "share": 45,
-     "color": "#C2410C",
-     "confidence": "rumor",
-     "claim": "설비투자 속도에 비해 AI 서비스 매출이 너무 느리다는 주장.",
-     "basis": "설비투자 증가율과 클라우드 매출 증가율의 차이",
-     "where": "X 경제 계정, 레딧"
-    },
-    {
-     "label": "B · 이제 시작론",
-     "share": 35,
-     "color": "#1F4FD8",
-     "confidence": "rumor",
-     "claim": "추론 수요가 본격적으로 늘기 시작했고 공급이 부족하다는 주장.",
-     "basis": "전력 계약과 장비 주문 잔고",
-     "where": "텔레그램 리서치 채널, 유튜브"
-    },
-    {
-     "label": "C · 선별론",
-     "share": 20,
-     "color": "#5B6472",
+     "label": "A · 신용 사슬 경고",
+     "share": 40,
      "confidence": "partial",
-     "claim": "전체는 과열이어도 실제 매출을 내는 기업과 아닌 기업이 갈린다는 주장.",
-     "basis": "기업별 AI 매출 공개 여부",
-     "where": "스레드, 텔레그램"
+     "claim": "엔비디아가 지분 투자·보증으로 돌려 온 AI 순환 금융이 멈추면, 신용도가 약한 네오클라우드부터 자금줄이 끊기는 \"AI판 양적긴축\"이 온다.",
+     "basis": "5,000억 달러가 넘는 엔비디아발 순환 금융 추정(골드만삭스·UBS 경고를 전한 중국 언론), 코어위브 무담보채 수익률 약 16%, 마이클 버리의 나스닥100·반도체 풋옵션 확대 보도",
+     "where": "텔레그램(월가·중국 언론 인용), X",
+     "color": "#C2410C"
+    },
+    {
+     "label": "B · 1998년형 조정",
+     "share": 35,
+     "confidence": "partial",
+     "claim": "지금은 이익이 주가보다 빨리 늘어 2000년 거품과 다르다. 경영 공백은 일시적 충격이고 조정 뒤 상승이 이어질 수 있다.",
+     "basis": "1995~2000년 주가 +680%·이익 +180% vs 2020년 이후 주가 +300%·이익 +400%, 기술주 선행 PER 17배(2000년 48배), 2027년 상반기 주문 확정 분석",
+     "where": "텔레그램, 국내 개인투자자",
+     "color": "#1D4ED8"
+    },
+    {
+     "label": "C · 실적이 가른다",
+     "share": 25,
+     "confidence": "partial",
+     "claim": "17일 데이터센터 매출·가이던스와 고객 이탈 여부를 확인하기 전에는 어느 쪽도 단정할 수 없다.",
+     "basis": "한 클라우드 고객의 AMD·구글 칩 검토 보도, 임시 CEO의 보수적 재무 성향",
+     "where": "텔레그램 시황 채널",
+     "color": "#6B7280"
     }
    ],
-   "known": "주요 빅테크가 내년 설비투자 확대 계획을 밝혔다.",
-   "unknown": "AI 서비스 매출이 투자를 언제 따라잡을지.",
+   "known": "엔비디아는 11.9~13 주간 12.75% 내렸고 AMD·브로드컴은 18%대 올랐다. 코어위브는 메타 계약을 담보로 7.5% 금리 대출을 추진할 만큼 자체 신용 조달 비용이 높다.",
+   "unknown": "고객사가 실제로 다른 칩으로 옮기는지, 새 경영진이 고객 금융 지원을 얼마나 줄일지.",
    "detail": {
     "summary": [
-     "거품론이 언급의 절반 가까이를 차지했다.",
-     "실적 시즌을 앞두고 양쪽 근거가 숫자 싸움으로 번졌다.",
-     "확인된 사실과 해석을 나눠 읽어야 한다."
+     "경고론의 핵심은 \"누가 AI 투자 자금을 대 왔나\"다. 엔비디아가 고객사 지분·구매 보증으로 수요를 받쳐 왔다면, 그 역할이 줄 때 가장 약한 고리(네오클라우드 신용)부터 흔들린다는 논리다.",
+     "낙관론은 숫자로 반박한다. 2000년과 달리 이익 증가가 주가 상승을 앞서고 밸류에이션도 절반 이하라는 것이다.",
+     "두 주장 모두 이번 주 엔비디아 실적(17일)과 앤트로픽 상장 첫날(19일)이 첫 판정이 된다."
     ],
-    "timeline": [
+    "logic": [
      {
-      "label": "05시",
-      "count": 5
+      "step": "전제",
+      "text": "엔비디아는 고객사 지분 투자·구매 보증으로 AI 생태계의 자금줄 역할을 해 왔다(\"AI의 중앙은행\")."
      },
      {
-      "label": "06시",
-      "count": 3
+      "step": "근거",
+      "text": "임시 CEO는 재무통이고, 오픈AI 대상 대규모 신용 지원에 이의를 제기해 왔다는 보도가 있다."
      },
      {
-      "label": "07시",
-      "count": 3
+      "step": "연결",
+      "text": "지원이 줄면 자체 신용이 약한 네오클라우드의 조달 비용이 오른다(코어위브 무담보채 약 16%)."
      },
      {
-      "label": "08시",
-      "count": 2
-     },
-     {
-      "label": "09시",
-      "count": 6
-     },
-     {
-      "label": "10시",
-      "count": 2
-     },
-     {
-      "label": "11시",
-      "count": 5
-     },
-     {
-      "label": "12시",
-      "count": 5
-     },
-     {
-      "label": "13시",
-      "count": 7
-     },
-     {
-      "label": "14시",
-      "count": 8
-     },
-     {
-      "label": "15시",
-      "count": 10
-     },
-     {
-      "label": "16시",
-      "count": 14
-     },
-     {
-      "label": "17시",
-      "count": 16
-     },
-     {
-      "label": "18시",
-      "count": 20
-     },
-     {
-      "label": "19시",
-      "count": 21
-     },
-     {
-      "label": "20시",
-      "count": 22
-     },
-     {
-      "label": "21시",
-      "count": 18
-     },
-     {
-      "label": "22시",
-      "count": 13
-     },
-     {
-      "label": "23시",
-      "count": 9
-     },
-     {
-      "label": "00시",
-      "count": 7
-     },
-     {
-      "label": "01시",
-      "count": 8
-     },
-     {
-      "label": "02시",
-      "count": 3
-     },
-     {
-      "label": "03시",
-      "count": 4
-     },
-     {
-      "label": "04시",
-      "count": 5
+      "step": "결론",
+      "text": "GPU 주문이 줄고 AI 투자 사이클이 둔화한다 → A 입장. 반대로 수요가 진짜라면 다른 자금원이 빈자리를 메운다 → B 입장."
      }
     ],
-    "background": "설비투자 규모가 커질수록 회수 시점 논쟁도 커지고 있다.",
+    "checks": [
+     {
+      "item": "엔비디아·AMD·브로드컴 주간 등락",
+      "value": "-12.75% / +18.93% / +18.16%",
+      "sources": [
+       {
+        "name": "Finviz (11.15 새벽 수집)"
+       },
+       {
+        "name": "텔레그램 채널 (퀄리티기업연구소)"
+       }
+      ],
+      "verdict": "일치"
+     },
+     {
+      "item": "코어위브 조달 금리",
+      "value": "메타 담보 대출 목표 약 7.5%, 무담보채 수익률 약 16%",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (테크밸리 Insight)"
+       }
+      ],
+      "verdict": "단일 출처"
+     },
+     {
+      "item": "버리의 하락 베팅",
+      "value": "나스닥100 풋옵션 확대, 반도체지수 풋 재설정(보도)",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (하나 중국/신흥국 전략)"
+       },
+       {
+        "name": "텔레그램 채널 (한투증권 미국/중국전략)"
+       }
+      ],
+      "verdict": "단일 출처"
+     },
+     {
+      "item": "1998년 비교 숫자",
+      "value": "1995~2000 주가 +680%·이익 +180%, 2020 이후 주가 +300%·이익 +400%",
+      "sources": [
+       {
+        "name": "텔레그램 채널 (퀄리티기업연구소)"
+       }
+      ],
+      "verdict": "단일 출처"
+     }
+    ],
+    "counter": [
+     "A의 약점: 엔비디아 순환 금융 규모(5,000억 달러+)는 언론 추정이고, 실제 보증 잔액은 공시로 확인되지 않았다.",
+     "B의 약점: 이익 증가가 AI 설비투자에 몰려 있어, 투자 사이클이 꺾이면 이익 추정치도 함께 내려갈 수 있다.",
+     "두 입장 모두 한 주의 주가 움직임을 과대 해석할 위험이 있다."
+    ],
+    "test": [
+     "17일 엔비디아 데이터센터 매출·가이던스",
+     "네오클라우드(코어위브 등) 회사채 금리",
+     "19일 앤트로픽 공모가가 범위 상단인지"
+    ],
+    "background": "엔비디아는 고객사 지분 투자와 구매 보증으로 AI 생태계 자금줄 역할을 해 왔다는 평가를 받는다. 창업자 퇴진으로 그 역할이 이어질지가 논쟁의 출발점이다.",
     "watch": [
-     "이번 주 빅테크 실적 발언",
-     "데이터센터 전력 계약 뉴스"
+     "11.17 엔비디아 실적",
+     "11.19 앤트로픽 상장 첫날"
     ],
     "sources": [
      {
-      "name": "X 게시글 묶음",
-      "meta": "추천·팔로잉",
-      "url": "https://t.me/"
+      "name": "딘스티커 Dean's Ticker",
+      "meta": "11.14 21:19 · 조회 9,304",
+      "url": "https://t.me/d_ticker/4154"
      },
      {
-      "name": "레딧 r/stocks",
-      "meta": "인기글",
-      "url": "https://t.me/"
+      "name": "습관이 부자를 만든다. 🧘",
+      "meta": "11.14 14:16 · 조회 9,236",
+      "url": "https://t.me/habit4117/87975"
+     },
+     {
+      "name": "한투증권 미국/중국전략 정정영",
+      "meta": "11.14 13:29 · 조회 6,187",
+      "url": "https://t.me/G2strategy/34452"
+     },
+     {
+      "name": "급등일보 미국주식🇺🇸 속보·매크로·리서치",
+      "meta": "11.14 18:06 · 조회 4,818",
+      "url": "https://t.me/FastStockNewsUSA/24475"
+     },
+     {
+      "name": "하나 중국/신흥국 전략 김경환",
+      "meta": "11.14 13:52 · 조회 2,253",
+      "url": "https://t.me/HANAchina/72112"
+     },
+     {
+      "name": "COINNESS News Feed (코인니스)",
+      "meta": "11.14 21:58 · 조회 919",
+      "url": "https://t.me/coinnesskr/238113"
+     },
+     {
+      "name": "뺀지뤼의 SKLab.(스크랩)",
+      "meta": "11.14 14:24 · 조회 720",
+      "url": "https://t.me/bbanjil/145704"
+     },
+     {
+      "name": "퀄리티기업연구소",
+      "meta": "11.14 20:20 · 조회 551",
+      "url": "https://t.me/QualityInvestingLaboratory/21674"
      }
     ]
-   }
+   },
+   "id": "d1",
+   "kicker": "4면 오늘의 논쟁"
   },
   "buzz": [
    {
+    "where": "텔레그램(중국 언론 인용)",
+    "title": "메모리 3사, 엔비디아 HBM 우대를 다시 따질까",
+    "confidence": "rumor",
+    "note": "엔비디아의 HBM 구매 비중이 66%→58%→37%로 줄어든다는 추정을 근거로, 삼성·SK하이닉스·마이크론이 주던 할인과 우선 배정이 약해질 수 있다는 가설이다.",
+    "detail": {
+     "summary": [
+      "메모리 3사는 엔비디아 장기 주문을 지키려고 AMD·구글보다 낮은 값에 HBM을 공급해 왔다고 전해진다.",
+      "엔비디아 비중이 줄고 새 경영진이 보수적이면, 우대를 계속할 이유가 약해진다는 논리다."
+     ],
+     "logic": [
+      {
+       "step": "전제",
+       "text": "메모리 업체가 최대 고객 엔비디아에 가격 할인·우선 배정을 줘 왔다."
+      },
+      {
+       "step": "근거",
+       "text": "엔비디아의 세계 HBM 구매 비중 추정: 2025년 66% → 2026년 58% → 2027년 37%."
+      },
+      {
+       "step": "연결",
+       "text": "AMD·구글 등 다른 고객 비중이 커지면 엔비디아에만 싸게 줄 이유가 줄어든다. 임시 CEO가 구매 금융 보증에 소극적이라는 보도도 있다."
+      },
+      {
+       "step": "결론",
+       "text": "HBM 협상력이 메모리 업체 쪽으로 옮겨 가면 메모리 업체 마진에는 긍정적, 엔비디아 원가에는 부담."
+      }
+     ],
+     "checks": [
+      {
+       "item": "HBM 구매 비중 추정",
+       "value": "66% / 58% / 37%",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (하나 중국/신흥국 전략)"
+        },
+        {
+         "name": "텔레그램 채널 (테크밸리 Insight)"
+        }
+       ],
+       "verdict": "단일 출처"
+      },
+      {
+       "item": "SK하이닉스 ADR 13일",
+       "value": "-4.30%",
+       "sources": [
+        {
+         "name": "Finviz (11.15 새벽 수집)"
+        }
+       ],
+       "verdict": "단일 출처"
+      }
+     ],
+     "counter": [
+      "기존 장기 계약 때문에 조건이 바로 바뀌지는 않는다.",
+      "비중이 줄어도 엔비디아는 여전히 최대 고객이라 협상력이 크게 바뀌지 않을 수 있다."
+     ],
+     "test": [
+      "다음 분기 메모리 업체 실적 발표의 HBM 가격 언급",
+      "엔비디아 실적에서 매출총이익률 변화"
+     ],
+     "sources": [
+      {
+       "name": "TNBfolio",
+       "meta": "11.15 00:26 · 조회 5,595",
+       "url": "https://t.me/TNBfolio/72001"
+      },
+      {
+       "name": "하나 중국/신흥국 전략 김경환",
+       "meta": "11.15 08:03 · 조회 3,010",
+       "url": "https://t.me/HANAchina/72140"
+      },
+      {
+       "name": "인상주의 투자 인생 업그레이드노트",
+       "meta": "11.15 08:04 · 조회 708",
+       "url": "https://t.me/insangnism/29584"
+      },
+      {
+       "name": "🗽엄브렐라(Umbrella Research) 리서치+ 네프콘 옆집부자형 since 2020",
+       "meta": "11.15 11:52 · 조회 307",
+       "url": "https://t.me/umbrellaresearch/43364"
+      },
+      {
+       "name": "연수르 해외주식",
+       "meta": "11.15 11:31 · 조회 222",
+       "url": "https://t.me/yeonsour/5984"
+      }
+     ]
+    },
     "id": "b1",
-    "where": "X",
-    "title": "실적은 숫자보다 가이던스라는 밈 확산",
-    "note": "실적 발표 전후 주가 반응을 두고 비슷한 해석이 퍼졌다.",
-    "confidence": "rumor",
-    "kicker": "5면 그 밖의 화제",
+    "kicker": "5면 그 밖의 화제"
+   },
+   {
+    "where": "텔레그램·레딧",
+    "title": "\"엔비디아는 네오클라우드의 중앙은행\" — 공백이 신용으로 번질까",
+    "confidence": "partial",
+    "note": "구형 GPU 재계약가가 원래보다 높다는 \"GPU 임대료 상승\" 서사로 네비우스·코어위브가 개인투자자 관심 2·3위에 올랐다. 동시에 엔비디아 공백이 이들의 자금줄을 흔든다는 경계가 커졌다.",
     "detail": {
      "summary": [
-      "실적 발표 전후 주가 반응을 두고 비슷한 해석이 퍼졌다.",
-      "확산 경로와 반응을 아래에 정리했다."
+      "네오클라우드는 GPU를 빌려 주는 신생 클라우드 업체다. GPU 임대료가 오르면 수익성이 좋아진다는 기대가 주가를 끌었다.",
+      "그러나 이들의 성장은 엔비디아의 물량 배정·투자에 기대 왔고, 자체 신용 조달 비용은 높다."
      ],
-     "timeline": [
+     "logic": [
       {
-       "label": "05시",
-       "count": 3
+       "step": "근거",
+       "text": "구형 GPU 재계약가가 원 계약가를 웃돈다는 업계 이야기 → 임대료 상승 서사."
       },
       {
-       "label": "06시",
-       "count": 4
+       "step": "근거",
+       "text": "코어위브는 메타 계약을 담보로 7.5% 대출을 추진, 자체 무담보채 수익률은 약 16%."
       },
       {
-       "label": "07시",
-       "count": 4
+       "step": "연결",
+       "text": "조달 비용이 높은 회사일수록 대주주·공급자(엔비디아)의 지원 여부에 민감하다."
       },
       {
-       "label": "08시",
-       "count": 6
-      },
-      {
-       "label": "09시",
-       "count": 3
-      },
-      {
-       "label": "10시",
-       "count": 5
-      },
-      {
-       "label": "11시",
-       "count": 5
-      },
-      {
-       "label": "12시",
-       "count": 8
-      },
-      {
-       "label": "13시",
-       "count": 12
-      },
-      {
-       "label": "14시",
-       "count": 16
-      },
-      {
-       "label": "15시",
-       "count": 20
-      },
-      {
-       "label": "16시",
-       "count": 22
-      },
-      {
-       "label": "17시",
-       "count": 20
-      },
-      {
-       "label": "18시",
-       "count": 19
-      },
-      {
-       "label": "19시",
-       "count": 20
-      },
-      {
-       "label": "20시",
-       "count": 15
-      },
-      {
-       "label": "21시",
-       "count": 9
-      },
-      {
-       "label": "22시",
-       "count": 8
-      },
-      {
-       "label": "23시",
-       "count": 8
-      },
-      {
-       "label": "00시",
-       "count": 4
-      },
-      {
-       "label": "01시",
-       "count": 3
-      },
-      {
-       "label": "02시",
-       "count": 2
-      },
-      {
-       "label": "03시",
-       "count": 5
-      },
-      {
-       "label": "04시",
-       "count": 2
+       "step": "결론",
+       "text": "임대료가 올라도 자금 조달이 막히면 성장이 꺾일 수 있다 — 두 이야기가 같은 회사에서 충돌한다."
       }
      ],
-     "views": [
+     "checks": [
       {
-       "label": "동의",
-       "count": 6,
-       "text": "그럴듯하다는 반응.",
-       "who": "댓글·인용"
+       "item": "관심 종목 순위",
+       "value": "네비우스 2위, 코어위브 3위 (레딧·X·서브스택 집계)",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (딘스티커)"
+        }
+       ],
+       "verdict": "단일 출처"
       },
       {
-       "label": "반박",
-       "count": 4,
-       "text": "근거가 약하다는 반응.",
-       "who": "댓글·인용"
+       "item": "코어위브 주가",
+       "value": "13일 -6.13%, 주간 +14.50%",
+       "sources": [
+        {
+         "name": "Finviz (11.15 새벽 수집)"
+        }
+       ],
+       "verdict": "단일 출처"
       }
+     ],
+     "counter": [
+      "메타처럼 신용도 높은 고객 계약을 담보로 쓰면 엔비디아 의존 없이도 자금을 구할 수 있다.",
+      "임대료 상승 서사는 일부 재계약 사례에 기댄 이야기다."
+     ],
+     "test": [
+      "코어위브 대출 확정 금리",
+      "네오클라우드 회사채 가격",
+      "GPU 시간당 임대료 지표"
      ],
      "sources": [
       {
-       "name": "X",
-       "meta": "원문 게시글",
-       "url": "https://t.me/"
+       "name": "딘스티커 Dean's Ticker",
+       "meta": "11.14 22:13 · 조회 3,127",
+       "url": "https://t.me/d_ticker/4155"
+      },
+      {
+       "name": "테크밸리 Insight",
+       "meta": "11.14 22:58 · 조회 1,367",
+       "url": "https://t.me/triple_stock/17472"
+      },
+      {
+       "name": "서화백의 그림놀이 🚀",
+       "meta": "11.14 19:04 · 조회 1,294",
+       "url": "https://t.me/easobi/17230"
+      },
+      {
+       "name": "퀄리티기업연구소",
+       "meta": "11.14 22:33 · 조회 263",
+       "url": "https://t.me/QualityInvestingLaboratory/21676"
       }
      ]
-    }
-   },
-   {
+    },
     "id": "b2",
-    "where": "레딧 r/wallstreetbets",
-    "title": "우주 테마 옵션 거래 인증글 급증",
-    "note": "단기 옵션 거래가 몰렸다는 글이 상위에 올랐다.",
+    "kicker": "5면 그 밖의 화제"
+   },
+   {
+    "where": "텔레그램",
+    "title": "선거 끝나자 쏟아진 매파 발언, \"2018년 12월 데자뷰\"?",
     "confidence": "partial",
-    "kicker": "5면 그 밖의 화제",
+    "note": "연준 인사들이 중간선거가 끝나기를 기다렸다는 듯 인상론을 쏟아냈고, 시장의 2027년 인상 기대가 1회에서 2.4회로 뛰었다. 선거 직후 긴축이 빨라졌던 2018년 12월과 닮았다는 해석이다.",
     "detail": {
      "summary": [
-      "단기 옵션 거래가 몰렸다는 글이 상위에 올랐다.",
-      "확산 경로와 반응을 아래에 정리했다."
+      "2018년 12월 연준은 시장 약세에도 금리를 올렸고, 그 뒤 주가가 크게 흔들렸다.",
+      "이번에도 선거 직후 위원 발언이 한꺼번에 매파로 기울었다는 관찰이다."
      ],
-     "timeline": [
+     "logic": [
       {
-       "label": "05시",
-       "count": 4
+       "step": "관찰",
+       "text": "11월 3일 선거 뒤 콜린스·월러·로건 등 매파 발언이 이어졌다."
       },
       {
-       "label": "06시",
-       "count": 3
+       "step": "근거",
+       "text": "시장은 12월 인상을 기정사실로 보고 2027년 인상 기대를 1회→2.4회(지금부터 총 3.4회)로 올렸다."
       },
       {
-       "label": "07시",
-       "count": 4
+       "step": "연결",
+       "text": "긴축 속도 기대가 갑자기 빨라지면 달러·단기 금리가 오르고 유동성 자산(코인·성장주)이 먼저 흔들린다."
       },
       {
-       "label": "08시",
-       "count": 3
-      },
-      {
-       "label": "09시",
-       "count": 5
-      },
-      {
-       "label": "10시",
-       "count": 3
-      },
-      {
-       "label": "11시",
-       "count": 6
-      },
-      {
-       "label": "12시",
-       "count": 9
-      },
-      {
-       "label": "13시",
-       "count": 11
-      },
-      {
-       "label": "14시",
-       "count": 16
-      },
-      {
-       "label": "15시",
-       "count": 17
-      },
-      {
-       "label": "16시",
-       "count": 20
-      },
-      {
-       "label": "17시",
-       "count": 21
-      },
-      {
-       "label": "18시",
-       "count": 19
-      },
-      {
-       "label": "19시",
-       "count": 16
-      },
-      {
-       "label": "20시",
-       "count": 14
-      },
-      {
-       "label": "21시",
-       "count": 10
-      },
-      {
-       "label": "22시",
-       "count": 8
-      },
-      {
-       "label": "23시",
-       "count": 8
-      },
-      {
-       "label": "00시",
-       "count": 7
-      },
-      {
-       "label": "01시",
-       "count": 5
-      },
-      {
-       "label": "02시",
-       "count": 3
-      },
-      {
-       "label": "03시",
-       "count": 3
-      },
-      {
-       "label": "04시",
-       "count": 5
+       "step": "결론",
+       "text": "2018년처럼 \"연준 실수\" 논쟁과 변동성 확대가 올 수 있다."
       }
      ],
-     "views": [
+     "checks": [
       {
-       "label": "동의",
-       "count": 6,
-       "text": "그럴듯하다는 반응.",
-       "who": "댓글·인용"
+       "item": "10월 FOMC 반대표",
+       "value": "쿡·해맥이 인상 주장(10대 2 동결)",
+       "sources": [
+        {
+         "name": "Stock Analysis",
+         "url": "https://stockanalysis.com/news/fed-waller-december-rate-hike-half-point/"
+        },
+        {
+         "name": "텔레그램 채널 (미국 주식 인사이더)"
+        }
+       ],
+       "verdict": "일치"
       },
       {
-       "label": "반박",
-       "count": 4,
-       "text": "근거가 약하다는 반응.",
-       "who": "댓글·인용"
+       "item": "인상 기대 변화",
+       "value": "2027년 1회 → 2.4회",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (소수의견)"
+        }
+       ],
+       "verdict": "단일 출처"
+      },
+      {
+       "item": "국채 금리",
+       "value": "5년물 1주 +0.33%p, 10년물 +0.29%p",
+       "sources": [
+        {
+         "name": "야후 파이낸스 시세 (11.15 수집)"
+        }
+       ],
+       "verdict": "단일 출처"
       }
+     ],
+     "counter": [
+      "위원 상당수는 선거 전(9~10월)부터 연내 추가 인상을 예고해 왔다(콜린스 10월 발언).",
+      "2018년과 달리 지금은 물가가 목표를 크게 웃돌아 인상 근거가 분명하다."
+     ],
+     "test": [
+      "19일 FOMC 의사록의 매파 범위",
+      "12월 점도표의 2027년 경로"
      ],
      "sources": [
       {
-       "name": "레딧 r/wallstreetbets",
-       "meta": "원문 게시글",
-       "url": "https://t.me/"
+       "name": "미국 주식 인사이더 🇺🇸 (US Stocks Insider)",
+       "meta": "11.14 17:35 · 조회 6,332",
+       "url": "https://t.me/insidertracking/69267"
       }
      ]
-    }
-   },
-   {
+    },
     "id": "b3",
-    "where": "스레드",
-    "title": "국내 주식에서 미국 ETF로 갈아타기",
-    "note": "세제 변화 기대와 맞물려 경험담이 많이 공유됐다.",
+    "kicker": "5면 그 밖의 화제"
+   },
+   {
+    "where": "텔레그램",
+    "title": "\"금·코인 팔아 앤트로픽 산다\" — 상장 앞 자금 이동 가설",
     "confidence": "rumor",
-    "kicker": "5면 그 밖의 화제",
+    "note": "비트코인(-13.7%)과 금(-4.6%)이 한 주에 함께 빠진 이유 중 하나로, 19일 앤트로픽 상장을 앞둔 자금 재배치가 거론된다. 개인 배정이 20%로 커서 개인 자금이 움직였다는 해석이다.",
     "detail": {
      "summary": [
-      "세제 변화 기대와 맞물려 경험담이 많이 공유됐다.",
-      "확산 경로와 반응을 아래에 정리했다."
+      "앤트로픽은 공모의 약 20%를 개인에게 배정한다. 보통(5~10%)의 두 배다.",
+      "같은 주에 위험 자산 중 유동성이 큰 코인과 금이 함께 약했다."
      ],
-     "timeline": [
+     "logic": [
       {
-       "label": "05시",
-       "count": 2
+       "step": "근거",
+       "text": "개인 배정 약 20%, 공모 규모 최대 644억 달러 → 개인 몫만 100억 달러를 넘을 수 있다."
       },
       {
-       "label": "06시",
-       "count": 3
+       "step": "근거",
+       "text": "1주 수익률: 비트코인 -13.7%, 이더리움 -14.7%, 금 -4.6%, 나스닥 +2.3%."
       },
       {
-       "label": "07시",
-       "count": 4
+       "step": "연결",
+       "text": "청약 자금을 마련하려 유동성 큰 자산을 판다면 코인·금이 먼저 팔린다."
       },
       {
-       "label": "08시",
-       "count": 6
-      },
-      {
-       "label": "09시",
-       "count": 5
-      },
-      {
-       "label": "10시",
-       "count": 6
-      },
-      {
-       "label": "11시",
-       "count": 7
-      },
-      {
-       "label": "12시",
-       "count": 7
-      },
-      {
-       "label": "13시",
-       "count": 13
-      },
-      {
-       "label": "14시",
-       "count": 14
-      },
-      {
-       "label": "15시",
-       "count": 18
-      },
-      {
-       "label": "16시",
-       "count": 19
-      },
-      {
-       "label": "17시",
-       "count": 21
-      },
-      {
-       "label": "18시",
-       "count": 22
-      },
-      {
-       "label": "19시",
-       "count": 16
-      },
-      {
-       "label": "20시",
-       "count": 13
-      },
-      {
-       "label": "21시",
-       "count": 10
-      },
-      {
-       "label": "22시",
-       "count": 7
-      },
-      {
-       "label": "23시",
-       "count": 6
-      },
-      {
-       "label": "00시",
-       "count": 5
-      },
-      {
-       "label": "01시",
-       "count": 3
-      },
-      {
-       "label": "02시",
-       "count": 2
-      },
-      {
-       "label": "03시",
-       "count": 3
-      },
-      {
-       "label": "04시",
-       "count": 3
+       "step": "결론",
+       "text": "상장 뒤 자금이 돌아오면 코인 반등의 재료가 될 수 있다."
       }
      ],
-     "views": [
+     "checks": [
       {
-       "label": "동의",
-       "count": 6,
-       "text": "그럴듯하다는 반응.",
-       "who": "댓글·인용"
+       "item": "개인 배정 비율",
+       "value": "약 20%",
+       "sources": [
+        {
+         "name": "Decrypt",
+         "url": "https://decrypt.co/382939/anthropic-sets-ipo-price-range-at-70-to-78-valuing-company-at-up-to-1-4-trillion?amp=1"
+        },
+        {
+         "name": "Beyond Tomorrow",
+         "url": "https://beyondtmrw.org/article/anthropic-s-ipo-pitch-lands-at-70-78-as-trillion-dollar-talk-cools"
+        }
+       ],
+       "verdict": "일치"
       },
       {
-       "label": "반박",
-       "count": 4,
-       "text": "근거가 약하다는 반응.",
-       "who": "댓글·인용"
+       "item": "자산별 1주 수익률",
+       "value": "비트코인 -13.7%, 금 -4.6%, 나스닥 +2.3%",
+       "sources": [
+        {
+         "name": "야후 파이낸스 시세 (11.15 수집)"
+        }
+       ],
+       "verdict": "단일 출처"
       }
+     ],
+     "counter": [
+      "비트코인 하락은 10월 말부터 이어졌고, 레버리지 청산·금리·ETF 유출로 더 잘 설명된다.",
+      "청약 자금 규모를 실제로 보여 주는 자료는 없다."
+     ],
+     "test": [
+      "상장 뒤 1~2주 비트코인 ETF 자금 흐름",
+      "공모 개인 청약 경쟁률 공개 여부"
      ],
      "sources": [
       {
-       "name": "스레드",
-       "meta": "원문 게시글",
-       "url": "https://t.me/"
+       "name": "요약하는 고잉",
+       "meta": "11.15 09:28 · 조회 7,951",
+       "url": "https://t.me/one_going/4515"
+      },
+      {
+       "name": "서화백의 그림놀이 🚀",
+       "meta": "11.14 19:04 · 조회 1,294",
+       "url": "https://t.me/easobi/17230"
+      },
+      {
+       "name": "허재환 유진증권 전략",
+       "meta": "11.14 14:40 · 조회 853",
+       "url": "https://t.me/huhjae/4627"
       }
      ]
-    }
-   },
-   {
+    },
     "id": "b4",
-    "where": "유튜브",
-    "title": "2027년 금리 시나리오 세 가지",
-    "note": "인하 지속, 동결, 재인상으로 나눠 자산별 영향을 설명했다.",
-    "confidence": "partial",
-    "kicker": "5면 그 밖의 화제",
-    "detail": {
-     "summary": [
-      "인하 지속, 동결, 재인상으로 나눠 자산별 영향을 설명했다.",
-      "확산 경로와 반응을 아래에 정리했다."
-     ],
-     "timeline": [
-      {
-       "label": "05시",
-       "count": 3
-      },
-      {
-       "label": "06시",
-       "count": 5
-      },
-      {
-       "label": "07시",
-       "count": 2
-      },
-      {
-       "label": "08시",
-       "count": 3
-      },
-      {
-       "label": "09시",
-       "count": 2
-      },
-      {
-       "label": "10시",
-       "count": 5
-      },
-      {
-       "label": "11시",
-       "count": 5
-      },
-      {
-       "label": "12시",
-       "count": 7
-      },
-      {
-       "label": "13시",
-       "count": 12
-      },
-      {
-       "label": "14시",
-       "count": 13
-      },
-      {
-       "label": "15시",
-       "count": 17
-      },
-      {
-       "label": "16시",
-       "count": 20
-      },
-      {
-       "label": "17시",
-       "count": 23
-      },
-      {
-       "label": "18시",
-       "count": 20
-      },
-      {
-       "label": "19시",
-       "count": 18
-      },
-      {
-       "label": "20시",
-       "count": 16
-      },
-      {
-       "label": "21시",
-       "count": 10
-      },
-      {
-       "label": "22시",
-       "count": 8
-      },
-      {
-       "label": "23시",
-       "count": 5
-      },
-      {
-       "label": "00시",
-       "count": 6
-      },
-      {
-       "label": "01시",
-       "count": 2
-      },
-      {
-       "label": "02시",
-       "count": 5
-      },
-      {
-       "label": "03시",
-       "count": 3
-      },
-      {
-       "label": "04시",
-       "count": 4
-      }
-     ],
-     "views": [
-      {
-       "label": "동의",
-       "count": 6,
-       "text": "그럴듯하다는 반응.",
-       "who": "댓글·인용"
-      },
-      {
-       "label": "반박",
-       "count": 4,
-       "text": "근거가 약하다는 반응.",
-       "who": "댓글·인용"
-      }
-     ],
-     "sources": [
-      {
-       "name": "유튜브",
-       "meta": "원문 게시글",
-       "url": "https://t.me/"
-      }
-     ]
-    }
+    "kicker": "5면 그 밖의 화제"
    },
    {
-    "id": "b5",
-    "where": "Finviz",
-    "title": "공매도 비중 상위 종목에서 급등 사례",
-    "note": "공매도 비중이 높은 중소형주가 하루 새 크게 올랐다.",
-    "confidence": "confirmed",
-    "kicker": "5면 그 밖의 화제",
-    "detail": {
-     "summary": [
-      "공매도 비중이 높은 중소형주가 하루 새 크게 올랐다.",
-      "확산 경로와 반응을 아래에 정리했다."
-     ],
-     "timeline": [
-      {
-       "label": "05시",
-       "count": 4
-      },
-      {
-       "label": "06시",
-       "count": 5
-      },
-      {
-       "label": "07시",
-       "count": 2
-      },
-      {
-       "label": "08시",
-       "count": 2
-      },
-      {
-       "label": "09시",
-       "count": 6
-      },
-      {
-       "label": "10시",
-       "count": 4
-      },
-      {
-       "label": "11시",
-       "count": 5
-      },
-      {
-       "label": "12시",
-       "count": 8
-      },
-      {
-       "label": "13시",
-       "count": 11
-      },
-      {
-       "label": "14시",
-       "count": 15
-      },
-      {
-       "label": "15시",
-       "count": 18
-      },
-      {
-       "label": "16시",
-       "count": 21
-      },
-      {
-       "label": "17시",
-       "count": 23
-      },
-      {
-       "label": "18시",
-       "count": 20
-      },
-      {
-       "label": "19시",
-       "count": 18
-      },
-      {
-       "label": "20시",
-       "count": 16
-      },
-      {
-       "label": "21시",
-       "count": 12
-      },
-      {
-       "label": "22시",
-       "count": 8
-      },
-      {
-       "label": "23시",
-       "count": 4
-      },
-      {
-       "label": "00시",
-       "count": 6
-      },
-      {
-       "label": "01시",
-       "count": 2
-      },
-      {
-       "label": "02시",
-       "count": 5
-      },
-      {
-       "label": "03시",
-       "count": 2
-      },
-      {
-       "label": "04시",
-       "count": 4
-      }
-     ],
-     "views": [
-      {
-       "label": "동의",
-       "count": 6,
-       "text": "그럴듯하다는 반응.",
-       "who": "댓글·인용"
-      },
-      {
-       "label": "반박",
-       "count": 4,
-       "text": "근거가 약하다는 반응.",
-       "who": "댓글·인용"
-      }
-     ],
-     "sources": [
-      {
-       "name": "Finviz",
-       "meta": "원문 게시글",
-       "url": "https://t.me/"
-      }
-     ]
-    }
-   },
-   {
-    "id": "b6",
     "where": "X",
-    "title": "비트코인 급락 배후에 대형 청산설",
-    "note": "특정 계정의 청산이 계기였다는 주장이 돌았지만 확인되지 않았다.",
-    "confidence": "rumor",
-    "kicker": "5면 그 밖의 화제",
+    "title": "머스크 \"엔비디아 거래 상당수는 서면 아닌 악수\"",
+    "confidence": "partial",
+    "note": "머스크가 젠슨 황 공백으로 일부 핵심 계약을 잃을 수 있다고 주장했다. 핵심 거래가 구두 합의에 묶여 있었다면 그 자체가 지배구조 위험이라는 반론이 따랐다.",
     "detail": {
      "summary": [
-      "특정 계정의 청산이 계기였다는 주장이 돌았지만 확인되지 않았다.",
-      "확산 경로와 반응을 아래에 정리했다."
+      "머스크는 엔비디아 고객으로서 젠슨 황이 약속을 늘 지켰고 공식 주문서는 나중에 나오는 경우가 많았다고 썼다.",
+      "TSMC와 엔비디아의 거래 다수가 구두로 이뤄졌다는 앞선 보도와 맞물려 화제가 됐다."
      ],
-     "timeline": [
+     "logic": [
       {
-       "label": "05시",
-       "count": 2
+       "step": "주장",
+       "text": "공급·납품 약속이 젠슨 황 개인의 신뢰로 성사됐다(머스크)."
       },
       {
-       "label": "06시",
-       "count": 4
+       "step": "연결",
+       "text": "사람이 바뀌면 문서로 남지 않은 약속은 다시 협상해야 한다."
       },
       {
-       "label": "07시",
-       "count": 2
-      },
-      {
-       "label": "08시",
-       "count": 5
-      },
-      {
-       "label": "09시",
-       "count": 3
-      },
-      {
-       "label": "10시",
-       "count": 5
-      },
-      {
-       "label": "11시",
-       "count": 7
-      },
-      {
-       "label": "12시",
-       "count": 10
-      },
-      {
-       "label": "13시",
-       "count": 11
-      },
-      {
-       "label": "14시",
-       "count": 15
-      },
-      {
-       "label": "15시",
-       "count": 18
-      },
-      {
-       "label": "16시",
-       "count": 22
-      },
-      {
-       "label": "17시",
-       "count": 20
-      },
-      {
-       "label": "18시",
-       "count": 21
-      },
-      {
-       "label": "19시",
-       "count": 18
-      },
-      {
-       "label": "20시",
-       "count": 14
-      },
-      {
-       "label": "21시",
-       "count": 11
-      },
-      {
-       "label": "22시",
-       "count": 6
-      },
-      {
-       "label": "23시",
-       "count": 6
-      },
-      {
-       "label": "00시",
-       "count": 4
-      },
-      {
-       "label": "01시",
-       "count": 4
-      },
-      {
-       "label": "02시",
-       "count": 4
-      },
-      {
-       "label": "03시",
-       "count": 5
-      },
-      {
-       "label": "04시",
-       "count": 4
+       "step": "결론",
+       "text": "단기적으로 공급 배정·가격 조건이 흔들릴 수 있다. 반대로 이 의존 자체가 지배구조 위험이었다는 해석도 가능하다."
       }
      ],
-     "views": [
+     "checks": [
       {
-       "label": "동의",
-       "count": 6,
-       "text": "그럴듯하다는 반응.",
-       "who": "댓글·인용"
-      },
-      {
-       "label": "반박",
-       "count": 4,
-       "text": "근거가 약하다는 반응.",
-       "who": "댓글·인용"
+       "item": "머스크 발언",
+       "value": "X 게시, 구체적 거래 당사자·취소 사례는 공개 안 됨",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (한투증권 미국/중국전략)"
+        },
+        {
+         "name": "텔레그램 채널 (미국 주식 인사이더)"
+        }
+       ],
+       "verdict": "단일 출처"
       }
+     ],
+     "counter": [
+      "대형 공급 계약은 결국 서면 계약으로 정리되는 경우가 많다.",
+      "머스크는 젠슨 황 복귀를 공개 지지해 온 이해관계자다."
+     ],
+     "test": [
+      "엔비디아 실적 발표에서 공급 계약·선급금 변화",
+      "TSMC 월간 매출"
      ],
      "sources": [
       {
-       "name": "X",
-       "meta": "원문 게시글",
-       "url": "https://t.me/"
+       "name": "회색인간의 매크로 + 투자",
+       "meta": "11.15 12:30 · 조회 1,109",
+       "url": "https://t.me/mistergray_11/25300"
+      },
+      {
+       "name": "한투증권 미국/중국전략 정정영",
+       "meta": "11.15 12:10 · 조회 4,710",
+       "url": "https://t.me/G2strategy/34470"
+      },
+      {
+       "name": "습관이 부자를 만든다. 🧘",
+       "meta": "11.15 04:12 · 조회 2,916",
+       "url": "https://t.me/habit4117/87988"
+      },
+      {
+       "name": "하나 중국/신흥국 전략 김경환",
+       "meta": "11.15 09:58 · 조회 1,026",
+       "url": "https://t.me/HANAchina/72143"
+      },
+      {
+       "name": "석학들의 마켓 (인)사이트 PRO",
+       "meta": "11.14 23:43 · 조회 146",
+       "url": "https://t.me/getfeed/155129"
+      },
+      {
+       "name": "뺀지뤼의 SKLab.(스크랩)",
+       "meta": "11.15 13:13 · 조회 110",
+       "url": "https://t.me/bbanjil/145711"
       }
      ]
-    }
+    },
+    "id": "b5",
+    "kicker": "5면 그 밖의 화제"
+   },
+   {
+    "where": "블룸버그·텔레그램",
+    "title": "삼성전자, 미 데이터센터 냉각업체 모딘 인수 협의설",
+    "confidence": "partial",
+    "note": "블룸버그 보도로 모딘(MOD) 주가가 13일 27.86% 뛰었다. 약 56억 달러 규모로 수 주 안에 계약이 가능하다는 내용이다.",
+    "detail": {
+     "summary": [
+      "모딘은 11월 3일 실적에서 데이터센터 부문 매출이 전년보다 95% 늘었다고 밝혔다.",
+      "삼성이 메모리를 넘어 AI 데이터센터 냉각 인프라로 넓히려는 수직계열화 전략으로 풀이된다."
+     ],
+     "logic": [
+      {
+       "step": "근거",
+       "text": "AI 서버 발열이 커지며 액체 냉각 수요가 빠르게 늘고 있다(모딘 데이터센터 매출 +95%)."
+      },
+      {
+       "step": "연결",
+       "text": "메모리·서버 부품을 파는 삼성이 냉각까지 갖추면 데이터센터 고객에게 묶음 공급이 가능하다."
+      },
+      {
+       "step": "결론",
+       "text": "성사되면 삼성의 AI 인프라 매출 다변화, 무산되면 모딘 급등분 반납 위험."
+      }
+     ],
+     "checks": [
+      {
+       "item": "모딘 주가",
+       "value": "13일 +27.86%, 주간 +40.42%",
+       "sources": [
+        {
+         "name": "Finviz (11.15 새벽 수집)"
+        },
+        {
+         "name": "텔레그램 채널 (우주방산AI로봇 아카이브)"
+        }
+       ],
+       "verdict": "일치"
+      },
+      {
+       "item": "인수 협의 보도",
+       "value": "블룸버그 단독, 약 56억 달러",
+       "sources": [
+        {
+         "name": "텔레그램 채널 (연수르 해외주식)"
+        },
+        {
+         "name": "텔레그램 채널 (우주방산AI로봇 아카이브)"
+        }
+       ],
+       "verdict": "단일 출처"
+      }
+     ],
+     "counter": [
+      "회사 측 공식 확인이 없다.",
+      "데이터센터 부문 이익률 하락과 설비투자 부담이 변수다."
+     ],
+     "test": [
+      "삼성전자 공시",
+      "모딘 공시·주가"
+     ],
+     "sources": [
+      {
+       "name": "우주방산AI로봇 아카이브",
+       "meta": "11.14 17:08 · 조회 1,516",
+       "url": "https://t.me/defence_24/6577"
+      },
+      {
+       "name": "서화백의 그림놀이 🚀",
+       "meta": "11.14 19:04 · 조회 1,294",
+       "url": "https://t.me/easobi/17230"
+      },
+      {
+       "name": "연수르 해외주식",
+       "meta": "11.15 11:31 · 조회 409",
+       "url": "https://t.me/yeonsour/5983"
+      },
+      {
+       "name": "퀄리티기업연구소",
+       "meta": "11.14 22:33 · 조회 331",
+       "url": "https://t.me/QualityInvestingLaboratory/21677"
+      }
+     ]
+    },
+    "id": "b6",
+    "kicker": "5면 그 밖의 화제"
    }
   ]
  },
- "weekly": {
-  "range": "11.9 (월) – 11.14 (토)",
-  "issues": 6,
-  "messages": "7,920",
-  "debates": 3,
-  "oneLine": "AI 투자는 거품 논쟁 속에서도 실적으로 버텼고, 시장의 관심은 금리 경로로 옮겨 갔다.",
-  "top": [
+ "earnings": {
+  "range": "11.9 – 11.12 발표",
+  "lead": "지난주 발표한 S&P 500 기업 대부분이 EPS 예상치를 넘었지만, 시스코처럼 마진·주문이 아쉬우면 호실적에도 주가가 밀렸다. 이번 주는 엔비디아(17일)와 월마트(19일)가 핵심이다.",
+  "stats": {
+   "count": 11,
+   "epsBeat": "11/11",
+   "revBeat": "6/11"
+  },
+  "reported": [
    {
-    "title": "AI 투자 사이클 논쟁",
-    "days": [
-     1,
-     1,
-     1,
-     1,
-     1,
-     0
-    ],
-    "note": "월요일 시작, 목요일에 언급이 가장 많았다."
+    "ticker": "CSCO",
+    "name": "Cisco Systems Inc",
+    "sector": "Technology",
+    "marketCap": "3,765억 달러",
+    "date": "11.12",
+    "time": "장후",
+    "epsSurprise": "+5.6%",
+    "revSurprise": "+2.2%",
+    "epsGrowth": "+59.15%",
+    "salesGrowth": "+24.42%",
+    "change": "-6.24%",
+    "perfWeek": "+1.91%",
+    "note": "EPS·매출 모두 상회, 마진·주문 둔화에 하락"
    },
    {
-    "title": "연준 12월 인하 확률 변화",
-    "days": [
-     1,
-     0,
-     1,
-     1,
-     0,
-     1
-    ],
-    "note": "지표가 나올 때마다 해석이 엇갈렸다."
+    "ticker": "AMAT",
+    "name": "Applied Materials Inc",
+    "sector": "Technology",
+    "marketCap": "2,940억 달러",
+    "date": "11.12",
+    "time": "장후",
+    "epsSurprise": "+2.4%",
+    "revSurprise": "+1.0%",
+    "epsGrowth": "+43.03%",
+    "salesGrowth": "+53.07%",
+    "change": "-2.74%",
+    "perfWeek": "+11.36%",
+    "note": "예상 소폭 상회, 실적 후 약세"
    },
    {
-    "title": "우주 테마 강세",
-    "days": [
-     1,
-     1,
-     0,
-     0,
-     0,
-     1
-    ],
-    "note": "주초에 몰렸다가 주말에 다시 살아났다."
+    "ticker": "CEG",
+    "name": "Constellation Energy Corp",
+    "sector": "Utilities",
+    "marketCap": "993억 달러",
+    "date": "11.9",
+    "time": "장전",
+    "epsSurprise": "+29.8%",
+    "revSurprise": "+3.4%",
+    "epsGrowth": "+74.46%",
+    "salesGrowth": "+38.46%",
+    "change": "-0.78%",
+    "perfWeek": "+12.10%",
+    "note": "EPS 서프라이즈 약 30%"
    },
    {
-    "title": "유가 약세와 공급과잉 전망",
-    "days": [
-     0,
-     1,
-     1,
-     0,
-     1,
-     0
-    ],
-    "note": "산유국 회의가 다가오며 다시 늘었다."
+    "ticker": "KKR",
+    "name": "KKR & Co Inc",
+    "sector": "Financial",
+    "marketCap": "875억 달러",
+    "date": "11.9",
+    "time": "장전",
+    "epsSurprise": "+12.9%",
+    "revSurprise": "-1.8%",
+    "epsGrowth": "+32.07%",
+    "salesGrowth": "+16.57%",
+    "change": "+0.87%",
+    "perfWeek": "+1.63%",
+    "note": ""
    },
    {
-    "title": "비트코인 변동성",
-    "days": [
-     0,
-     0,
-     0,
-     1,
-     1,
-     1
-    ],
-    "note": "주 후반 급락 뒤 청산 규모가 화제."
+    "ticker": "TDG",
+    "name": "Transdigm Group Incorporated",
+    "sector": "Industrials",
+    "marketCap": "665억 달러",
+    "date": "11.10",
+    "time": "장전",
+    "epsSurprise": "+1.9%",
+    "revSurprise": "+1.4%",
+    "epsGrowth": "+33.14%",
+    "salesGrowth": "+22.65%",
+    "change": "+1.19%",
+    "perfWeek": "+1.69%",
+    "note": ""
+   },
+   {
+    "ticker": "OXY",
+    "name": "Occidental Petroleum Corp",
+    "sector": "Energy",
+    "marketCap": "587억 달러",
+    "date": "11.9",
+    "time": "장후",
+    "epsSurprise": "+31.0%",
+    "revSurprise": "-3.7%",
+    "epsGrowth": "+148.27%",
+    "salesGrowth": "+5.94%",
+    "change": "+0.60%",
+    "perfWeek": "+4.20%",
+    "note": "EPS 상회, 매출은 하회"
+   },
+   {
+    "ticker": "FERG",
+    "name": "Ferguson Enterprises Inc",
+    "sector": "Industrials",
+    "marketCap": "497억 달러",
+    "date": "11.9",
+    "time": "장전",
+    "epsSurprise": "+3.7%",
+    "revSurprise": "+3.3%",
+    "epsGrowth": "+6.37%",
+    "salesGrowth": "+10.49%",
+    "change": "+0.62%",
+    "perfWeek": "+9.74%",
+    "note": ""
+   },
+   {
+    "ticker": "VYLR",
+    "name": "Vylor Inc",
+    "sector": "Basic Materials",
+    "marketCap": "484억 달러",
+    "date": "11.11",
+    "time": "장후",
+    "epsSurprise": "+21.1%",
+    "revSurprise": "-0.8%",
+    "epsGrowth": "",
+    "salesGrowth": "",
+    "change": "+0.67%",
+    "perfWeek": "+3.42%",
+    "note": ""
+   },
+   {
+    "ticker": "TTWO",
+    "name": "Take-Two Interactive Software Inc",
+    "sector": "Communication Services",
+    "marketCap": "427억 달러",
+    "date": "11.9",
+    "time": "장후",
+    "epsSurprise": "+2.8%",
+    "revSurprise": "-1.9%",
+    "epsGrowth": "+60.22%",
+    "salesGrowth": "-15.60%",
+    "change": "+0.38%",
+    "perfWeek": "+6.03%",
+    "note": ""
+   },
+   {
+    "ticker": "SKYD",
+    "name": "Skydance Corp",
+    "sector": "Communication Services",
+    "marketCap": "379억 달러",
+    "date": "11.9",
+    "time": "장후",
+    "epsSurprise": "+244.8%",
+    "revSurprise": "-0.3%",
+    "epsGrowth": "+127.72%",
+    "salesGrowth": "+4.82%",
+    "change": "-0.92%",
+    "perfWeek": "-6.12%",
+    "note": ""
+   },
+   {
+    "ticker": "NRG",
+    "name": "NRG Energy Inc",
+    "sector": "Utilities",
+    "marketCap": "204억 달러",
+    "date": "11.9",
+    "time": "장전",
+    "epsSurprise": "+39.9%",
+    "revSurprise": "+12.4%",
+    "epsGrowth": "+274.19%",
+    "salesGrowth": "+25.24%",
+    "change": "-0.97%",
+    "perfWeek": "+9.98%",
+    "note": "EPS·매출 모두 큰 폭 상회"
    }
   ],
-  "macro": [
+  "upcoming": [
    {
-    "label": "미 10년물",
-    "start": "4.21%",
-    "end": "4.38%",
-    "change": "+0.17%p"
+    "ticker": "TSN",
+    "name": "Tyson Foods Inc",
+    "date": "11.16",
+    "time": "장전",
+    "marketCap": "203억 달러",
+    "epsEst": "0.53",
+    "note": ""
    },
    {
-    "label": "달러인덱스",
-    "start": "105.1",
-    "end": "106.2",
-    "change": "+1.0%"
+    "ticker": "NVDA",
+    "name": "NVIDIA Corp",
+    "date": "11.17",
+    "time": "장후",
+    "marketCap": "3.92조 달러",
+    "epsEst": "2.47",
+    "note": "젠슨 황 사임 후 첫 실적"
    },
    {
-    "label": "WTI 유가",
-    "start": "70.4달러",
-    "end": "67.8달러",
-    "change": "-3.7%"
+    "ticker": "HD",
+    "name": "Home Depot Inc",
+    "date": "11.17",
+    "time": "장전",
+    "marketCap": "3,479억 달러",
+    "epsEst": "3.84",
+    "note": "주택·소비 지표"
    },
    {
-    "label": "원/달러",
-    "start": "1,398원",
-    "end": "1,412원",
-    "change": "+14원"
+    "ticker": "DIS",
+    "name": "Walt Disney Co",
+    "date": "11.17",
+    "time": "장전",
+    "marketCap": "2,054억 달러",
+    "epsEst": "1.68",
+    "note": ""
+   },
+   {
+    "ticker": "PANW",
+    "name": "Palo Alto Networks Inc",
+    "date": "11.18",
+    "time": "장후",
+    "marketCap": "2,638억 달러",
+    "epsEst": "0.97",
+    "note": "보안 업종 대표"
+   },
+   {
+    "ticker": "TJX",
+    "name": "TJX Companies Inc",
+    "date": "11.18",
+    "time": "장전",
+    "marketCap": "1,478억 달러",
+    "epsEst": "1.34",
+    "note": ""
+   },
+   {
+    "ticker": "LOW",
+    "name": "Lowe's Cos. Inc",
+    "date": "11.18",
+    "time": "장전",
+    "marketCap": "1,278억 달러",
+    "epsEst": "2.89",
+    "note": ""
+   },
+   {
+    "ticker": "TGT",
+    "name": "Target Corp",
+    "date": "11.18",
+    "time": "장전",
+    "marketCap": "733억 달러",
+    "epsEst": "2.07",
+    "note": ""
+   },
+   {
+    "ticker": "P",
+    "name": "Everpure Inc",
+    "date": "11.18",
+    "time": "장후",
+    "marketCap": "360억 달러",
+    "epsEst": "0.77",
+    "note": ""
+   },
+   {
+    "ticker": "WMT",
+    "name": "Walmart Inc",
+    "date": "11.19",
+    "time": "장전",
+    "marketCap": "1.02조 달러",
+    "epsEst": "0.64",
+    "note": "소비 경기 가늠자"
+   },
+   {
+    "ticker": "INTU",
+    "name": "Intuit Inc",
+    "date": "11.19",
+    "time": "장후",
+    "marketCap": "913억 달러",
+    "epsEst": "2.46",
+    "note": ""
+   },
+   {
+    "ticker": "ROST",
+    "name": "Ross Stores Inc",
+    "date": "11.19",
+    "time": "장후",
+    "marketCap": "740억 달러",
+    "epsEst": "1.87",
+    "note": ""
+   },
+   {
+    "ticker": "KEYS",
+    "name": "Keysight Technologies Inc",
+    "date": "11.19",
+    "time": "장후",
+    "marketCap": "507억 달러",
+    "epsEst": "3.37",
+    "note": ""
+   },
+   {
+    "ticker": "WSM",
+    "name": "Williams-Sonoma Inc",
+    "date": "11.19",
+    "time": "장전",
+    "marketCap": "299억 달러",
+    "epsEst": "2.18",
+    "note": ""
    }
   ],
-  "companies": [
-   {
-    "name": "엔비디아",
-    "count": 186,
-    "note": "실적과 가이던스"
-   },
-   {
-    "name": "테슬라",
-    "count": 97,
-    "note": "자율주행 서비스 확대"
-   },
-   {
-    "name": "삼성전자",
-    "count": 88,
-    "note": "고대역폭 메모리 공급"
-   },
-   {
-    "name": "TSMC",
-    "count": 61,
-    "note": "월간 매출과 증설"
-   },
-   {
-    "name": "스페이스X",
-    "count": 54,
-    "note": "발사 성공과 상장설"
-   }
-  ],
-  "debate": "주초에는 AI 거품론이 X와 레딧을 중심으로 퍼졌지만, 목요일 이후 선별론으로 무게가 옮겨 갔다. 확인된 것은 설비투자 계획이 유지됐다는 점이고, 회수 시점은 여전히 해석의 영역이다.",
-  "next": [
-   {
-    "date": "11.17 (월)",
-    "event": "미국 소매판매"
-   },
-   {
-    "date": "11.19 (수)",
-    "event": "엔비디아 실적 발표"
-   },
-   {
-    "date": "11.20 (목)",
-    "event": "FOMC 의사록 공개"
-   },
-   {
-    "date": "11.21 (금)",
-    "event": "국내 11월 20일까지 수출"
-   }
-  ]
- }
+  "source": "Finviz (S&P 500, 2026-11-15 새벽 수집) · 서프라이즈는 실제치와 컨센서스의 차이"
+ },
+ "issue": 1
 }
