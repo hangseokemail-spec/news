@@ -447,12 +447,13 @@
   }
   function reportBlock(it) {
     const r = it.report;
-    const rows = [['발행', r.publisher], ['작성', r.author], ['발행일', r.date], ['분량', r.pages ? `${r.pages}쪽` : '']].filter((x) => x[1]);
+    const rows = [['자료', r.series === '소몽' ? '소몽 · 한 주 정리' : r.series], ['발행', r.publisher], ['작성', r.author], ['발행일', r.date], ['분량', r.pages ? `${r.pages}쪽` : '']].filter((x) => x[1]);
     return `<section class="d-block span-all report-head"><div class="report-meta">${rows.map((x) => `<span><span class="muted">${esc(x[0])}</span> ${esc(x[1])}</span>`).join('')}</div>${reportLink(r)}</section>`;
   }
   function picksPage(ed) {
     const ps = ed.picks || [];
-    const head = `<div class="section-head"><h2 class="section-title">이번 호의 리포트</h2><p class="section-note">하루 1~2개, 자세한 요약</p></div>`;
+    const weekly = ps.some((p) => p.report && p.report.series === '소몽');
+    const head = `<div class="section-head"><h2 class="section-title">${weekly ? '이번 주를 정리한 리포트' : '이번 호의 리포트'}</h2><p class="section-note">${weekly ? '월요일 · 소몽 주간 정리, 자세한 요약' : '하루 1~2개, 자세한 요약'}</p></div>`;
     if (!ps.length) return `${head}<section class="panel empty-picks"><p style="margin:0">이번 호에 정리한 리포트가 없습니다.</p></section>`;
     return `${head}<div class="picks">${ps.map((x) => `
       <article class="panel pick">
