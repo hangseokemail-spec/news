@@ -185,16 +185,21 @@
     THEME_VARS.forEach((v) => root.style.removeProperty(v));
     document.body.classList.remove('themed');
     root.style.removeProperty('--cover-url');
-    if (!ed.cover && !ed.theme) return;
+    document.body.classList.remove('has-banner');
+    const banner = ed.art && ed.art.banner;
+    if (!ed.cover && !ed.theme && !banner) return;
     let t = null;
     if (ed.theme && ed.theme.accent && ed.theme.mast) t = buildTheme(rgb2hsl(hex2rgb(ed.theme.accent)), rgb2hsl(hex2rgb(ed.theme.mast)));
-    const key = `sp_theme_v1_${ed.date}_${ed.cover ? ed.cover.src : ''}`;
+    const srcImg = ed.cover ? ed.cover.src : banner;
+    const key = `sp_theme_v1_${ed.date}_${srcImg || ''}`;
     if (!t) { try { t = JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { t = null; } }
-    if (!t && ed.cover) { t = await themeFromImage(ed.cover.src); try { if (t) localStorage.setItem(key, JSON.stringify(t)); } catch (e) { /* 저장 못 해도 괜찮다 */ } }
+    if (!t && srcImg) { t = await themeFromImage(srcImg); try { if (t) localStorage.setItem(key, JSON.stringify(t)); } catch (e) { /* 저장 못 해도 괜찮다 */ } }
     if (!t || state.date !== ed.date) return;
     const vars = matchMedia('(prefers-color-scheme: dark)').matches ? t.dark : t.light;
     Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
-    if (ed.cover) root.style.setProperty('--cover-url', `url("${ed.cover.src}")`);
+    const backdrop = banner || (ed.cover && ed.cover.src);
+    if (backdrop) root.style.setProperty('--cover-url', `url("${backdrop}")`);
+    if (banner) document.body.classList.add('has-banner');
     document.body.classList.add('themed');
   }
 
