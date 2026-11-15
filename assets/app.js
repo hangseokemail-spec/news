@@ -145,8 +145,10 @@
   function hotPage(ed) {
     const n = hotN(ed);
     const total = ed.hot.length;
+    const cv = ed.cover;
     return `
-      <div class="hot-top">
+      <div class="hot-top${cv ? ' has-cover' : ''}">
+      ${cv ? `<figure class="cover"><a href="${esc(cv.src)}" target="_blank" rel="noopener"><img src="${esc(cv.src)}" alt="오늘의 표지: ${esc(cv.alt || '')}" loading="eager"></a>${state.full && cv.why ? `<figcaption class="small muted">${esc(cv.by)} 시안 채택 · ${esc(cv.why)}</figcaption>` : ''}</figure>` : ''}
       <section class="panel lead-panel">
         <div><span class="kicker">오늘의 한 줄</span><p class="lead-text">${esc(ed.lead)}</p></div>
       </section>
@@ -385,6 +387,7 @@
         ${x.chart ? miniChart(x.chart, true) : ''}
         <p class="yt-gist">${esc(x.why || '')}</p>
         <span class="small muted">펀더멘털 ${Math.round((x.F || 0) * 100)} · 차트 ${Math.round((x.C || 0) * 100)} · 고점 대비 ${esc(x.from_high || '-')} · RSI ${esc(x.rsi ?? '-')}</span>
+        <span class="small"><a href="https://finviz.com/quote.ashx?t=${encodeURIComponent(x.ticker)}" target="_blank" rel="noopener">Finviz 차트 ↗</a> · <a href="https://seekingalpha.com/symbol/${encodeURIComponent(x.ticker)}" target="_blank" rel="noopener">Seeking Alpha ↗</a></span>
       </article>`;
     return `<div class="section-head"><h2 class="section-title">이번 주 스크리닝</h2><p class="section-note">${esc(sc.method || '')}</p></div>
       <section class="notice"><p style="margin:0">규칙에 따라 기계적으로 고른 후보입니다. 투자 권유가 아니며, 판단 전에 직접 확인하세요.</p></section>

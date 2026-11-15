@@ -418,3 +418,10 @@ ol.logic .step { font-size: 12px; font-weight: 700; color: var(--accent); backgr
 .scr.buy { border-top: 3px solid #D92D20; }
 .scr.sell { border-top: 3px solid #1F4FD8; }
 .scr-h { margin: 6px 0 0; font-family: var(--font-head); font-size: 19px; }
+/* 오늘의 표지 */
+.cover { margin: 0; display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.cover img { display: block; width: 100%; max-width: 300px; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+@media (min-width: 900px) {
+  .hot-top.has-cover { grid-template-columns: 210px minmax(0, 1fr) 280px; }
+  .hot-top.has-cover .cover img { max-width: 210px; }
+}
