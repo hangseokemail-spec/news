@@ -198,7 +198,8 @@
     const vars = matchMedia('(prefers-color-scheme: dark)').matches ? t.dark : t.light;
     Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
     const backdrop = banner || (ed.cover && ed.cover.src);
-    if (backdrop) root.style.setProperty('--cover-url', `url("${backdrop}")`);
+    // CSS 파일(assets/) 기준으로 풀리지 않게 절대 주소로
+    if (backdrop) root.style.setProperty('--cover-url', `url("${new URL(backdrop, location.href).href}")`);
     if (banner) document.body.classList.add('has-banner');
     document.body.classList.add('themed');
   }
@@ -445,6 +446,25 @@
     if (r.link) return `<a class="link-row" href="${esc(r.link)}" target="_blank" rel="noopener"><span><strong>원문 PDF 보기</strong><br><span class="small muted">${esc(r.file || '')}</span></span><span class="go">열기 ↗</span></a>`;
     return r.file ? `<div class="link-row"><span><strong>원문 PDF</strong><br><span class="small muted">${esc(r.file)}${state.full && r.folder ? ` · ${esc(r.folder)}` : ''}</span></span></div>` : '';
   }
+  // 함께 읽기: 영어 기사는 [원문] [국문] 버튼 — 국문은 구글 번역으로 그 기사를 한국어로 연다
+  function isForeign(r) {
+    if (r.lang) return r.lang !== 'ko';
+    const t = `${r.title || ''}`;
+    return !/[가-힣]/.test(t) && /[A-Za-z]{3,}/.test(t);
+  }
+  function translateUrl(u) {
+    return `https://translate.google.com/translate?sl=auto&tl=ko&hl=ko&u=${encodeURIComponent(u)}`;
+  }
+  function relatedRow(r) {
+    if (!r.url) return '';
+    if (!isForeign(r)) {
+      return `<a class="link-row" href="${esc(r.url)}" target="_blank" rel="noopener"><span><span class="small muted">${esc(r.source)}</span><br><strong>${esc(r.title)}</strong><br><span class="small muted">${esc(r.note || '')}</span></span><span class="go">↗</span></a>`;
+    }
+    const head = r.title_ko ? `<strong>${esc(r.title_ko)}</strong><br><span class="small muted">${esc(r.title)}</span>` : `<strong>${esc(r.title)}</strong>`;
+    return `<div class="link-row rel-foreign"><span><span class="small muted">${esc(r.source)}</span><br>${head}${r.note ? `<br><span class="small muted">${esc(r.note)}</span>` : ''}</span>`
+      + `<span class="rel-btns"><a class="rel-btn" href="${esc(r.url)}" target="_blank" rel="noopener">원문</a><a class="rel-btn ko" href="${esc(translateUrl(r.url))}" target="_blank" rel="noopener">국문</a></span></div>`;
+  }
+
   function reportBlock(it) {
     const r = it.report;
     const rows = [['자료', r.series === '소몽' ? '소몽 · 한 주 정리' : r.series], ['발행', r.publisher], ['작성', r.author], ['발행일', r.date], ['분량', r.pages ? `${r.pages}쪽` : '']].filter((x) => x[1]);
@@ -707,8 +727,8 @@
     if (d.counter && d.counter.length) blocks.push(`<section class="d-block counter"><h3>반론과 약점</h3><ul>${d.counter.map((c) => `<li>${esc(c)}</li>`).join('')}</ul></section>`);
     if (d.test && d.test.length) blocks.push(`<section class="d-block"><h3>맞는지 확인하려면</h3><ul>${d.test.map((c) => `<li>${esc(c)}</li>`).join('')}</ul></section>`);
     if (d.timeline && state.full) blocks.push(`<section class="d-block"><h3>시간대별 언급 흐름</h3>${chart(d.timeline)}</section>`);
-    if (d.views) blocks.push(`<section class="d-block"><h3>시장의 시각</h3>${d.views.map((v) => `<div class="view"><div class="view-top"><strong>${esc(v.label)}</strong></div><p>${esc(v.text)}</p><span class="small muted">${esc(v.who)}</span></div>`).join('')}</section>`);
-    if (d.excerpts) blocks.push(`<section class="d-block"><h3>주요 발언 요약</h3>${d.excerpts.map((x) => `<div class="excerpt"><span class="who">${esc(x.channel)} · ${esc(x.time)}</span><span>${esc(x.text)}</span></div>`).join('')}</section>`);
+    if (d.views) blocks.push(`<section class="d-block"><h3>시장의 시각</h3>${d.views.map((v) => `<div class="view"><div class="view-top"><strong>${esc(v.label)}</strong></div><p>${esc(v.text)}</p></div>`).join('')}</section>`);   // 출처 없이 의견만 (선생님 지시)
+    if (d.excerpts) blocks.push(`<section class="d-block"><h3>주요 발언 요약</h3>${d.excerpts.map((x) => `<div class="excerpt"><span>${esc(x.text)}</span></div>`).join('')}</section>`);
     if (d.background) blocks.push(`<section class="d-block"><h3>배경</h3><p>${esc(d.background)}</p></section>`);
     if (d.watch) blocks.push(`<section class="d-block"><h3>앞으로 볼 것</h3><ul>${d.watch.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></section>`);
     if (d.sources) blocks.push(`<section class="d-block"><h3>원문 보기</h3>${d.sources.map((s) => `<a class="link-row" href="${esc(s.url)}" target="_blank" rel="noopener"><span><strong>${esc(s.name)}</strong><br><span class="small muted">${esc(s.meta)}</span></span><span class="go">원문 열기 ↗</span></a>`).join('')}</section>`);
@@ -716,7 +736,7 @@
       const FK = { impact: '증시 영향', reach: '조회수', credibility: '신뢰도', coherence: '설명력', breadth: '확산', us: '미국 주식 관련성', novelty: '새로움', confidence: '확인 정도' };
       blocks.push(`<section class="d-block owner-only"><h3>선정 점수 ${esc(it.score)} <span class="small muted">(전체판에만 보임)</span></h3><div class="factor-list">${Object.keys(FK).filter((k) => k in it.factors).map((k) => `<div class="factor"><span>${FK[k]}</span><span class="bar"><i style="width:${Math.round(it.factors[k] * 100)}%"></i></span><span class="num">${Math.round(it.factors[k] * 100)}</span></div>`).join('')}</div></section>`);
     }
-    if (d.related) blocks.push(`<section class="d-block"><h3>함께 읽기</h3>${d.related.map((r) => `<a class="link-row" href="${esc(r.url)}" target="_blank" rel="noopener"><span><span class="small muted">${esc(r.source)}</span><br><strong>${esc(r.title)}</strong><br><span class="small muted">${esc(r.note || '')}</span></span><span class="go">↗</span></a>`).join('')}</section>`);
+    if (d.related) blocks.push(`<section class="d-block"><h3>함께 읽기</h3>${d.related.map(relatedRow).join('')}</section>`);
 
     el.detailBody.innerHTML = `
       <div style="display:flex;flex-direction:column;gap:10px">

@@ -474,3 +474,9 @@ body.themed.has-banner .masthead::after { opacity: 1; background: linear-gradien
 .d-meaning { border-left: 3px solid var(--accent, #8a6d3b); background: var(--accent-soft, rgba(138,109,59,.08)); padding: 10px 14px; border-radius: 4px; }
 .d-meaning h3 { color: var(--accent-ink, var(--accent, #8a6d3b)); }
 .d-meaning p { margin: 0; font-size: 1.02em; line-height: 1.6; }
+/* 함께 읽기: 영어 기사 원문/국문 버튼 */
+.rel-foreign { cursor: default; }
+.rel-btns { display: flex; gap: 6px; flex: none; align-self: center; }
+.rel-btn { display: inline-block; padding: 5px 11px; border: 1px solid var(--line, #d9d4c7); border-radius: 999px; font-size: 13px; font-weight: 600; text-decoration: none; color: inherit; white-space: nowrap; }
+.rel-btn.ko { background: var(--accent, #8a6d3b); border-color: var(--accent, #8a6d3b); color: #fff; }
+.rel-btn:hover { filter: brightness(.95); }
