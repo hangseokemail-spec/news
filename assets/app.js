@@ -490,6 +490,10 @@
     if (d.background) blocks.push(`<section class="d-block"><h3>배경</h3><p>${esc(d.background)}</p></section>`);
     if (d.watch) blocks.push(`<section class="d-block"><h3>앞으로 볼 것</h3><ul>${d.watch.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></section>`);
     if (d.sources) blocks.push(`<section class="d-block"><h3>원문 보기</h3>${d.sources.map((s) => `<a class="link-row" href="${esc(s.url)}" target="_blank" rel="noopener"><span><strong>${esc(s.name)}</strong><br><span class="small muted">${esc(s.meta)}</span></span><span class="go">원문 열기 ↗</span></a>`).join('')}</section>`);
+    if (state.full && it.factors) {
+      const FK = { impact: '증시 영향', reach: '조회수', credibility: '신뢰도', coherence: '설명력', breadth: '확산', us: '미국 주식 관련성', novelty: '새로움', confidence: '확인 정도' };
+      blocks.push(`<section class="d-block owner-only"><h3>선정 점수 ${esc(it.score)} <span class="small muted">(전체판에만 보임)</span></h3><div class="factor-list">${Object.keys(FK).filter((k) => k in it.factors).map((k) => `<div class="factor"><span>${FK[k]}</span><span class="bar"><i style="width:${Math.round(it.factors[k] * 100)}%"></i></span><span class="num">${Math.round(it.factors[k] * 100)}</span></div>`).join('')}</div></section>`);
+    }
     if (d.related) blocks.push(`<section class="d-block"><h3>함께 읽기</h3>${d.related.map((r) => `<a class="link-row" href="${esc(r.url)}" target="_blank" rel="noopener"><span><span class="small muted">${esc(r.source)}</span><br><strong>${esc(r.title)}</strong><br><span class="small muted">${esc(r.note || '')}</span></span><span class="go">↗</span></a>`).join('')}</section>`);
 
     el.detailBody.innerHTML = `

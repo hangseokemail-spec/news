@@ -402,3 +402,8 @@ ol.logic .step { font-size: 12px; font-weight: 700; color: var(--accent); backgr
 .yt-points { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; color: var(--ink-2); }
 .yt-points .ts { display: inline-block; min-width: 46px; font-variant-numeric: tabular-nums; font-weight: 700; margin-right: 6px; }
 @media (min-width: 900px) { .yt-list { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); align-items: start; } }
+.factor-list { display: flex; flex-direction: column; gap: 6px; }
+.factor { display: grid; grid-template-columns: 110px 1fr 34px; gap: 8px; align-items: center; font-size: 13px; }
+.factor .bar { display: block; height: 6px; background: var(--soft); border-radius: 3px; overflow: hidden; }
+.factor .bar i { display: block; height: 6px; background: var(--accent); border-radius: 3px; }
+.factor .num { text-align: right; }
