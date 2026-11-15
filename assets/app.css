@@ -407,3 +407,14 @@ ol.logic .step { font-size: 12px; font-weight: 700; color: var(--accent); backgr
 .factor .bar { display: block; height: 6px; background: var(--soft); border-radius: 3px; overflow: hidden; }
 .factor .bar i { display: block; height: 6px; background: var(--accent); border-radius: 3px; }
 .factor .num { text-align: right; }
+.chart.line .ln { fill: none; stroke-width: 2; }
+.chart.line .ln.upl { stroke: #D92D20; }
+.chart.line .ln.dnl { stroke: #1F4FD8; }
+.chart.line .ma { fill: none; stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 4 3; opacity: .7; }
+@media (prefers-color-scheme: dark) { .chart.line .ln.upl { stroke: #F97066; } .chart.line .ln.dnl { stroke: #7C9CF5; } }
+/* 주간 스크리닝 */
+.scr-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.scr { display: flex; flex-direction: column; gap: 8px; }
+.scr.buy { border-top: 3px solid #D92D20; }
+.scr.sell { border-top: 3px solid #1F4FD8; }
+.scr-h { margin: 6px 0 0; font-family: var(--font-head); font-size: 19px; }

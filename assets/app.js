@@ -3,11 +3,12 @@
   'use strict';
 
   const TABS = [
-    { id: 'hot', label: '1면 핫이슈' },
-    { id: 'macro', label: '2면 매크로' },
-    { id: 'company', label: '3면 기업' },
-    { id: 'earnings', label: '실적' },
-    { id: 'social', label: '4·5면 SNS' },
+    { id: 'hot', label: '핫이슈' },
+    { id: 'macro', label: '매크로' },
+    { id: 'company', label: '개별 기업' },
+    { id: 'earnings', label: '실적 분석' },
+    { id: 'social', label: 'SNS1' },
+    { id: 'social2', label: 'SNS2' },
     { id: 'picks', label: '리포트' },
     { id: 'weekly', label: '주간 특보' }
   ];
@@ -131,7 +132,7 @@
   /* ---------- 면별 화면 ---------- */
   function renderTab() {
     const ed = state.edition;
-    const html = { hot: hotPage, macro: macroPage, company: companyPage, earnings: earningsPage, social: socialPage, picks: picksPage, weekly: weeklyPage }[state.tab](ed);
+    const html = { hot: hotPage, macro: macroPage, company: companyPage, earnings: earningsPage, social: socialPage, social2: social2Page, picks: picksPage, weekly: weeklyPage }[state.tab](ed);
     el.content.innerHTML = html;
   }
 
@@ -263,7 +264,7 @@
     return `
       <section class="notice"><p>사실보다 사람들의 해석과 가설을 모은 면입니다. 확인되지 않은 내용이 섞여 있어 표시를 붙였습니다.</p>
         <div class="card-meta">${badge('confirmed')}${badge('partial')}${badge('rumor')}</div></section>
-      <div class="section-head"><h2 class="section-title"><span class="page-mark">4면</span>오늘의 논쟁</h2></div>
+      <div class="section-head"><h2 class="section-title">오늘의 논쟁</h2></div>
       <section class="panel debate">
         <button type="button" class="card no-rank" data-open="${esc(d.id)}" style="border:0;padding:0">
           <span class="card-body"><span class="card-title" style="font-size:22px">${esc(d.title)}</span>
@@ -281,7 +282,7 @@
         </div>
         <div class="facts"><div class="fact known"><b>확인된 사실</b>${esc(d.known)}</div><div class="fact unknown"><b>아직 모르는 것</b>${esc(d.unknown)}</div></div>
       </section>
-      <div class="section-head"><h2 class="section-title"><span class="page-mark">5면</span>그 밖의 화제</h2></div>
+      <div class="section-head"><h2 class="section-title">그 밖의 화제</h2></div>
       <div class="cards">${s.buzz.map((b) => `
         <button type="button" class="card no-rank" data-open="${esc(b.id)}">
           <span class="card-body">
@@ -293,13 +294,41 @@
             ${b.basis && !(b.key || []).length ? `<span class="basis"><b>근거</b>${esc(b.basis)}</span>` : ''}
           </span>
         </button>`).join('')}
-      </div>
-      ${youtubeBlock(s.youtube)}`;
+      </div>`;
+  }
+
+  /* SNS2: 유튜브·블로그 (그리고 GPT·Gemini 조사원이 찾은 SNS 이야기) */
+  function social2Page(ed) {
+    const s = ed.social || {};
+    const blog = s.blogs || [];
+    const ext = s.external || [];
+    const yt = youtubeBlock(s.youtube);
+    const bl = blog.length ? `<div class="section-head"><h2 class="section-title">블로그에서 읽을 만한 글</h2><p class="section-note">요약 · 원문 링크</p></div>
+      <div class="yt-list">${blog.map((b) => `
+        <article class="panel yt">
+          <div class="card-meta"><span class="small" style="font-weight:700">${esc(b.blog || '네이버 블로그')}</span>${b.date ? `<span class="small muted">${esc(b.date)}</span>` : ''}</div>
+          <a class="yt-title" href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)} ↗</a>
+          ${keyStrip(b)}
+          <p class="yt-gist">${esc(b.gist || '')}</p>
+          ${b.points && b.points.length ? `<ul class="yt-points">${b.points.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}
+        </article>`).join('')}</div>` : '';
+    const ex = ext.length ? `<div class="section-head"><h2 class="section-title">다른 곳에서 본 이야기</h2><p class="section-note">레딧·X·해외 커뮤니티 등</p></div>
+      <div class="yt-list">${ext.map((b) => `
+        <article class="panel yt">
+          <div class="card-meta"><span class="small" style="font-weight:700">${esc(b.where || '')}</span>${badge(b.confidence)}</div>
+          <span class="yt-title">${esc(b.title)}</span>
+          ${keyStrip(b)}
+          <p class="yt-gist">${esc(b.note || '')}</p>
+          ${(b.links || []).map((l) => `<a class="small" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)} ↗</a>`).join(' ')}
+        </article>`).join('')}</div>` : '';
+    if (!yt && !bl && !ex) return `<section class="panel"><p style="margin:0">이번 호에는 유튜브·블로그 요약이 없습니다.</p></section>`;
+    return `${yt}${bl}${ex}`;
   }
 
   /* 리포트: 카리스석스 방에 올린 PDF 중 최대 2개 요약 */
   function reportLink(r) {
-    return r.link ? `<a class="link-row" href="${esc(r.link)}" target="_blank" rel="noopener"><span><strong>텔레그램에서 원문 PDF 보기</strong><br><span class="small muted">${esc(r.file || '')}${r.posted ? ` · ${esc(r.posted)} 올림` : ''}</span></span><span class="go">열기 ↗</span></a>` : '';
+    if (r.link) return `<a class="link-row" href="${esc(r.link)}" target="_blank" rel="noopener"><span><strong>원문 PDF 보기</strong><br><span class="small muted">${esc(r.file || '')}</span></span><span class="go">열기 ↗</span></a>`;
+    return r.file ? `<div class="link-row"><span><strong>원문 PDF</strong><br><span class="small muted">${esc(r.file)}${state.full && r.folder ? ` · ${esc(r.folder)}` : ''}</span></span></div>` : '';
   }
   function reportBlock(it) {
     const r = it.report;
@@ -308,8 +337,8 @@
   }
   function picksPage(ed) {
     const ps = ed.picks || [];
-    const head = `<div class="section-head"><h2 class="section-title">이번 호의 리포트</h2><p class="section-note">카리스석스 방에 올린 PDF 중 최대 2개</p></div>`;
-    if (!ps.length) return `${head}<section class="panel empty-picks"><p style="margin:0">이번 호에 정리할 PDF가 없습니다. 카리스석스의 주식 이야기 Chat 방에 PDF를 올려 두면 다음 아침 신문에 요약이 실립니다.</p></section>`;
+    const head = `<div class="section-head"><h2 class="section-title">이번 호의 리포트</h2><p class="section-note">하루 1~2개, 자세한 요약</p></div>`;
+    if (!ps.length) return `${head}<section class="panel empty-picks"><p style="margin:0">이번 호에 정리한 리포트가 없습니다.</p></section>`;
     return `${head}<div class="picks">${ps.map((x) => `
       <article class="panel pick">
         <button type="button" class="card no-rank" data-open="${esc(x.id)}" style="border:0;padding:0;background:none">
@@ -339,6 +368,28 @@
           ${v.tickers && v.tickers.length ? `<div class="card-meta">${tickers(v.tickers)}</div>` : ''}
         </article>`).join('')}
       </div>`;
+  }
+
+  /* 주간 스크리닝: 매수 관심 후보 10 · 매도 검토 후보 10 (차트 + 한 줄 이유) */
+  function screenBlock(sc) {
+    if (!sc) return '';
+    const card = (x, side) => `
+      <article class="panel scr ${side}">
+        <div class="card-meta"><span class="ticker">${esc(x.ticker)}</span><strong>${esc(x.company || '')}</strong><span class="small muted">${esc(x.sector || '')}</span></div>
+        <span class="keynums">
+          <span class="kn"><strong>${esc(x.price)}</strong><span>주가</span></span>
+          <span class="kn"><strong class="${changeClass(x.perf_half)}">${esc(x.perf_half || '-')}</strong><span>6개월</span></span>
+          <span class="kn"><strong>${esc(x.fpe || '-')}</strong><span>선행 PER</span></span>
+          <span class="kn"><strong class="${changeClass(x.eps_next_y)}">${esc(x.eps_next_y || '-')}</strong><span>내년 EPS 성장</span></span>
+        </span>
+        ${x.chart ? miniChart(x.chart, true) : ''}
+        <p class="yt-gist">${esc(x.why || '')}</p>
+        <span class="small muted">펀더멘털 ${Math.round((x.F || 0) * 100)} · 차트 ${Math.round((x.C || 0) * 100)} · 고점 대비 ${esc(x.from_high || '-')} · RSI ${esc(x.rsi ?? '-')}</span>
+      </article>`;
+    return `<div class="section-head"><h2 class="section-title">이번 주 스크리닝</h2><p class="section-note">${esc(sc.method || '')}</p></div>
+      <section class="notice"><p style="margin:0">규칙에 따라 기계적으로 고른 후보입니다. 투자 권유가 아니며, 판단 전에 직접 확인하세요.</p></section>
+      <h3 class="scr-h up">매수 관심 후보 ${(sc.buy || []).length}</h3><div class="scr-grid">${(sc.buy || []).map((x) => card(x, 'buy')).join('')}</div>
+      <h3 class="scr-h down">매도 검토 후보 ${(sc.sell || []).length}</h3><div class="scr-grid">${(sc.sell || []).map((x) => card(x, 'sell')).join('')}</div>`;
   }
 
   function weeklyPage(ed) {
@@ -371,7 +422,8 @@
       <section class="notice"><b class="section-title" style="font-size:20px">이번 주 논쟁 결산</b><p>${esc(w.debate)}</p></section>
       <section class="panel"><h2 class="section-title" style="font-size:20px">다음 주 볼 일정</h2>
         <div class="table-box"><table><tbody>${w.next.map((n) => `<tr><th scope="row" style="width:110px">${esc(n.date)}</th><td style="text-align:left">${esc(n.event)}</td></tr>`).join('')}</tbody></table></div>
-      </section>`;
+      </section>
+      ${screenBlock(w.screen)}`;
   }
 
   el.content.addEventListener('input', (e) => {
@@ -431,6 +483,7 @@
   function miniChart(c, compact) {
     const pts = (c.points || []).filter((p) => typeof p.value === 'number');
     if (!pts.length) return '';
+    if (c.type === 'line') return lineChart(c, compact);
     const W = compact ? 320 : 480, H = compact ? 108 : 170, padL = 4, padR = 4, top = compact ? 16 : 22, bottom = compact ? 32 : 30;
     const maxV = Math.max(0, ...pts.map((p) => p.value)), minV = Math.min(0, ...pts.map((p) => p.value));
     const span = (maxV - minV) || 1;
@@ -447,6 +500,21 @@
     }).join('');
     const zero = minV < 0 ? `<line x1="${padL}" x2="${W - padR}" y1="${y(0).toFixed(1)}" y2="${y(0).toFixed(1)}" class="zero"/>` : '';
     return `<svg class="chart mini${compact ? ' compact' : ''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(c.title)}: ${pts.map((p) => `${esc(p.label)} ${fmt(p.value)}`).join(', ')}">${zero}${bars}</svg>`;
+  }
+
+  /* 선 그래프 (주가 흐름 등). c = {type:'line', points:[{label, value}], series2:[...] (선택, 예: 50일 이동평균)} */
+  function lineChart(c, compact) {
+    const pts = (c.points || []).filter((p) => typeof p.value === 'number');
+    const s2 = (c.series2 || []).map((p) => (typeof p.value === 'number' ? p.value : null));
+    const W = compact ? 320 : 480, H = compact ? 96 : 160, pad = 6, bottom = compact ? 14 : 22;
+    const all = pts.map((p) => p.value).concat(s2.filter((v) => v !== null));
+    const mx = Math.max(...all), mn = Math.min(...all), span = (mx - mn) || 1;
+    const x = (i) => pad + i * (W - pad * 2) / Math.max(1, pts.length - 1);
+    const y = (v) => pad + (mx - v) / span * (H - pad - bottom);
+    const path = (vals) => vals.map((v, i) => (v === null ? '' : `${i && vals[i - 1] !== null ? 'L' : 'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`)).join('');
+    const first = pts[0].value, last = pts[pts.length - 1].value, up = last >= first;
+    const lab = `<text x="${pad}" y="${H - 4}">${esc(pts[0].label)}</text><text x="${W - pad}" y="${H - 4}" text-anchor="end">${esc(pts[pts.length - 1].label)} ${Number(last.toFixed(2)).toLocaleString('ko-KR')}${esc(c.unit || '')}</text>`;
+    return `<svg class="chart mini line${compact ? ' compact' : ''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(c.title)}">${s2.length ? `<path d="${path(s2)}" class="ma"/>` : ''}<path d="${path(pts.map((p) => p.value))}" class="ln ${up ? 'upl' : 'dnl'}"/>${lab}</svg>`;
   }
 
   function openDetail(id) {
@@ -470,6 +538,7 @@
     if (it.report) blocks.push(reportBlock(it));
     if (d.summary) blocks.push(`<section class="d-block"><h3>핵심 요약</h3><ul>${d.summary.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></section>`);
     (d.charts || []).forEach((c) => blocks.push(`<section class="d-block"><h3>${esc(c.title)}</h3>${miniChart(c)}${c.note ? `<span class="small muted">${esc(c.note)}</span>` : ''}${c.source ? `<span class="small muted">출처: ${esc(c.source)}</span>` : ''}</section>`));
+    (d.sections || []).forEach((sec) => blocks.push(`<section class="d-block"><h3>${esc(sec.title)}</h3>${sec.text ? `<p>${esc(sec.text)}</p>` : ''}${(sec.bullets || []).length ? `<ul>${sec.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>` : ''}</section>`));
     if (d.points && d.points.length) blocks.push(`<section class="d-block"><h3>투자 포인트</h3><ul>${d.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></section>`);
     if (d.risks && d.risks.length) blocks.push(`<section class="d-block counter"><h3>리스크</h3><ul>${d.risks.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></section>`);
     if (d.why) blocks.push(`<section class="d-block"><h3>오늘 신문과의 연결</h3><p>${esc(d.why)}</p></section>`);
