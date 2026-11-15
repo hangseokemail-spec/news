@@ -425,3 +425,28 @@ ol.logic .step { font-size: 12px; font-weight: 700; color: var(--accent); backgr
   .hot-top.has-cover { grid-template-columns: 210px minmax(0, 1fr) 280px; }
   .hot-top.has-cover .cover img { max-width: 210px; }
 }
+
+/* ---------- 그날의 색 (표지에서 뽑음) ---------- */
+body.themed .masthead { background: var(--mast-bg); position: relative; overflow: hidden; isolation: isolate; }
+body.themed .masthead::before { content: ""; position: absolute; inset: -40px; z-index: -1; background: var(--cover-url) center 35% / cover no-repeat; filter: blur(30px) saturate(1.15); opacity: .32; }
+body.themed .masthead::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 40%, var(--mast-bg)); opacity: .6; }
+body.themed .mast-title { border-top-color: rgba(245, 241, 232, .9); border-bottom-color: rgba(245, 241, 232, .45); }
+body.themed .paper-name a { color: #F5F1E8; }
+body.themed .date-label, body.themed .issue-line { color: rgba(245, 241, 232, .78); }
+body.themed .cal-btn { color: #F5F1E8; border-color: rgba(245, 241, 232, .35); background: rgba(0, 0, 0, .15); }
+body.themed .tabs-wrap { border-bottom-color: var(--line-accent); }
+body.themed .tab[aria-selected="true"] { color: var(--accent-ink); }
+body.themed .section-title::before { content: ""; display: inline-block; width: 5px; height: .78em; margin-right: 9px; border-radius: 2px; background: var(--accent); vertical-align: -0.04em; }
+body.themed .lead-panel { border-left: 4px solid var(--accent); }
+body.themed .kicker, body.themed .rank.top { color: var(--accent-ink); }
+body.themed .kn { background: var(--accent-soft); }
+body.themed .card:hover { border-color: var(--accent); }
+body.themed .card-chart { border-top-color: var(--line-accent); }
+body.themed .detail-bar { background: var(--mast-bg); border-bottom-color: transparent; }
+body.themed .detail-bar, body.themed .detail-bar button, body.themed .detail-bar .bar-name { color: #F5F1E8; }
+body.themed .d-keys .dk { border-color: var(--line-accent); }
+body.themed .count-bar input[type="range"] { accent-color: var(--accent); }
+body.themed .site-footer { border-top: 3px solid var(--accent); }
+body.themed .chart .b { fill: var(--line-accent); }
+body.themed .chart .b.max { fill: var(--accent); }
+@media (max-width: 899px) { .cover img { max-width: 230px; } }

@@ -104,8 +104,103 @@
   }
   const sameMonth = (ym, date) => date.startsWith(ym);
 
+  /* ---------- 그날의 색: 표지에서 뽑아 신문 전체(제호 띠, 강조색, 그래프, 카드, 상세 창)에 입힌다 ---------- */
+  const hex2rgb = (h) => { const n = parseInt(h.replace('#', ''), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+  const rgb2hsl = ([r, g, b]) => {
+    r /= 255; g /= 255; b /= 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2;
+    if (mx === mn) return [0, 0, l];
+    const d = mx - mn, s = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn);
+    const h = mx === r ? (g - b) / d + (g < b ? 6 : 0) : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+    return [h * 60, s, l];
+  };
+  const hsl = (h, s, l) => `hsl(${Math.round(h)} ${Math.round(Math.max(0, Math.min(1, s)) * 100)}% ${Math.round(Math.max(0, Math.min(1, l)) * 1000) / 10}%)`;
+  const hsl2rgb = (h, s, l) => {
+    const k = (n) => (n + h / 30) % 12, a = s * Math.min(l, 1 - l);
+    const f = (n) => l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1));
+    return [f(0) * 255, f(8) * 255, f(4) * 255];
+  };
+  const lum = (rgb) => { const c = rgb.map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }); return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]; };
+  const contrast = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+  // 강조색이 글자로 읽히도록 밝기를 조정 (흰 바탕 4.5:1, 어두운 바탕 4.5:1)
+  function readable(h, s, l, bg, darker) {
+    for (let i = 0; i < 60; i++) {
+      if (contrast(hsl2rgb(h, s, l), bg) >= 4.5) break;
+      l += darker ? -0.01 : 0.01;
+    }
+    return l;
+  }
+  function buildTheme(accent, mast) {
+    const [ah, as0] = accent, [mh, ms] = mast;
+    const as = Math.min(0.85, Math.max(0.35, as0));
+    const light = {
+      '--accent': hsl(ah, as, readable(ah, as, 0.45, [255, 255, 255], true) + 0.04),
+      '--accent-ink': hsl(ah, as, readable(ah, as, 0.4, [255, 255, 255], true)),
+      '--accent-soft': hsl(ah, Math.min(as, 0.55), 0.93),
+      '--line-accent': hsl(ah, Math.min(as, 0.45), 0.84),
+      '--paper': hsl(mh, Math.min(ms, 0.18), 0.965),
+      '--mast-bg': hsl(mh, Math.min(ms, 0.45), 0.12),
+    };
+    const dark = {
+      '--accent': hsl(ah, as, readable(ah, as, 0.6, [23, 29, 36], false)),
+      '--accent-ink': hsl(ah, as, readable(ah, as, 0.66, [23, 29, 36], false)),
+      '--accent-soft': hsl(ah, Math.min(as, 0.5), 0.18),
+      '--line-accent': hsl(ah, Math.min(as, 0.4), 0.3),
+      '--paper': hsl(mh, Math.min(ms, 0.25), 0.07),
+      '--mast-bg': hsl(mh, Math.min(ms, 0.45), 0.09),
+    };
+    return { light, dark };
+  }
+  function themeFromImage(src) {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => {
+        try {
+          const W = 48, H = 64, cv = document.createElement('canvas');
+          cv.width = W; cv.height = H;
+          const cx = cv.getContext('2d', { willReadFrequently: true });
+          cx.drawImage(img, 0, 0, W, H);
+          const px = cx.getImageData(0, 0, W, H).data, buckets = new Map();
+          for (let i = 0; i < px.length; i += 4) {
+            const k = ((px[i] >> 4) << 8) | ((px[i + 1] >> 4) << 4) | (px[i + 2] >> 4);
+            const b = buckets.get(k) || { n: 0, r: 0, g: 0, b: 0 };
+            b.n++; b.r += px[i]; b.g += px[i + 1]; b.b += px[i + 2]; buckets.set(k, b);
+          }
+          const list = [...buckets.values()].map((b) => { const rgb = [b.r / b.n, b.g / b.n, b.b / b.n]; return { n: b.n, rgb, hsl: rgb2hsl(rgb) }; });
+          list.sort((a, b) => b.n - a.n);
+          const dom = list[0];
+          const darkish = list.filter((c) => c.hsl[2] < 0.3).sort((a, b) => b.n - a.n)[0] || dom;
+          const acc = list.filter((c) => c.hsl[1] > 0.25 && c.hsl[2] > 0.22 && c.hsl[2] < 0.8)
+            .sort((a, b) => b.hsl[1] * Math.sqrt(b.n) - a.hsl[1] * Math.sqrt(a.n))[0];
+          resolve(buildTheme(acc ? acc.hsl : [215, 0.6, 0.45], darkish.hsl));
+        } catch (e) { resolve(null); }
+      };
+      img.onerror = () => resolve(null);
+      img.src = src;
+    });
+  }
+  const THEME_VARS = ['--accent', '--accent-ink', '--accent-soft', '--line-accent', '--paper', '--mast-bg'];
+  async function applyTheme(ed) {
+    const root = document.documentElement;
+    THEME_VARS.forEach((v) => root.style.removeProperty(v));
+    document.body.classList.remove('themed');
+    root.style.removeProperty('--cover-url');
+    if (!ed.cover && !ed.theme) return;
+    let t = null;
+    if (ed.theme && ed.theme.accent && ed.theme.mast) t = buildTheme(rgb2hsl(hex2rgb(ed.theme.accent)), rgb2hsl(hex2rgb(ed.theme.mast)));
+    const key = `sp_theme_v1_${ed.date}_${ed.cover ? ed.cover.src : ''}`;
+    if (!t) { try { t = JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { t = null; } }
+    if (!t && ed.cover) { t = await themeFromImage(ed.cover.src); try { if (t) localStorage.setItem(key, JSON.stringify(t)); } catch (e) { /* 저장 못 해도 괜찮다 */ } }
+    if (!t || state.date !== ed.date) return;
+    const vars = matchMedia('(prefers-color-scheme: dark)').matches ? t.dark : t.light;
+    Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
+    if (ed.cover) root.style.setProperty('--cover-url', `url("${ed.cover.src}")`);
+    document.body.classList.add('themed');
+  }
+
   /* ---------- 제호, 탭 ---------- */
   function renderChrome(ed, avail) {
+    applyTheme(ed);
     el.banner.hidden = !ed.sample;
     el.date.textContent = fmtLong(ed.date);
     el.issue.textContent = `제${ed.issue}호 · ${ed.published || '07:00'} 발행${ed.updated ? ` · ${ed.updated}` : ''}${state.full ? ' · 전체판' : ''}`;
