@@ -106,7 +106,7 @@
   function renderChrome(ed, avail) {
     el.banner.hidden = !ed.sample;
     el.date.textContent = fmtLong(ed.date);
-    el.issue.textContent = `제${ed.issue}호 · 06:15 발행 · 집계 ${ed.window || ''}${state.full ? ' · 전체판' : ''}`;
+    el.issue.textContent = `제${ed.issue}호 · ${ed.published || '07:00'} 발행${ed.updated ? ` · ${ed.updated}` : ''} · 집계 ${ed.window || ''}${state.full ? ' · 전체판' : ''}`;
     el.owner.hidden = !ownerKey();
     el.ownerText.textContent = state.keyError
       ? '이 기기에 저장된 열쇠로 전체판을 열지 못해 공유판을 보여드려요.'
