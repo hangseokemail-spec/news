@@ -470,3 +470,7 @@ body.themed .chart .b.max { fill: var(--accent); }
 body.themed.has-banner .masthead::before { inset: 0; filter: none; opacity: .9; background-position: right center; background-size: cover; }
 body.themed.has-banner .masthead::after { opacity: 1; background: linear-gradient(90deg, var(--mast-bg) 0%, color-mix(in srgb, var(--mast-bg) 70%, transparent) 45%, transparent 85%), linear-gradient(180deg, transparent 55%, var(--mast-bg)); }
 @media (min-width: 900px) { body.themed.has-banner .mast-inner { padding-bottom: 18px; } body.themed.has-banner .mast-title { padding: 14px 0 12px; } }
+/* 편집장이 본 의미 (상세 창 맨 위) */
+.d-meaning { border-left: 3px solid var(--accent, #8a6d3b); background: var(--accent-soft, rgba(138,109,59,.08)); padding: 10px 14px; border-radius: 4px; }
+.d-meaning h3 { color: var(--accent-ink, var(--accent, #8a6d3b)); }
+.d-meaning p { margin: 0; font-size: 1.02em; line-height: 1.6; }

@@ -688,6 +688,7 @@
     }
     if ((it.key || []).length && !(it.paid && !state.full)) blocks.push(`<section class="d-keys span-all" aria-label="핵심 수치">${it.key.map((x) => `<div class="dk"><strong class="${changeClass(x.value)}">${esc(x.value)}</strong><span>${esc(x.label)}</span></div>`).join('')}</section>`);
     if (it.report) blocks.push(reportBlock(it));
+    if (d.meaning) blocks.push(`<section class="d-block span-all d-meaning"><h3>편집장이 본 의미</h3><p>${esc(d.meaning)}</p></section>`);
     if (d.summary) blocks.push(`<section class="d-block"><h3>핵심 요약</h3><ul>${d.summary.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></section>`);
     (d.charts || []).forEach((c) => blocks.push(`<section class="d-block"><h3>${esc(c.title)}</h3>${miniChart(c)}${c.note ? `<span class="small muted">${esc(c.note)}</span>` : ''}${c.source ? `<span class="small muted">출처: ${esc(c.source)}</span>` : ''}</section>`));
     (d.sections || []).forEach((sec) => blocks.push(`<section class="d-block"><h3>${esc(sec.title)}</h3>${sec.text ? `<p>${esc(sec.text)}</p>` : ''}${(sec.bullets || []).length ? `<ul>${sec.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>` : ''}</section>`));
