@@ -6,13 +6,16 @@
     { id: 'hot', label: '1면 핫이슈' },
     { id: 'macro', label: '2면 매크로' },
     { id: 'company', label: '3면 기업' },
+    { id: 'earnings', label: '실적' },
     { id: 'social', label: '4·5면 SNS' },
     { id: 'weekly', label: '주간 특보' }
   ];
   const CONF = { confirmed: '확인됨', partial: '일부 확인', rumor: '가설·소문' };
   const DOW = ['일', '월', '화', '수', '목', '금', '토'];
 
-  const state = { index: null, edition: null, date: null, tab: 'hot', item: null, calMonth: null, lastFocus: null };
+  const state = { index: null, edition: null, date: null, tab: 'hot', item: null, calMonth: null, lastFocus: null, hotN: null };
+  const HOTN_STORE = 'sp_hot_n';
+  try { const v = parseInt(localStorage.getItem(HOTN_STORE), 10); if (v > 0) state.hotN = v; } catch (e) {}
   const $ = (s) => document.querySelector(s);
   const el = { content: $('#content'), tabs: $('#tabs'), date: $('#dateLabel'), issue: $('#issueLine'),
     banner: $('#sampleBanner'), cal: $('#calendar'), recent: $('#recent'), calPanel: $('#calendarPanel'),
@@ -88,7 +91,7 @@
       return;
     }
     const ed = state.edition;
-    const avail = TABS.filter((t) => t.id !== 'weekly' || ed.weekly);
+    const avail = TABS.filter((t) => (t.id !== 'weekly' || ed.weekly) && (t.id !== 'earnings' || ed.earnings));
     state.tab = avail.some((t) => t.id === h.tab) ? h.tab : 'hot';
     state.item = h.item;
     if (!state.calMonth || !sameMonth(state.calMonth, date)) state.calMonth = date.slice(0, 7);
@@ -127,12 +130,20 @@
   /* ---------- 면별 화면 ---------- */
   function renderTab() {
     const ed = state.edition;
-    const html = { hot: hotPage, macro: macroPage, company: companyPage, social: socialPage, weekly: weeklyPage }[state.tab](ed);
+    const html = { hot: hotPage, macro: macroPage, company: companyPage, earnings: earningsPage, social: socialPage, weekly: weeklyPage }[state.tab](ed);
     el.content.innerHTML = html;
+  }
+
+  function hotN(ed) {
+    const total = ed.hot.length;
+    const want = state.hotN || 7;
+    return Math.max(Math.min(want, total), Math.min(3, total));
   }
 
   function hotPage(ed) {
     const max = Math.max(...ed.hot.map((h) => h.channels), 1);
+    const n = hotN(ed);
+    const total = ed.hot.length;
     return `
       <section class="panel lead-panel">
         <div><span class="kicker">오늘의 한 줄</span><p class="lead-text">${esc(ed.lead)}</p></div>
@@ -142,16 +153,21 @@
           <div class="stat"><strong>${esc(ed.stats.messages)}</strong><span>분석한 메시지</span></div>
         </div>
       </section>
-      <div class="section-head"><h2 class="section-title">핫이슈 TOP ${ed.hot.length}</h2><p class="section-note">여러 채널에서 겹친 순 · 누르면 자세히</p></div>
+      <div class="section-head"><h2 class="section-title">핫이슈 TOP <span id="hotNTitle">${n}</span></h2><p class="section-note">중요도 순 · 누르면 자세히</p></div>
+      ${total > 3 ? `<section class="count-bar" aria-label="기사 수 조절">
+        <label for="hotN"><strong>기사 수</strong> <span class="num" id="hotNVal">${n}</span>개</label>
+        <input type="range" id="hotN" min="${Math.min(3, total)}" max="${total}" step="1" value="${n}" aria-valuetext="${n}개">
+        <span class="small muted">오늘 후보 ${total}개 · 많이 겹치고 중요한 기사부터</span>
+      </section>` : ''}
       <div class="cards">${ed.hot.map((h, i) => `
-        <button type="button" class="card" data-open="${esc(h.id)}">
+        <button type="button" class="card" data-open="${esc(h.id)}" data-rank="${i + 1}"${i + 1 > n ? ' hidden' : ''}>
           <span class="rank${i < 3 ? ' top' : ''}">${i + 1}</span>
           <span class="card-body">
             <span class="card-title">${esc(h.title)}</span>
             <span class="card-text">${esc(h.summary)}</span>
             <span class="card-meta">
               <span class="mention"><span class="mbar"><i style="width:${Math.round(h.channels / max * 100)}%"></i></span>${esc(h.channels)}개 채널</span>
-              ${tickers(h.tickers)}${badge(h.confidence)}${paidChip(h)}<span class="more">자세히 ›</span>
+              ${h.score != null ? `<span class="score" title="중요도 점수">중요도 ${esc(h.score)}</span>` : ''}${h.boost ? '<span class="chip boost">카리스석스 언급</span>' : ''}${tickers(h.tickers)}${badge(h.confidence)}${paidChip(h)}<span class="more">자세히 ›</span>
             </span>
           </span>
         </button>`).join('')}
@@ -206,6 +222,37 @@
           </span>
         </button>`).join('')}
       </div>`;
+  }
+
+  function earningsPage(ed) {
+    const e = ed.earnings;
+    const st = e.stats || {};
+    const rows = (e.reported || []).map((r) => `
+      <tr>
+        <th scope="row" style="text-align:left"><strong>${esc(r.name)}</strong> <span class="ticker">${esc(r.ticker)}</span><br><span class="small muted">${esc(r.sector || '')}${r.marketCap ? ` · ${esc(r.marketCap)}` : ''}</span></th>
+        <td>${esc(r.date || '')}${r.time ? `<br><span class="small muted">${esc(r.time)}</span>` : ''}</td>
+        <td class="${changeClass(r.epsSurprise)}">${esc(r.epsSurprise || '—')}</td>
+        <td class="${changeClass(r.revSurprise)}">${esc(r.revSurprise || '—')}</td>
+        <td>${r.epsGrowth ? `<span class="${changeClass(r.epsGrowth)}">EPS ${esc(r.epsGrowth)}</span>` : ''}${r.salesGrowth ? `<br><span class="small ${changeClass(r.salesGrowth)}">매출 ${esc(r.salesGrowth)}</span>` : ''}</td>
+        <td class="${changeClass(r.change)}">${esc(r.change || '—')}${r.perfWeek ? `<br><span class="small ${changeClass(r.perfWeek)}">1주 ${esc(r.perfWeek)}</span>` : ''}</td>
+        <td style="text-align:left" class="small">${esc(r.note || '')}</td>
+      </tr>`).join('');
+    const up = (e.upcoming || []).map((r) => `<tr><th scope="row" style="width:110px">${esc(r.date)}${r.time ? ` <span class="small muted">${esc(r.time)}</span>` : ''}</th><td style="text-align:left"><strong>${esc(r.name)}</strong> <span class="ticker">${esc(r.ticker)}</span></td><td class="small muted">${esc(r.marketCap || '')}</td><td class="small">${r.epsEst ? `EPS 컨센 ${esc(r.epsEst)}` : ''}</td><td style="text-align:left" class="small">${esc(r.note || '')}</td></tr>`).join('');
+    return `
+      <section class="panel lead-panel">
+        <div><span class="kicker">S&amp;P 500 실적 · ${esc(e.range || '')}</span><p class="lead-text">${esc(e.lead || '최근 발표한 S&P 500 기업의 실적을 시장 예상치(컨센서스)와 비교했습니다.')}</p></div>
+        <div class="stats">
+          <div class="stat"><strong>${esc(st.count ?? (e.reported || []).length)}</strong><span>발표 기업</span></div>
+          <div class="stat"><strong>${esc(st.epsBeat ?? '—')}</strong><span>EPS 예상 상회</span></div>
+          <div class="stat"><strong>${esc(st.revBeat ?? '—')}</strong><span>매출 예상 상회</span></div>
+        </div>
+      </section>
+      <div class="section-head"><h2 class="section-title">발표한 기업</h2><p class="section-note">서프라이즈 = 실제치가 컨센서스보다 높거나 낮은 정도</p></div>
+      <section class="panel"><div class="table-box"><table class="earn"><thead><tr><th scope="col" style="text-align:left">기업</th><th scope="col">발표</th><th scope="col">EPS vs 컨센</th><th scope="col">매출 vs 컨센</th><th scope="col">전년 대비</th><th scope="col">주가<br><span class="small muted">마지막 거래일</span></th><th scope="col" style="text-align:left">한 줄</th></tr></thead>
+        <tbody>${rows || '<tr><td colspan="7" class="muted">이 기간에 발표한 기업이 없어요.</td></tr>'}</tbody></table></div>
+        ${e.source ? `<span class="small muted">출처: ${esc(e.source)}</span>` : ''}</section>
+      ${up ? `<div class="section-head"><h2 class="section-title">다음 발표 예정</h2></div>
+      <section class="panel"><div class="table-box"><table><tbody>${up}</tbody></table></div></section>` : ''}`;
   }
 
   function socialPage(ed) {
@@ -277,6 +324,17 @@
       </section>`;
   }
 
+  el.content.addEventListener('input', (e) => {
+    if (e.target.id !== 'hotN') return;
+    const n = parseInt(e.target.value, 10);
+    state.hotN = n;
+    try { localStorage.setItem(HOTN_STORE, String(n)); } catch (err) {}
+    e.target.setAttribute('aria-valuetext', `${n}개`);
+    const v = document.getElementById('hotNVal'); if (v) v.textContent = n;
+    const t = document.getElementById('hotNTitle'); if (t) t.textContent = n;
+    el.content.querySelectorAll('.card[data-rank]').forEach((c) => { c.hidden = Number(c.dataset.rank) > n; });
+  });
+
   el.content.addEventListener('click', (e) => {
     const b = e.target.closest('[data-open]');
     if (b) { state.lastFocus = b; go(state.date, state.tab, b.dataset.open); }
@@ -304,6 +362,30 @@
     return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="시간대별 언급 수. 가장 많은 때는 ${esc(peak.label)} ${max}건">${bars}${labels}<text x="${W - pad}" y="12" text-anchor="end">최고 ${max}건 · ${esc(peak.label)}</text></svg>`;
   }
 
+  const VERDICT = { '일치': 'ok', '대체로 일치': 'ok', '엇갈림': 'mixed', '단일 출처': 'one', '확인 안 됨': 'no' };
+
+  /* 막대 그래프 (음수 지원). c = {type:'bar', unit, points:[{label, value}]} */
+  function miniChart(c) {
+    const pts = (c.points || []).filter((p) => typeof p.value === 'number');
+    if (!pts.length) return '';
+    const W = 480, H = 170, padL = 8, padR = 8, top = 22, bottom = 30;
+    const maxV = Math.max(0, ...pts.map((p) => p.value)), minV = Math.min(0, ...pts.map((p) => p.value));
+    const span = (maxV - minV) || 1;
+    const y = (v) => top + (maxV - v) / span * (H - top - bottom);
+    const bw = (W - padL - padR) / pts.length;
+    const fmt = (v) => `${Math.abs(v) >= 1000 ? v.toLocaleString('ko-KR', { maximumFractionDigits: 0 }) : Number(v.toFixed(2)).toLocaleString('ko-KR')}${esc(c.unit || '')}`;
+    const bars = pts.map((p, i) => {
+      const x = padL + i * bw + bw * 0.15, w = bw * 0.7;
+      const y0 = y(Math.max(0, p.value)), h = Math.max(1.5, Math.abs(y(p.value) - y(0)));
+      const neg = p.value < 0;
+      return `<rect class="b${neg ? ' neg' : ''}${p.hi ? ' max' : ''}" x="${x.toFixed(1)}" y="${y0.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="2"><title>${esc(p.label)} ${fmt(p.value)}</title></rect>
+        <text x="${(x + w / 2).toFixed(1)}" y="${(neg ? y0 + h + 12 : y0 - 4).toFixed(1)}" text-anchor="middle">${fmt(p.value)}</text>
+        <text x="${(x + w / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(p.label)}</text>`;
+    }).join('');
+    const zero = minV < 0 ? `<line x1="${padL}" x2="${W - padR}" y1="${y(0).toFixed(1)}" y2="${y(0).toFixed(1)}" class="zero"/>` : '';
+    return `<svg class="chart mini" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(c.title)}: ${pts.map((p) => `${esc(p.label)} ${fmt(p.value)}`).join(', ')}">${zero}${bars}</svg>`;
+  }
+
   function openDetail(id) {
     const it = findItem(id);
     if (!it) { closeDetail(true); return; }
@@ -327,6 +409,11 @@
       <div class="table-box"><table><thead><tr><th scope="col">항목</th><th scope="col">값</th><th scope="col" style="text-align:left">설명</th></tr></thead><tbody>
       ${d.numbers.map((n) => `<tr><th scope="row">${esc(n.label)}</th><td class="${changeClass(n.value)}">${esc(n.value)}</td><td style="text-align:left" class="muted">${esc(n.note || '')}</td></tr>`).join('')}
       </tbody></table></div>${d.numbersSource ? `<span class="small muted">출처: ${esc(d.numbersSource)}</span>` : ''}</section>`);
+    (d.charts || []).forEach((c) => blocks.push(`<section class="d-block"><h3>${esc(c.title)}</h3>${miniChart(c)}${c.note ? `<span class="small muted">${esc(c.note)}</span>` : ''}${c.source ? `<span class="small muted">출처: ${esc(c.source)}</span>` : ''}</section>`));
+    if (d.checks && d.checks.length) blocks.push(`<section class="d-block"><h3>교차 확인</h3><span class="small muted">핵심 사실과 숫자를 여러 출처에서 맞춰 봤습니다.</span>
+      <div class="table-box"><table class="checks"><thead><tr><th scope="col" style="text-align:left">항목</th><th scope="col" style="text-align:left">확인한 내용</th><th scope="col" style="text-align:left">출처</th><th scope="col">판정</th></tr></thead><tbody>
+      ${d.checks.map((c) => `<tr><th scope="row" style="text-align:left">${esc(c.item)}</th><td style="text-align:left">${esc(c.value)}</td><td style="text-align:left" class="small">${(c.sources || []).map((s) => (s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>` : esc(s.name))).join(' · ')}</td><td><span class="verdict v-${esc(VERDICT[c.verdict] || 'one')}">${esc(c.verdict || '단일 출처')}</span></td></tr>`).join('')}
+      </tbody></table></div></section>`);
     if (d.timeline) blocks.push(`<section class="d-block"><h3>시간대별 언급 흐름</h3>${chart(d.timeline)}</section>`);
     if (d.views) blocks.push(`<section class="d-block"><h3>채널별 시각</h3>${d.views.map((v) => `<div class="view"><div class="view-top"><strong>${esc(v.label)}</strong><span class="muted num">${esc(v.count)}곳</span></div><p>${esc(v.text)}</p><span class="small muted">${esc(v.who)}</span></div>`).join('')}</section>`);
     if (d.excerpts) blocks.push(`<section class="d-block"><h3>채널 발췌 요약</h3>${d.excerpts.map((x) => `<div class="excerpt"><span class="who">${esc(x.channel)} · ${esc(x.time)}</span><span>${esc(x.text)}</span></div>`).join('')}</section>`);
