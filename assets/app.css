@@ -108,8 +108,8 @@ button { font: inherit; color: inherit; }
 .cal-head-row { display: flex; justify-content: space-between; align-items: center; }
 .side-title { margin: 0; font-family: var(--font-head); font-weight: 800; font-size: 20px; }
 
-@media (min-width: 1100px) {
-  .layout { grid-template-columns: minmax(0, 1fr) 320px; align-items: start; }
+@media (min-width: 1600px) {
+  .layout { grid-template-columns: minmax(0, 1fr) 300px; align-items: start; }
   .calendar-panel {
     position: sticky; top: 64px; inset: auto; transform: none; max-height: none; box-shadow: none; z-index: auto;
     border: 1px solid var(--line); border-radius: var(--radius); padding: 16px;
@@ -256,9 +256,7 @@ button.cal-day.selected { background: var(--accent); border-color: var(--accent)
 @media (min-width: 760px) {
   .detail-sheet { inset: 24px auto 24px 50%; transform: translateX(-50%); width: min(760px, calc(100vw - 48px)); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
 }
-@media (min-width: 1280px) {
-  .detail-sheet { inset: 0 0 0 auto; transform: none; width: 640px; border-radius: 0; }
-}
+
 .d-title { margin: 0; font-family: var(--font-head); font-weight: 800; font-size: clamp(23px, 3vw, 28px); line-height: 1.38; text-wrap: balance; }
 .d-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .d-block { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
@@ -316,3 +314,81 @@ ol.logic { margin: 0; padding: 0; list-style: none; display: flex; flex-directio
 ol.logic li { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: start; }
 ol.logic .step { font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 6px; text-align: center; }
 .d-block.counter { border-color: var(--hot-line); }
+
+
+/* ---------- 넓은 화면: 옆으로 펼쳐 스크롤 줄이기 ---------- */
+.hot-top { display: grid; gap: 12px; }
+.basis { display: block; font-size: 13px; color: var(--ink-2); border-left: 3px solid var(--accent-soft); padding-left: 8px; }
+.basis b { color: var(--ink); margin-right: 6px; }
+.company-wrap, .earn-wrap { display: grid; gap: 16px; align-items: start; }
+.company-side, .earn-wrap > div { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+
+/* 태블릿 이상: 달력은 오른쪽 서랍 */
+@media (min-width: 760px) and (max-width: 1599px) {
+  .calendar-panel { inset: 0 0 0 auto; width: 340px; max-height: none; border-radius: 0; transform: translateX(105%); box-shadow: -8px 0 30px rgba(0,0,0,.18); }
+  .calendar-panel.open { transform: translateX(0); }
+}
+@media (min-width: 900px) {
+  .hot-top { grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); align-items: stretch; }
+  .hot-top .count-bar { flex-direction: column; align-items: stretch; justify-content: center; }
+  .hot-top .count-bar .small { flex-basis: auto; }
+  .card .card-text { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+}
+@media (min-width: 1100px) {
+  .cards { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .company-wrap { grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); }
+  .company-side { position: sticky; top: 60px; }
+  .company-cards { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .indicators { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (min-width: 1400px) {
+  .wrap { max-width: 1680px; }
+  .earn-wrap { grid-template-columns: minmax(0, 1.7fr) minmax(360px, 1fr); }
+  .indicators { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+}
+
+/* 상세 보기: 넓은 화면은 큰 창에 두 단으로 */
+@media (min-width: 1100px) {
+  .detail-sheet { inset: 24px; left: 50%; transform: translateX(-50%); width: min(1400px, calc(100vw - 48px)); border-radius: 16px; }
+  .detail-body { display: block; max-width: none; columns: 2 460px; column-gap: 16px; padding: 22px 24px 32px; }
+  .detail-body > * { break-inside: avoid; margin: 0 0 16px; }
+  .detail-body > :first-child { column-span: all; }
+}
+@media (min-width: 1700px) {
+  .detail-body { columns: 3 440px; }
+}
+
+/* ---------- 요약 속 핵심 수치와 작은 그래프 ---------- */
+.keynums { display: flex; flex-wrap: wrap; gap: 6px; }
+.kn { flex: 1 1 auto; display: flex; flex-direction: column; gap: 1px; background: var(--soft); border-radius: 8px; padding: 6px 8px; min-width: 74px; }
+.kn strong { font-size: 14.5px; font-variant-numeric: tabular-nums; line-height: 1.25; word-break: keep-all; overflow-wrap: normal; }
+.kn span { font-size: 11.5px; color: var(--ink-2); line-height: 1.3; }
+.card-chart { display: flex; flex-direction: column; gap: 2px; border-top: 1px dashed var(--line); padding-top: 6px; }
+.cc-title { font-size: 11.5px; font-weight: 600; color: var(--ink-2); }
+.chart.compact { width: 100%; height: auto; max-height: 112px; }
+.chart.compact text { font-size: 10.5px; }
+.d-keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+.dk { display: flex; flex-direction: column; gap: 2px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.dk strong { font-size: 20px; font-variant-numeric: tabular-nums; line-height: 1.25; word-break: keep-all; overflow-wrap: normal; }
+.d-block .chart.mini { max-height: 230px; }
+.dk span { font-size: 12.5px; color: var(--ink-2); }
+/* 리포트 탭 */
+.picks { display: grid; gap: 14px; }
+.pick { display: flex; flex-direction: column; gap: 12px; }
+.pick .card:hover { border: 0; }
+.pick-sum { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 14.5px; }
+.report-meta { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13.5px; }
+.report-head { display: flex; flex-direction: column; gap: 10px; }
+@media (min-width: 1100px) {
+  .picks { grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); align-items: start; }
+  .detail-body > .span-all { column-span: all; }
+}
+.hot-top .lead-panel { grid-template-columns: minmax(0, 1fr); align-content: center; }
+
+@media (min-width: 900px) {
+  .hot-top { grid-template-columns: minmax(0, 1fr) 300px; align-items: stretch; }
+  .hot-top .lead-panel { padding: 14px 18px; }
+  .hot-top .lead-text { font-size: clamp(19px, 1.6vw, 23px); max-width: none; text-wrap: pretty; }
+  .hot-top .count-bar { justify-content: center; gap: 10px; }
+}
+@media (min-width: 900px) { .hot-top .count-bar > *, .hot-top .count-bar input[type="range"] { flex: none; } }

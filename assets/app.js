@@ -8,6 +8,7 @@
     { id: 'company', label: '3면 기업' },
     { id: 'earnings', label: '실적' },
     { id: 'social', label: '4·5면 SNS' },
+    { id: 'picks', label: '리포트' },
     { id: 'weekly', label: '주간 특보' }
   ];
   const CONF = { confirmed: '확인됨', partial: '일부 확인', rumor: '가설·소문' };
@@ -130,7 +131,7 @@
   /* ---------- 면별 화면 ---------- */
   function renderTab() {
     const ed = state.edition;
-    const html = { hot: hotPage, macro: macroPage, company: companyPage, earnings: earningsPage, social: socialPage, weekly: weeklyPage }[state.tab](ed);
+    const html = { hot: hotPage, macro: macroPage, company: companyPage, earnings: earningsPage, social: socialPage, picks: picksPage, weekly: weeklyPage }[state.tab](ed);
     el.content.innerHTML = html;
   }
 
@@ -144,21 +145,25 @@
     const n = hotN(ed);
     const total = ed.hot.length;
     return `
+      <div class="hot-top">
       <section class="panel lead-panel">
         <div><span class="kicker">오늘의 한 줄</span><p class="lead-text">${esc(ed.lead)}</p></div>
       </section>
-      <div class="section-head"><h2 class="section-title">핫이슈 TOP <span id="hotNTitle">${n}</span></h2><p class="section-note">누르면 자세히</p></div>
       ${total > 3 ? `<section class="count-bar" aria-label="기사 수 조절">
         <label for="hotN"><strong>기사 수</strong> <span class="num" id="hotNVal">${n}</span>개</label>
         <input type="range" id="hotN" min="${Math.min(3, total)}" max="${total}" step="1" value="${n}" aria-valuetext="${n}개">
         <span class="small muted">최대 ${total}개</span>
       </section>` : ''}
-      <div class="cards">${ed.hot.map((h, i) => `
+      </div>
+      <div class="section-head"><h2 class="section-title">핫이슈 TOP <span id="hotNTitle">${n}</span></h2><p class="section-note">누르면 자세히</p></div>
+      <div class="cards hot-cards">${ed.hot.map((h, i) => `
         <button type="button" class="card" data-open="${esc(h.id)}" data-rank="${i + 1}"${i + 1 > n ? ' hidden' : ''}>
           <span class="rank${i < 3 ? ' top' : ''}">${i + 1}</span>
           <span class="card-body">
             <span class="card-title">${esc(h.title)}</span>
+            ${keyStrip(h)}
             <span class="card-text">${esc(h.summary)}</span>
+            ${cardChart(h)}
             <span class="card-meta">
               ${tickers(h.tickers)}${badge(h.confidence)}${paidChip(h)}<span class="more">자세히 ›</span>
             </span>
@@ -179,7 +184,9 @@
           <span class="card-body">
             <span class="card-meta"><span class="rank top" style="font-size:20px">${i + 1}</span><span class="chip">${esc(x.category)}</span>${badge(x.confidence)}</span>
             <span class="card-title">${esc(x.title)}</span>
+            ${keyStrip(x)}
             <span class="card-text">${esc(x.now)}</span>
+            ${cardChart(x)}
             <span class="macro-read"><b>시장 해석</b>${esc(x.read)}</span>
             <span class="card-meta small muted"><span>다음 일정 · ${esc(x.next)}</span><span class="more">자세히 ›</span></span>
           </span>
@@ -191,6 +198,7 @@
     const c = ed.company;
     const max = Math.max(...c.ranking.map((r) => r.telegram + r.x), 1);
     return `
+      <div class="company-wrap"><div class="company-side">
       <div class="section-head"><h2 class="section-title">많이 언급된 기업</h2><p class="section-note">지난 24시간 언급 횟수</p></div>
       <section class="panel" style="display:flex;flex-direction:column;gap:12px">
         <div class="legend"><span><i style="background:var(--accent)"></i>텔레그램</span><span><i class="xkey" style="background:#9DB4F0"></i>X</span></div>
@@ -199,8 +207,8 @@
             <span class="stack" role="img" aria-label="${esc(r.name)} 텔레그램 ${r.telegram}회, X ${r.x}회"><i class="tg" style="width:${r.telegram / max * 100}%"></i><i class="x" style="width:${r.x / max * 100}%"></i></span>
             <strong class="num" style="text-align:right">${r.telegram + r.x}</strong></div>`).join('')}
         </div>
-      </section>
-      <div class="cards">${c.cards.map((x) => `
+      </section></div>
+      <div class="cards company-cards">${c.cards.map((x) => `
         <button type="button" class="card no-rank" data-open="${esc(x.id)}">
           <span class="card-body">
             <span class="card-meta"><span class="card-title" style="font-size:19px">${esc(x.name)}</span><span class="ticker">${esc(x.ticker)}</span></span>
@@ -214,7 +222,7 @@
             <span class="card-meta"><span class="more">핵심 논점과 수치 보기 ›</span></span>
           </span>
         </button>`).join('')}
-      </div>`;
+      </div></div>`;
   }
 
   function earningsPage(ed) {
@@ -240,12 +248,13 @@
           <div class="stat"><strong>${esc(st.revBeat ?? '—')}</strong><span>매출 예상 상회</span></div>
         </div>
       </section>
+      <div class="earn-wrap"><div>
       <div class="section-head"><h2 class="section-title">발표한 기업</h2><p class="section-note">서프라이즈 = 실제치가 컨센서스보다 높거나 낮은 정도</p></div>
       <section class="panel"><div class="table-box"><table class="earn"><thead><tr><th scope="col" style="text-align:left">기업</th><th scope="col">발표</th><th scope="col">EPS vs 컨센</th><th scope="col">매출 vs 컨센</th><th scope="col">전년 대비</th><th scope="col">주가<br><span class="small muted">마지막 거래일</span></th><th scope="col" style="text-align:left">한 줄</th></tr></thead>
         <tbody>${rows || '<tr><td colspan="7" class="muted">이 기간에 발표한 기업이 없어요.</td></tr>'}</tbody></table></div>
-        ${e.source ? `<span class="small muted">출처: ${esc(e.source)}</span>` : ''}</section>
-      ${up ? `<div class="section-head"><h2 class="section-title">다음 발표 예정</h2></div>
-      <section class="panel"><div class="table-box"><table><tbody>${up}</tbody></table></div></section>` : ''}`;
+        ${e.source ? `<span class="small muted">출처: ${esc(e.source)}</span>` : ''}</section></div>
+      ${up ? `<div><div class="section-head"><h2 class="section-title">다음 발표 예정</h2></div>
+      <section class="panel"><div class="table-box"><table><tbody>${up}</tbody></table></div></section></div>` : ''}</div>`;
   }
 
   function socialPage(ed) {
@@ -258,6 +267,7 @@
       <section class="panel debate">
         <button type="button" class="card no-rank" data-open="${esc(d.id)}" style="border:0;padding:0">
           <span class="card-body"><span class="card-title" style="font-size:22px">${esc(d.title)}</span>
+          ${keyStrip(d)}
           <span class="card-meta">${d.signals.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}<span class="more">자세히 ›</span></span></span>
         </button>
         <div class="positions">${d.positions.map((p) => `
@@ -277,10 +287,43 @@
           <span class="card-body">
             <span class="card-meta"><span class="small" style="font-weight:600">${esc(b.where)}</span><span style="margin-left:auto">${badge(b.confidence)}</span></span>
             <span class="card-title" style="font-size:16.5px">${esc(b.title)}</span>
+            ${keyStrip(b)}
             <span class="card-text">${esc(b.note)}</span>
+            ${cardChart(b)}
+            ${b.basis && !(b.key || []).length ? `<span class="basis"><b>근거</b>${esc(b.basis)}</span>` : ''}
           </span>
         </button>`).join('')}
       </div>`;
+  }
+
+  /* 리포트: 카리스석스 방에 올린 PDF 중 최대 2개 요약 */
+  function reportLink(r) {
+    return r.link ? `<a class="link-row" href="${esc(r.link)}" target="_blank" rel="noopener"><span><strong>텔레그램에서 원문 PDF 보기</strong><br><span class="small muted">${esc(r.file || '')}${r.posted ? ` · ${esc(r.posted)} 올림` : ''}</span></span><span class="go">열기 ↗</span></a>` : '';
+  }
+  function reportBlock(it) {
+    const r = it.report;
+    const rows = [['발행', r.publisher], ['작성', r.author], ['발행일', r.date], ['분량', r.pages ? `${r.pages}쪽` : '']].filter((x) => x[1]);
+    return `<section class="d-block span-all report-head"><div class="report-meta">${rows.map((x) => `<span><span class="muted">${esc(x[0])}</span> ${esc(x[1])}</span>`).join('')}</div>${reportLink(r)}</section>`;
+  }
+  function picksPage(ed) {
+    const ps = ed.picks || [];
+    const head = `<div class="section-head"><h2 class="section-title">이번 호의 리포트</h2><p class="section-note">카리스석스 방에 올린 PDF 중 최대 2개</p></div>`;
+    if (!ps.length) return `${head}<section class="panel empty-picks"><p style="margin:0">이번 호에 정리할 PDF가 없습니다. 카리스석스의 주식 이야기 Chat 방에 PDF를 올려 두면 다음 아침 신문에 요약이 실립니다.</p></section>`;
+    return `${head}<div class="picks">${ps.map((x) => `
+      <article class="panel pick">
+        <button type="button" class="card no-rank" data-open="${esc(x.id)}" style="border:0;padding:0;background:none">
+          <span class="card-body">
+            <span class="card-meta"><span class="chip">${esc((x.report || {}).publisher || 'PDF')}</span>${(x.report || {}).date ? `<span class="small muted">${esc(x.report.date)}</span>` : ''}${tickers(x.tickers)}</span>
+            <span class="card-title" style="font-size:20px">${esc(x.title)}</span>
+            ${keyStrip(x, 4)}
+            <span class="card-text">${esc(x.summary)}</span>
+            ${(x.detail || {}).summary ? `<ul class="pick-sum">${x.detail.summary.slice(0, 3).map((s) => `<li>${esc(s)}</li>`).join('')}</ul>` : ''}
+            ${cardChart(x)}
+            <span class="card-meta"><span class="more">전체 요약과 수치 보기 ›</span></span>
+          </span>
+        </button>
+        ${reportLink(x.report || {})}
+      </article>`).join('')}</div>`;
   }
 
   function weeklyPage(ed) {
@@ -335,7 +378,7 @@
   /* ---------- 상세 보기 ---------- */
   function findItem(id) {
     const ed = state.edition;
-    const pools = [ed.hot, ed.macro.items, ed.company.cards, ed.social.buzz, [ed.social.debate]];
+    const pools = [ed.hot, ed.macro.items, ed.company.cards, ed.social.buzz, [ed.social.debate], ed.picks];
     for (const p of pools) { const f = (p || []).find((x) => x && x.id === id); if (f) return f; }
     return null;
   }
@@ -354,13 +397,26 @@
     return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="시간대별 언급 수. 가장 많은 때는 ${esc(peak.label)} ${max}건">${bars}${labels}<text x="${W - pad}" y="12" text-anchor="end">최고 ${max}건 · ${esc(peak.label)}</text></svg>`;
   }
 
+  /* 카드 요약용 핵심 수치 (최대 n개) */
+  function keyStrip(it, n = 3) {
+    const k = (it.key || []).slice(0, n);
+    if (!k.length) return '';
+    return `<span class="keynums">${k.map((x) => `<span class="kn"><strong class="${changeClass(x.value)}">${esc(x.value)}</strong><span>${esc(x.label)}</span></span>`).join('')}</span>`;
+  }
+  /* 카드용 작은 그래프: 상세의 첫 그래프를 줄여서 */
+  function cardChart(it) {
+    const c = ((it.detail || {}).charts || [])[0];
+    if (!c) return '';
+    return `<span class="card-chart"><span class="cc-title">${esc(c.title)}</span>${miniChart(c, true)}</span>`;
+  }
+
   const VERDICT = { '일치': 'ok', '대체로 일치': 'ok', '엇갈림': 'mixed', '단일 출처': 'one', '확인 안 됨': 'no' };
 
   /* 막대 그래프 (음수 지원). c = {type:'bar', unit, points:[{label, value}]} */
-  function miniChart(c) {
+  function miniChart(c, compact) {
     const pts = (c.points || []).filter((p) => typeof p.value === 'number');
     if (!pts.length) return '';
-    const W = 480, H = 170, padL = 8, padR = 8, top = 22, bottom = 30;
+    const W = compact ? 320 : 480, H = compact ? 108 : 170, padL = 4, padR = 4, top = compact ? 16 : 22, bottom = compact ? 32 : 30;
     const maxV = Math.max(0, ...pts.map((p) => p.value)), minV = Math.min(0, ...pts.map((p) => p.value));
     const span = (maxV - minV) || 1;
     const y = (v) => top + (maxV - v) / span * (H - top - bottom);
@@ -372,10 +428,10 @@
       const neg = p.value < 0;
       return `<rect class="b${neg ? ' neg' : ''}${p.hi ? ' max' : ''}" x="${x.toFixed(1)}" y="${y0.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="2"><title>${esc(p.label)} ${fmt(p.value)}</title></rect>
         <text x="${(x + w / 2).toFixed(1)}" y="${(neg ? y0 + h + 12 : y0 - 4).toFixed(1)}" text-anchor="middle">${fmt(p.value)}</text>
-        <text x="${(x + w / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(p.label)}</text>`;
+        <text x="${(x + w / 2).toFixed(1)}" y="${H - (compact ? 5 : 8)}" text-anchor="middle">${esc(p.label)}</text>`;
     }).join('');
     const zero = minV < 0 ? `<line x1="${padL}" x2="${W - padR}" y1="${y(0).toFixed(1)}" y2="${y(0).toFixed(1)}" class="zero"/>` : '';
-    return `<svg class="chart mini" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(c.title)}: ${pts.map((p) => `${esc(p.label)} ${fmt(p.value)}`).join(', ')}">${zero}${bars}</svg>`;
+    return `<svg class="chart mini${compact ? ' compact' : ''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(c.title)}: ${pts.map((p) => `${esc(p.label)} ${fmt(p.value)}`).join(', ')}">${zero}${bars}</svg>`;
   }
 
   function openDetail(id) {
@@ -395,13 +451,18 @@
       blocks.push(`<section class="d-block paid-block"><h3>유료 구독 기사</h3><p>${esc(it.paid.source)}의 유료 기사라 공유판에는 요지와 원문 링크만 싣습니다. 전문은 구독 후 원문에서 읽을 수 있어요.</p>
         <a class="link-row" href="${esc(it.paid.url)}" target="_blank" rel="noopener"><span><strong>${esc(it.paid.title || it.title)}</strong><br><span class="small muted">${esc(it.paid.source)}</span></span><span class="go">원문 열기 ↗</span></a></section>`);
     }
+    if ((it.key || []).length && !(it.paid && !state.full)) blocks.push(`<section class="d-keys span-all" aria-label="핵심 수치">${it.key.map((x) => `<div class="dk"><strong class="${changeClass(x.value)}">${esc(x.value)}</strong><span>${esc(x.label)}</span></div>`).join('')}</section>`);
+    if (it.report) blocks.push(reportBlock(it));
     if (d.summary) blocks.push(`<section class="d-block"><h3>핵심 요약</h3><ul>${d.summary.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></section>`);
+    (d.charts || []).forEach((c) => blocks.push(`<section class="d-block"><h3>${esc(c.title)}</h3>${miniChart(c)}${c.note ? `<span class="small muted">${esc(c.note)}</span>` : ''}${c.source ? `<span class="small muted">출처: ${esc(c.source)}</span>` : ''}</section>`));
+    if (d.points && d.points.length) blocks.push(`<section class="d-block"><h3>투자 포인트</h3><ul>${d.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></section>`);
+    if (d.risks && d.risks.length) blocks.push(`<section class="d-block counter"><h3>리스크</h3><ul>${d.risks.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></section>`);
+    if (d.why) blocks.push(`<section class="d-block"><h3>오늘 신문과의 연결</h3><p>${esc(d.why)}</p></section>`);
     if (d.logic && d.logic.length) blocks.push(`<section class="d-block"><h3>논리 따라가기</h3><ol class="logic">${d.logic.map((l) => `<li><span class="step">${esc(l.step)}</span><span>${esc(l.text)}</span></li>`).join('')}</ol></section>`);
     if (d.numbers && d.numbers.length) blocks.push(`<section class="d-block"><h3>숫자로 보기</h3>${ed.sample ? '<span class="sample-note">시범 화면이라 표의 수치는 예시입니다.</span>' : ''}
       <div class="table-box"><table><thead><tr><th scope="col">항목</th><th scope="col">값</th><th scope="col" style="text-align:left">설명</th></tr></thead><tbody>
       ${d.numbers.map((n) => `<tr><th scope="row">${esc(n.label)}</th><td class="${changeClass(n.value)}">${esc(n.value)}</td><td style="text-align:left" class="muted">${esc(n.note || '')}</td></tr>`).join('')}
       </tbody></table></div>${d.numbersSource ? `<span class="small muted">출처: ${esc(d.numbersSource)}</span>` : ''}</section>`);
-    (d.charts || []).forEach((c) => blocks.push(`<section class="d-block"><h3>${esc(c.title)}</h3>${miniChart(c)}${c.note ? `<span class="small muted">${esc(c.note)}</span>` : ''}${c.source ? `<span class="small muted">출처: ${esc(c.source)}</span>` : ''}</section>`));
     if (d.checks && d.checks.length) blocks.push(`<section class="d-block"><h3>교차 확인</h3><span class="small muted">핵심 사실과 숫자를 여러 출처에서 맞춰 봤습니다.</span>
       <div class="table-box"><table class="checks"><thead><tr><th scope="col" style="text-align:left">항목</th><th scope="col" style="text-align:left">확인한 내용</th><th scope="col" style="text-align:left">출처</th><th scope="col">판정</th></tr></thead><tbody>
       ${d.checks.map((c) => `<tr><th scope="row" style="text-align:left">${esc(c.item)}</th><td style="text-align:left">${esc(c.value)}</td><td style="text-align:left" class="small">${(c.sources || []).map((s) => (s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>` : esc(s.name))).join(' · ')}</td><td><span class="verdict v-${esc(VERDICT[c.verdict] || 'one')}">${esc(c.verdict || '단일 출처')}</span></td></tr>`).join('')}
