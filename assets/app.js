@@ -106,7 +106,7 @@
   function renderChrome(ed, avail) {
     el.banner.hidden = !ed.sample;
     el.date.textContent = fmtLong(ed.date);
-    el.issue.textContent = `제${ed.issue}호 · ${ed.published || '07:00'} 발행${ed.updated ? ` · ${ed.updated}` : ''} · 집계 ${ed.window || ''}${state.full ? ' · 전체판' : ''}`;
+    el.issue.textContent = `제${ed.issue}호 · ${ed.published || '07:00'} 발행${ed.updated ? ` · ${ed.updated}` : ''}${state.full ? ' · 전체판' : ''}`;
     el.owner.hidden = !ownerKey();
     el.ownerText.textContent = state.keyError
       ? '이 기기에 저장된 열쇠로 전체판을 열지 못해 공유판을 보여드려요.'
@@ -141,23 +141,17 @@
   }
 
   function hotPage(ed) {
-    const max = Math.max(...ed.hot.map((h) => h.channels), 1);
     const n = hotN(ed);
     const total = ed.hot.length;
     return `
       <section class="panel lead-panel">
         <div><span class="kicker">오늘의 한 줄</span><p class="lead-text">${esc(ed.lead)}</p></div>
-        <div class="stats">
-          <div class="stat"><strong>${esc(ed.stats.priority)}</strong><span>1순위 채널</span></div>
-          <div class="stat"><strong>${esc(ed.stats.chats)}</strong><span>전체 대화방</span></div>
-          <div class="stat"><strong>${esc(ed.stats.messages)}</strong><span>분석한 메시지</span></div>
-        </div>
       </section>
-      <div class="section-head"><h2 class="section-title">핫이슈 TOP <span id="hotNTitle">${n}</span></h2><p class="section-note">중요도 순 · 누르면 자세히</p></div>
+      <div class="section-head"><h2 class="section-title">핫이슈 TOP <span id="hotNTitle">${n}</span></h2><p class="section-note">누르면 자세히</p></div>
       ${total > 3 ? `<section class="count-bar" aria-label="기사 수 조절">
         <label for="hotN"><strong>기사 수</strong> <span class="num" id="hotNVal">${n}</span>개</label>
         <input type="range" id="hotN" min="${Math.min(3, total)}" max="${total}" step="1" value="${n}" aria-valuetext="${n}개">
-        <span class="small muted">오늘 후보 ${total}개 · 많이 겹치고 중요한 기사부터</span>
+        <span class="small muted">최대 ${total}개</span>
       </section>` : ''}
       <div class="cards">${ed.hot.map((h, i) => `
         <button type="button" class="card" data-open="${esc(h.id)}" data-rank="${i + 1}"${i + 1 > n ? ' hidden' : ''}>
@@ -166,8 +160,7 @@
             <span class="card-title">${esc(h.title)}</span>
             <span class="card-text">${esc(h.summary)}</span>
             <span class="card-meta">
-              <span class="mention"><span class="mbar"><i style="width:${Math.round(h.channels / max * 100)}%"></i></span>${esc(h.channels)}개 채널</span>
-              ${h.score != null ? `<span class="score" title="중요도 점수">중요도 ${esc(h.score)}</span>` : ''}${h.boost ? '<span class="chip boost">카리스석스 언급</span>' : ''}${tickers(h.tickers)}${badge(h.confidence)}${paidChip(h)}<span class="more">자세히 ›</span>
+              ${tickers(h.tickers)}${badge(h.confidence)}${paidChip(h)}<span class="more">자세히 ›</span>
             </span>
           </span>
         </button>`).join('')}
@@ -177,7 +170,7 @@
   function macroPage(ed) {
     const m = ed.macro;
     return `
-      <div class="section-head"><h2 class="section-title">매크로 환경 ${m.items.length}가지</h2><p class="section-note">1순위에서 고르고 전체 대화방과 공식 발표로 보강</p></div>
+      <div class="section-head"><h2 class="section-title">매크로 환경 ${m.items.length}가지</h2></div>
       <section class="indicators" aria-label="주요 지표">${m.indicators.map((x) => `
         <div class="indicator"><span class="small muted">${esc(x.label)}</span><strong>${esc(x.value)}</strong><span class="small ${changeClass(x.change)}">${esc(x.change)}</span></div>`).join('')}
       </section>
@@ -198,7 +191,7 @@
     const c = ed.company;
     const max = Math.max(...c.ranking.map((r) => r.telegram + r.x), 1);
     return `
-      <div class="section-head"><h2 class="section-title">많이 언급된 기업</h2><p class="section-note">지난 24시간 텔레그램과 X 언급 횟수</p></div>
+      <div class="section-head"><h2 class="section-title">많이 언급된 기업</h2><p class="section-note">지난 24시간 언급 횟수</p></div>
       <section class="panel" style="display:flex;flex-direction:column;gap:12px">
         <div class="legend"><span><i style="background:var(--accent)"></i>텔레그램</span><span><i class="xkey" style="background:#9DB4F0"></i>X</span></div>
         <div class="rank-list">${c.ranking.map((r) => `
@@ -297,7 +290,6 @@
         <div><span class="kicker">주간 특보 · ${esc(w.range)}</span><p class="lead-text">${esc(w.oneLine)}</p></div>
         <div class="stats">
           <div class="stat"><strong>${esc(w.issues)}</strong><span>묶은 일간 호</span></div>
-          <div class="stat"><strong>${esc(w.messages)}</strong><span>분석한 메시지</span></div>
           <div class="stat"><strong>${esc(w.debates)}</strong><span>주요 논쟁</span></div>
         </div>
       </section>
@@ -392,7 +384,6 @@
     const d = it.detail || {};
     const ed = state.edition;
     const meta = [
-      it.channels ? `<span class="mention">${esc(it.channels)}개 채널 언급${it.priority ? ` (1순위 ${esc(it.priority)})` : ''}</span>` : '',
       it.category ? `<span class="chip">${esc(it.category)}</span>` : '',
       it.where ? `<span class="chip">${esc(it.where)}</span>` : '',
       tickers(it.tickers || (it.ticker ? [it.ticker] : [])),
@@ -414,9 +405,9 @@
       <div class="table-box"><table class="checks"><thead><tr><th scope="col" style="text-align:left">항목</th><th scope="col" style="text-align:left">확인한 내용</th><th scope="col" style="text-align:left">출처</th><th scope="col">판정</th></tr></thead><tbody>
       ${d.checks.map((c) => `<tr><th scope="row" style="text-align:left">${esc(c.item)}</th><td style="text-align:left">${esc(c.value)}</td><td style="text-align:left" class="small">${(c.sources || []).map((s) => (s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>` : esc(s.name))).join(' · ')}</td><td><span class="verdict v-${esc(VERDICT[c.verdict] || 'one')}">${esc(c.verdict || '단일 출처')}</span></td></tr>`).join('')}
       </tbody></table></div></section>`);
-    if (d.timeline) blocks.push(`<section class="d-block"><h3>시간대별 언급 흐름</h3>${chart(d.timeline)}</section>`);
-    if (d.views) blocks.push(`<section class="d-block"><h3>채널별 시각</h3>${d.views.map((v) => `<div class="view"><div class="view-top"><strong>${esc(v.label)}</strong><span class="muted num">${esc(v.count)}곳</span></div><p>${esc(v.text)}</p><span class="small muted">${esc(v.who)}</span></div>`).join('')}</section>`);
-    if (d.excerpts) blocks.push(`<section class="d-block"><h3>채널 발췌 요약</h3>${d.excerpts.map((x) => `<div class="excerpt"><span class="who">${esc(x.channel)} · ${esc(x.time)}</span><span>${esc(x.text)}</span></div>`).join('')}</section>`);
+    if (d.timeline && state.full) blocks.push(`<section class="d-block"><h3>시간대별 언급 흐름</h3>${chart(d.timeline)}</section>`);
+    if (d.views) blocks.push(`<section class="d-block"><h3>시장의 시각</h3>${d.views.map((v) => `<div class="view"><div class="view-top"><strong>${esc(v.label)}</strong></div><p>${esc(v.text)}</p><span class="small muted">${esc(v.who)}</span></div>`).join('')}</section>`);
+    if (d.excerpts) blocks.push(`<section class="d-block"><h3>주요 발언 요약</h3>${d.excerpts.map((x) => `<div class="excerpt"><span class="who">${esc(x.channel)} · ${esc(x.time)}</span><span>${esc(x.text)}</span></div>`).join('')}</section>`);
     if (d.background) blocks.push(`<section class="d-block"><h3>배경</h3><p>${esc(d.background)}</p></section>`);
     if (d.watch) blocks.push(`<section class="d-block"><h3>앞으로 볼 것</h3><ul>${d.watch.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></section>`);
     if (d.sources) blocks.push(`<section class="d-block"><h3>원문 보기</h3>${d.sources.map((s) => `<a class="link-row" href="${esc(s.url)}" target="_blank" rel="noopener"><span><strong>${esc(s.name)}</strong><br><span class="small muted">${esc(s.meta)}</span></span><span class="go">원문 열기 ↗</span></a>`).join('')}</section>`);
