@@ -446,24 +446,38 @@
     if (r.link) return `<a class="link-row" href="${esc(r.link)}" target="_blank" rel="noopener"><span><strong>원문 PDF 보기</strong><br><span class="small muted">${esc(r.file || '')}</span></span><span class="go">열기 ↗</span></a>`;
     return r.file ? `<div class="link-row"><span><strong>원문 PDF</strong><br><span class="small muted">${esc(r.file)}${state.full && r.folder ? ` · ${esc(r.folder)}` : ''}</span></span></div>` : '';
   }
-  // 함께 읽기: 영어 기사는 [원문] [국문] 버튼 — 국문은 구글 번역으로 그 기사를 한국어로 연다
+  // 함께 읽기: 영어 기사는 [원문] [국문] 버튼 — 국문은 Claude(Sonnet)가 원문을 읽고 한국어로 정리한 내용을 펼친다
   function isForeign(r) {
     if (r.lang) return r.lang !== 'ko';
     const t = `${r.title || ''}`;
     return !/[가-힣]/.test(t) && /[A-Za-z]{3,}/.test(t);
   }
-  function translateUrl(u) {
-    return `https://translate.google.com/translate?sl=auto&tl=ko&hl=ko&u=${encodeURIComponent(u)}`;
+  function koPanel(k) {
+    const pts = (k.points || []).map((x) => `<li>${esc(x)}</li>`).join('');
+    const nums = (k.numbers || []).map((n) => `<li><span class="muted">${esc(n.label)}</span> <strong>${esc(n.value)}</strong></li>`).join('');
+    const text = (k.text || []).map((x) => `<p>${esc(x)}</p>`).join('');
+    return `<div class="rel-ko" hidden>${k.gist ? `<p class="rel-gist">${esc(k.gist)}</p>` : ''}${text}${pts ? `<ul>${pts}</ul>` : ''}${nums ? `<ul class="rel-nums">${nums}</ul>` : ''}`
+      + `<span class="small muted">${k.mode === '전문 번역' ? '원문을 한국어로 옮긴 것' : '원문을 읽고 한국어로 정리한 내용'} · Claude</span></div>`;
   }
   function relatedRow(r) {
     if (!r.url) return '';
     if (!isForeign(r)) {
       return `<a class="link-row" href="${esc(r.url)}" target="_blank" rel="noopener"><span><span class="small muted">${esc(r.source)}</span><br><strong>${esc(r.title)}</strong><br><span class="small muted">${esc(r.note || '')}</span></span><span class="go">↗</span></a>`;
     }
-    const head = r.title_ko ? `<strong>${esc(r.title_ko)}</strong><br><span class="small muted">${esc(r.title)}</span>` : `<strong>${esc(r.title)}</strong>`;
-    return `<div class="link-row rel-foreign"><span><span class="small muted">${esc(r.source)}</span><br>${head}${r.note ? `<br><span class="small muted">${esc(r.note)}</span>` : ''}</span>`
-      + `<span class="rel-btns"><a class="rel-btn" href="${esc(r.url)}" target="_blank" rel="noopener">원문</a><a class="rel-btn ko" href="${esc(translateUrl(r.url))}" target="_blank" rel="noopener">국문</a></span></div>`;
+    const tko = r.title_ko || (r.ko && r.ko.title_ko);
+    const head = tko ? `<strong>${esc(tko)}</strong><br><span class="small muted">${esc(r.title)}</span>` : `<strong>${esc(r.title)}</strong>`;
+    const koBtn = r.ko ? `<button type="button" class="rel-btn ko" data-relko>국문</button>` : '';
+    return `<div class="rel-item"><div class="link-row rel-foreign"><span><span class="small muted">${esc(r.source)}</span><br>${head}${r.note ? `<br><span class="small muted">${esc(r.note)}</span>` : ''}</span>`
+      + `<span class="rel-btns"><a class="rel-btn" href="${esc(r.url)}" target="_blank" rel="noopener">원문</a>${koBtn}</span></div>${r.ko ? koPanel(r.ko) : ''}</div>`;
   }
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest && e.target.closest('[data-relko]');
+    if (!b) return;
+    const panel = b.closest('.rel-item').querySelector('.rel-ko');
+    panel.hidden = !panel.hidden;
+    b.classList.toggle('on', !panel.hidden);
+    b.textContent = panel.hidden ? '국문' : '접기';
+  });
 
   function reportBlock(it) {
     const r = it.report;

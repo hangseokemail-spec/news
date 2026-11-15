@@ -480,3 +480,12 @@ body.themed.has-banner .masthead::after { opacity: 1; background: linear-gradien
 .rel-btn { display: inline-block; padding: 5px 11px; border: 1px solid var(--line, #d9d4c7); border-radius: 999px; font-size: 13px; font-weight: 600; text-decoration: none; color: inherit; white-space: nowrap; }
 .rel-btn.ko { background: var(--accent, #8a6d3b); border-color: var(--accent, #8a6d3b); color: #fff; }
 .rel-btn:hover { filter: brightness(.95); }
+/* 함께 읽기: 국문 정리 펼침 */
+.rel-item + .rel-item { margin-top: 8px; }
+button.rel-btn { cursor: pointer; font: inherit; font-size: 13px; font-weight: 600; }
+.rel-btn.ko.on { background: transparent; color: var(--accent, #8a6d3b); }
+.rel-ko { margin: 6px 4px 2px; padding: 10px 14px; border-left: 3px solid var(--accent, #8a6d3b); background: var(--accent-soft, rgba(138,109,59,.07)); border-radius: 4px; line-height: 1.65; }
+.rel-ko .rel-gist { font-weight: 700; margin: 0 0 6px; }
+.rel-ko ul { margin: 4px 0 8px; padding-left: 18px; }
+.rel-ko .rel-nums { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.rel-ko p { margin: 0 0 8px; }
