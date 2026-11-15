@@ -293,7 +293,8 @@
             ${b.basis && !(b.key || []).length ? `<span class="basis"><b>근거</b>${esc(b.basis)}</span>` : ''}
           </span>
         </button>`).join('')}
-      </div>`;
+      </div>
+      ${youtubeBlock(s.youtube)}`;
   }
 
   /* 리포트: 카리스석스 방에 올린 PDF 중 최대 2개 요약 */
@@ -324,6 +325,20 @@
         </button>
         ${reportLink(x.report || {})}
       </article>`).join('')}</div>`;
+  }
+
+  function youtubeBlock(list) {
+    if (!list || !list.length) return '';
+    return `<div class="section-head"><h2 class="section-title"><span class="yt-mark" aria-hidden="true">▶</span> 유튜브에서 많이 본 영상</h2><p class="section-note">지난 24시간 조회수 상위 · 영상 요약</p></div>
+      <div class="yt-list">${list.map((v) => `
+        <article class="panel yt">
+          <div class="card-meta"><span class="small" style="font-weight:700">${esc(v.channel)}</span><span class="small muted">조회 ${Number(v.views).toLocaleString('ko-KR')}</span>${v.stance ? `<span class="chip">${esc(v.stance)}</span>` : ''}</div>
+          <a class="yt-title" href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)} ↗</a>
+          <p class="yt-gist">${esc(v.gist)}</p>
+          ${v.points && v.points.length ? `<ul class="yt-points">${v.points.map((p) => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener" class="ts">${esc(p.t || '▶')}</a>${esc(p.text)}</li>`).join('')}</ul>` : ''}
+          ${v.tickers && v.tickers.length ? `<div class="card-meta">${tickers(v.tickers)}</div>` : ''}
+        </article>`).join('')}
+      </div>`;
   }
 
   function weeklyPage(ed) {

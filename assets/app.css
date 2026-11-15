@@ -392,3 +392,13 @@ ol.logic .step { font-size: 12px; font-weight: 700; color: var(--accent); backgr
   .hot-top .count-bar { justify-content: center; gap: 10px; }
 }
 @media (min-width: 900px) { .hot-top .count-bar > *, .hot-top .count-bar input[type="range"] { flex: none; } }
+/* 4·5면 유튜브 */
+.yt-mark { color: #D93025; font-size: 0.75em; vertical-align: 0.1em; }
+.yt-list { display: grid; gap: 12px; }
+.yt { display: flex; flex-direction: column; gap: 8px; }
+.yt-title { font-weight: 700; font-size: 16px; color: var(--ink); line-height: 1.4; }
+.yt-title:hover { color: var(--accent); }
+.yt-gist { margin: 0; font-size: 14.5px; }
+.yt-points { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; color: var(--ink-2); }
+.yt-points .ts { display: inline-block; min-width: 46px; font-variant-numeric: tabular-nums; font-weight: 700; margin-right: 6px; }
+@media (min-width: 900px) { .yt-list { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); align-items: start; } }
