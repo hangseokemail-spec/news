@@ -409,7 +409,7 @@
   }
 
   function weeklyPage(ed) {
-    const w = ed.weekly;
+    const w = Object.assign({ top: [], macro: [], companies: [], next: [] }, ed.weekly);
     return `
       <section class="panel weekly-head lead-panel">
         <div><span class="kicker">주간 특보 · ${esc(w.range)}</span><p class="lead-text">${esc(w.oneLine)}</p></div>
