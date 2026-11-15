@@ -413,6 +413,22 @@ ol.logic .step { font-size: 12px; font-weight: 700; color: var(--accent); backgr
 .chart.line .ma { fill: none; stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 4 3; opacity: .7; }
 @media (prefers-color-scheme: dark) { .chart.line .ln.upl { stroke: #F97066; } .chart.line .ln.dnl { stroke: #7C9CF5; } }
 /* 주간 스크리닝 */
+.chart.line .ma2 { fill: none; stroke: #7C3AED; stroke-width: 1.2; opacity: .75; }
+.chart.line.ta .ma { stroke: #D97706; stroke-dasharray: none; opacity: .85; }
+.chart.line .pl { stroke: var(--ink); stroke-width: 1.2; }
+.chart.line .pl.support { stroke-dasharray: 4 2; }
+.chart.line .pl.target { stroke: #059669; stroke-dasharray: 3 3; }
+.chart.line .pm { fill: var(--ink-2); }
+.chart.line .pm-t, .chart.line .pl-t, .chart.line .lg { font-size: 9px; fill: var(--ink-2); }
+.chart.line .lg2 { fill: #D97706; } .chart.line .lg3 { fill: #7C3AED; }
+.ta-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.ta-chips .chip.up, .table-box .chip.up { color: #B42318; background: #FEECEB; }
+.ta-chips .chip.down, .table-box .chip.down { color: #1F4FD8; background: #E3E8F7; }
+.ta-pats { margin: 0; padding-left: 16px; font-size: 13px; line-height: 1.5; }
+.ta-pats li.up b { color: #B42318; } .ta-pats li.down b { color: #1F4FD8; }
+.ta-more summary { cursor: pointer; font-size: 13px; color: var(--ink-2); }
+.ta-more ul { margin: 6px 0 0; padding-left: 16px; font-size: 12.5px; line-height: 1.5; color: var(--ink-2); }
+@media (prefers-color-scheme: dark) { .ta-chips .chip.up, .table-box .chip.up { color: #FDA29B; background: #3B1512; } .ta-chips .chip.down, .table-box .chip.down { color: #A4BCFD; background: #16213F; } }
 .scr-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
 .scr { display: flex; flex-direction: column; gap: 8px; }
 .scr.buy { border-top: 3px solid #D92D20; }

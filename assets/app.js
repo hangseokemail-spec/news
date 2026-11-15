@@ -486,6 +486,29 @@
   }
 
   /* 주간 스크리닝: 매수 관심 후보 10 · 매도 검토 후보 10 (차트 + 한 줄 이유) */
+  /* 스크리닝 2판: 단계·이평 배열·추세 템플릿·RS·섹터 칩과 패턴 줄 */
+  function taChips(x) {
+    const t = x.ta, s = x.sector_info || {};
+    const chip = (txt, cls) => `<span class="chip ${cls || ''}">${esc(txt)}</span>`;
+    const stageCls = { 2: 'up', 4: 'down' }[t.stage] || '';
+    return `<span class="ta-chips">${chip(t.stage_ko, stageCls)}${chip(t.align)}${chip(`추세 템플릿 ${t.template}/8`)}${chip(`RS ${x.rs_rating ?? '-'}`)}${s.ko ? chip(`${s.ko} ${s.label || ''}`, s.label === '주도' || s.label === '강세' ? 'up' : s.label === '약세' ? 'down' : '') : ''}</span>`;
+  }
+  function taPatterns(t) {
+    const ps = t.patterns || [];
+    const ma = t.ma || {};
+    const maLine = `<li><b>이동평균</b> 50일선 ${ma.dist50 > 0 ? '+' : ''}${esc(ma.dist50)}% · 200일선 ${ma.dist200 > 0 ? '+' : ''}${esc(ma.dist200)}%${ma.cross ? ` · ${esc(ma.cross.type)} ${esc(ma.cross.date)}` : ''}</li>`;
+    const pl = ps.map((p) => `<li class="${p.dir === 'up' ? 'up' : p.dir === 'down' ? 'down' : ''}"><b>${esc(p.name)}</b> ${esc(p.status)}${p.when ? ` (${esc(p.when)})` : ''}${p.neckline != null ? ` · 기준선 ${esc(p.neckline)}` : ''}${p.target != null ? ` · 목표 ${esc(p.target)}` : ''}${p.invalid != null ? ` · 무효 ${esc(p.invalid)}` : ''}</li>`).join('');
+    return `<ul class="ta-pats">${pl || '<li class="muted">뚜렷한 차트 패턴 없음</li>'}${maLine}</ul>`;
+  }
+  function sectorTable(secs) {
+    if (!secs || !secs.length) return '';
+    const cls = (l) => (l === '주도' || l === '강세' ? 'up' : l === '약세' ? 'down' : '');
+    const f = (v) => (v == null ? '-' : `${v > 0 ? '+' : ''}${v}%p`);
+    return `<section class="panel"><h3 class="section-title" style="font-size:18px">섹터 흐름 (S&P 500 대비)</h3>
+      <div class="table-box"><table><thead><tr><th scope="col">순위</th><th scope="col" style="text-align:left">섹터</th><th scope="col">1개월</th><th scope="col">3개월</th><th scope="col">6개월</th><th scope="col" style="text-align:left">추세</th></tr></thead>
+      <tbody>${secs.map((s) => `<tr><td>${esc(s.rank)}</td><th scope="row" style="text-align:left">${esc(s.ko)} <span class="chip ${cls(s.label)}">${esc(s.label)}</span> <span class="small muted">${esc(s.etf)}</span></th><td class="${changeClass(f(s.vs_spy_1m))}">${f(s.vs_spy_1m)}</td><td class="${changeClass(f(s.vs_spy_3m))}">${f(s.vs_spy_3m)}</td><td class="${changeClass(f(s.vs_spy_6m))}">${f(s.vs_spy_6m)}</td><td style="text-align:left">${esc(s.stage_ko || '')}</td></tr>`).join('')}</tbody></table></div></section>`;
+  }
+
   function screenBlock(sc) {
     if (!sc) return '';
     const card = (x, side) => `
@@ -497,13 +520,17 @@
           <span class="kn"><strong>${esc(x.fpe || '-')}</strong><span>선행 PER</span></span>
           <span class="kn"><strong class="${changeClass(x.eps_next_y)}">${esc(x.eps_next_y || '-')}</strong><span>내년 EPS 성장</span></span>
         </span>
-        ${x.chart ? miniChart(x.chart, true) : ''}
+        ${x.ta ? taChips(x) : ''}
+        ${x.chart ? miniChart(x.chart, !x.ta) : ''}
+        ${x.ta ? taPatterns(x.ta) : ''}
         <p class="yt-gist">${esc(x.why || '')}</p>
-        <span class="small muted">펀더멘털 ${Math.round((x.F || 0) * 100)} · 차트 ${Math.round((x.C || 0) * 100)} · 고점 대비 ${esc(x.from_high || '-')} · RSI ${esc(x.rsi ?? '-')}</span>
+        ${x.ta && (x.ta.signals || []).length ? `<details class="ta-more"><summary>기술적 분석 자세히</summary><ul>${x.ta.signals.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></details>` : ''}
+        <span class="small muted">펀더멘털 ${Math.round((x.F || 0) * 100)} · ${x.ta ? `기술 ${Math.round(((side === 'buy' ? x.Tb : x.Tr) || 0) * 100)} · 섹터 ${Math.round((x.Ss || 0) * 100)}` : `차트 ${Math.round((x.C || 0) * 100)}`} · 고점 대비 ${esc(x.from_high || '-')} · RSI ${esc(x.rsi ?? '-')}</span>
         <span class="small"><a href="https://finviz.com/quote.ashx?t=${encodeURIComponent(x.ticker)}" target="_blank" rel="noopener">Finviz 차트 ↗</a> · <a href="https://seekingalpha.com/symbol/${encodeURIComponent(x.ticker)}" target="_blank" rel="noopener">Seeking Alpha ↗</a></span>
       </article>`;
     return `<div class="section-head"><h2 class="section-title">이번 주 스크리닝</h2><p class="section-note">${esc(sc.method || '')}</p></div>
-      <section class="notice"><p style="margin:0">규칙에 따라 기계적으로 고른 후보입니다. 투자 권유가 아니며, 판단 전에 직접 확인하세요.</p></section>
+      <section class="notice"><p style="margin:0">${sc.version >= 2 ? '규칙(펀더멘털·기술적 분석·섹터 강도)으로 후보를 추린 뒤 편집장이 차트를 직접 보고 고른 종목입니다.' : '규칙에 따라 기계적으로 고른 후보입니다.'} 투자 권유가 아니며, 판단 전에 직접 확인하세요.</p></section>
+      ${sectorTable(sc.sectors)}
       <h3 class="scr-h up">매수 관심 후보 ${(sc.buy || []).length}</h3><div class="scr-grid">${(sc.buy || []).map((x) => card(x, 'buy')).join('')}</div>
       <h3 class="scr-h down">매도 검토 후보 ${(sc.sell || []).length}</h3><div class="scr-grid">${(sc.sell || []).map((x) => card(x, 'sell')).join('')}</div>`;
   }
@@ -622,15 +649,23 @@
   function lineChart(c, compact) {
     const pts = (c.points || []).filter((p) => typeof p.value === 'number');
     const s2 = (c.series2 || []).map((p) => (typeof p.value === 'number' ? p.value : null));
-    const W = compact ? 320 : 480, H = compact ? 96 : 160, pad = 6, bottom = compact ? 14 : 22;
-    const all = pts.map((p) => p.value).concat(s2.filter((v) => v !== null));
+    const s3 = (c.series3 || []).map((p) => (typeof p.value === 'number' ? p.value : null));
+    const lastV = pts.length ? pts[pts.length - 1].value : 0;
+    const near = (v) => typeof v === 'number' && Math.abs(v / lastV - 1) <= 0.35;
+    const lines = (c.lines || []).filter((l) => near(l.v1) && near(l.v2));
+    const marks = (c.marks || []).filter((m) => near(m.v));
+    const W = compact ? 320 : 480, H = compact ? 96 : (s3.length ? 200 : 160), pad = 6, bottom = compact ? 14 : 22;
+    const all = pts.map((p) => p.value).concat(s2.filter((v) => v !== null), s3.filter((v) => v !== null), lines.flatMap((l) => [l.v1, l.v2]), marks.map((m) => m.v));
     const mx = Math.max(...all), mn = Math.min(...all), span = (mx - mn) || 1;
     const x = (i) => pad + i * (W - pad * 2) / Math.max(1, pts.length - 1);
     const y = (v) => pad + (mx - v) / span * (H - pad - bottom);
     const path = (vals) => vals.map((v, i) => (v === null ? '' : `${i && vals[i - 1] !== null ? 'L' : 'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`)).join('');
     const first = pts[0].value, last = pts[pts.length - 1].value, up = last >= first;
     const lab = `<text x="${pad}" y="${H - 4}">${esc(pts[0].label)}</text><text x="${W - pad}" y="${H - 4}" text-anchor="end">${esc(pts[pts.length - 1].label)} ${Number(last.toFixed(2)).toLocaleString('ko-KR')}${esc(c.unit || '')}</text>`;
-    return `<svg class="chart mini line${compact ? ' compact' : ''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(c.title)}">${s2.length ? `<path d="${path(s2)}" class="ma"/>` : ''}<path d="${path(pts.map((p) => p.value))}" class="ln ${up ? 'upl' : 'dnl'}"/>${lab}</svg>`;
+    const seg = lines.map((l) => `<line x1="${x(l.i1).toFixed(1)}" y1="${y(l.v1).toFixed(1)}" x2="${x(l.i2).toFixed(1)}" y2="${y(l.v2).toFixed(1)}" class="pl ${esc(l.kind || '')}"/>${l.label ? `<text class="pl-t" x="${x(l.i2).toFixed(1)}" y="${(y(l.v2) - 3).toFixed(1)}" text-anchor="end">${esc(l.label)}</text>` : ''}`).join('');
+    const mk = marks.map((m) => `<circle cx="${x(m.i).toFixed(1)}" cy="${y(m.v).toFixed(1)}" r="2.2" class="pm"/><text class="pm-t" x="${x(m.i).toFixed(1)}" y="${(y(m.v) - 5).toFixed(1)}" text-anchor="middle">${esc(m.label)}</text>`).join('');
+    const legend = s3.length ? `<text class="lg" x="${pad + 2}" y="${pad + 8}"><tspan class="lg2">— 50일선</tspan> <tspan class="lg3">— 200일선</tspan></text>` : '';
+    return `<svg class="chart mini line${compact ? ' compact' : ''}${s3.length ? ' ta' : ''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(c.title)}">${s3.length ? `<path d="${path(s3)}" class="ma2"/>` : ''}${s2.length ? `<path d="${path(s2)}" class="ma"/>` : ''}<path d="${path(pts.map((p) => p.value))}" class="ln ${up ? 'upl' : 'dnl'}"/>${seg}${mk}${legend}${lab}</svg>`;
   }
 
   function openDetail(id) {
