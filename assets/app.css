@@ -278,6 +278,9 @@ button.cal-day.selected { background: var(--accent); border-color: var(--accent)
 .chart text { fill: var(--ink-2); font-size: 11px; font-family: var(--font-body); }
 .sample-note { font-size: 12px; color: var(--hot-ink); }
 
+.chip.paid { background: transparent; border: 1px solid var(--line); color: var(--ink-2); }
+.paid-block { border-color: var(--hot-line); background: var(--hot-soft); }
+.owner-box { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; }
 .state { padding: 40px 16px; text-align: center; color: var(--ink-2); }
 .site-footer { font-size: 12.5px; color: var(--ink-2); padding-bottom: calc(24px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); padding-top: 14px; }
 .site-footer p { margin: 0; max-width: 70ch; }

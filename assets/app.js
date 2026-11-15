@@ -16,7 +16,9 @@
   const $ = (s) => document.querySelector(s);
   const el = { content: $('#content'), tabs: $('#tabs'), date: $('#dateLabel'), issue: $('#issueLine'),
     banner: $('#sampleBanner'), cal: $('#calendar'), recent: $('#recent'), calPanel: $('#calendarPanel'),
-    calBtn: $('#calBtn'), calScrim: $('#calScrim'), detail: $('#detail'), detailBody: $('#detailBody') };
+    calBtn: $('#calBtn'), calScrim: $('#calScrim'), detail: $('#detail'), detailBody: $('#detailBody'),
+    owner: $('#ownerBox'), ownerText: $('#ownerText'), ownerOff: $('#ownerOff') };
+  const paidChip = (it) => (it.paid ? `<span class="chip paid">유료 · ${esc(it.paid.source)}</span>` : '');
 
   const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const parseDate = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
@@ -36,6 +38,29 @@
     if (location.hash !== h) location.hash = h; else route();
   }
 
+  /* ---------- 전체판(선생님 전용) 열쇠 ---------- */
+  const KEY_STORE = 'sp_owner_key';
+  function b64(s) {
+    let t = s.replace(/-/g, '+').replace(/_/g, '/');
+    while (t.length % 4) t += '=';
+    return Uint8Array.from(atob(t), (c) => c.charCodeAt(0));
+  }
+  function captureKey() {
+    const m = location.hash.match(/^#key=([A-Za-z0-9_-]{20,})/);
+    if (!m) return false;
+    try { localStorage.setItem(KEY_STORE, m[1]); } catch (e) { /* 저장 불가 브라우저 */ }
+    history.replaceState(null, '', location.pathname + location.search + '#/');
+    state.date = null;
+    return true;
+  }
+  function ownerKey() { try { return localStorage.getItem(KEY_STORE); } catch (e) { return null; } }
+  async function decryptFull(date) {
+    const env = await fetchJSON(`data/editions/${date}.full.enc`);
+    const key = await crypto.subtle.importKey('raw', b64(ownerKey()), 'AES-GCM', false, ['decrypt']);
+    const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(env.iv) }, key, b64(env.data));
+    return JSON.parse(new TextDecoder().decode(plain));
+  }
+
   async function fetchJSON(url) {
     const r = await fetch(url, { cache: 'no-cache' });
     if (!r.ok) throw new Error(url + ' ' + r.status);
@@ -48,7 +73,14 @@
     const date = h.date && list.some((e) => e.date === h.date) ? h.date : state.index.latest;
     try {
       if (date !== state.date) {
-        state.edition = await fetchJSON(`data/editions/${date}.json`);
+        const meta = list.find((e) => e.date === date) || {};
+        let ed = null;
+        state.full = false;
+        state.keyError = false;
+        if (meta.full && ownerKey()) {
+          try { ed = await decryptFull(date); state.full = true; } catch (err) { state.keyError = true; }
+        }
+        state.edition = ed || await fetchJSON(`data/editions/${date}.json`);
         state.date = date;
       }
     } catch (e) {
@@ -71,7 +103,11 @@
   function renderChrome(ed, avail) {
     el.banner.hidden = !ed.sample;
     el.date.textContent = fmtLong(ed.date);
-    el.issue.textContent = `제${ed.issue}호 · 06:15 발행 · 집계 ${ed.window || ''}`;
+    el.issue.textContent = `제${ed.issue}호 · 06:15 발행 · 집계 ${ed.window || ''}${state.full ? ' · 전체판' : ''}`;
+    el.owner.hidden = !ownerKey();
+    el.ownerText.textContent = state.keyError
+      ? '이 기기에 저장된 열쇠로 전체판을 열지 못해 공유판을 보여드려요.'
+      : (state.full ? '이 기기에서는 전체판(선생님 전용)을 보고 있어요.' : '이 날짜에는 전체판이 따로 없어요.');
     document.title = `Seok's Paper · ${fmtShort(ed.date)}`;
     el.tabs.innerHTML = avail.map((t) => `<button type="button" role="tab" class="tab${t.id === 'weekly' ? ' weekly-tab' : ''}" id="tab-${t.id}" aria-selected="${t.id === state.tab}" aria-controls="content" data-tab="${t.id}">${esc(t.label)}${t.id === 'weekly' ? '<span class="dot" aria-hidden="true"></span>' : ''}</button>`).join('');
   }
@@ -115,7 +151,7 @@
             <span class="card-text">${esc(h.summary)}</span>
             <span class="card-meta">
               <span class="mention"><span class="mbar"><i style="width:${Math.round(h.channels / max * 100)}%"></i></span>${esc(h.channels)}개 채널</span>
-              ${tickers(h.tickers)}${badge(h.confidence)}<span class="more">자세히 ›</span>
+              ${tickers(h.tickers)}${badge(h.confidence)}${paidChip(h)}<span class="more">자세히 ›</span>
             </span>
           </span>
         </button>`).join('')}
@@ -278,9 +314,14 @@
       it.category ? `<span class="chip">${esc(it.category)}</span>` : '',
       it.where ? `<span class="chip">${esc(it.where)}</span>` : '',
       tickers(it.tickers || (it.ticker ? [it.ticker] : [])),
-      badge(it.confidence)
+      badge(it.confidence),
+      paidChip(it)
     ].join('');
     const blocks = [];
+    if (it.paid && !state.full) {
+      blocks.push(`<section class="d-block paid-block"><h3>유료 구독 기사</h3><p>${esc(it.paid.source)}의 유료 기사라 공유판에는 요지와 원문 링크만 싣습니다. 전문은 구독 후 원문에서 읽을 수 있어요.</p>
+        <a class="link-row" href="${esc(it.paid.url)}" target="_blank" rel="noopener"><span><strong>${esc(it.paid.title || it.title)}</strong><br><span class="small muted">${esc(it.paid.source)}</span></span><span class="go">원문 열기 ↗</span></a></section>`);
+    }
     if (d.summary) blocks.push(`<section class="d-block"><h3>핵심 요약</h3><ul>${d.summary.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></section>`);
     if (d.numbers && d.numbers.length) blocks.push(`<section class="d-block"><h3>숫자로 보기</h3>${ed.sample ? '<span class="sample-note">시범 화면이라 표의 수치는 예시입니다.</span>' : ''}
       <div class="table-box"><table><thead><tr><th scope="col">항목</th><th scope="col">값</th><th scope="col" style="text-align:left">설명</th></tr></thead><tbody>
@@ -367,8 +408,15 @@
     else if (el.calPanel.classList.contains('open')) toggleCal(false);
   });
 
+  el.ownerOff.addEventListener('click', () => {
+    try { localStorage.removeItem(KEY_STORE); } catch (e) { /* 무시 */ }
+    state.date = null;
+    route();
+  });
+
   /* ---------- 시작 ---------- */
-  window.addEventListener('hashchange', route);
+  captureKey();
+  window.addEventListener('hashchange', () => { captureKey(); route(); });
   fetchJSON('data/index.json')
     .then((idx) => { state.index = idx; return route(); })
     .catch(() => { el.content.innerHTML = '<p class="state">아직 발행된 신문이 없어요.</p>'; el.date.textContent = ''; });
