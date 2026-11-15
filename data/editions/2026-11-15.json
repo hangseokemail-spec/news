@@ -1,0 +1,4336 @@
+{
+ "date": "2026-11-15",
+ "issue": 2,
+ "sample": true,
+ "window": "11.14 05:00 – 11.15 05:00",
+ "lead": "AI 투자 사이클 논쟁과 금리 경로가 동시에 시장을 흔든 한 주의 끝",
+ "stats": {
+  "priority": 31,
+  "chats": 116,
+  "messages": "1,284"
+ },
+ "hot": [
+  {
+   "id": "h1",
+   "title": "AI 투자 사이클 논쟁 재점화, 엔비디아 실적이 분수령",
+   "summary": "수요가 견조하다는 쪽과 설비투자에 비해 매출이 늦다는 쪽이 맞섰다.",
+   "channels": 18,
+   "priority": 11,
+   "tickers": [
+    "NVDA",
+    "AMD"
+   ],
+   "confidence": "confirmed",
+   "kicker": "1면 핫이슈 · TOP 1",
+   "detail": {
+    "summary": [
+     "AI 투자 사이클 논쟁 재점화 관련 글이 18개 채널에서 나왔고, 그중 1순위 채널이 11곳이었다.",
+     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
+     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
+    ],
+    "numbers": [
+     {
+      "label": "종가",
+      "value": "182.40",
+      "note": "미국 정규장 마감 기준"
+     },
+     {
+      "label": "전일 대비",
+      "value": "+2.8%",
+      "note": "최근 5거래일 중 최대 상승"
+     },
+     {
+      "label": "거래량",
+      "value": "1.6배",
+      "note": "20일 평균 대비"
+     },
+     {
+      "label": "시가총액",
+      "value": "4.4조 달러",
+      "note": ""
+     },
+     {
+      "label": "선행 PER",
+      "value": "31.2배",
+      "note": "업종 평균 24배"
+     },
+     {
+      "label": "다음 실적",
+      "value": "11.19 (수)",
+      "note": "장 마감 후 발표"
+     }
+    ],
+    "numbersSource": "Finviz (예시)",
+    "timeline": [
+     {
+      "label": "05시",
+      "count": 8
+     },
+     {
+      "label": "06시",
+      "count": 6
+     },
+     {
+      "label": "07시",
+      "count": 12
+     },
+     {
+      "label": "08시",
+      "count": 13
+     },
+     {
+      "label": "09시",
+      "count": 20
+     },
+     {
+      "label": "10시",
+      "count": 19
+     },
+     {
+      "label": "11시",
+      "count": 23
+     },
+     {
+      "label": "12시",
+      "count": 21
+     },
+     {
+      "label": "13시",
+      "count": 19
+     },
+     {
+      "label": "14시",
+      "count": 16
+     },
+     {
+      "label": "15시",
+      "count": 10
+     },
+     {
+      "label": "16시",
+      "count": 7
+     },
+     {
+      "label": "17시",
+      "count": 7
+     },
+     {
+      "label": "18시",
+      "count": 4
+     },
+     {
+      "label": "19시",
+      "count": 3
+     },
+     {
+      "label": "20시",
+      "count": 3
+     },
+     {
+      "label": "21시",
+      "count": 5
+     },
+     {
+      "label": "22시",
+      "count": 5
+     },
+     {
+      "label": "23시",
+      "count": 5
+     },
+     {
+      "label": "00시",
+      "count": 2
+     },
+     {
+      "label": "01시",
+      "count": 5
+     },
+     {
+      "label": "02시",
+      "count": 4
+     },
+     {
+      "label": "03시",
+      "count": 2
+     },
+     {
+      "label": "04시",
+      "count": 3
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "count": 9,
+      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
+      "who": "채널 A, 채널 C 외"
+     },
+     {
+      "label": "신중",
+      "count": 6,
+      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
+      "who": "채널 B, 채널 F 외"
+     },
+     {
+      "label": "중립",
+      "count": 3,
+      "text": "다음 발표를 보고 판단하자는 쪽이다.",
+      "who": "채널 D 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "채널 A (1순위)",
+      "time": "06:38",
+      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
+     },
+     {
+      "channel": "채널 B (1순위)",
+      "time": "01:12",
+      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
+     },
+     {
+      "channel": "채널 E",
+      "time": "전날 23:40",
+      "text": "해외 리포트 요약을 공유했다."
+     }
+    ],
+    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
+    "watch": [
+     "이번 주 실적 발표와 가이던스",
+     "주요 고객사의 설비투자 발언",
+     "관련 ETF 자금 흐름"
+    ],
+    "sources": [
+     {
+      "name": "채널 A",
+      "meta": "1순위 · 06:38",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 B",
+      "meta": "1순위 · 01:12",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 E",
+      "meta": "기타 · 전날 23:40",
+      "url": "https://t.me/"
+     }
+    ],
+    "related": [
+     {
+      "source": "Finviz 뉴스",
+      "title": "관련 헤드라인 (예시)",
+      "url": "https://finviz.com/",
+      "note": "텔레그램에 없던 사실을 보강"
+     },
+     {
+      "source": "웹 검색",
+      "title": "관련 기사 (예시)",
+      "url": "https://www.google.com/",
+      "note": "공식 발표 확인"
+     }
+    ]
+   }
+  },
+  {
+   "id": "h2",
+   "title": "연준 12월 인하 기대 후퇴, 장기금리 반등",
+   "summary": "고용·물가 지표 뒤 인하 확률을 낮춰 잡는 해석이 늘었다.",
+   "channels": 15,
+   "priority": 9,
+   "tickers": [
+    "TLT"
+   ],
+   "confidence": "confirmed",
+   "kicker": "1면 핫이슈 · TOP 2",
+   "detail": {
+    "summary": [
+     "연준 12월 인하 기대 후퇴 관련 글이 15개 채널에서 나왔고, 그중 1순위 채널이 9곳이었다.",
+     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
+     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
+    ],
+    "numbers": [
+     {
+      "label": "종가",
+      "value": "182.40",
+      "note": "미국 정규장 마감 기준"
+     },
+     {
+      "label": "전일 대비",
+      "value": "+2.8%",
+      "note": "최근 5거래일 중 최대 상승"
+     },
+     {
+      "label": "거래량",
+      "value": "1.6배",
+      "note": "20일 평균 대비"
+     },
+     {
+      "label": "시가총액",
+      "value": "4.4조 달러",
+      "note": ""
+     },
+     {
+      "label": "선행 PER",
+      "value": "31.2배",
+      "note": "업종 평균 24배"
+     },
+     {
+      "label": "다음 실적",
+      "value": "11.19 (수)",
+      "note": "장 마감 후 발표"
+     }
+    ],
+    "numbersSource": "Finviz (예시)",
+    "timeline": [
+     {
+      "label": "05시",
+      "count": 4
+     },
+     {
+      "label": "06시",
+      "count": 6
+     },
+     {
+      "label": "07시",
+      "count": 8
+     },
+     {
+      "label": "08시",
+      "count": 11
+     },
+     {
+      "label": "09시",
+      "count": 14
+     },
+     {
+      "label": "10시",
+      "count": 19
+     },
+     {
+      "label": "11시",
+      "count": 20
+     },
+     {
+      "label": "12시",
+      "count": 22
+     },
+     {
+      "label": "13시",
+      "count": 19
+     },
+     {
+      "label": "14시",
+      "count": 17
+     },
+     {
+      "label": "15시",
+      "count": 14
+     },
+     {
+      "label": "16시",
+      "count": 9
+     },
+     {
+      "label": "17시",
+      "count": 9
+     },
+     {
+      "label": "18시",
+      "count": 5
+     },
+     {
+      "label": "19시",
+      "count": 6
+     },
+     {
+      "label": "20시",
+      "count": 6
+     },
+     {
+      "label": "21시",
+      "count": 3
+     },
+     {
+      "label": "22시",
+      "count": 5
+     },
+     {
+      "label": "23시",
+      "count": 5
+     },
+     {
+      "label": "00시",
+      "count": 4
+     },
+     {
+      "label": "01시",
+      "count": 2
+     },
+     {
+      "label": "02시",
+      "count": 3
+     },
+     {
+      "label": "03시",
+      "count": 4
+     },
+     {
+      "label": "04시",
+      "count": 3
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "count": 7,
+      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
+      "who": "채널 A, 채널 C 외"
+     },
+     {
+      "label": "신중",
+      "count": 5,
+      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
+      "who": "채널 B, 채널 F 외"
+     },
+     {
+      "label": "중립",
+      "count": 3,
+      "text": "다음 발표를 보고 판단하자는 쪽이다.",
+      "who": "채널 D 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "채널 A (1순위)",
+      "time": "06:38",
+      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
+     },
+     {
+      "channel": "채널 B (1순위)",
+      "time": "01:12",
+      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
+     },
+     {
+      "channel": "채널 E",
+      "time": "전날 23:40",
+      "text": "해외 리포트 요약을 공유했다."
+     }
+    ],
+    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
+    "watch": [
+     "이번 주 실적 발표와 가이던스",
+     "주요 고객사의 설비투자 발언",
+     "관련 ETF 자금 흐름"
+    ],
+    "sources": [
+     {
+      "name": "채널 A",
+      "meta": "1순위 · 06:38",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 B",
+      "meta": "1순위 · 01:12",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 E",
+      "meta": "기타 · 전날 23:40",
+      "url": "https://t.me/"
+     }
+    ],
+    "related": [
+     {
+      "source": "Finviz 뉴스",
+      "title": "관련 헤드라인 (예시)",
+      "url": "https://finviz.com/",
+      "note": "텔레그램에 없던 사실을 보강"
+     },
+     {
+      "source": "웹 검색",
+      "title": "관련 기사 (예시)",
+      "url": "https://www.google.com/",
+      "note": "공식 발표 확인"
+     }
+    ]
+   }
+  },
+  {
+   "id": "h3",
+   "title": "스타십 회수 성공에 우주 테마 동반 강세",
+   "summary": "발사 비용 하락 기대가 위성·발사체 종목으로 번졌다.",
+   "channels": 12,
+   "priority": 8,
+   "tickers": [
+    "RKLB",
+    "ASTS"
+   ],
+   "confidence": "confirmed",
+   "kicker": "1면 핫이슈 · TOP 3",
+   "detail": {
+    "summary": [
+     "스타십 회수 성공에 우주 테마 동반 강세 관련 글이 12개 채널에서 나왔고, 그중 1순위 채널이 8곳이었다.",
+     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
+     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
+    ],
+    "numbers": [
+     {
+      "label": "종가",
+      "value": "182.40",
+      "note": "미국 정규장 마감 기준"
+     },
+     {
+      "label": "전일 대비",
+      "value": "+2.8%",
+      "note": "최근 5거래일 중 최대 상승"
+     },
+     {
+      "label": "거래량",
+      "value": "1.6배",
+      "note": "20일 평균 대비"
+     },
+     {
+      "label": "시가총액",
+      "value": "4.4조 달러",
+      "note": ""
+     },
+     {
+      "label": "선행 PER",
+      "value": "31.2배",
+      "note": "업종 평균 24배"
+     },
+     {
+      "label": "다음 실적",
+      "value": "11.19 (수)",
+      "note": "장 마감 후 발표"
+     }
+    ],
+    "numbersSource": "Finviz (예시)",
+    "timeline": [
+     {
+      "label": "05시",
+      "count": 4
+     },
+     {
+      "label": "06시",
+      "count": 6
+     },
+     {
+      "label": "07시",
+      "count": 8
+     },
+     {
+      "label": "08시",
+      "count": 7
+     },
+     {
+      "label": "09시",
+      "count": 12
+     },
+     {
+      "label": "10시",
+      "count": 15
+     },
+     {
+      "label": "11시",
+      "count": 19
+     },
+     {
+      "label": "12시",
+      "count": 19
+     },
+     {
+      "label": "13시",
+      "count": 20
+     },
+     {
+      "label": "14시",
+      "count": 20
+     },
+     {
+      "label": "15시",
+      "count": 19
+     },
+     {
+      "label": "16시",
+      "count": 13
+     },
+     {
+      "label": "17시",
+      "count": 11
+     },
+     {
+      "label": "18시",
+      "count": 7
+     },
+     {
+      "label": "19시",
+      "count": 7
+     },
+     {
+      "label": "20시",
+      "count": 6
+     },
+     {
+      "label": "21시",
+      "count": 4
+     },
+     {
+      "label": "22시",
+      "count": 6
+     },
+     {
+      "label": "23시",
+      "count": 2
+     },
+     {
+      "label": "00시",
+      "count": 5
+     },
+     {
+      "label": "01시",
+      "count": 5
+     },
+     {
+      "label": "02시",
+      "count": 2
+     },
+     {
+      "label": "03시",
+      "count": 4
+     },
+     {
+      "label": "04시",
+      "count": 4
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "count": 6,
+      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
+      "who": "채널 A, 채널 C 외"
+     },
+     {
+      "label": "신중",
+      "count": 4,
+      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
+      "who": "채널 B, 채널 F 외"
+     },
+     {
+      "label": "중립",
+      "count": 2,
+      "text": "다음 발표를 보고 판단하자는 쪽이다.",
+      "who": "채널 D 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "채널 A (1순위)",
+      "time": "06:38",
+      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
+     },
+     {
+      "channel": "채널 B (1순위)",
+      "time": "01:12",
+      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
+     },
+     {
+      "channel": "채널 E",
+      "time": "전날 23:40",
+      "text": "해외 리포트 요약을 공유했다."
+     }
+    ],
+    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
+    "watch": [
+     "이번 주 실적 발표와 가이던스",
+     "주요 고객사의 설비투자 발언",
+     "관련 ETF 자금 흐름"
+    ],
+    "sources": [
+     {
+      "name": "채널 A",
+      "meta": "1순위 · 06:38",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 B",
+      "meta": "1순위 · 01:12",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 E",
+      "meta": "기타 · 전날 23:40",
+      "url": "https://t.me/"
+     }
+    ],
+    "related": [
+     {
+      "source": "Finviz 뉴스",
+      "title": "관련 헤드라인 (예시)",
+      "url": "https://finviz.com/",
+      "note": "텔레그램에 없던 사실을 보강"
+     },
+     {
+      "source": "웹 검색",
+      "title": "관련 기사 (예시)",
+      "url": "https://www.google.com/",
+      "note": "공식 발표 확인"
+     }
+    ]
+   }
+  },
+  {
+   "id": "h4",
+   "title": "원유 공급과잉 전망에 유가 약세",
+   "summary": "내년 공급이 수요를 앞선다는 기관 전망이 잇따라 인용됐다.",
+   "channels": 9,
+   "priority": 5,
+   "tickers": [
+    "XOM",
+    "USO"
+   ],
+   "confidence": "partial",
+   "kicker": "1면 핫이슈 · TOP 4",
+   "detail": {
+    "summary": [
+     "원유 공급과잉 전망에 유가 약세 관련 글이 9개 채널에서 나왔고, 그중 1순위 채널이 5곳이었다.",
+     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
+     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
+    ],
+    "numbers": [
+     {
+      "label": "종가",
+      "value": "182.40",
+      "note": "미국 정규장 마감 기준"
+     },
+     {
+      "label": "전일 대비",
+      "value": "+2.8%",
+      "note": "최근 5거래일 중 최대 상승"
+     },
+     {
+      "label": "거래량",
+      "value": "1.6배",
+      "note": "20일 평균 대비"
+     },
+     {
+      "label": "시가총액",
+      "value": "4.4조 달러",
+      "note": ""
+     },
+     {
+      "label": "선행 PER",
+      "value": "31.2배",
+      "note": "업종 평균 24배"
+     },
+     {
+      "label": "다음 실적",
+      "value": "11.19 (수)",
+      "note": "장 마감 후 발표"
+     }
+    ],
+    "numbersSource": "Finviz (예시)",
+    "timeline": [
+     {
+      "label": "05시",
+      "count": 2
+     },
+     {
+      "label": "06시",
+      "count": 5
+     },
+     {
+      "label": "07시",
+      "count": 4
+     },
+     {
+      "label": "08시",
+      "count": 5
+     },
+     {
+      "label": "09시",
+      "count": 8
+     },
+     {
+      "label": "10시",
+      "count": 11
+     },
+     {
+      "label": "11시",
+      "count": 14
+     },
+     {
+      "label": "12시",
+      "count": 18
+     },
+     {
+      "label": "13시",
+      "count": 20
+     },
+     {
+      "label": "14시",
+      "count": 21
+     },
+     {
+      "label": "15시",
+      "count": 21
+     },
+     {
+      "label": "16시",
+      "count": 17
+     },
+     {
+      "label": "17시",
+      "count": 15
+     },
+     {
+      "label": "18시",
+      "count": 12
+     },
+     {
+      "label": "19시",
+      "count": 9
+     },
+     {
+      "label": "20시",
+      "count": 8
+     },
+     {
+      "label": "21시",
+      "count": 4
+     },
+     {
+      "label": "22시",
+      "count": 3
+     },
+     {
+      "label": "23시",
+      "count": 5
+     },
+     {
+      "label": "00시",
+      "count": 4
+     },
+     {
+      "label": "01시",
+      "count": 2
+     },
+     {
+      "label": "02시",
+      "count": 4
+     },
+     {
+      "label": "03시",
+      "count": 5
+     },
+     {
+      "label": "04시",
+      "count": 5
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "count": 4,
+      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
+      "who": "채널 A, 채널 C 외"
+     },
+     {
+      "label": "신중",
+      "count": 3,
+      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
+      "who": "채널 B, 채널 F 외"
+     },
+     {
+      "label": "중립",
+      "count": 2,
+      "text": "다음 발표를 보고 판단하자는 쪽이다.",
+      "who": "채널 D 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "채널 A (1순위)",
+      "time": "06:38",
+      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
+     },
+     {
+      "channel": "채널 B (1순위)",
+      "time": "01:12",
+      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
+     },
+     {
+      "channel": "채널 E",
+      "time": "전날 23:40",
+      "text": "해외 리포트 요약을 공유했다."
+     }
+    ],
+    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
+    "watch": [
+     "이번 주 실적 발표와 가이던스",
+     "주요 고객사의 설비투자 발언",
+     "관련 ETF 자금 흐름"
+    ],
+    "sources": [
+     {
+      "name": "채널 A",
+      "meta": "1순위 · 06:38",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 B",
+      "meta": "1순위 · 01:12",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 E",
+      "meta": "기타 · 전날 23:40",
+      "url": "https://t.me/"
+     }
+    ],
+    "related": [
+     {
+      "source": "Finviz 뉴스",
+      "title": "관련 헤드라인 (예시)",
+      "url": "https://finviz.com/",
+      "note": "텔레그램에 없던 사실을 보강"
+     },
+     {
+      "source": "웹 검색",
+      "title": "관련 기사 (예시)",
+      "url": "https://www.google.com/",
+      "note": "공식 발표 확인"
+     }
+    ]
+   }
+  },
+  {
+   "id": "h5",
+   "title": "대만 반도체 밸류체인 실적 점검",
+   "summary": "파운드리·패키징 업체 월간 매출로 AI 수요를 가늠했다.",
+   "channels": 8,
+   "priority": 6,
+   "tickers": [
+    "TSM"
+   ],
+   "confidence": "confirmed",
+   "kicker": "1면 핫이슈 · TOP 5",
+   "detail": {
+    "summary": [
+     "대만 반도체 밸류체인 실적 점검 관련 글이 8개 채널에서 나왔고, 그중 1순위 채널이 6곳이었다.",
+     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
+     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
+    ],
+    "numbers": [
+     {
+      "label": "종가",
+      "value": "182.40",
+      "note": "미국 정규장 마감 기준"
+     },
+     {
+      "label": "전일 대비",
+      "value": "+2.8%",
+      "note": "최근 5거래일 중 최대 상승"
+     },
+     {
+      "label": "거래량",
+      "value": "1.6배",
+      "note": "20일 평균 대비"
+     },
+     {
+      "label": "시가총액",
+      "value": "4.4조 달러",
+      "note": ""
+     },
+     {
+      "label": "선행 PER",
+      "value": "31.2배",
+      "note": "업종 평균 24배"
+     },
+     {
+      "label": "다음 실적",
+      "value": "11.19 (수)",
+      "note": "장 마감 후 발표"
+     }
+    ],
+    "numbersSource": "Finviz (예시)",
+    "timeline": [
+     {
+      "label": "05시",
+      "count": 4
+     },
+     {
+      "label": "06시",
+      "count": 5
+     },
+     {
+      "label": "07시",
+      "count": 4
+     },
+     {
+      "label": "08시",
+      "count": 5
+     },
+     {
+      "label": "09시",
+      "count": 6
+     },
+     {
+      "label": "10시",
+      "count": 10
+     },
+     {
+      "label": "11시",
+      "count": 10
+     },
+     {
+      "label": "12시",
+      "count": 13
+     },
+     {
+      "label": "13시",
+      "count": 17
+     },
+     {
+      "label": "14시",
+      "count": 20
+     },
+     {
+      "label": "15시",
+      "count": 21
+     },
+     {
+      "label": "16시",
+      "count": 20
+     },
+     {
+      "label": "17시",
+      "count": 16
+     },
+     {
+      "label": "18시",
+      "count": 14
+     },
+     {
+      "label": "19시",
+      "count": 10
+     },
+     {
+      "label": "20시",
+      "count": 8
+     },
+     {
+      "label": "21시",
+      "count": 5
+     },
+     {
+      "label": "22시",
+      "count": 3
+     },
+     {
+      "label": "23시",
+      "count": 3
+     },
+     {
+      "label": "00시",
+      "count": 4
+     },
+     {
+      "label": "01시",
+      "count": 3
+     },
+     {
+      "label": "02시",
+      "count": 4
+     },
+     {
+      "label": "03시",
+      "count": 5
+     },
+     {
+      "label": "04시",
+      "count": 3
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "count": 4,
+      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
+      "who": "채널 A, 채널 C 외"
+     },
+     {
+      "label": "신중",
+      "count": 2,
+      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
+      "who": "채널 B, 채널 F 외"
+     },
+     {
+      "label": "중립",
+      "count": 2,
+      "text": "다음 발표를 보고 판단하자는 쪽이다.",
+      "who": "채널 D 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "채널 A (1순위)",
+      "time": "06:38",
+      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
+     },
+     {
+      "channel": "채널 B (1순위)",
+      "time": "01:12",
+      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
+     },
+     {
+      "channel": "채널 E",
+      "time": "전날 23:40",
+      "text": "해외 리포트 요약을 공유했다."
+     }
+    ],
+    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
+    "watch": [
+     "이번 주 실적 발표와 가이던스",
+     "주요 고객사의 설비투자 발언",
+     "관련 ETF 자금 흐름"
+    ],
+    "sources": [
+     {
+      "name": "채널 A",
+      "meta": "1순위 · 06:38",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 B",
+      "meta": "1순위 · 01:12",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 E",
+      "meta": "기타 · 전날 23:40",
+      "url": "https://t.me/"
+     }
+    ],
+    "related": [
+     {
+      "source": "Finviz 뉴스",
+      "title": "관련 헤드라인 (예시)",
+      "url": "https://finviz.com/",
+      "note": "텔레그램에 없던 사실을 보강"
+     },
+     {
+      "source": "웹 검색",
+      "title": "관련 기사 (예시)",
+      "url": "https://www.google.com/",
+      "note": "공식 발표 확인"
+     }
+    ]
+   }
+  },
+  {
+   "id": "h6",
+   "title": "증권사 2027년 자산시장 전망 잇따라",
+   "summary": "주식 비중 확대와 달러 약세를 기본 시나리오로 둔 곳이 많았다.",
+   "channels": 7,
+   "priority": 5,
+   "tickers": [],
+   "confidence": "partial",
+   "kicker": "1면 핫이슈 · TOP 6",
+   "detail": {
+    "summary": [
+     "증권사 2027년 자산시장 전망 잇따라 관련 글이 7개 채널에서 나왔고, 그중 1순위 채널이 5곳이었다.",
+     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
+     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
+    ],
+    "numbers": [
+     {
+      "label": "언급 채널",
+      "value": "7",
+      "note": "1순위 5"
+     },
+     {
+      "label": "주식 비중 확대 의견",
+      "value": "5곳",
+      "note": "전망을 낸 7곳 중"
+     }
+    ],
+    "numbersSource": "Finviz (예시)",
+    "timeline": [
+     {
+      "label": "05시",
+      "count": 5
+     },
+     {
+      "label": "06시",
+      "count": 4
+     },
+     {
+      "label": "07시",
+      "count": 5
+     },
+     {
+      "label": "08시",
+      "count": 6
+     },
+     {
+      "label": "09시",
+      "count": 4
+     },
+     {
+      "label": "10시",
+      "count": 6
+     },
+     {
+      "label": "11시",
+      "count": 10
+     },
+     {
+      "label": "12시",
+      "count": 12
+     },
+     {
+      "label": "13시",
+      "count": 15
+     },
+     {
+      "label": "14시",
+      "count": 17
+     },
+     {
+      "label": "15시",
+      "count": 20
+     },
+     {
+      "label": "16시",
+      "count": 23
+     },
+     {
+      "label": "17시",
+      "count": 19
+     },
+     {
+      "label": "18시",
+      "count": 17
+     },
+     {
+      "label": "19시",
+      "count": 16
+     },
+     {
+      "label": "20시",
+      "count": 11
+     },
+     {
+      "label": "21시",
+      "count": 7
+     },
+     {
+      "label": "22시",
+      "count": 5
+     },
+     {
+      "label": "23시",
+      "count": 6
+     },
+     {
+      "label": "00시",
+      "count": 3
+     },
+     {
+      "label": "01시",
+      "count": 3
+     },
+     {
+      "label": "02시",
+      "count": 4
+     },
+     {
+      "label": "03시",
+      "count": 5
+     },
+     {
+      "label": "04시",
+      "count": 3
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "count": 3,
+      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
+      "who": "채널 A, 채널 C 외"
+     },
+     {
+      "label": "신중",
+      "count": 2,
+      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
+      "who": "채널 B, 채널 F 외"
+     },
+     {
+      "label": "중립",
+      "count": 2,
+      "text": "다음 발표를 보고 판단하자는 쪽이다.",
+      "who": "채널 D 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "채널 A (1순위)",
+      "time": "06:38",
+      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
+     },
+     {
+      "channel": "채널 B (1순위)",
+      "time": "01:12",
+      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
+     },
+     {
+      "channel": "채널 E",
+      "time": "전날 23:40",
+      "text": "해외 리포트 요약을 공유했다."
+     }
+    ],
+    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
+    "watch": [
+     "이번 주 실적 발표와 가이던스",
+     "주요 고객사의 설비투자 발언",
+     "관련 ETF 자금 흐름"
+    ],
+    "sources": [
+     {
+      "name": "채널 A",
+      "meta": "1순위 · 06:38",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 B",
+      "meta": "1순위 · 01:12",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 E",
+      "meta": "기타 · 전날 23:40",
+      "url": "https://t.me/"
+     }
+    ],
+    "related": [
+     {
+      "source": "Finviz 뉴스",
+      "title": "관련 헤드라인 (예시)",
+      "url": "https://finviz.com/",
+      "note": "텔레그램에 없던 사실을 보강"
+     },
+     {
+      "source": "웹 검색",
+      "title": "관련 기사 (예시)",
+      "url": "https://www.google.com/",
+      "note": "공식 발표 확인"
+     }
+    ]
+   }
+  },
+  {
+   "id": "h7",
+   "title": "비트코인 급락 뒤 변동성 확대",
+   "summary": "레버리지 청산 규모와 현물 ETF 자금 흐름이 함께 언급됐다.",
+   "channels": 7,
+   "priority": 3,
+   "tickers": [
+    "IBIT",
+    "MSTR"
+   ],
+   "confidence": "partial",
+   "kicker": "1면 핫이슈 · TOP 7",
+   "detail": {
+    "summary": [
+     "비트코인 급락 뒤 변동성 확대 관련 글이 7개 채널에서 나왔고, 그중 1순위 채널이 3곳이었다.",
+     "채널들이 공통으로 든 근거와 서로 엇갈린 해석을 아래에 나눠 정리했다.",
+     "숫자는 발행 시점 기준이며, 원문 링크로 바로 확인할 수 있다."
+    ],
+    "numbers": [
+     {
+      "label": "종가",
+      "value": "182.40",
+      "note": "미국 정규장 마감 기준"
+     },
+     {
+      "label": "전일 대비",
+      "value": "+2.8%",
+      "note": "최근 5거래일 중 최대 상승"
+     },
+     {
+      "label": "거래량",
+      "value": "1.6배",
+      "note": "20일 평균 대비"
+     },
+     {
+      "label": "시가총액",
+      "value": "4.4조 달러",
+      "note": ""
+     },
+     {
+      "label": "선행 PER",
+      "value": "31.2배",
+      "note": "업종 평균 24배"
+     },
+     {
+      "label": "다음 실적",
+      "value": "11.19 (수)",
+      "note": "장 마감 후 발표"
+     }
+    ],
+    "numbersSource": "Finviz (예시)",
+    "timeline": [
+     {
+      "label": "05시",
+      "count": 2
+     },
+     {
+      "label": "06시",
+      "count": 4
+     },
+     {
+      "label": "07시",
+      "count": 4
+     },
+     {
+      "label": "08시",
+      "count": 4
+     },
+     {
+      "label": "09시",
+      "count": 3
+     },
+     {
+      "label": "10시",
+      "count": 6
+     },
+     {
+      "label": "11시",
+      "count": 7
+     },
+     {
+      "label": "12시",
+      "count": 8
+     },
+     {
+      "label": "13시",
+      "count": 11
+     },
+     {
+      "label": "14시",
+      "count": 13
+     },
+     {
+      "label": "15시",
+      "count": 16
+     },
+     {
+      "label": "16시",
+      "count": 20
+     },
+     {
+      "label": "17시",
+      "count": 22
+     },
+     {
+      "label": "18시",
+      "count": 19
+     },
+     {
+      "label": "19시",
+      "count": 19
+     },
+     {
+      "label": "20시",
+      "count": 13
+     },
+     {
+      "label": "21시",
+      "count": 10
+     },
+     {
+      "label": "22시",
+      "count": 6
+     },
+     {
+      "label": "23시",
+      "count": 8
+     },
+     {
+      "label": "00시",
+      "count": 6
+     },
+     {
+      "label": "01시",
+      "count": 6
+     },
+     {
+      "label": "02시",
+      "count": 4
+     },
+     {
+      "label": "03시",
+      "count": 2
+     },
+     {
+      "label": "04시",
+      "count": 3
+     }
+    ],
+    "views": [
+     {
+      "label": "낙관",
+      "count": 3,
+      "text": "수요와 계획이 유지되고 있다는 근거를 든다.",
+      "who": "채널 A, 채널 C 외"
+     },
+     {
+      "label": "신중",
+      "count": 2,
+      "text": "가격에 이미 기대가 반영됐다는 지적이다.",
+      "who": "채널 B, 채널 F 외"
+     },
+     {
+      "label": "중립",
+      "count": 2,
+      "text": "다음 발표를 보고 판단하자는 쪽이다.",
+      "who": "채널 D 외"
+     }
+    ],
+    "excerpts": [
+     {
+      "channel": "채널 A (1순위)",
+      "time": "06:38",
+      "text": "핵심은 숫자보다 다음 분기 가이던스라는 요지의 글."
+     },
+     {
+      "channel": "채널 B (1순위)",
+      "time": "01:12",
+      "text": "과거 사이클과 비교한 표를 올리며 신중론을 폈다."
+     },
+     {
+      "channel": "채널 E",
+      "time": "전날 23:40",
+      "text": "해외 리포트 요약을 공유했다."
+     }
+    ],
+    "background": "이 주제는 지난주부터 꾸준히 언급이 늘었다. 관련 일정이 가까워지면서 채널마다 시나리오를 내놓고 있다.",
+    "watch": [
+     "이번 주 실적 발표와 가이던스",
+     "주요 고객사의 설비투자 발언",
+     "관련 ETF 자금 흐름"
+    ],
+    "sources": [
+     {
+      "name": "채널 A",
+      "meta": "1순위 · 06:38",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 B",
+      "meta": "1순위 · 01:12",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "채널 E",
+      "meta": "기타 · 전날 23:40",
+      "url": "https://t.me/"
+     }
+    ],
+    "related": [
+     {
+      "source": "Finviz 뉴스",
+      "title": "관련 헤드라인 (예시)",
+      "url": "https://finviz.com/",
+      "note": "텔레그램에 없던 사실을 보강"
+     },
+     {
+      "source": "웹 검색",
+      "title": "관련 기사 (예시)",
+      "url": "https://www.google.com/",
+      "note": "공식 발표 확인"
+     }
+    ]
+   }
+  }
+ ],
+ "macro": {
+  "indicators": [
+   {
+    "label": "미 10년물",
+    "value": "4.38%",
+    "change": "+0.06%p"
+   },
+   {
+    "label": "달러인덱스",
+    "value": "106.2",
+    "change": "+0.3%"
+   },
+   {
+    "label": "WTI 유가",
+    "value": "67.8달러",
+    "change": "-1.4%"
+   },
+   {
+    "label": "원/달러",
+    "value": "1,412원",
+    "change": "+4.5원"
+   }
+  ],
+  "items": [
+   {
+    "id": "m1",
+    "category": "금리·연준",
+    "title": "12월 인하 기대 후퇴",
+    "now": "고용·물가 지표 뒤 연준 인사들의 발언이 신중해졌다.",
+    "read": "장기금리 반등이 성장주 밸류에이션에 부담이라는 시각이 많았다.",
+    "next": "11.20 FOMC 의사록",
+    "confidence": "confirmed",
+    "channels": 11,
+    "kicker": "2면 매크로 · 금리·연준",
+    "detail": {
+     "summary": [
+      "고용·물가 지표 뒤 연준 인사들의 발언이 신중해졌다.",
+      "장기금리 반등이 성장주 밸류에이션에 부담이라는 시각이 많았다.",
+      "다음 일정: 11.20 FOMC 의사록"
+     ],
+     "numbers": [
+      {
+       "label": "미 10년물",
+       "value": "4.38%",
+       "note": "전일 대비 +0.06%p"
+      },
+      {
+       "label": "달러인덱스",
+       "value": "106.2",
+       "note": "전일 대비 +0.3%"
+      },
+      {
+       "label": "WTI 유가",
+       "value": "67.8달러",
+       "note": "전일 대비 -1.4%"
+      }
+     ],
+     "numbersSource": "공식 발표·시장 데이터 (예시)",
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 4
+      },
+      {
+       "label": "06시",
+       "count": 3
+      },
+      {
+       "label": "07시",
+       "count": 2
+      },
+      {
+       "label": "08시",
+       "count": 5
+      },
+      {
+       "label": "09시",
+       "count": 5
+      },
+      {
+       "label": "10시",
+       "count": 7
+      },
+      {
+       "label": "11시",
+       "count": 10
+      },
+      {
+       "label": "12시",
+       "count": 15
+      },
+      {
+       "label": "13시",
+       "count": 20
+      },
+      {
+       "label": "14시",
+       "count": 20
+      },
+      {
+       "label": "15시",
+       "count": 23
+      },
+      {
+       "label": "16시",
+       "count": 22
+      },
+      {
+       "label": "17시",
+       "count": 17
+      },
+      {
+       "label": "18시",
+       "count": 13
+      },
+      {
+       "label": "19시",
+       "count": 10
+      },
+      {
+       "label": "20시",
+       "count": 9
+      },
+      {
+       "label": "21시",
+       "count": 6
+      },
+      {
+       "label": "22시",
+       "count": 6
+      },
+      {
+       "label": "23시",
+       "count": 6
+      },
+      {
+       "label": "00시",
+       "count": 4
+      },
+      {
+       "label": "01시",
+       "count": 4
+      },
+      {
+       "label": "02시",
+       "count": 2
+      },
+      {
+       "label": "03시",
+       "count": 2
+      },
+      {
+       "label": "04시",
+       "count": 5
+      }
+     ],
+     "views": [
+      {
+       "label": "다수 의견",
+       "count": 7,
+       "text": "장기금리 반등이 성장주 밸류에이션에 부담이라는 시각이 많았다.",
+       "who": "채널 A, 채널 G 외"
+      },
+      {
+       "label": "소수 의견",
+       "count": 3,
+       "text": "시장이 지나치게 앞서 간다는 반론.",
+       "who": "채널 H 외"
+      }
+     ],
+     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
+     "watch": [
+      "11.20 FOMC 의사록",
+      "관련 당국자 발언",
+      "시장 기대치 변화"
+     ],
+     "sources": [
+      {
+       "name": "채널 A",
+       "meta": "1순위 · 05:40",
+       "url": "https://t.me/"
+      },
+      {
+       "name": "채널 G",
+       "meta": "기타 · 02:15",
+       "url": "https://t.me/"
+      }
+     ],
+     "related": [
+      {
+       "source": "공식 발표",
+       "title": "관련 통계 발표 (예시)",
+       "url": "https://www.google.com/",
+       "note": ""
+      }
+     ]
+    }
+   },
+   {
+    "id": "m2",
+    "category": "환율",
+    "title": "원/달러 고점 논쟁",
+    "now": "달러 강세가 이어지며 원화 약세 구간이 길어졌다.",
+    "read": "수출주에는 우호적이지만 외국인 수급에는 부담이라는 해석이 갈렸다.",
+    "next": "12.1 수출입 동향",
+    "confidence": "confirmed",
+    "channels": 10,
+    "kicker": "2면 매크로 · 환율",
+    "detail": {
+     "summary": [
+      "달러 강세가 이어지며 원화 약세 구간이 길어졌다.",
+      "수출주에는 우호적이지만 외국인 수급에는 부담이라는 해석이 갈렸다.",
+      "다음 일정: 12.1 수출입 동향"
+     ],
+     "numbers": [
+      {
+       "label": "미 10년물",
+       "value": "4.38%",
+       "note": "전일 대비 +0.06%p"
+      },
+      {
+       "label": "달러인덱스",
+       "value": "106.2",
+       "note": "전일 대비 +0.3%"
+      },
+      {
+       "label": "WTI 유가",
+       "value": "67.8달러",
+       "note": "전일 대비 -1.4%"
+      }
+     ],
+     "numbersSource": "공식 발표·시장 데이터 (예시)",
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 2
+      },
+      {
+       "label": "06시",
+       "count": 2
+      },
+      {
+       "label": "07시",
+       "count": 4
+      },
+      {
+       "label": "08시",
+       "count": 5
+      },
+      {
+       "label": "09시",
+       "count": 4
+      },
+      {
+       "label": "10시",
+       "count": 6
+      },
+      {
+       "label": "11시",
+       "count": 10
+      },
+      {
+       "label": "12시",
+       "count": 15
+      },
+      {
+       "label": "13시",
+       "count": 17
+      },
+      {
+       "label": "14시",
+       "count": 21
+      },
+      {
+       "label": "15시",
+       "count": 22
+      },
+      {
+       "label": "16시",
+       "count": 19
+      },
+      {
+       "label": "17시",
+       "count": 18
+      },
+      {
+       "label": "18시",
+       "count": 14
+      },
+      {
+       "label": "19시",
+       "count": 11
+      },
+      {
+       "label": "20시",
+       "count": 10
+      },
+      {
+       "label": "21시",
+       "count": 4
+      },
+      {
+       "label": "22시",
+       "count": 3
+      },
+      {
+       "label": "23시",
+       "count": 6
+      },
+      {
+       "label": "00시",
+       "count": 3
+      },
+      {
+       "label": "01시",
+       "count": 2
+      },
+      {
+       "label": "02시",
+       "count": 3
+      },
+      {
+       "label": "03시",
+       "count": 3
+      },
+      {
+       "label": "04시",
+       "count": 5
+      }
+     ],
+     "views": [
+      {
+       "label": "다수 의견",
+       "count": 7,
+       "text": "수출주에는 우호적이지만 외국인 수급에는 부담이라는 해석이 갈렸다.",
+       "who": "채널 A, 채널 G 외"
+      },
+      {
+       "label": "소수 의견",
+       "count": 3,
+       "text": "시장이 지나치게 앞서 간다는 반론.",
+       "who": "채널 H 외"
+      }
+     ],
+     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
+     "watch": [
+      "12.1 수출입 동향",
+      "관련 당국자 발언",
+      "시장 기대치 변화"
+     ],
+     "sources": [
+      {
+       "name": "채널 A",
+       "meta": "1순위 · 05:40",
+       "url": "https://t.me/"
+      },
+      {
+       "name": "채널 G",
+       "meta": "기타 · 02:15",
+       "url": "https://t.me/"
+      }
+     ],
+     "related": [
+      {
+       "source": "공식 발표",
+       "title": "관련 통계 발표 (예시)",
+       "url": "https://www.google.com/",
+       "note": ""
+      }
+     ]
+    }
+   },
+   {
+    "id": "m3",
+    "category": "유가·원자재",
+    "title": "공급과잉 전망과 감산 사이",
+    "now": "내년 공급이 수요를 앞선다는 기관 전망이 이어졌다.",
+    "read": "산유국 추가 감산 여부가 다음 변수라는 데 의견이 모였다.",
+    "next": "11.30 산유국 회의",
+    "confidence": "partial",
+    "channels": 9,
+    "kicker": "2면 매크로 · 유가·원자재",
+    "detail": {
+     "summary": [
+      "내년 공급이 수요를 앞선다는 기관 전망이 이어졌다.",
+      "산유국 추가 감산 여부가 다음 변수라는 데 의견이 모였다.",
+      "다음 일정: 11.30 산유국 회의"
+     ],
+     "numbers": [
+      {
+       "label": "미 10년물",
+       "value": "4.38%",
+       "note": "전일 대비 +0.06%p"
+      },
+      {
+       "label": "달러인덱스",
+       "value": "106.2",
+       "note": "전일 대비 +0.3%"
+      },
+      {
+       "label": "WTI 유가",
+       "value": "67.8달러",
+       "note": "전일 대비 -1.4%"
+      }
+     ],
+     "numbersSource": "공식 발표·시장 데이터 (예시)",
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 2
+      },
+      {
+       "label": "06시",
+       "count": 3
+      },
+      {
+       "label": "07시",
+       "count": 3
+      },
+      {
+       "label": "08시",
+       "count": 6
+      },
+      {
+       "label": "09시",
+       "count": 6
+      },
+      {
+       "label": "10시",
+       "count": 9
+      },
+      {
+       "label": "11시",
+       "count": 9
+      },
+      {
+       "label": "12시",
+       "count": 14
+      },
+      {
+       "label": "13시",
+       "count": 19
+      },
+      {
+       "label": "14시",
+       "count": 21
+      },
+      {
+       "label": "15시",
+       "count": 23
+      },
+      {
+       "label": "16시",
+       "count": 22
+      },
+      {
+       "label": "17시",
+       "count": 17
+      },
+      {
+       "label": "18시",
+       "count": 12
+      },
+      {
+       "label": "19시",
+       "count": 12
+      },
+      {
+       "label": "20시",
+       "count": 6
+      },
+      {
+       "label": "21시",
+       "count": 4
+      },
+      {
+       "label": "22시",
+       "count": 6
+      },
+      {
+       "label": "23시",
+       "count": 5
+      },
+      {
+       "label": "00시",
+       "count": 5
+      },
+      {
+       "label": "01시",
+       "count": 5
+      },
+      {
+       "label": "02시",
+       "count": 2
+      },
+      {
+       "label": "03시",
+       "count": 2
+      },
+      {
+       "label": "04시",
+       "count": 2
+      }
+     ],
+     "views": [
+      {
+       "label": "다수 의견",
+       "count": 7,
+       "text": "산유국 추가 감산 여부가 다음 변수라는 데 의견이 모였다.",
+       "who": "채널 A, 채널 G 외"
+      },
+      {
+       "label": "소수 의견",
+       "count": 3,
+       "text": "시장이 지나치게 앞서 간다는 반론.",
+       "who": "채널 H 외"
+      }
+     ],
+     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
+     "watch": [
+      "11.30 산유국 회의",
+      "관련 당국자 발언",
+      "시장 기대치 변화"
+     ],
+     "sources": [
+      {
+       "name": "채널 A",
+       "meta": "1순위 · 05:40",
+       "url": "https://t.me/"
+      },
+      {
+       "name": "채널 G",
+       "meta": "기타 · 02:15",
+       "url": "https://t.me/"
+      }
+     ],
+     "related": [
+      {
+       "source": "공식 발표",
+       "title": "관련 통계 발표 (예시)",
+       "url": "https://www.google.com/",
+       "note": ""
+      }
+     ]
+    }
+   },
+   {
+    "id": "m4",
+    "category": "채권·크레딧",
+    "title": "회사채 스프레드 소폭 확대",
+    "now": "기술 기업의 대규모 채권 발행이 잇따랐다.",
+    "read": "AI 설비투자 자금 조달이 크레딧 부담으로 번질지 지켜본다는 의견.",
+    "next": "대형 발행 일정",
+    "confidence": "partial",
+    "channels": 8,
+    "kicker": "2면 매크로 · 채권·크레딧",
+    "detail": {
+     "summary": [
+      "기술 기업의 대규모 채권 발행이 잇따랐다.",
+      "AI 설비투자 자금 조달이 크레딧 부담으로 번질지 지켜본다는 의견.",
+      "다음 일정: 대형 발행 일정"
+     ],
+     "numbers": [
+      {
+       "label": "미 10년물",
+       "value": "4.38%",
+       "note": "전일 대비 +0.06%p"
+      },
+      {
+       "label": "달러인덱스",
+       "value": "106.2",
+       "note": "전일 대비 +0.3%"
+      },
+      {
+       "label": "WTI 유가",
+       "value": "67.8달러",
+       "note": "전일 대비 -1.4%"
+      }
+     ],
+     "numbersSource": "공식 발표·시장 데이터 (예시)",
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 4
+      },
+      {
+       "label": "06시",
+       "count": 4
+      },
+      {
+       "label": "07시",
+       "count": 5
+      },
+      {
+       "label": "08시",
+       "count": 4
+      },
+      {
+       "label": "09시",
+       "count": 7
+      },
+      {
+       "label": "10시",
+       "count": 10
+      },
+      {
+       "label": "11시",
+       "count": 13
+      },
+      {
+       "label": "12시",
+       "count": 13
+      },
+      {
+       "label": "13시",
+       "count": 19
+      },
+      {
+       "label": "14시",
+       "count": 21
+      },
+      {
+       "label": "15시",
+       "count": 22
+      },
+      {
+       "label": "16시",
+       "count": 22
+      },
+      {
+       "label": "17시",
+       "count": 18
+      },
+      {
+       "label": "18시",
+       "count": 14
+      },
+      {
+       "label": "19시",
+       "count": 13
+      },
+      {
+       "label": "20시",
+       "count": 9
+      },
+      {
+       "label": "21시",
+       "count": 5
+      },
+      {
+       "label": "22시",
+       "count": 4
+      },
+      {
+       "label": "23시",
+       "count": 4
+      },
+      {
+       "label": "00시",
+       "count": 2
+      },
+      {
+       "label": "01시",
+       "count": 4
+      },
+      {
+       "label": "02시",
+       "count": 4
+      },
+      {
+       "label": "03시",
+       "count": 3
+      },
+      {
+       "label": "04시",
+       "count": 5
+      }
+     ],
+     "views": [
+      {
+       "label": "다수 의견",
+       "count": 7,
+       "text": "AI 설비투자 자금 조달이 크레딧 부담으로 번질지 지켜본다는 의견.",
+       "who": "채널 A, 채널 G 외"
+      },
+      {
+       "label": "소수 의견",
+       "count": 3,
+       "text": "시장이 지나치게 앞서 간다는 반론.",
+       "who": "채널 H 외"
+      }
+     ],
+     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
+     "watch": [
+      "대형 발행 일정",
+      "관련 당국자 발언",
+      "시장 기대치 변화"
+     ],
+     "sources": [
+      {
+       "name": "채널 A",
+       "meta": "1순위 · 05:40",
+       "url": "https://t.me/"
+      },
+      {
+       "name": "채널 G",
+       "meta": "기타 · 02:15",
+       "url": "https://t.me/"
+      }
+     ],
+     "related": [
+      {
+       "source": "공식 발표",
+       "title": "관련 통계 발표 (예시)",
+       "url": "https://www.google.com/",
+       "note": ""
+      }
+     ]
+    }
+   },
+   {
+    "id": "m5",
+    "category": "경기지표",
+    "title": "소비 둔화 신호 엇갈려",
+    "now": "카드 지출은 견조하지만 저소득층 연체율이 올랐다.",
+    "read": "둔화 속도가 느려 연착륙 시나리오가 유지된다는 쪽이 우세.",
+    "next": "11.17 소매판매",
+    "confidence": "confirmed",
+    "channels": 7,
+    "kicker": "2면 매크로 · 경기지표",
+    "detail": {
+     "summary": [
+      "카드 지출은 견조하지만 저소득층 연체율이 올랐다.",
+      "둔화 속도가 느려 연착륙 시나리오가 유지된다는 쪽이 우세.",
+      "다음 일정: 11.17 소매판매"
+     ],
+     "numbers": [
+      {
+       "label": "미 10년물",
+       "value": "4.38%",
+       "note": "전일 대비 +0.06%p"
+      },
+      {
+       "label": "달러인덱스",
+       "value": "106.2",
+       "note": "전일 대비 +0.3%"
+      },
+      {
+       "label": "WTI 유가",
+       "value": "67.8달러",
+       "note": "전일 대비 -1.4%"
+      }
+     ],
+     "numbersSource": "공식 발표·시장 데이터 (예시)",
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 4
+      },
+      {
+       "label": "06시",
+       "count": 4
+      },
+      {
+       "label": "07시",
+       "count": 5
+      },
+      {
+       "label": "08시",
+       "count": 6
+      },
+      {
+       "label": "09시",
+       "count": 7
+      },
+      {
+       "label": "10시",
+       "count": 7
+      },
+      {
+       "label": "11시",
+       "count": 13
+      },
+      {
+       "label": "12시",
+       "count": 14
+      },
+      {
+       "label": "13시",
+       "count": 17
+      },
+      {
+       "label": "14시",
+       "count": 19
+      },
+      {
+       "label": "15시",
+       "count": 22
+      },
+      {
+       "label": "16시",
+       "count": 19
+      },
+      {
+       "label": "17시",
+       "count": 17
+      },
+      {
+       "label": "18시",
+       "count": 15
+      },
+      {
+       "label": "19시",
+       "count": 12
+      },
+      {
+       "label": "20시",
+       "count": 9
+      },
+      {
+       "label": "21시",
+       "count": 4
+      },
+      {
+       "label": "22시",
+       "count": 3
+      },
+      {
+       "label": "23시",
+       "count": 3
+      },
+      {
+       "label": "00시",
+       "count": 4
+      },
+      {
+       "label": "01시",
+       "count": 5
+      },
+      {
+       "label": "02시",
+       "count": 5
+      },
+      {
+       "label": "03시",
+       "count": 5
+      },
+      {
+       "label": "04시",
+       "count": 4
+      }
+     ],
+     "views": [
+      {
+       "label": "다수 의견",
+       "count": 7,
+       "text": "둔화 속도가 느려 연착륙 시나리오가 유지된다는 쪽이 우세.",
+       "who": "채널 A, 채널 G 외"
+      },
+      {
+       "label": "소수 의견",
+       "count": 3,
+       "text": "시장이 지나치게 앞서 간다는 반론.",
+       "who": "채널 H 외"
+      }
+     ],
+     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
+     "watch": [
+      "11.17 소매판매",
+      "관련 당국자 발언",
+      "시장 기대치 변화"
+     ],
+     "sources": [
+      {
+       "name": "채널 A",
+       "meta": "1순위 · 05:40",
+       "url": "https://t.me/"
+      },
+      {
+       "name": "채널 G",
+       "meta": "기타 · 02:15",
+       "url": "https://t.me/"
+      }
+     ],
+     "related": [
+      {
+       "source": "공식 발표",
+       "title": "관련 통계 발표 (예시)",
+       "url": "https://www.google.com/",
+       "note": ""
+      }
+     ]
+    }
+   },
+   {
+    "id": "m6",
+    "category": "정책·관세",
+    "title": "반도체 품목 관세 일정 주목",
+    "now": "주요국과의 관세 협상 시한이 다가왔다.",
+    "read": "장비·소재 품목 포함 여부에 따라 업종별 영향이 갈린다는 분석.",
+    "next": "협상 시한",
+    "confidence": "partial",
+    "channels": 6,
+    "kicker": "2면 매크로 · 정책·관세",
+    "detail": {
+     "summary": [
+      "주요국과의 관세 협상 시한이 다가왔다.",
+      "장비·소재 품목 포함 여부에 따라 업종별 영향이 갈린다는 분석.",
+      "다음 일정: 협상 시한"
+     ],
+     "numbers": [
+      {
+       "label": "미 10년물",
+       "value": "4.38%",
+       "note": "전일 대비 +0.06%p"
+      },
+      {
+       "label": "달러인덱스",
+       "value": "106.2",
+       "note": "전일 대비 +0.3%"
+      },
+      {
+       "label": "WTI 유가",
+       "value": "67.8달러",
+       "note": "전일 대비 -1.4%"
+      }
+     ],
+     "numbersSource": "공식 발표·시장 데이터 (예시)",
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 4
+      },
+      {
+       "label": "06시",
+       "count": 5
+      },
+      {
+       "label": "07시",
+       "count": 5
+      },
+      {
+       "label": "08시",
+       "count": 6
+      },
+      {
+       "label": "09시",
+       "count": 5
+      },
+      {
+       "label": "10시",
+       "count": 10
+      },
+      {
+       "label": "11시",
+       "count": 11
+      },
+      {
+       "label": "12시",
+       "count": 15
+      },
+      {
+       "label": "13시",
+       "count": 19
+      },
+      {
+       "label": "14시",
+       "count": 22
+      },
+      {
+       "label": "15시",
+       "count": 21
+      },
+      {
+       "label": "16시",
+       "count": 20
+      },
+      {
+       "label": "17시",
+       "count": 19
+      },
+      {
+       "label": "18시",
+       "count": 15
+      },
+      {
+       "label": "19시",
+       "count": 12
+      },
+      {
+       "label": "20시",
+       "count": 7
+      },
+      {
+       "label": "21시",
+       "count": 8
+      },
+      {
+       "label": "22시",
+       "count": 3
+      },
+      {
+       "label": "23시",
+       "count": 5
+      },
+      {
+       "label": "00시",
+       "count": 3
+      },
+      {
+       "label": "01시",
+       "count": 2
+      },
+      {
+       "label": "02시",
+       "count": 4
+      },
+      {
+       "label": "03시",
+       "count": 2
+      },
+      {
+       "label": "04시",
+       "count": 2
+      }
+     ],
+     "views": [
+      {
+       "label": "다수 의견",
+       "count": 7,
+       "text": "장비·소재 품목 포함 여부에 따라 업종별 영향이 갈린다는 분석.",
+       "who": "채널 A, 채널 G 외"
+      },
+      {
+       "label": "소수 의견",
+       "count": 3,
+       "text": "시장이 지나치게 앞서 간다는 반론.",
+       "who": "채널 H 외"
+      }
+     ],
+     "background": "최근 한 달 동안의 흐름과 이번 주 지표 일정을 함께 놓고 보면 방향이 보인다.",
+     "watch": [
+      "협상 시한",
+      "관련 당국자 발언",
+      "시장 기대치 변화"
+     ],
+     "sources": [
+      {
+       "name": "채널 A",
+       "meta": "1순위 · 05:40",
+       "url": "https://t.me/"
+      },
+      {
+       "name": "채널 G",
+       "meta": "기타 · 02:15",
+       "url": "https://t.me/"
+      }
+     ],
+     "related": [
+      {
+       "source": "공식 발표",
+       "title": "관련 통계 발표 (예시)",
+       "url": "https://www.google.com/",
+       "note": ""
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "company": {
+  "ranking": [
+   {
+    "name": "엔비디아",
+    "telegram": 35,
+    "x": 7
+   },
+   {
+    "name": "테슬라",
+    "telegram": 19,
+    "x": 8
+   },
+   {
+    "name": "삼성전자",
+    "telegram": 21,
+    "x": 2
+   },
+   {
+    "name": "스페이스X",
+    "telegram": 12,
+    "x": 7
+   },
+   {
+    "name": "TSMC",
+    "telegram": 13,
+    "x": 2
+   },
+   {
+    "name": "마이크로소프트",
+    "telegram": 9,
+    "x": 3
+   }
+  ],
+  "cards": [
+   {
+    "id": "c1",
+    "name": "엔비디아",
+    "title": "엔비디아",
+    "ticker": "NVDA",
+    "telegram": 35,
+    "x": 7,
+    "metrics": {
+     "price": "182.40",
+     "change": "+2.8%",
+     "earnings": "11.19"
+    },
+    "what": "실적 발표를 앞두고 데이터센터 매출 기대치와 공급 상황이 주로 언급됐다.",
+    "kicker": "3면 기업",
+    "channels": 35,
+    "detail": {
+     "summary": [
+      "실적 발표를 앞두고 데이터센터 매출 기대치와 공급 상황이 주로 언급됐다.",
+      "고객사 설비투자가 내년에도 유지되는가",
+      "차세대 제품 출하 속도",
+      "수출 규제가 중국 매출에 주는 영향"
+     ],
+     "numbers": [
+      {
+       "label": "종가",
+       "value": "182.40",
+       "note": ""
+      },
+      {
+       "label": "등락",
+       "value": "+2.8%",
+       "note": "전일 대비"
+      },
+      {
+       "label": "52주 범위",
+       "value": "예시 범위",
+       "note": ""
+      },
+      {
+       "label": "선행 PER",
+       "value": "28.4배",
+       "note": ""
+      },
+      {
+       "label": "목표주가 평균",
+       "value": "+18%",
+       "note": "현재가 대비 여력"
+      },
+      {
+       "label": "다음 실적",
+       "value": "11.19",
+       "note": ""
+      }
+     ],
+     "numbersSource": "Finviz (예시)",
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 4
+      },
+      {
+       "label": "06시",
+       "count": 4
+      },
+      {
+       "label": "07시",
+       "count": 6
+      },
+      {
+       "label": "08시",
+       "count": 7
+      },
+      {
+       "label": "09시",
+       "count": 11
+      },
+      {
+       "label": "10시",
+       "count": 16
+      },
+      {
+       "label": "11시",
+       "count": 16
+      },
+      {
+       "label": "12시",
+       "count": 20
+      },
+      {
+       "label": "13시",
+       "count": 22
+      },
+      {
+       "label": "14시",
+       "count": 19
+      },
+      {
+       "label": "15시",
+       "count": 17
+      },
+      {
+       "label": "16시",
+       "count": 16
+      },
+      {
+       "label": "17시",
+       "count": 13
+      },
+      {
+       "label": "18시",
+       "count": 7
+      },
+      {
+       "label": "19시",
+       "count": 5
+      },
+      {
+       "label": "20시",
+       "count": 7
+      },
+      {
+       "label": "21시",
+       "count": 3
+      },
+      {
+       "label": "22시",
+       "count": 4
+      },
+      {
+       "label": "23시",
+       "count": 4
+      },
+      {
+       "label": "00시",
+       "count": 4
+      },
+      {
+       "label": "01시",
+       "count": 5
+      },
+      {
+       "label": "02시",
+       "count": 5
+      },
+      {
+       "label": "03시",
+       "count": 4
+      },
+      {
+       "label": "04시",
+       "count": 5
+      }
+     ],
+     "views": [
+      {
+       "label": "텔레그램",
+       "count": 35,
+       "text": "리서치 채널은 실적과 수급 위주로 다뤘다.",
+       "who": "채널 A, 채널 C 외"
+      },
+      {
+       "label": "X",
+       "count": 7,
+       "text": "해외 계정은 경영진 발언과 제품 일정에 집중했다.",
+       "who": "팔로우 중인 계정 외"
+      }
+     ],
+     "watch": [
+      "11.19 실적 발표",
+      "경쟁사 발표",
+      "수급 변화"
+     ],
+     "sources": [
+      {
+       "name": "채널 A",
+       "meta": "1순위 · 04:50",
+       "url": "https://t.me/"
+      },
+      {
+       "name": "X 게시글",
+       "meta": "팔로잉 · 02:30",
+       "url": "https://t.me/"
+      }
+     ]
+    }
+   },
+   {
+    "id": "c2",
+    "name": "테슬라",
+    "title": "테슬라",
+    "ticker": "TSLA",
+    "telegram": 19,
+    "x": 8,
+    "metrics": {
+     "price": "342.10",
+     "change": "-1.2%",
+     "earnings": "1.28"
+    },
+    "what": "자율주행 서비스 확대 계획과 로봇 사업 일정이 화제였다.",
+    "kicker": "3면 기업",
+    "channels": 19,
+    "detail": {
+     "summary": [
+      "자율주행 서비스 확대 계획과 로봇 사업 일정이 화제였다.",
+      "로보택시 운행 지역 확대 일정",
+      "차량 판매 둔화와 가격 정책",
+      "로봇 사업의 실제 매출 시점"
+     ],
+     "numbers": [
+      {
+       "label": "종가",
+       "value": "342.10",
+       "note": ""
+      },
+      {
+       "label": "등락",
+       "value": "-1.2%",
+       "note": "전일 대비"
+      },
+      {
+       "label": "52주 범위",
+       "value": "예시 범위",
+       "note": ""
+      },
+      {
+       "label": "선행 PER",
+       "value": "28.4배",
+       "note": ""
+      },
+      {
+       "label": "목표주가 평균",
+       "value": "+18%",
+       "note": "현재가 대비 여력"
+      },
+      {
+       "label": "다음 실적",
+       "value": "1.28",
+       "note": ""
+      }
+     ],
+     "numbersSource": "Finviz (예시)",
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 3
+      },
+      {
+       "label": "06시",
+       "count": 5
+      },
+      {
+       "label": "07시",
+       "count": 5
+      },
+      {
+       "label": "08시",
+       "count": 9
+      },
+      {
+       "label": "09시",
+       "count": 10
+      },
+      {
+       "label": "10시",
+       "count": 15
+      },
+      {
+       "label": "11시",
+       "count": 20
+      },
+      {
+       "label": "12시",
+       "count": 20
+      },
+      {
+       "label": "13시",
+       "count": 23
+      },
+      {
+       "label": "14시",
+       "count": 21
+      },
+      {
+       "label": "15시",
+       "count": 18
+      },
+      {
+       "label": "16시",
+       "count": 15
+      },
+      {
+       "label": "17시",
+       "count": 11
+      },
+      {
+       "label": "18시",
+       "count": 7
+      },
+      {
+       "label": "19시",
+       "count": 8
+      },
+      {
+       "label": "20시",
+       "count": 4
+      },
+      {
+       "label": "21시",
+       "count": 6
+      },
+      {
+       "label": "22시",
+       "count": 5
+      },
+      {
+       "label": "23시",
+       "count": 2
+      },
+      {
+       "label": "00시",
+       "count": 3
+      },
+      {
+       "label": "01시",
+       "count": 3
+      },
+      {
+       "label": "02시",
+       "count": 5
+      },
+      {
+       "label": "03시",
+       "count": 2
+      },
+      {
+       "label": "04시",
+       "count": 4
+      }
+     ],
+     "views": [
+      {
+       "label": "텔레그램",
+       "count": 19,
+       "text": "리서치 채널은 실적과 수급 위주로 다뤘다.",
+       "who": "채널 A, 채널 C 외"
+      },
+      {
+       "label": "X",
+       "count": 8,
+       "text": "해외 계정은 경영진 발언과 제품 일정에 집중했다.",
+       "who": "팔로우 중인 계정 외"
+      }
+     ],
+     "watch": [
+      "1.28 실적 발표",
+      "경쟁사 발표",
+      "수급 변화"
+     ],
+     "sources": [
+      {
+       "name": "채널 A",
+       "meta": "1순위 · 04:50",
+       "url": "https://t.me/"
+      },
+      {
+       "name": "X 게시글",
+       "meta": "팔로잉 · 02:30",
+       "url": "https://t.me/"
+      }
+     ]
+    }
+   },
+   {
+    "id": "c3",
+    "name": "삼성전자",
+    "title": "삼성전자",
+    "ticker": "005930",
+    "telegram": 21,
+    "x": 2,
+    "metrics": {
+     "price": "61,200원",
+     "change": "+1.5%",
+     "earnings": "1.8"
+    },
+    "what": "고대역폭 메모리 공급 계약과 메모리 가격 반등 여부가 거론됐다.",
+    "kicker": "3면 기업",
+    "channels": 21,
+    "detail": {
+     "summary": [
+      "고대역폭 메모리 공급 계약과 메모리 가격 반등 여부가 거론됐다.",
+      "고대역폭 메모리 납품 확대",
+      "범용 메모리 가격 흐름",
+      "파운드리 수주 소식"
+     ],
+     "numbers": [
+      {
+       "label": "종가",
+       "value": "61,200원",
+       "note": ""
+      },
+      {
+       "label": "등락",
+       "value": "+1.5%",
+       "note": "전일 대비"
+      },
+      {
+       "label": "52주 범위",
+       "value": "예시 범위",
+       "note": ""
+      },
+      {
+       "label": "선행 PER",
+       "value": "28.4배",
+       "note": ""
+      },
+      {
+       "label": "목표주가 평균",
+       "value": "+18%",
+       "note": "현재가 대비 여력"
+      },
+      {
+       "label": "다음 실적",
+       "value": "1.8",
+       "note": ""
+      }
+     ],
+     "numbersSource": "Finviz (예시)",
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 6
+      },
+      {
+       "label": "06시",
+       "count": 3
+      },
+      {
+       "label": "07시",
+       "count": 7
+      },
+      {
+       "label": "08시",
+       "count": 8
+      },
+      {
+       "label": "09시",
+       "count": 13
+      },
+      {
+       "label": "10시",
+       "count": 14
+      },
+      {
+       "label": "11시",
+       "count": 20
+      },
+      {
+       "label": "12시",
+       "count": 19
+      },
+      {
+       "label": "13시",
+       "count": 23
+      },
+      {
+       "label": "14시",
+       "count": 20
+      },
+      {
+       "label": "15시",
+       "count": 17
+      },
+      {
+       "label": "16시",
+       "count": 14
+      },
+      {
+       "label": "17시",
+       "count": 11
+      },
+      {
+       "label": "18시",
+       "count": 6
+      },
+      {
+       "label": "19시",
+       "count": 5
+      },
+      {
+       "label": "20시",
+       "count": 3
+      },
+      {
+       "label": "21시",
+       "count": 2
+      },
+      {
+       "label": "22시",
+       "count": 2
+      },
+      {
+       "label": "23시",
+       "count": 2
+      },
+      {
+       "label": "00시",
+       "count": 3
+      },
+      {
+       "label": "01시",
+       "count": 5
+      },
+      {
+       "label": "02시",
+       "count": 3
+      },
+      {
+       "label": "03시",
+       "count": 5
+      },
+      {
+       "label": "04시",
+       "count": 5
+      }
+     ],
+     "views": [
+      {
+       "label": "텔레그램",
+       "count": 21,
+       "text": "리서치 채널은 실적과 수급 위주로 다뤘다.",
+       "who": "채널 A, 채널 C 외"
+      },
+      {
+       "label": "X",
+       "count": 2,
+       "text": "해외 계정은 경영진 발언과 제품 일정에 집중했다.",
+       "who": "팔로우 중인 계정 외"
+      }
+     ],
+     "watch": [
+      "1.8 실적 발표",
+      "경쟁사 발표",
+      "수급 변화"
+     ],
+     "sources": [
+      {
+       "name": "채널 A",
+       "meta": "1순위 · 04:50",
+       "url": "https://t.me/"
+      },
+      {
+       "name": "X 게시글",
+       "meta": "팔로잉 · 02:30",
+       "url": "https://t.me/"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "social": {
+  "debate": {
+   "id": "d1",
+   "title": "AI 데이터센터 투자, 거품인가 이제 시작인가",
+   "kicker": "4면 오늘의 논쟁",
+   "confidence": "rumor",
+   "signals": [
+    "X 언급 급증",
+    "레딧 인기글 3건",
+    "유튜브 요약 2건",
+    "텔레그램 9개 채널"
+   ],
+   "positions": [
+    {
+     "label": "A · 거품론",
+     "share": 45,
+     "color": "#C2410C",
+     "confidence": "rumor",
+     "claim": "설비투자 속도에 비해 AI 서비스 매출이 너무 느리다는 주장.",
+     "basis": "설비투자 증가율과 클라우드 매출 증가율의 차이",
+     "where": "X 경제 계정, 레딧"
+    },
+    {
+     "label": "B · 이제 시작론",
+     "share": 35,
+     "color": "#1F4FD8",
+     "confidence": "rumor",
+     "claim": "추론 수요가 본격적으로 늘기 시작했고 공급이 부족하다는 주장.",
+     "basis": "전력 계약과 장비 주문 잔고",
+     "where": "텔레그램 리서치 채널, 유튜브"
+    },
+    {
+     "label": "C · 선별론",
+     "share": 20,
+     "color": "#5B6472",
+     "confidence": "partial",
+     "claim": "전체는 과열이어도 실제 매출을 내는 기업과 아닌 기업이 갈린다는 주장.",
+     "basis": "기업별 AI 매출 공개 여부",
+     "where": "스레드, 텔레그램"
+    }
+   ],
+   "known": "주요 빅테크가 내년 설비투자 확대 계획을 밝혔다.",
+   "unknown": "AI 서비스 매출이 투자를 언제 따라잡을지.",
+   "detail": {
+    "summary": [
+     "거품론이 언급의 절반 가까이를 차지했다.",
+     "실적 시즌을 앞두고 양쪽 근거가 숫자 싸움으로 번졌다.",
+     "확인된 사실과 해석을 나눠 읽어야 한다."
+    ],
+    "timeline": [
+     {
+      "label": "05시",
+      "count": 5
+     },
+     {
+      "label": "06시",
+      "count": 3
+     },
+     {
+      "label": "07시",
+      "count": 3
+     },
+     {
+      "label": "08시",
+      "count": 2
+     },
+     {
+      "label": "09시",
+      "count": 6
+     },
+     {
+      "label": "10시",
+      "count": 2
+     },
+     {
+      "label": "11시",
+      "count": 5
+     },
+     {
+      "label": "12시",
+      "count": 5
+     },
+     {
+      "label": "13시",
+      "count": 7
+     },
+     {
+      "label": "14시",
+      "count": 8
+     },
+     {
+      "label": "15시",
+      "count": 10
+     },
+     {
+      "label": "16시",
+      "count": 14
+     },
+     {
+      "label": "17시",
+      "count": 16
+     },
+     {
+      "label": "18시",
+      "count": 20
+     },
+     {
+      "label": "19시",
+      "count": 21
+     },
+     {
+      "label": "20시",
+      "count": 22
+     },
+     {
+      "label": "21시",
+      "count": 18
+     },
+     {
+      "label": "22시",
+      "count": 13
+     },
+     {
+      "label": "23시",
+      "count": 9
+     },
+     {
+      "label": "00시",
+      "count": 7
+     },
+     {
+      "label": "01시",
+      "count": 8
+     },
+     {
+      "label": "02시",
+      "count": 3
+     },
+     {
+      "label": "03시",
+      "count": 4
+     },
+     {
+      "label": "04시",
+      "count": 5
+     }
+    ],
+    "background": "설비투자 규모가 커질수록 회수 시점 논쟁도 커지고 있다.",
+    "watch": [
+     "이번 주 빅테크 실적 발언",
+     "데이터센터 전력 계약 뉴스"
+    ],
+    "sources": [
+     {
+      "name": "X 게시글 묶음",
+      "meta": "추천·팔로잉",
+      "url": "https://t.me/"
+     },
+     {
+      "name": "레딧 r/stocks",
+      "meta": "인기글",
+      "url": "https://t.me/"
+     }
+    ]
+   }
+  },
+  "buzz": [
+   {
+    "id": "b1",
+    "where": "X",
+    "title": "실적은 숫자보다 가이던스라는 밈 확산",
+    "note": "실적 발표 전후 주가 반응을 두고 비슷한 해석이 퍼졌다.",
+    "confidence": "rumor",
+    "kicker": "5면 그 밖의 화제",
+    "detail": {
+     "summary": [
+      "실적 발표 전후 주가 반응을 두고 비슷한 해석이 퍼졌다.",
+      "확산 경로와 반응을 아래에 정리했다."
+     ],
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 3
+      },
+      {
+       "label": "06시",
+       "count": 4
+      },
+      {
+       "label": "07시",
+       "count": 4
+      },
+      {
+       "label": "08시",
+       "count": 6
+      },
+      {
+       "label": "09시",
+       "count": 3
+      },
+      {
+       "label": "10시",
+       "count": 5
+      },
+      {
+       "label": "11시",
+       "count": 5
+      },
+      {
+       "label": "12시",
+       "count": 8
+      },
+      {
+       "label": "13시",
+       "count": 12
+      },
+      {
+       "label": "14시",
+       "count": 16
+      },
+      {
+       "label": "15시",
+       "count": 20
+      },
+      {
+       "label": "16시",
+       "count": 22
+      },
+      {
+       "label": "17시",
+       "count": 20
+      },
+      {
+       "label": "18시",
+       "count": 19
+      },
+      {
+       "label": "19시",
+       "count": 20
+      },
+      {
+       "label": "20시",
+       "count": 15
+      },
+      {
+       "label": "21시",
+       "count": 9
+      },
+      {
+       "label": "22시",
+       "count": 8
+      },
+      {
+       "label": "23시",
+       "count": 8
+      },
+      {
+       "label": "00시",
+       "count": 4
+      },
+      {
+       "label": "01시",
+       "count": 3
+      },
+      {
+       "label": "02시",
+       "count": 2
+      },
+      {
+       "label": "03시",
+       "count": 5
+      },
+      {
+       "label": "04시",
+       "count": 2
+      }
+     ],
+     "views": [
+      {
+       "label": "동의",
+       "count": 6,
+       "text": "그럴듯하다는 반응.",
+       "who": "댓글·인용"
+      },
+      {
+       "label": "반박",
+       "count": 4,
+       "text": "근거가 약하다는 반응.",
+       "who": "댓글·인용"
+      }
+     ],
+     "sources": [
+      {
+       "name": "X",
+       "meta": "원문 게시글",
+       "url": "https://t.me/"
+      }
+     ]
+    }
+   },
+   {
+    "id": "b2",
+    "where": "레딧 r/wallstreetbets",
+    "title": "우주 테마 옵션 거래 인증글 급증",
+    "note": "단기 옵션 거래가 몰렸다는 글이 상위에 올랐다.",
+    "confidence": "partial",
+    "kicker": "5면 그 밖의 화제",
+    "detail": {
+     "summary": [
+      "단기 옵션 거래가 몰렸다는 글이 상위에 올랐다.",
+      "확산 경로와 반응을 아래에 정리했다."
+     ],
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 4
+      },
+      {
+       "label": "06시",
+       "count": 3
+      },
+      {
+       "label": "07시",
+       "count": 4
+      },
+      {
+       "label": "08시",
+       "count": 3
+      },
+      {
+       "label": "09시",
+       "count": 5
+      },
+      {
+       "label": "10시",
+       "count": 3
+      },
+      {
+       "label": "11시",
+       "count": 6
+      },
+      {
+       "label": "12시",
+       "count": 9
+      },
+      {
+       "label": "13시",
+       "count": 11
+      },
+      {
+       "label": "14시",
+       "count": 16
+      },
+      {
+       "label": "15시",
+       "count": 17
+      },
+      {
+       "label": "16시",
+       "count": 20
+      },
+      {
+       "label": "17시",
+       "count": 21
+      },
+      {
+       "label": "18시",
+       "count": 19
+      },
+      {
+       "label": "19시",
+       "count": 16
+      },
+      {
+       "label": "20시",
+       "count": 14
+      },
+      {
+       "label": "21시",
+       "count": 10
+      },
+      {
+       "label": "22시",
+       "count": 8
+      },
+      {
+       "label": "23시",
+       "count": 8
+      },
+      {
+       "label": "00시",
+       "count": 7
+      },
+      {
+       "label": "01시",
+       "count": 5
+      },
+      {
+       "label": "02시",
+       "count": 3
+      },
+      {
+       "label": "03시",
+       "count": 3
+      },
+      {
+       "label": "04시",
+       "count": 5
+      }
+     ],
+     "views": [
+      {
+       "label": "동의",
+       "count": 6,
+       "text": "그럴듯하다는 반응.",
+       "who": "댓글·인용"
+      },
+      {
+       "label": "반박",
+       "count": 4,
+       "text": "근거가 약하다는 반응.",
+       "who": "댓글·인용"
+      }
+     ],
+     "sources": [
+      {
+       "name": "레딧 r/wallstreetbets",
+       "meta": "원문 게시글",
+       "url": "https://t.me/"
+      }
+     ]
+    }
+   },
+   {
+    "id": "b3",
+    "where": "스레드",
+    "title": "국내 주식에서 미국 ETF로 갈아타기",
+    "note": "세제 변화 기대와 맞물려 경험담이 많이 공유됐다.",
+    "confidence": "rumor",
+    "kicker": "5면 그 밖의 화제",
+    "detail": {
+     "summary": [
+      "세제 변화 기대와 맞물려 경험담이 많이 공유됐다.",
+      "확산 경로와 반응을 아래에 정리했다."
+     ],
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 2
+      },
+      {
+       "label": "06시",
+       "count": 3
+      },
+      {
+       "label": "07시",
+       "count": 4
+      },
+      {
+       "label": "08시",
+       "count": 6
+      },
+      {
+       "label": "09시",
+       "count": 5
+      },
+      {
+       "label": "10시",
+       "count": 6
+      },
+      {
+       "label": "11시",
+       "count": 7
+      },
+      {
+       "label": "12시",
+       "count": 7
+      },
+      {
+       "label": "13시",
+       "count": 13
+      },
+      {
+       "label": "14시",
+       "count": 14
+      },
+      {
+       "label": "15시",
+       "count": 18
+      },
+      {
+       "label": "16시",
+       "count": 19
+      },
+      {
+       "label": "17시",
+       "count": 21
+      },
+      {
+       "label": "18시",
+       "count": 22
+      },
+      {
+       "label": "19시",
+       "count": 16
+      },
+      {
+       "label": "20시",
+       "count": 13
+      },
+      {
+       "label": "21시",
+       "count": 10
+      },
+      {
+       "label": "22시",
+       "count": 7
+      },
+      {
+       "label": "23시",
+       "count": 6
+      },
+      {
+       "label": "00시",
+       "count": 5
+      },
+      {
+       "label": "01시",
+       "count": 3
+      },
+      {
+       "label": "02시",
+       "count": 2
+      },
+      {
+       "label": "03시",
+       "count": 3
+      },
+      {
+       "label": "04시",
+       "count": 3
+      }
+     ],
+     "views": [
+      {
+       "label": "동의",
+       "count": 6,
+       "text": "그럴듯하다는 반응.",
+       "who": "댓글·인용"
+      },
+      {
+       "label": "반박",
+       "count": 4,
+       "text": "근거가 약하다는 반응.",
+       "who": "댓글·인용"
+      }
+     ],
+     "sources": [
+      {
+       "name": "스레드",
+       "meta": "원문 게시글",
+       "url": "https://t.me/"
+      }
+     ]
+    }
+   },
+   {
+    "id": "b4",
+    "where": "유튜브",
+    "title": "2027년 금리 시나리오 세 가지",
+    "note": "인하 지속, 동결, 재인상으로 나눠 자산별 영향을 설명했다.",
+    "confidence": "partial",
+    "kicker": "5면 그 밖의 화제",
+    "detail": {
+     "summary": [
+      "인하 지속, 동결, 재인상으로 나눠 자산별 영향을 설명했다.",
+      "확산 경로와 반응을 아래에 정리했다."
+     ],
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 3
+      },
+      {
+       "label": "06시",
+       "count": 5
+      },
+      {
+       "label": "07시",
+       "count": 2
+      },
+      {
+       "label": "08시",
+       "count": 3
+      },
+      {
+       "label": "09시",
+       "count": 2
+      },
+      {
+       "label": "10시",
+       "count": 5
+      },
+      {
+       "label": "11시",
+       "count": 5
+      },
+      {
+       "label": "12시",
+       "count": 7
+      },
+      {
+       "label": "13시",
+       "count": 12
+      },
+      {
+       "label": "14시",
+       "count": 13
+      },
+      {
+       "label": "15시",
+       "count": 17
+      },
+      {
+       "label": "16시",
+       "count": 20
+      },
+      {
+       "label": "17시",
+       "count": 23
+      },
+      {
+       "label": "18시",
+       "count": 20
+      },
+      {
+       "label": "19시",
+       "count": 18
+      },
+      {
+       "label": "20시",
+       "count": 16
+      },
+      {
+       "label": "21시",
+       "count": 10
+      },
+      {
+       "label": "22시",
+       "count": 8
+      },
+      {
+       "label": "23시",
+       "count": 5
+      },
+      {
+       "label": "00시",
+       "count": 6
+      },
+      {
+       "label": "01시",
+       "count": 2
+      },
+      {
+       "label": "02시",
+       "count": 5
+      },
+      {
+       "label": "03시",
+       "count": 3
+      },
+      {
+       "label": "04시",
+       "count": 4
+      }
+     ],
+     "views": [
+      {
+       "label": "동의",
+       "count": 6,
+       "text": "그럴듯하다는 반응.",
+       "who": "댓글·인용"
+      },
+      {
+       "label": "반박",
+       "count": 4,
+       "text": "근거가 약하다는 반응.",
+       "who": "댓글·인용"
+      }
+     ],
+     "sources": [
+      {
+       "name": "유튜브",
+       "meta": "원문 게시글",
+       "url": "https://t.me/"
+      }
+     ]
+    }
+   },
+   {
+    "id": "b5",
+    "where": "Finviz",
+    "title": "공매도 비중 상위 종목에서 급등 사례",
+    "note": "공매도 비중이 높은 중소형주가 하루 새 크게 올랐다.",
+    "confidence": "confirmed",
+    "kicker": "5면 그 밖의 화제",
+    "detail": {
+     "summary": [
+      "공매도 비중이 높은 중소형주가 하루 새 크게 올랐다.",
+      "확산 경로와 반응을 아래에 정리했다."
+     ],
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 4
+      },
+      {
+       "label": "06시",
+       "count": 5
+      },
+      {
+       "label": "07시",
+       "count": 2
+      },
+      {
+       "label": "08시",
+       "count": 2
+      },
+      {
+       "label": "09시",
+       "count": 6
+      },
+      {
+       "label": "10시",
+       "count": 4
+      },
+      {
+       "label": "11시",
+       "count": 5
+      },
+      {
+       "label": "12시",
+       "count": 8
+      },
+      {
+       "label": "13시",
+       "count": 11
+      },
+      {
+       "label": "14시",
+       "count": 15
+      },
+      {
+       "label": "15시",
+       "count": 18
+      },
+      {
+       "label": "16시",
+       "count": 21
+      },
+      {
+       "label": "17시",
+       "count": 23
+      },
+      {
+       "label": "18시",
+       "count": 20
+      },
+      {
+       "label": "19시",
+       "count": 18
+      },
+      {
+       "label": "20시",
+       "count": 16
+      },
+      {
+       "label": "21시",
+       "count": 12
+      },
+      {
+       "label": "22시",
+       "count": 8
+      },
+      {
+       "label": "23시",
+       "count": 4
+      },
+      {
+       "label": "00시",
+       "count": 6
+      },
+      {
+       "label": "01시",
+       "count": 2
+      },
+      {
+       "label": "02시",
+       "count": 5
+      },
+      {
+       "label": "03시",
+       "count": 2
+      },
+      {
+       "label": "04시",
+       "count": 4
+      }
+     ],
+     "views": [
+      {
+       "label": "동의",
+       "count": 6,
+       "text": "그럴듯하다는 반응.",
+       "who": "댓글·인용"
+      },
+      {
+       "label": "반박",
+       "count": 4,
+       "text": "근거가 약하다는 반응.",
+       "who": "댓글·인용"
+      }
+     ],
+     "sources": [
+      {
+       "name": "Finviz",
+       "meta": "원문 게시글",
+       "url": "https://t.me/"
+      }
+     ]
+    }
+   },
+   {
+    "id": "b6",
+    "where": "X",
+    "title": "비트코인 급락 배후에 대형 청산설",
+    "note": "특정 계정의 청산이 계기였다는 주장이 돌았지만 확인되지 않았다.",
+    "confidence": "rumor",
+    "kicker": "5면 그 밖의 화제",
+    "detail": {
+     "summary": [
+      "특정 계정의 청산이 계기였다는 주장이 돌았지만 확인되지 않았다.",
+      "확산 경로와 반응을 아래에 정리했다."
+     ],
+     "timeline": [
+      {
+       "label": "05시",
+       "count": 2
+      },
+      {
+       "label": "06시",
+       "count": 4
+      },
+      {
+       "label": "07시",
+       "count": 2
+      },
+      {
+       "label": "08시",
+       "count": 5
+      },
+      {
+       "label": "09시",
+       "count": 3
+      },
+      {
+       "label": "10시",
+       "count": 5
+      },
+      {
+       "label": "11시",
+       "count": 7
+      },
+      {
+       "label": "12시",
+       "count": 10
+      },
+      {
+       "label": "13시",
+       "count": 11
+      },
+      {
+       "label": "14시",
+       "count": 15
+      },
+      {
+       "label": "15시",
+       "count": 18
+      },
+      {
+       "label": "16시",
+       "count": 22
+      },
+      {
+       "label": "17시",
+       "count": 20
+      },
+      {
+       "label": "18시",
+       "count": 21
+      },
+      {
+       "label": "19시",
+       "count": 18
+      },
+      {
+       "label": "20시",
+       "count": 14
+      },
+      {
+       "label": "21시",
+       "count": 11
+      },
+      {
+       "label": "22시",
+       "count": 6
+      },
+      {
+       "label": "23시",
+       "count": 6
+      },
+      {
+       "label": "00시",
+       "count": 4
+      },
+      {
+       "label": "01시",
+       "count": 4
+      },
+      {
+       "label": "02시",
+       "count": 4
+      },
+      {
+       "label": "03시",
+       "count": 5
+      },
+      {
+       "label": "04시",
+       "count": 4
+      }
+     ],
+     "views": [
+      {
+       "label": "동의",
+       "count": 6,
+       "text": "그럴듯하다는 반응.",
+       "who": "댓글·인용"
+      },
+      {
+       "label": "반박",
+       "count": 4,
+       "text": "근거가 약하다는 반응.",
+       "who": "댓글·인용"
+      }
+     ],
+     "sources": [
+      {
+       "name": "X",
+       "meta": "원문 게시글",
+       "url": "https://t.me/"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "weekly": {
+  "range": "11.9 (월) – 11.14 (토)",
+  "issues": 6,
+  "messages": "7,920",
+  "debates": 3,
+  "oneLine": "AI 투자는 거품 논쟁 속에서도 실적으로 버텼고, 시장의 관심은 금리 경로로 옮겨 갔다.",
+  "top": [
+   {
+    "title": "AI 투자 사이클 논쟁",
+    "days": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    "note": "월요일 시작, 목요일에 언급이 가장 많았다."
+   },
+   {
+    "title": "연준 12월 인하 확률 변화",
+    "days": [
+     1,
+     0,
+     1,
+     1,
+     0,
+     1
+    ],
+    "note": "지표가 나올 때마다 해석이 엇갈렸다."
+   },
+   {
+    "title": "우주 테마 강세",
+    "days": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     1
+    ],
+    "note": "주초에 몰렸다가 주말에 다시 살아났다."
+   },
+   {
+    "title": "유가 약세와 공급과잉 전망",
+    "days": [
+     0,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    "note": "산유국 회의가 다가오며 다시 늘었다."
+   },
+   {
+    "title": "비트코인 변동성",
+    "days": [
+     0,
+     0,
+     0,
+     1,
+     1,
+     1
+    ],
+    "note": "주 후반 급락 뒤 청산 규모가 화제."
+   }
+  ],
+  "macro": [
+   {
+    "label": "미 10년물",
+    "start": "4.21%",
+    "end": "4.38%",
+    "change": "+0.17%p"
+   },
+   {
+    "label": "달러인덱스",
+    "start": "105.1",
+    "end": "106.2",
+    "change": "+1.0%"
+   },
+   {
+    "label": "WTI 유가",
+    "start": "70.4달러",
+    "end": "67.8달러",
+    "change": "-3.7%"
+   },
+   {
+    "label": "원/달러",
+    "start": "1,398원",
+    "end": "1,412원",
+    "change": "+14원"
+   }
+  ],
+  "companies": [
+   {
+    "name": "엔비디아",
+    "count": 186,
+    "note": "실적과 가이던스"
+   },
+   {
+    "name": "테슬라",
+    "count": 97,
+    "note": "자율주행 서비스 확대"
+   },
+   {
+    "name": "삼성전자",
+    "count": 88,
+    "note": "고대역폭 메모리 공급"
+   },
+   {
+    "name": "TSMC",
+    "count": 61,
+    "note": "월간 매출과 증설"
+   },
+   {
+    "name": "스페이스X",
+    "count": 54,
+    "note": "발사 성공과 상장설"
+   }
+  ],
+  "debate": "주초에는 AI 거품론이 X와 레딧을 중심으로 퍼졌지만, 목요일 이후 선별론으로 무게가 옮겨 갔다. 확인된 것은 설비투자 계획이 유지됐다는 점이고, 회수 시점은 여전히 해석의 영역이다.",
+  "next": [
+   {
+    "date": "11.17 (월)",
+    "event": "미국 소매판매"
+   },
+   {
+    "date": "11.19 (수)",
+    "event": "엔비디아 실적 발표"
+   },
+   {
+    "date": "11.20 (목)",
+    "event": "FOMC 의사록 공개"
+   },
+   {
+    "date": "11.21 (금)",
+    "event": "국내 11월 20일까지 수출"
+   }
+  ]
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "latest": "2026-11-15",
+ "editions": [
+  {
+   "date": "2026-11-15",
+   "issue": 2,
+   "lead": "AI 투자 사이클 논쟁과 금리 경로가 동시에 시장을 흔든 한 주의 끝",
+   "weekly": true,
+   "sample": true
+  },
+  {
+   "date": "2026-11-14",
+   "issue": 1,
+   "lead": "스타십 회수 성공에 우주 테마가 달아오른 하루",
+   "weekly": false,
+   "sample": true
+  }
+ ]
+}
