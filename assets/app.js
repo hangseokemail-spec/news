@@ -305,6 +305,19 @@
     const blog = s.blogs || [];
     const ext = s.external || [];
     const yt = youtubeBlock(s.youtube);
+    const cur = s.curated || [];
+    const cu = cur.length ? `<div class="section-head"><h2 class="section-title">선생님이 고른 글</h2><p class="section-note">Seeking Alpha·블로그 등 · 누르면 자세히</p></div>
+      <div class="cards">${cur.map((c) => `
+        <button type="button" class="card no-rank" data-open="${esc(c.id)}">
+          <span class="card-body">
+            <span class="card-meta"><span class="small" style="font-weight:700">${esc(c.source || '')}</span>${c.date ? `<span class="small muted">${esc(c.date)}</span>` : ''}${paidChip(c)}</span>
+            <span class="card-title" style="font-size:16.5px">${esc(c.title)}</span>
+            ${keyStrip(c)}
+            <span class="card-text">${esc(c.summary)}</span>
+            ${cardChart(c)}
+            <span class="card-meta"><span class="more">자세히 ›</span></span>
+          </span>
+        </button>`).join('')}</div>` : '';
     const bl = blog.length ? `<div class="section-head"><h2 class="section-title">블로그에서 읽을 만한 글</h2><p class="section-note">요약 · 원문 링크</p></div>
       <div class="yt-list">${blog.map((b) => `
         <article class="panel yt">
@@ -323,8 +336,8 @@
           <p class="yt-gist">${esc(b.note || '')}</p>
           ${(b.links || []).map((l) => `<a class="small" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)} ↗</a>`).join(' ')}
         </article>`).join('')}</div>` : '';
-    if (!yt && !bl && !ex) return `<section class="panel"><p style="margin:0">이번 호에는 유튜브·블로그 요약이 없습니다.</p></section>`;
-    return `${yt}${bl}${ex}`;
+    if (!cu && !yt && !bl && !ex) return `<section class="panel"><p style="margin:0">이번 호에는 유튜브·블로그 요약이 없습니다.</p></section>`;
+    return `${cu}${yt}${bl}${ex}`;
   }
 
   /* 리포트: 카리스석스 방에 올린 PDF 중 최대 2개 요약 */
@@ -448,7 +461,7 @@
   /* ---------- 상세 보기 ---------- */
   function findItem(id) {
     const ed = state.edition;
-    const pools = [ed.hot, ed.macro.items, ed.company.cards, ed.social.buzz, [ed.social.debate], ed.picks];
+    const pools = [ed.hot, ed.macro.items, ed.company.cards, ed.social.buzz, [ed.social.debate], ed.picks, (ed.social || {}).curated];
     for (const p of pools) { const f = (p || []).find((x) => x && x.id === id); if (f) return f; }
     return null;
   }
