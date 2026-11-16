@@ -757,9 +757,11 @@
       paidChip(it)
     ].join('');
     const blocks = [];
-    if (it.paid && !state.full) {
+    if (it.paid && !state.full && it.paid.url) {
       blocks.push(`<section class="d-block paid-block"><h3>유료 구독 기사</h3><p>${esc(it.paid.source)}의 유료 기사라 공유판에는 요지와 원문 링크만 싣습니다. 전문은 구독 후 원문에서 읽을 수 있어요.</p>
         <a class="link-row" href="${esc(it.paid.url)}" target="_blank" rel="noopener"><span><strong>${esc(it.paid.title || it.title)}</strong><br><span class="small muted">${esc(it.paid.source)}</span></span><span class="go">원문 열기 ↗</span></a></section>`);
+    } else if (it.paid && !state.full) {   // 유료 강의 자료처럼 공개 링크가 없는 것
+      blocks.push(`<section class="d-block paid-block"><h3>유료 자료</h3><p>${esc(it.paid.source)}의 유료 자료라 공유판에는 요지만 싣습니다.</p></section>`);
     }
     if ((it.key || []).length && !(it.paid && !state.full)) blocks.push(`<section class="d-keys span-all" aria-label="핵심 수치">${it.key.map((x) => `<div class="dk"><strong class="${changeClass(x.value)}">${esc(x.value)}</strong><span>${esc(x.label)}</span></div>`).join('')}</section>`);
     if (it.report) blocks.push(reportBlock(it));
