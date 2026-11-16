@@ -352,13 +352,54 @@
           <div class="stat"><strong>${esc(st.revBeat ?? '—')}</strong><span>매출 예상 상회</span></div>
         </div>
       </section>
-      <div class="earn-wrap"><div>
+      <div class="earn-wrap${e.calendar && e.calendar.length ? ' solo' : ''}"><div>
       <div class="section-head"><h2 class="section-title">발표한 기업</h2><p class="section-note">서프라이즈 = 실제치가 컨센서스보다 높거나 낮은 정도</p></div>
       <section class="panel"><div class="table-box"><table class="earn"><thead><tr><th scope="col" style="text-align:left">기업</th><th scope="col">발표</th><th scope="col">EPS vs 컨센</th><th scope="col">매출 vs 컨센</th><th scope="col">전년 대비</th><th scope="col">주가<br><span class="small muted">마지막 거래일</span></th><th scope="col" style="text-align:left">한 줄</th></tr></thead>
         <tbody>${rows || '<tr><td colspan="7" class="muted">이 기간에 발표한 기업이 없어요.</td></tr>'}</tbody></table></div>
         ${e.source ? `<span class="small muted">출처: ${esc(e.source)}</span>` : ''}</section></div>
-      ${up ? `<div><div class="section-head"><h2 class="section-title">다음 발표 예정</h2></div>
-      <section class="panel"><div class="table-box"><table><tbody>${up}</tbody></table></div></section></div>` : ''}</div>`;
+      ${up && !(e.calendar && e.calendar.length) ? `<div><div class="section-head"><h2 class="section-title">다음 발표 예정</h2></div>
+      <section class="panel"><div class="table-box"><table><tbody>${up}</tbody></table></div></section></div>` : ''}</div>
+      ${e.calendar && e.calendar.length ? earningsCalendar(e.calendar) : ''}`;
+  }
+
+  // 실적 달력: 날짜별 발표 예정 기업 — 이번 분기 컨센서스, 직전 분기 실제치·컨센서스 (2026-11-17 제3호부터)
+  function earningsCalendar(days) {
+    const SHOW = 8;
+    const pair = (o) => {
+      if (!o) return '';
+      const main = o.act ? `<strong>${esc(o.act)}</strong>` : '';
+      const est = o.est ? `<span class="muted">컨센 ${esc(o.est)}${o.derived ? '<sup title="실제치와 서프라이즈 비율로 거꾸로 계산">역산</sup>' : ''}</span>` : '';
+      const sp = o.surprise ? `<b class="${changeClass(o.surprise)}">${esc(o.surprise)}</b>` : '';
+      return [main, est, sp].filter(Boolean).join(' ');
+    };
+    const item = (x) => {
+      const n = x.next || {};
+      const l = x.last || {};
+      const last = (l.rev && Object.keys(l.rev).length) || (l.eps && Object.keys(l.eps).length);
+      return `<li class="ecal-item">
+        <div class="ecal-top"><span><strong>${esc(x.name)}</strong> <span class="ticker">${esc(x.ticker)}</span></span>
+          <span class="ecal-when">${x.session ? `<span class="chip">${esc(x.session)}</span>` : ''}${x.kst ? `<span class="small muted">${esc(x.kst)}</span>` : ''}</span></div>
+        ${x.marketCap ? `<span class="small muted">시가총액 ${esc(x.marketCap)}</span>` : ''}
+        <dl class="ecal-nums">
+          <dt>이번 분기 컨센서스${n.quarter ? `<span class="small muted"> · ${esc(n.quarter)}</span>` : ''}</dt>
+          <dd><span>매출 <strong>${esc(n.rev || '—')}</strong></span><span>EPS <strong>${esc(n.eps || '—')}</strong></span></dd>
+          ${last ? `<dt>${(l.rev && l.rev.act) || (l.eps && l.eps.act) ? '직전 분기 실제' : '직전 분기 서프라이즈(컨센 대비)'}${l.quarter ? `<span class="small muted"> · ${esc(l.quarter)}</span>` : ''}</dt>
+          <dd class="ecal-last">${l.rev ? `<span>매출 ${pair(l.rev)}</span>` : ''}${l.eps ? `<span>EPS ${pair(l.eps)}</span>` : ''}</dd>` : ''}
+        </dl>
+        ${x.warn ? `<span class="small ecal-warn">출처마다 차이: ${x.warn.map(esc).join(' / ')}</span>` : ''}
+        ${x.note ? `<span class="small">${esc(x.note)}</span>` : ''}
+        ${x.sources ? `<span class="small muted">출처 ${x.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</span>` : ''}
+      </li>`;
+    };
+    const day = (d) => {
+      const first = d.items.slice(0, SHOW).map(item).join('');
+      const more = d.items.length > SHOW ? `<details class="ecal-more"><summary>${d.items.length - SHOW}곳 더 보기</summary><ul class="ecal-list">${d.items.slice(SHOW).map(item).join('')}</ul></details>` : '';
+      return `<section class="ecal-day"><h3 class="ecal-date">${esc(d.date)} <span>(${esc(d.dow)})</span><span class="small muted">${d.items.length}곳</span></h3>
+        <ul class="ecal-list">${first}</ul>${more}</section>`;
+    };
+    return `<div class="section-head"><h2 class="section-title">다음 발표 예정 · 실적 달력</h2>
+        <p class="section-note">날짜는 미국 발표일, 옆에 한국 시각. 서프라이즈 = 실제치가 컨센서스보다 높거나 낮은 정도</p></div>
+      <div class="ecal">${days.map(day).join('')}</div>`;
   }
 
   function socialPage(ed) {

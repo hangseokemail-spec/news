@@ -489,3 +489,25 @@ button.rel-btn { cursor: pointer; font: inherit; font-size: 13px; font-weight: 6
 .rel-ko ul { margin: 4px 0 8px; padding-left: 18px; }
 .rel-ko .rel-nums { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; }
 .rel-ko p { margin: 0 0 8px; }
+
+/* 실적 달력 (다음 발표 예정) */
+.ecal { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: 4px; }
+@media (min-width: 760px) { .ecal { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); } }
+.ecal-day { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.ecal-date { margin: 0; font-size: 20px; display: flex; align-items: baseline; gap: 6px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+.ecal-date span { font-size: 14px; color: var(--ink-2); font-weight: 600; }
+.ecal-date .small { margin-left: auto; }
+.ecal-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.ecal-item { border: 1px solid var(--soft); border-radius: 10px; padding: 10px; display: flex; flex-direction: column; gap: 4px; }
+.ecal-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
+.ecal-when { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ecal-nums { margin: 4px 0 0; display: grid; gap: 2px; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.ecal-nums dt { font-size: 12px; font-weight: 700; color: var(--accent-ink); margin-top: 4px; }
+.ecal-nums dd { margin: 0; display: flex; flex-wrap: wrap; gap: 2px 14px; }
+.ecal-last span { display: inline-flex; gap: 5px; align-items: baseline; flex-wrap: wrap; }
+.ecal-nums sup { font-size: 10px; color: var(--ink-2); margin-left: 1px; }
+.ecal-warn { color: #B54708; }
+@media (prefers-color-scheme: dark) { .ecal-warn { color: #FDB022; } }
+.ecal-more summary { cursor: pointer; font-size: 13px; color: var(--accent); padding: 4px 0; }
+.ecal-more .ecal-list { margin-top: 8px; }
+.earn-wrap.solo { grid-template-columns: minmax(0, 1fr) !important; }
