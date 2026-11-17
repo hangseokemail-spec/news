@@ -3,6 +3,7 @@
   'use strict';
 
   const TABS = [
+    { id: 'column', label: '총평' },
     { id: 'hot', label: '핫이슈' },
     { id: 'macro', label: '매크로' },
     { id: 'company', label: '개별 기업' },
@@ -93,8 +94,8 @@
       return;
     }
     const ed = state.edition;
-    const avail = TABS.filter((t) => (t.id !== 'weekly' || ed.weekly) && (t.id !== 'earnings' || ed.earnings));
-    state.tab = avail.some((t) => t.id === h.tab) ? h.tab : 'hot';
+    const avail = TABS.filter((t) => (t.id !== 'weekly' || ed.weekly) && (t.id !== 'earnings' || ed.earnings) && (t.id !== 'column' || ed.column));
+    state.tab = avail.some((t) => t.id === h.tab) ? h.tab : avail[0].id;   // 총평이 있으면 총평부터
     state.item = h.item;
     if (!state.calMonth || !sameMonth(state.calMonth, date)) state.calMonth = date.slice(0, 7);
     renderChrome(ed, avail);
@@ -233,7 +234,7 @@
   /* ---------- 면별 화면 ---------- */
   function renderTab() {
     const ed = state.edition;
-    const html = { hot: hotPage, macro: macroPage, company: companyPage, earnings: earningsPage, social: socialPage, social2: social2Page, picks: picksPage, weekly: weeklyPage }[state.tab](ed);
+    const html = { column: columnPage, hot: hotPage, macro: macroPage, company: companyPage, earnings: earningsPage, social: socialPage, social2: social2Page, picks: picksPage, weekly: weeklyPage }[state.tab](ed);
     el.content.innerHTML = html;
   }
 
@@ -241,6 +242,38 @@
     const total = ed.hot.length;
     const want = state.hotN || 7;
     return Math.max(Math.min(want, total), Math.min(3, total));
+  }
+
+  // 총평: 편집장 칼럼 — 위에 핵심 카드 3장, 아래 풀어 쓴 글 (2026-11-18)
+  function columnPage(ed) {
+    const c = ed.column;
+    const TONE = { up: '좋은 쪽', down: '조심', flat: '중립' };
+    const cards = (c.cards || []).map((x, i) => `
+      <article class="panel col-card t-${esc(x.tone)}">
+        <span class="col-no">${i + 1}</span>
+        <span class="kicker">${esc(x.tag)}${x.tone ? ` · ${TONE[x.tone] || ''}` : ''}</span>
+        <h3 class="col-card-title">${esc(x.title)}</h3>
+        ${x.num ? `<strong class="col-num ${changeClass(x.num)}">${esc(x.num)}</strong>` : ''}
+        <p>${esc(x.text)}</p>
+      </article>`).join('');
+    const secs = (c.sections || []).map((x) => `
+      <section class="col-sec">${x.h ? `<h3>${esc(x.h)}</h3>` : ''}${x.body.map((p) => `<p>${esc(p)}</p>`).join('')}</section>`).join('');
+    const acts = (c.actions || []).length ? `
+      <section class="panel col-acts"><h3>오늘 투자자가 점검할 것</h3>
+        <ol>${c.actions.map((a) => `<li>${a.if ? `<span class="col-if">${esc(a.if)}</span>` : ''}<span>${esc(a.then)}</span></li>`).join('')}</ol>
+        <p class="small muted" style="margin:6px 0 0">편집장의 판단을 정리한 것이며 매매를 권하는 글이 아닙니다. 결정은 각자의 상황에 맞게.</p></section>` : '';
+    return `
+      <article class="column">
+        <header class="col-head">
+          <span class="kicker">편집장 총평${c.board ? ` · 참고: Seoks 현황판 ${esc(c.board)}` : ''}</span>
+          <h2 class="col-title">${esc(c.title)}</h2>
+          ${c.standfirst ? `<p class="col-stand">${esc(c.standfirst)}</p>` : ''}
+          <span class="small muted">${esc(c.byline || '편집장')}</span>
+        </header>
+        <div class="col-cards">${cards}</div>
+        <div class="panel col-body">${secs}</div>
+        ${acts}
+      </article>`;
   }
 
   function hotPage(ed) {
@@ -885,7 +918,7 @@
       return;
     }
     const b = e.target.closest('[data-date]');
-    if (b) { toggleCal(false); go(b.dataset.date, 'hot'); window.scrollTo({ top: 0 }); }
+    if (b) { toggleCal(false); go(b.dataset.date); window.scrollTo({ top: 0 }); }
   });
   function toggleCal(open) {
     el.calPanel.classList.toggle('open', open);
