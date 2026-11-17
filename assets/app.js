@@ -276,9 +276,34 @@
       </div>`;
   }
 
+  function editorBox(text, title = '편집장 총평') {
+    return text ? `<section class="panel editor-box"><span class="kicker">${esc(title)}</span><p>${esc(text)}</p></section>` : '';
+  }
+  // 분기별 막대(매출·EPS) — 값이 음수면 아래로
+  function qBars(qs, key, label, fmt) {
+    const pts = (qs || []).filter((x) => x[key] !== undefined && x[key] !== null);
+    if (pts.length < 2) return '';
+    const W = 150, H = 54, pad = 2, bw = Math.floor((W - pad * 2) / pts.length) - 4;
+    const vals = pts.map((x) => x[key]);
+    const max = Math.max(...vals, 0), min = Math.min(...vals, 0), span = (max - min) || 1;
+    const zero = H - 14 - ((0 - min) / span) * (H - 18);
+    const bars = pts.map((x, i) => {
+      const v = x[key], h = Math.max(1, Math.abs(v) / span * (H - 18));
+      const y = v >= 0 ? zero - h : zero;
+      const xx = pad + i * (bw + 4);
+      return `<rect x="${xx}" y="${y.toFixed(1)}" width="${bw}" height="${h.toFixed(1)}" rx="2" class="${i === pts.length - 1 ? 'qb last' : 'qb'}${v < 0 ? ' neg' : ''}"><title>${esc(x.q)} ${esc(fmt(v))}</title></rect>`
+        + `<text x="${xx + bw / 2}" y="${H - 2}" text-anchor="middle" class="qlab">${esc(x.q)}</text>`;
+    }).join('');
+    const last = pts[pts.length - 1];
+    return `<span class="qchart"><span class="small muted">${esc(label)} <strong>${esc(fmt(last[key]))}</strong> <span class="muted">(${esc(last.q)})</span></span><svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="${esc(label)} 최근 ${pts.length}분기">${bars}</svg></span>`;
+  }
+  const fmtRev = (v) => (Math.abs(v) >= 100 ? `${(v / 100).toLocaleString('ko-KR', { maximumFractionDigits: v >= 10000 ? 0 : 1 })}억$` : `${v.toLocaleString('ko-KR')}백만$`);
+  const fmtEps = (v) => `${v.toFixed(2)}$`;
+
   function macroPage(ed) {
     const m = ed.macro;
     return `
+      ${editorBox(m.editorial)}
       <div class="section-head"><h2 class="section-title">매크로 환경 ${m.items.length}가지</h2></div>
       <section class="indicators" aria-label="주요 지표">${m.indicators.map((x) => `
         <div class="indicator"><span class="small muted">${esc(x.label)}</span><strong>${esc(x.value)}</strong><span class="small ${changeClass(x.change)}">${esc(x.change)}</span></div>`).join('')}
@@ -312,36 +337,43 @@
             <strong class="num" style="text-align:right">${r.telegram + r.x}</strong></div>`).join('')}
         </div>
       </section></div>
-      <div class="cards company-cards">${c.cards.map((x) => `
-        <button type="button" class="card no-rank" data-open="${esc(x.id)}">
+      <div class="cards company-cards big">${c.cards.map((x) => {
+        const d = x.detail || {};
+        const nums = (d.numbers || []).filter((n) => ['주가', '시가총액', '선행 PER', '52주 고점 대비', '연초 이후', '다음 실적'].includes(n.label));
+        const grid = nums.length ? nums : [{ label: '주가', value: x.metrics.price }, { label: '등락', value: x.metrics.change }, { label: '다음 실적', value: x.metrics.earnings }];
+        return `
+        <button type="button" class="card no-rank company-card" data-open="${esc(x.id)}">
           <span class="card-body">
-            <span class="card-meta"><span class="card-title" style="font-size:19px">${esc(x.name)}</span><span class="ticker">${esc(x.ticker)}</span></span>
-            <span class="small muted">언급 ${x.telegram + x.x}회 · 텔레그램 ${x.telegram} · X ${x.x}</span>
-            <span class="metric-grid">
-              <span class="metric"><span>종가</span><strong>${esc(x.metrics.price)}</strong></span>
-              <span class="metric"><span>등락</span><strong class="${changeClass(x.metrics.change)}">${esc(x.metrics.change)}</strong></span>
-              <span class="metric"><span>다음 실적</span><strong>${esc(x.metrics.earnings)}</strong></span>
-            </span>
+            <span class="card-meta"><span class="card-title" style="font-size:20px">${esc(x.name)}</span><span class="ticker">${esc(x.ticker)}</span><span class="small muted">언급 ${x.telegram + x.x}회</span></span>
+            ${x.headline ? `<span class="company-head">${esc(x.headline)}</span>` : ''}
+            <span class="metric-grid six">${grid.map((n) => `<span class="metric"><span>${esc(n.label)}</span><strong class="${changeClass(n.value)}">${esc(n.value)}</strong></span>`).join('')}</span>
+            ${keyStrip(x, 4)}
             <span class="card-text">${esc(x.what)}</span>
-            <span class="card-meta"><span class="more">핵심 논점과 수치 보기 ›</span></span>
+            ${d.summary && d.summary.length ? `<ul class="pick-sum">${d.summary.slice(0, 3).map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+            <span class="card-meta"><span class="more">기사와 수치 보기 ›</span></span>
           </span>
-        </button>`).join('')}
+        </button>`;
+      }).join('')}
       </div></div>`;
   }
 
   function earningsPage(ed) {
     const e = ed.earnings;
     const st = e.stats || {};
+    const RES = { beat: '컨센 상회', mixed: '일부 하회', miss: '컨센 하회' };
     const rows = (e.reported || []).map((r) => `
-      <tr>
-        <th scope="row" style="text-align:left"><strong>${esc(r.name)}</strong> <span class="ticker">${esc(r.ticker)}</span><br><span class="small muted">${esc(r.sector || '')}${r.marketCap ? ` · ${esc(r.marketCap)}` : ''}</span></th>
-        <td>${esc(r.date || '')}${r.time ? `<br><span class="small muted">${esc(r.time)}</span>` : ''}</td>
-        <td class="${changeClass(r.epsSurprise)}">${esc(r.epsSurprise || '—')}</td>
-        <td class="${changeClass(r.revSurprise)}">${esc(r.revSurprise || '—')}</td>
-        <td>${r.epsGrowth ? `<span class="${changeClass(r.epsGrowth)}">EPS ${esc(r.epsGrowth)}</span>` : ''}${r.salesGrowth ? `<br><span class="small ${changeClass(r.salesGrowth)}">매출 ${esc(r.salesGrowth)}</span>` : ''}</td>
-        <td class="${changeClass(r.change)}">${esc(r.change || '—')}${r.perfWeek ? `<br><span class="small ${changeClass(r.perfWeek)}">1주 ${esc(r.perfWeek)}</span>` : ''}</td>
-        <td style="text-align:left" class="small">${esc(r.note || '')}</td>
-      </tr>`).join('');
+      <article class="panel earn-card ${esc(r.result || '')}">
+        <div class="card-meta"><strong style="font-size:16.5px">${esc(r.name)}</strong><span class="ticker">${esc(r.ticker)}</span><span class="res-badge">${esc(RES[r.result] || '')}</span></div>
+        <span class="small muted">${esc(r.sector || '')}${r.marketCap ? ` · ${esc(r.marketCap)}` : ''} · ${esc(r.date || '')} ${esc(r.time || '')}</span>
+        <div class="earn-nums">
+          <span><span class="small muted">EPS vs 컨센</span><strong class="${changeClass(r.epsSurprise)}">${esc(r.epsSurprise || '—')}</strong></span>
+          <span><span class="small muted">매출 vs 컨센</span><strong class="${changeClass(r.revSurprise)}">${esc(r.revSurprise || '—')}</strong></span>
+          <span><span class="small muted">주가</span><strong class="${changeClass(r.change)}">${esc(r.change || '—')}</strong>${r.perfWeek ? `<span class="small ${changeClass(r.perfWeek)}">1주 ${esc(r.perfWeek)}</span>` : ''}</span>
+        </div>
+        ${r.epsGrowth || r.salesGrowth ? `<span class="small">전년 대비 ${r.epsGrowth ? `EPS <b class="${changeClass(r.epsGrowth)}">${esc(r.epsGrowth)}</b>` : ''} ${r.salesGrowth ? `· 매출 <b class="${changeClass(r.salesGrowth)}">${esc(r.salesGrowth)}</b>` : ''}</span>` : ''}
+        ${r.quarters ? `<div class="qcharts">${qBars(r.quarters, 'rev', '분기 매출', fmtRev)}${qBars(r.quarters, 'eps', '분기 EPS', fmtEps)}</div>` : ''}
+        ${r.note ? `<p class="small" style="margin:0">${esc(r.note)}</p>` : ''}
+      </article>`).join('');
     const up = (e.upcoming || []).map((r) => `<tr><th scope="row" style="width:110px">${esc(r.date)}${r.time ? ` <span class="small muted">${esc(r.time)}</span>` : ''}</th><td style="text-align:left"><strong>${esc(r.name)}</strong> <span class="ticker">${esc(r.ticker)}</span></td><td class="small muted">${esc(r.marketCap || '')}</td><td class="small">${r.epsEst ? `EPS 컨센 ${esc(r.epsEst)}` : ''}</td><td style="text-align:left" class="small">${esc(r.note || '')}</td></tr>`).join('');
     return `
       <section class="panel lead-panel">
@@ -354,9 +386,8 @@
       </section>
       <div class="earn-wrap${e.calendar && e.calendar.length ? ' solo' : ''}"><div>
       <div class="section-head"><h2 class="section-title">발표한 기업</h2><p class="section-note">서프라이즈 = 실제치가 컨센서스보다 높거나 낮은 정도</p></div>
-      <section class="panel"><div class="table-box"><table class="earn"><thead><tr><th scope="col" style="text-align:left">기업</th><th scope="col">발표</th><th scope="col">EPS vs 컨센</th><th scope="col">매출 vs 컨센</th><th scope="col">전년 대비</th><th scope="col">주가<br><span class="small muted">마지막 거래일</span></th><th scope="col" style="text-align:left">한 줄</th></tr></thead>
-        <tbody>${rows || '<tr><td colspan="7" class="muted">이 기간에 발표한 기업이 없어요.</td></tr>'}</tbody></table></div>
-        ${e.source ? `<span class="small muted">출처: ${esc(e.source)}</span>` : ''}</section></div>
+      <div class="earn-cards">${rows || '<section class="panel"><p class="muted" style="margin:0">이 기간에 발표한 기업이 없어요.</p></section>'}</div>
+      <span class="small muted">실적·서프라이즈 Finviz, 분기 매출·EPS 그래프는 회사 공시 기준(야후 파이낸스) · 카드 색: 컨센 하회는 파랑, 일부 하회는 노랑</span></div>
       ${up && !(e.calendar && e.calendar.length) ? `<div><div class="section-head"><h2 class="section-title">다음 발표 예정</h2></div>
       <section class="panel"><div class="table-box"><table><tbody>${up}</tbody></table></div></section></div>` : ''}</div>
       ${e.calendar && e.calendar.length ? earningsCalendar(e.calendar) : ''}`;
@@ -380,15 +411,10 @@
         <div class="ecal-top"><span><strong>${esc(x.name)}</strong> <span class="ticker">${esc(x.ticker)}</span></span>
           <span class="ecal-when">${x.session ? `<span class="chip">${esc(x.session)}</span>` : ''}${x.kst ? `<span class="small muted">${esc(x.kst)}</span>` : ''}</span></div>
         ${x.marketCap ? `<span class="small muted">시가총액 ${esc(x.marketCap)}</span>` : ''}
-        <dl class="ecal-nums">
-          <dt>이번 분기 컨센서스${n.quarter ? `<span class="small muted"> · ${esc(n.quarter)}</span>` : ''}</dt>
-          <dd><span>매출 <strong>${esc(n.rev || '—')}</strong></span><span>EPS <strong>${esc(n.eps || '—')}</strong></span></dd>
-          ${last ? `<dt>${(l.rev && l.rev.act) || (l.eps && l.eps.act) ? '직전 분기 실제' : '직전 분기 서프라이즈(컨센 대비)'}${l.quarter ? `<span class="small muted"> · ${esc(l.quarter)}</span>` : ''}</dt>
-          <dd class="ecal-last">${l.rev ? `<span>매출 ${pair(l.rev)}</span>` : ''}${l.eps ? `<span>EPS ${pair(l.eps)}</span>` : ''}</dd>` : ''}
-        </dl>
-        ${x.warn ? `<span class="small ecal-warn">출처마다 차이: ${x.warn.map(esc).join(' / ')}</span>` : ''}
-        ${x.note ? `<span class="small">${esc(x.note)}</span>` : ''}
-        ${x.sources ? `<span class="small muted">출처 ${x.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</span>` : ''}
+        <div class="ecal-cons"><span class="small muted">이번 분기 컨센서스${n.quarter ? ` · ${esc(n.quarter)}` : ''}</span>
+          <span class="ecal-big"><span>매출 <strong>${esc(n.rev || '—')}</strong></span><span>EPS <strong>${esc(n.eps || '—')}</strong></span></span></div>
+        ${last ? `<dl class="ecal-nums"><dt>${(l.rev && l.rev.act) || (l.eps && l.eps.act) ? '직전 분기 실제' : '직전 분기 서프라이즈(컨센 대비)'}${l.quarter ? `<span class="small muted"> · ${esc(l.quarter)}</span>` : ''}</dt>
+          <dd class="ecal-last">${l.rev ? `<span>매출 ${pair(l.rev)}</span>` : ''}${l.eps ? `<span>EPS ${pair(l.eps)}</span>` : ''}</dd></dl>` : ''}
       </li>`;
     };
     const day = (d) => {
@@ -479,11 +505,12 @@
           ${(b.links || []).map((l) => `<a class="small" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)} ↗</a>`).join(' ')}
         </article>`).join('')}</div>` : '';
     if (!cu && !yt && !bl && !ex) return `<section class="panel"><p style="margin:0">이번 호에는 유튜브·블로그 요약이 없습니다.</p></section>`;
-    return `${cu}${yt}${bl}${ex}`;
+    return `${editorBox(s.editorial2)}${cu}${yt}${bl}${ex}`;
   }
 
   /* 리포트: 카리스석스 방에 올린 PDF 중 최대 2개 요약 */
   function reportLink(r) {
+    return '';   // 원문은 싣지 않는다(저작권, 선생님 지시 2026-11-18)
     if (r.link) return `<a class="link-row" href="${esc(r.link)}" target="_blank" rel="noopener"><span><strong>원문 PDF 보기</strong><br><span class="small muted">${esc(r.file || '')}</span></span><span class="go">열기 ↗</span></a>`;
     return r.file ? `<div class="link-row"><span><strong>원문 PDF</strong><br><span class="small muted">${esc(r.file)}${state.full && r.folder ? ` · ${esc(r.folder)}` : ''}</span></span></div>` : '';
   }
@@ -522,7 +549,8 @@
 
   function reportBlock(it) {
     const r = it.report;
-    const rows = [['자료', r.series === '소몽' ? '소몽 · 한 주 정리' : r.series], ['발행', r.publisher], ['작성', r.author], ['발행일', r.date], ['분량', r.pages ? `${r.pages}쪽` : '']].filter((x) => x[1]);
+    const lab = r.series_label || (r.series === '소몽' ? '소몽' : '');
+    const rows = (lab ? [['자료', lab], ['발행일', r.date], ['분량', r.pages ? `${r.pages}쪽` : '']] : [['발행', r.publisher], ['작성', r.author], ['발행일', r.date], ['분량', r.pages ? `${r.pages}쪽` : '']]).filter((x) => x[1]);
     return `<section class="d-block span-all report-head"><div class="report-meta">${rows.map((x) => `<span><span class="muted">${esc(x[0])}</span> ${esc(x[1])}</span>`).join('')}</div>${reportLink(r)}</section>`;
   }
   function picksPage(ed) {
@@ -537,8 +565,8 @@
             <span class="card-meta"><span class="chip">${esc((x.report || {}).publisher || 'PDF')}</span>${(x.report || {}).date ? `<span class="small muted">${esc(x.report.date)}</span>` : ''}${tickers(x.tickers)}</span>
             <span class="card-title" style="font-size:20px">${esc(x.title)}</span>
             ${keyStrip(x, 4)}
-            <span class="card-text">${esc(x.summary)}</span>
-            ${(x.detail || {}).summary ? `<ul class="pick-sum">${x.detail.summary.slice(0, 3).map((s) => `<li>${esc(s)}</li>`).join('')}</ul>` : ''}
+            ${(x.detail || {}).thesis ? `<span class="thesis"><b>이 리포트가 말하는 것</b>${esc(x.detail.thesis)}</span>` : `<span class="card-text">${esc(x.summary)}</span>`}
+            ${(x.detail || {}).claims ? `<ol class="pick-claims">${x.detail.claims.slice(0, 4).map((c) => `<li>${esc(c.claim || c)}</li>`).join('')}</ol>` : ((x.detail || {}).summary ? `<ul class="pick-sum">${x.detail.summary.slice(0, 3).map((s) => `<li>${esc(s)}</li>`).join('')}</ul>` : '')}
             ${cardChart(x)}
             <span class="card-meta"><span class="more">전체 요약과 수치 보기 ›</span></span>
           </span>
@@ -549,13 +577,15 @@
 
   function youtubeBlock(list) {
     if (!list || !list.length) return '';
-    return `<div class="section-head"><h2 class="section-title"><span class="yt-mark" aria-hidden="true">▶</span> 유튜브에서 많이 본 영상</h2><p class="section-note">지난 24시간 조회수 상위 · 영상 요약</p></div>
+    return `<div class="section-head"><h2 class="section-title"><span class="yt-mark" aria-hidden="true">▶</span> 유튜브에서 많이 본 영상</h2><p class="section-note">지난 24시간 조회수 상위 · 영상 요약과 볼 점</p></div>
       <div class="yt-list">${list.map((v) => `
         <article class="panel yt">
           <div class="card-meta"><span class="small" style="font-weight:700">${esc(v.channel)}</span><span class="small muted">조회 ${Number(v.views).toLocaleString('ko-KR')}</span>${v.stance ? `<span class="chip">${esc(v.stance)}</span>` : ''}</div>
           <a class="yt-title" href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)} ↗</a>
           <p class="yt-gist">${esc(v.gist)}</p>
-          ${v.points && v.points.length ? `<ul class="yt-points">${v.points.map((p) => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener" class="ts">${esc(p.t || '▶')}</a>${esc(p.text)}</li>`).join('')}</ul>` : ''}
+          ${v.facts && v.facts.length ? `<ul class="yt-points">${v.facts.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}
+          ${v.meaning ? `<div class="yt-meaning"><b>이 영상에서 볼 것</b><p>${esc(v.meaning)}</p></div>` : ''}
+          <a class="rel-btn yt-go" href="${esc(v.url)}" target="_blank" rel="noopener">영상 보기 ↗</a>
           ${v.tickers && v.tickers.length ? `<div class="card-meta">${tickers(v.tickers)}</div>` : ''}
         </article>`).join('')}
       </div>`;
@@ -765,6 +795,8 @@
     }
     if ((it.key || []).length && !(it.paid && !state.full)) blocks.push(`<section class="d-keys span-all" aria-label="핵심 수치">${it.key.map((x) => `<div class="dk"><strong class="${changeClass(x.value)}">${esc(x.value)}</strong><span>${esc(x.label)}</span></div>`).join('')}</section>`);
     if (it.report) blocks.push(reportBlock(it));
+    if (d.thesis) blocks.push(`<section class="d-block span-all d-thesis"><h3>이 리포트가 말하고자 하는 것</h3><p>${esc(d.thesis)}</p></section>`);
+    if (d.claims && d.claims.length) blocks.push(`<section class="d-block span-all"><h3>주장과 근거</h3><ol class="claims">${d.claims.map((c) => `<li><strong>${esc(c.claim || c)}</strong>${(c.evidence || []).length ? `<ul>${c.evidence.map((e2) => `<li>${esc(e2)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></section>`);
     if (d.meaning) blocks.push(`<section class="d-block span-all d-meaning"><h3>편집장이 본 의미</h3><p>${esc(d.meaning)}</p></section>`);
     if (d.summary) blocks.push(`<section class="d-block"><h3>핵심 요약</h3><ul>${d.summary.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></section>`);
     if (d.article && d.article.length) blocks.push(`<section class="d-block span-all d-article"><h3>기사</h3>${d.article.map((p) => `<p>${esc(p)}</p>`).join('')}</section>`);   // 핵심 요약 아래 기사 본문 (2026-11-18)
