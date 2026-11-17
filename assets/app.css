@@ -583,3 +583,11 @@ ol.claims ul { margin-top: 4px; }
 .col-acts ol { margin: 8px 0 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 8px; }
 .col-acts li { line-height: 1.6; }
 .col-if { display: inline-block; font-size: 12.5px; font-weight: 700; background: var(--soft); border-radius: 6px; padding: 1px 7px; margin-right: 6px; }
+.col-sn { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
+.col-sn h3 { margin: 0 0 8px; font-size: 16px; }
+.col-sn ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.col-sn li { display: flex; flex-direction: column; gap: 2px; padding-left: 12px; border-left: 3px solid; line-height: 1.55; }
+.col-sn li span { font-size: 14px; color: var(--ink-2); }
+.col-sig li { border-left-color: #C8372D; }
+.col-noise { background: var(--soft); }
+.col-noise li { border-left-color: #8A8F98; }

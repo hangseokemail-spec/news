@@ -271,6 +271,11 @@
           <span class="small muted">${esc(c.byline || '편집장')}</span>
         </header>
         <div class="col-cards">${cards}</div>
+        ${(c.signals || []).length || (c.noise || []).length ? `
+        <section class="col-sn">
+          <div class="panel col-sig"><h3>신호 — 중요하게 볼 것</h3><ul>${(c.signals || []).map((x) => `<li><strong>${esc(x.what)}</strong>${x.why ? `<span>${esc(x.why)}</span>` : ''}</li>`).join('')}</ul></div>
+          <div class="panel col-noise"><h3>소음 — 흘려들을 것</h3><ul>${(c.noise || []).map((x) => `<li><strong>${esc(x.what)}</strong>${x.why ? `<span>${esc(x.why)}</span>` : ''}</li>`).join('')}</ul></div>
+        </section>` : ''}
         <div class="panel col-body">${secs}</div>
         ${acts}
       </article>`;
