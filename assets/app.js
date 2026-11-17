@@ -696,7 +696,7 @@
     return `<span class="card-chart"><span class="cc-title">${esc(c.title)}</span>${miniChart(c, true)}</span>`;
   }
 
-  const VERDICT = { '일치': 'ok', '대체로 일치': 'ok', '엇갈림': 'mixed', '단일 출처': 'one', '확인 안 됨': 'no' };
+  const VERDICT = { '일치': 'ok', '대체로 일치': 'ok', '일부 일치': 'one', '엇갈림': 'mixed', '단일 출처': 'no', '확인 안 됨': 'no' };
 
   /* 막대 그래프 (음수 지원). c = {type:'bar', unit, points:[{label, value}]} */
   function miniChart(c, compact) {
@@ -767,26 +767,28 @@
     if (it.report) blocks.push(reportBlock(it));
     if (d.meaning) blocks.push(`<section class="d-block span-all d-meaning"><h3>편집장이 본 의미</h3><p>${esc(d.meaning)}</p></section>`);
     if (d.summary) blocks.push(`<section class="d-block"><h3>핵심 요약</h3><ul>${d.summary.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></section>`);
+    if (d.article && d.article.length) blocks.push(`<section class="d-block span-all d-article"><h3>기사</h3>${d.article.map((p) => `<p>${esc(p)}</p>`).join('')}</section>`);   // 핵심 요약 아래 기사 본문 (2026-11-18)
     (d.charts || []).forEach((c) => blocks.push(`<section class="d-block"><h3>${esc(c.title)}</h3>${miniChart(c)}${c.note ? `<span class="small muted">${esc(c.note)}</span>` : ''}${c.source ? `<span class="small muted">출처: ${esc(c.source)}</span>` : ''}</section>`));
     (d.sections || []).forEach((sec) => blocks.push(`<section class="d-block"><h3>${esc(sec.title)}</h3>${sec.text ? `<p>${esc(sec.text)}</p>` : ''}${(sec.bullets || []).length ? `<ul>${sec.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>` : ''}</section>`));
     if (d.points && d.points.length) blocks.push(`<section class="d-block"><h3>투자 포인트</h3><ul>${d.points.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></section>`);
     if (d.risks && d.risks.length) blocks.push(`<section class="d-block counter"><h3>리스크</h3><ul>${d.risks.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></section>`);
     if (d.why) blocks.push(`<section class="d-block"><h3>오늘 신문과의 연결</h3><p>${esc(d.why)}</p></section>`);
     if (d.logic && d.logic.length) blocks.push(`<section class="d-block"><h3>논리 따라가기</h3><ol class="logic">${d.logic.map((l) => `<li><span class="step">${esc(l.step)}</span><span>${esc(l.text)}</span></li>`).join('')}</ol></section>`);
-    if (d.numbers && d.numbers.length) blocks.push(`<section class="d-block"><h3>숫자로 보기</h3>${ed.sample ? '<span class="sample-note">시범 화면이라 표의 수치는 예시입니다.</span>' : ''}
-      <div class="table-box"><table><thead><tr><th scope="col">항목</th><th scope="col">값</th><th scope="col" style="text-align:left">설명</th></tr></thead><tbody>
-      ${d.numbers.map((n) => `<tr><th scope="row">${esc(n.label)}</th><td class="${changeClass(n.value)}">${esc(n.value)}</td><td style="text-align:left" class="muted">${esc(n.note || '')}</td></tr>`).join('')}
-      </tbody></table></div>${d.numbersSource ? `<span class="small muted">출처: ${esc(d.numbersSource)}</span>` : ''}</section>`);
-    if (d.checks && d.checks.length) blocks.push(`<section class="d-block"><h3>교차 확인</h3><span class="small muted">핵심 사실과 숫자를 여러 출처에서 맞춰 봤습니다.</span>
-      <div class="table-box"><table class="checks"><thead><tr><th scope="col" style="text-align:left">항목</th><th scope="col" style="text-align:left">확인한 내용</th><th scope="col" style="text-align:left">출처</th><th scope="col">판정</th></tr></thead><tbody>
-      ${d.checks.map((c) => `<tr><th scope="row" style="text-align:left">${esc(c.item)}</th><td style="text-align:left">${esc(c.value)}</td><td style="text-align:left" class="small">${(c.sources || []).map((s) => (s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>` : esc(s.name))).join(' · ')}</td><td><span class="verdict v-${esc(VERDICT[c.verdict] || 'one')}">${esc(c.verdict || '단일 출처')}</span></td></tr>`).join('')}
-      </tbody></table></div></section>`);
+    if (d.numbers && d.numbers.length) {   // 숫자로 보기: 꼭 볼 숫자만, 설명이 없으면 두 칸 (2026-11-18)
+      const withNote = d.numbers.some((n) => n.note);
+      blocks.push(`<section class="d-block"><h3>숫자로 보기</h3>${ed.sample ? '<span class="sample-note">시범 화면이라 표의 수치는 예시입니다.</span>' : ''}
+      <div class="table-box"><table class="nums"><tbody>
+      ${d.numbers.map((n) => `<tr><th scope="row">${esc(n.label)}</th><td class="${changeClass(n.value)}">${esc(n.value)}</td>${withNote ? `<td style="text-align:left" class="muted small">${esc(n.note || '')}</td>` : ''}</tr>`).join('')}
+      </tbody></table></div>${d.numbersSource ? `<span class="small muted">${esc(d.numbersSource)}</span>` : ''}</section>`);
+    }
+    if (d.checks && d.checks.length) blocks.push(`<section class="d-block"><h3>교차 확인</h3>
+      <ul class="checks-simple">${d.checks.map((c) => `<li><span>${esc(c.item)}</span><span class="verdict v-${esc(VERDICT[c.verdict] || 'no')}">${esc(c.verdict || '확인 안 됨')}</span></li>`).join('')}</ul></section>`);   // 항목과 판정만, 출처 없이 (선생님 지시 2026-11-18)
     if (d.counter && d.counter.length) blocks.push(`<section class="d-block counter"><h3>반론과 약점</h3><ul>${d.counter.map((c) => `<li>${esc(c)}</li>`).join('')}</ul></section>`);
     if (d.test && d.test.length) blocks.push(`<section class="d-block"><h3>맞는지 확인하려면</h3><ul>${d.test.map((c) => `<li>${esc(c)}</li>`).join('')}</ul></section>`);
     if (d.timeline && state.full) blocks.push(`<section class="d-block"><h3>시간대별 언급 흐름</h3>${chart(d.timeline)}</section>`);
     if (d.views) blocks.push(`<section class="d-block"><h3>시장의 시각</h3>${d.views.map((v) => `<div class="view"><div class="view-top"><strong>${esc(v.label)}</strong></div><p>${esc(v.text)}</p></div>`).join('')}</section>`);   // 출처 없이 의견만 (선생님 지시)
     if (d.excerpts) blocks.push(`<section class="d-block"><h3>주요 발언 요약</h3>${d.excerpts.map((x) => `<div class="excerpt"><span>${esc(x.text)}</span></div>`).join('')}</section>`);
-    if (d.background) blocks.push(`<section class="d-block"><h3>배경</h3><p>${esc(d.background)}</p></section>`);
+    if (d.background && !(d.article && d.article.length)) blocks.push(`<section class="d-block"><h3>배경</h3><p>${esc(d.background)}</p></section>`);   // 기사 본문이 있으면 배경은 본문에 들어 있다
     if (d.watch) blocks.push(`<section class="d-block"><h3>앞으로 볼 것</h3><ul>${d.watch.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></section>`);
     if (d.sources) blocks.push(`<section class="d-block"><h3>원문 보기</h3>${d.sources.map((s) => `<a class="link-row" href="${esc(s.url)}" target="_blank" rel="noopener"><span><strong>${esc(s.name)}</strong><br><span class="small muted">${esc(s.meta)}</span></span><span class="go">원문 열기 ↗</span></a>`).join('')}</section>`);
     if (state.full && it.factors) {

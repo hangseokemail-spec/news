@@ -511,3 +511,16 @@ button.rel-btn { cursor: pointer; font: inherit; font-size: 13px; font-weight: 6
 .ecal-more summary { cursor: pointer; font-size: 13px; color: var(--accent); padding: 4px 0; }
 .ecal-more .ecal-list { margin-top: 8px; }
 .earn-wrap.solo { grid-template-columns: minmax(0, 1fr) !important; }
+
+/* 기사 본문 · 간단한 교차 확인 · 숫자 표 (2026-11-18) */
+.d-article p { margin: 0 0 0.9em; line-height: 1.85; font-size: 15.5px; text-indent: 0.6em; word-break: keep-all; }
+.d-article p:first-of-type { font-weight: 600; text-indent: 0; }
+.d-article p { max-width: 48em; }
+.checks-simple { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.checks-simple li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--soft); font-size: 14px; }
+.checks-simple li:last-child { border-bottom: 0; }
+.checks-simple .verdict { flex: none; }
+table.nums th { text-align: left; font-weight: 600; }
+.verdict.v-one { background: #FFF4D6; color: #8A5A00; }
+@media (prefers-color-scheme: dark) { .verdict.v-one { background: #3A2E10; color: #F2C66D; } }
+.d-block ul.checks-simple { padding-left: 0; margin-left: 0; }
