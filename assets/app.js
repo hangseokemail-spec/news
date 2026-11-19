@@ -532,6 +532,8 @@
           ${keyStrip(b)}
           <p class="yt-gist">${esc(b.gist || '')}</p>
           ${b.points && b.points.length ? `<ul class="yt-points">${b.points.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}
+          ${b.meaning ? `<div class="yt-meaning"><b>이 글에서 볼 것</b><p>${esc(b.meaning)}</p></div>` : ''}
+          <a class="rel-btn yt-go" href="${esc(b.url)}" target="_blank" rel="noopener">원문 보기 ↗</a>
         </article>`).join('')}</div>` : '';
     const ex = ext.length ? `<div class="section-head"><h2 class="section-title">다른 곳에서 본 이야기</h2><p class="section-note">레딧·X·해외 커뮤니티 등</p></div>
       <div class="yt-list">${ext.map((b) => `
