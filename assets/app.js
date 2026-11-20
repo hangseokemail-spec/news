@@ -596,17 +596,19 @@
   function picksPage(ed) {
     const ps = ed.picks || [];
     const weekly = ps.some((p) => p.report && p.report.series === '소몽');
-    const head = `<div class="section-head"><h2 class="section-title">${weekly ? '이번 주를 정리한 리포트' : '이번 호의 리포트'}</h2><p class="section-note">${weekly ? '월요일 · 소몽 주간 정리, 자세한 요약' : '하루 1~2개, 자세한 요약'}</p></div>`;
+    const deep = ps.some((p) => p.deep);   // 심층 리포트: 하루 1개를 깊이 있게 + 편집장 총평 (2026-11-20)
+    const head = `<div class="section-head"><h2 class="section-title">${weekly ? '이번 주를 정리한 리포트' : (deep ? '이번 호의 심층 리포트' : '이번 호의 리포트')}</h2><p class="section-note">${weekly ? '주말 뒤 첫 호 · 소몽 주간 정리, 자세한 요약' : (deep ? '한 편을 깊이 있게 · 편집장 총평' : '하루 1~2개, 자세한 요약')}</p></div>`;
     if (!ps.length) return `${head}<section class="panel empty-picks"><p style="margin:0">이번 호에 정리한 리포트가 없습니다.</p></section>`;
     return `${head}<div class="picks">${ps.map((x) => `
       <article class="panel pick">
         <button type="button" class="card no-rank" data-open="${esc(x.id)}" style="border:0;padding:0;background:none">
           <span class="card-body">
-            <span class="card-meta"><span class="chip">${esc((x.report || {}).publisher || 'PDF')}</span>${(x.report || {}).date ? `<span class="small muted">${esc(x.report.date)}</span>` : ''}${tickers(x.tickers)}</span>
+            <span class="card-meta">${x.deep ? '<span class="chip">심층</span>' : ''}<span class="chip">${esc((x.report || {}).publisher || 'PDF')}</span>${(x.report || {}).date ? `<span class="small muted">${esc(x.report.date)}</span>` : ''}${tickers(x.tickers)}</span>
             <span class="card-title" style="font-size:20px">${esc(x.title)}</span>
             ${keyStrip(x, 4)}
             ${(x.detail || {}).thesis ? `<span class="thesis"><b>이 리포트가 말하는 것</b>${esc(x.detail.thesis)}</span>` : `<span class="card-text">${esc(x.summary)}</span>`}
             ${(x.detail || {}).claims ? `<ol class="pick-claims">${x.detail.claims.slice(0, 4).map((c) => `<li>${esc(c.claim || c)}</li>`).join('')}</ol>` : ((x.detail || {}).summary ? `<ul class="pick-sum">${x.detail.summary.slice(0, 3).map((s) => `<li>${esc(s)}</li>`).join('')}</ul>` : '')}
+            ${(x.detail || {}).verdict ? `<span class="thesis"><b>편집장 총평</b>${esc(x.detail.verdict)}</span>` : ''}
             ${cardChart(x)}
             <span class="card-meta"><span class="more">전체 요약과 수치 보기 ›</span></span>
           </span>
@@ -837,6 +839,7 @@
     if (it.report) blocks.push(reportBlock(it));
     if (d.thesis) blocks.push(`<section class="d-block span-all d-thesis"><h3>이 리포트가 말하고자 하는 것</h3><p>${esc(d.thesis)}</p></section>`);
     if (d.claims && d.claims.length) blocks.push(`<section class="d-block span-all"><h3>주장과 근거</h3><ol class="claims">${d.claims.map((c) => `<li><strong>${esc(c.claim || c)}</strong>${(c.evidence || []).length ? `<ul>${c.evidence.map((e2) => `<li>${esc(e2)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></section>`);
+    if (d.verdict) blocks.push(`<section class="d-block span-all d-meaning"><h3>편집장 총평</h3><p>${esc(d.verdict)}</p></section>`);   // 심층 리포트 총평 (2026-11-20)
     if (d.meaning) blocks.push(`<section class="d-block span-all d-meaning"><h3>편집장이 본 의미</h3><p>${esc(d.meaning)}</p></section>`);
     if (d.summary) blocks.push(`<section class="d-block"><h3>핵심 요약</h3><ul>${d.summary.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></section>`);
     if (d.article && d.article.length) blocks.push(`<section class="d-block span-all d-article"><h3>기사</h3>${d.article.map((p) => `<p>${esc(p)}</p>`).join('')}</section>`);   // 핵심 요약 아래 기사 본문 (2026-11-18)
