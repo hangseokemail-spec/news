@@ -13,7 +13,8 @@
   ];
   const TOPN_STORE = 'seokonomy.topN';
   const $ = (s, r = document) => r.querySelector(s);
-  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+    .replace(/(S&amp;P|나스닥|러셀|다우) (500|100|2000|30)/g, '$1&nbsp;$2');   // 'S&P 500' 같은 이름이 줄 끝에서 갈라지지 않게 (선생님 지시 2026-11-21)
   const el = { tabs: $('#tabs'), content: $('#content'), meta: $('#issueMeta'), past: $('#pastSel'), foot: $('#foot') };
   const state = { index: null, date: null, tab: 'reading', mag: null, topN: 10, open: {} };
   try { const n = parseInt(localStorage.getItem(TOPN_STORE), 10); if (n >= 5 && n <= 10) state.topN = n; } catch (e) { /* 저장소 없음 */ }
@@ -66,10 +67,11 @@
   /* ---------- 글 안의 근거 번호 [3] → 근거 주소로 바로 가는 작은 단추 ---------- */
   function withRefs(text, refs) {
     const map = {}; (refs || []).forEach((r) => { map[r.n] = r; });
-    return esc(text).replace(/\[(\d+(?:\s*[,·]\s*\d+)*)\]/g, (all, g) => g.split(/\s*[,·]\s*/).map((n) => {
+    // 근거 번호는 앞 낱말에 붙여 한 덩어리로 — 번호만 다음 줄 맨 앞으로 떨어지지 않게
+    return esc(text).replace(/(\S*)\s*\[(\d+(?:\s*[,·]\s*\d+)*)\]/g, (all, pre, g) => `<span class="nb">${pre}${g.split(/\s*[,·]\s*/).map((n) => {
       const r = map[n];
       return r && r.url ? `<sup class="fn"><a href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc(r.title)} — ${esc(r.source || '')}">${n}</a></sup>` : `<sup class="fn"><a href="#ref-${n}">${n}</a></sup>`;
-    }).join(''));
+    }).join('')}</span>`);
   }
   function refList(refs, title) {
     if (!refs || !refs.length) return '';
@@ -94,11 +96,10 @@
       <article class="essay">
         <h3 class="essay-title">${esc(rd.title || '')}</h3>
         ${rd.standfirst ? `<p class="standfirst">${esc(rd.standfirst)}</p>` : ''}
-        <p class="byline">${esc(rd.byline || '총평 위원회')} · 읽는 데 약 ${Math.max(3, Math.round(chars / 600))}분 · 문단의 작은 번호를 누르면 근거로 갑니다</p>
+        <p class="byline">읽는 데 약 ${Math.max(3, Math.round(chars / 600))}분 · 문단의 작은 번호를 누르면 근거로 갑니다</p>
         ${secs}
         ${(rd.next_watch || []).length ? `<div class="panel"><b>다음 주, 판단을 바꿀 것</b><ul>${rd.next_watch.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
         ${refList(rd.refs)}
-        ${rd.process ? `<p class="process">${esc(rd.process)}</p>` : ''}
       </article>`;
   }
 
@@ -241,7 +242,7 @@
       const k = patKey(p.name);
       return `<h5>차트 패턴: ${esc(p.name)} — ${esc(p.status)}</h5><p>${esc(k ? PAT[k] : '주가가 그리는 모양에서 다음 방향을 읽는 방법입니다.')}</p>
         <ul>${p.neckline != null ? `<li><b>기준선 ${esc(p.neckline)}</b> — 이 가격을 넘거나(상승 패턴) 깨면(하락 패턴) 패턴이 '확인'됩니다.</li>` : ''}${p.target != null ? `<li><b>목표 ${esc(p.target)}</b> — 패턴 높이만큼 더 간다고 볼 때의 가격(참고용 계산)입니다.</li>` : ''}${p.invalid != null ? `<li><b>무효 ${esc(p.invalid)}</b> — 이 가격을 반대로 지나면 패턴이 깨졌다고 봅니다.</li>` : ''}</ul>
-        <p class="small muted">패턴은 도구가 찾고 편집장이 그림을 보고 억지스러운 것은 걸렀습니다. 확률의 언어이지 약속이 아닙니다.</p>`;
+        <p class="small muted">패턴은 도구가 찾고, 그림을 직접 보며 억지스러운 것은 걸렀습니다. 확률의 언어이지 약속이 아닙니다.</p>`;
     }
     return '';
   }
@@ -351,7 +352,7 @@
     return `
       <div class="sec-head"><h2 class="sec-title">${side === 'buy' ? '매수 관심 후보' : '매도 검토 후보'} ${list.length}</h2><p class="sec-note">S&amp;P 500 종목 ${esc(sc.universe || 500)}곳에서 · 기술적 분석 + 센티 + 펀더멘털 · ${esc(lastBar(list))} 종가 기준</p></div>
       ${m[side === 'buy' ? 'intro_buy' : 'intro_sell'] ? `<p class="lede">${esc(m[side === 'buy' ? 'intro_buy' : 'intro_sell'])}</p>` : ''}
-      <p class="notice">규칙으로 추린 후보 가운데 편집장이 차트를 직접 보고 이번 주 분위기와 펀더멘털을 함께 따져 골랐습니다. 투자 권유가 아니며, 판단 전에 직접 확인하세요. 동그라미(ⓘ) 단추를 누르면 그 요소의 뜻과 이 종목의 값이 나옵니다.</p>
+      <p class="notice">규칙으로 추린 후보 가운데 차트를 직접 보고 이번 주 분위기와 펀더멘털을 함께 따져 골랐습니다. 투자 권유가 아니며, 판단 전에 직접 확인하세요. 동그라미(ⓘ) 단추를 누르면 그 요소의 뜻과 이 종목의 값이 나옵니다.</p>
       ${sectorTable(sc.sectors)}
       <div class="stocks">${list.map((x) => stockCard(x, side)).join('')}</div>`;
   }
@@ -386,7 +387,7 @@
       <span class="kicker">인뎁스 · ${esc(d.kicker || '')}</span>
       <h2 class="f-title">${esc(d.title)}</h2>
       ${d.standfirst ? `<p class="standfirst">${esc(d.standfirst)}</p>` : ''}
-      <p class="byline">${esc(d.byline || '')}</p>
+      <p class="byline">읽는 데 약 ${Math.max(3, Math.round((d.sections || []).reduce((a, s) => a + (s.paras || []).join('').length, 0) / 600))}분 · 문단의 작은 번호를 누르면 근거로 갑니다</p>
       ${(d.sections || []).map((s, si) => `${s.heading ? `<h4>${esc(s.heading)}</h4>` : ''}${(s.paras || []).map((p) => `<p>${withRefs(p, d.refs)}</p>`).join('')}${si === 0 && (d.numbers || []).length ? numBox(d) : ''}`).join('')}
       ${d.takeaway ? `<blockquote class="pull">${esc(d.takeaway)}</blockquote>` : ''}
       ${refList(d.refs, '근거와 더 읽을거리')}
@@ -397,9 +398,7 @@
   }
 
   function footer(m) {
-    const cr = m.credits || {};
     return `<p><b>SEOKONOMY 세코노미</b> 제${esc(m.issue)}호 · ${esc(m.date)} 발행 · 매주 토요일 아침 8시</p>
-      ${cr.text ? `<p>${esc(cr.text)}</p>` : ''}
       <p>모든 내용은 공개 자료와 선생님이 모은 자료를 정리한 것이며 투자 권유가 아닙니다. 판단과 책임은 읽는 분께 있습니다.</p>
       <p><a href="../">Seok's Paper(아침 신문)로 가기</a></p>`;
   }
