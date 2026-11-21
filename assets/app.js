@@ -10,8 +10,7 @@
     { id: 'earnings', label: '실적 분석' },
     { id: 'social', label: 'SNS1' },
     { id: 'social2', label: 'SNS2' },
-    { id: 'picks', label: '리포트' },
-    { id: 'weekly', label: '주간 특보' }
+    { id: 'picks', label: '리포트' }
   ];
   const CONF = { confirmed: '확인됨', partial: '일부 확인', rumor: '가설·소문' };
   const DOW = ['일', '월', '화', '수', '목', '금', '토'];
@@ -94,7 +93,7 @@
       return;
     }
     const ed = state.edition;
-    const avail = TABS.filter((t) => (t.id !== 'weekly' || ed.weekly) && (t.id !== 'earnings' || ed.earnings) && (t.id !== 'column' || ed.column));
+    const avail = TABS.filter((t) => (t.id !== 'earnings' || ed.earnings) && (t.id !== 'column' || ed.column));
     state.tab = avail.some((t) => t.id === h.tab) ? h.tab : avail[0].id;   // 총평이 있으면 총평부터
     state.item = h.item;
     if (!state.calMonth || !sameMonth(state.calMonth, date)) state.calMonth = date.slice(0, 7);
@@ -216,7 +215,7 @@
       ? '이 기기에 저장된 열쇠로 전체판을 열지 못해 공유판을 보여드려요.'
       : (state.full ? '이 기기에서는 전체판(선생님 전용)을 보고 있어요.' : '이 날짜에는 전체판이 따로 없어요.');
     document.title = `Seok's Paper · ${fmtShort(ed.date)}`;
-    el.tabs.innerHTML = avail.map((t) => `<button type="button" role="tab" class="tab${t.id === 'weekly' ? ' weekly-tab' : ''}" id="tab-${t.id}" aria-selected="${t.id === state.tab}" aria-controls="content" data-tab="${t.id}">${esc(t.label)}${t.id === 'weekly' ? '<span class="dot" aria-hidden="true"></span>' : ''}</button>`).join('');
+    el.tabs.innerHTML = avail.map((t) => `<button type="button" role="tab" class="tab" id="tab-${t.id}" aria-selected="${t.id === state.tab}" aria-controls="content" data-tab="${t.id}">${esc(t.label)}</button>`).join('');
   }
   el.tabs.addEventListener('click', (e) => {
     const b = e.target.closest('[data-tab]');
@@ -234,7 +233,7 @@
   /* ---------- 면별 화면 ---------- */
   function renderTab() {
     const ed = state.edition;
-    const html = { column: columnPage, hot: hotPage, macro: macroPage, company: companyPage, earnings: earningsPage, social: socialPage, social2: social2Page, picks: picksPage, weekly: weeklyPage }[state.tab](ed);
+    const html = { column: columnPage, hot: hotPage, macro: macroPage, company: companyPage, earnings: earningsPage, social: socialPage, social2: social2Page, picks: picksPage }[state.tab](ed);
     el.content.innerHTML = html;
   }
 
@@ -683,40 +682,6 @@
       <h3 class="scr-h down">매도 검토 후보 ${(sc.sell || []).length}</h3><div class="scr-grid">${(sc.sell || []).map((x) => card(x, 'sell')).join('')}</div>`;
   }
 
-  function weeklyPage(ed) {
-    const w = Object.assign({ top: [], macro: [], companies: [], next: [] }, ed.weekly);
-    return `
-      <section class="panel weekly-head lead-panel">
-        <div><span class="kicker">주간 특보 · ${esc(w.range)}</span><p class="lead-text">${esc(w.oneLine)}</p></div>
-        <div class="stats">
-          <div class="stat"><strong>${esc(w.issues)}</strong><span>묶은 일간 호</span></div>
-          <div class="stat"><strong>${esc(w.debates)}</strong><span>주요 논쟁</span></div>
-        </div>
-      </section>
-      <div class="section-head"><h2 class="section-title">주간 TOP ${w.top.length} 흐름</h2><p class="section-note">어느 요일에 등장했는지 함께 표시</p></div>
-      <div class="cards">${w.top.map((t, i) => `
-        <div class="card" style="cursor:default">
-          <span class="rank top" style="color:var(--hot)">${i + 1}</span>
-          <span class="card-body"><span class="card-title">${esc(t.title)}</span>
-            <span class="days">${['월', '화', '수', '목', '금', '토'].map((d, j) => `<span class="${t.days[j] ? 'on' : ''}">${d}</span>`).join('')}</span>
-            <span class="card-text">${esc(t.note)}</span></span>
-        </div>`).join('')}
-      </div>
-      <section class="panel"><h2 class="section-title" style="font-size:20px">매크로 주간 변화</h2>
-        <div class="table-box"><table><thead><tr><th scope="col">지표</th><th scope="col">월요일</th><th scope="col">토요일</th><th scope="col">변화</th></tr></thead>
-        <tbody>${w.macro.map((r) => `<tr><th scope="row">${esc(r.label)}</th><td>${esc(r.start)}</td><td>${esc(r.end)}</td><td class="${changeClass(r.change)}">${esc(r.change)}</td></tr>`).join('')}</tbody></table></div>
-      </section>
-      <section class="panel"><h2 class="section-title" style="font-size:20px">이번 주 많이 언급된 기업</h2>
-        <div class="table-box"><table><thead><tr><th scope="col">기업</th><th scope="col">언급</th><th scope="col" style="text-align:left">주된 이야기</th></tr></thead>
-        <tbody>${w.companies.map((c) => `<tr><th scope="row">${esc(c.name)}</th><td>${esc(c.count)}회</td><td style="text-align:left">${esc(c.note)}</td></tr>`).join('')}</tbody></table></div>
-      </section>
-      <section class="notice"><b class="section-title" style="font-size:20px">이번 주 논쟁 결산</b><p>${esc(w.debate)}</p></section>
-      <section class="panel"><h2 class="section-title" style="font-size:20px">다음 주 볼 일정</h2>
-        <div class="table-box"><table><tbody>${w.next.map((n) => `<tr><th scope="row" style="width:110px">${esc(n.date)}</th><td style="text-align:left">${esc(n.event)}</td></tr>`).join('')}</tbody></table></div>
-      </section>
-      ${screenBlock(w.screen)}`;
-  }
-
   el.content.addEventListener('input', (e) => {
     if (e.target.id !== 'hotN') return;
     const n = parseInt(e.target.value, 10);
@@ -906,7 +871,7 @@
       const ds = `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
       const e = byDate.get(ds);
       if (e) {
-        cells.push(`<button type="button" class="cal-day${e.weekly ? ' weekly' : ''}${ds === state.date ? ' selected' : ''}" data-date="${ds}" aria-label="${fmtLong(ds)} 신문${e.weekly ? '과 주간 특보' : ''} 열기"${ds === state.date ? ' aria-current="date"' : ''}>${d}<span class="mk" aria-hidden="true"></span></button>`);
+        cells.push(`<button type="button" class="cal-day${ds === state.date ? ' selected' : ''}" data-date="${ds}" aria-label="${fmtLong(ds)} 신문 열기"${ds === state.date ? ' aria-current="date"' : ''}>${d}<span class="mk" aria-hidden="true"></span></button>`);
       } else {
         cells.push(`<span class="cal-day">${d}</span>`);
       }
@@ -916,7 +881,7 @@
       <div class="cal-grid">${DOW.map((d, i) => `<span class="cal-dow${i === 0 ? ' sun' : ''}">${d}</span>`).join('')}${cells.join('')}</div>
       <div class="legend" style="justify-content:center;margin-top:8px"><span><i style="border-radius:50%;background:var(--accent);width:7px;height:7px"></i>일간</span><span><i style="background:var(--hot);transform:rotate(45deg);width:7px;height:7px"></i>주간 특보</span></div>`;
     const recent = state.index.editions.slice(0, 6);
-    el.recent.innerHTML = `<h3>최근 발행</h3>${recent.map((e) => `<button type="button" data-date="${e.date}"><span class="rd">${fmtShort(e.date)}${e.weekly ? ' · 일간 + 주간 특보' : ''}</span><span class="rh">${esc(e.lead)}</span></button>`).join('')}`;
+    el.recent.innerHTML = `<h3>최근 발행</h3>${recent.map((e) => `<button type="button" data-date="${e.date}"><span class="rd">${fmtShort(e.date)}</span><span class="rh">${esc(e.lead)}</span></button>`).join('')}`;
   }
   el.calPanel.addEventListener('click', (e) => {
     const mv = e.target.closest('[data-month]');
