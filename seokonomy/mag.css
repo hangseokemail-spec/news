@@ -201,14 +201,16 @@ details.more { font-size: 14px; margin: 6px 0; } details.more summary { cursor: 
 /* 글자 배치 (선생님 지시 2026-11-21 19:14: "문단 모양 양쪽 정렬 형태로 맞추고, 글자 단어 단위로 짤리지 않게")
    - 줄바꿈은 낱말 단위(body의 keep-all), 줄 끝 문장부호는 앞 글자와 함께(line-break: strict)
    - 읽는 문단은 양쪽 정렬, 마지막 줄 외톨이 낱말은 줄이고(pretty), 제목은 두 줄 길이를 고르게(balance)
-   - 근거 번호·지수 이름은 앞 낱말과 한 덩어리(.nb, mag.js) */
+   - 근거 번호·지수 이름은 앞 낱말과 한 덩어리(.nb, mag.js)
+   - 휴대폰(560px 이하)에서는 첫 글자 장식을 끈다 — 장식 옆 좁은 두 줄이 크게 벌어져서 */
 .dek, .standfirst, .glance p, .essay p, .feature p, .topc p, .s-body p, .lede, .notice, .explain p, .panel li, .cal .w {
-  text-align: justify; text-justify: inter-word; text-wrap: pretty;
+  text-align: justify; text-justify: inter-character; text-wrap: pretty;   /* 남는 폭을 글자 사이에 고르게 — 낱말 사이만 벌어지지 않게 */
 }
 h1, h2, h3, h4, h5, .cover-head, .essay-title, .f-title, .s-head, .pull, .keys span, .glance b { text-wrap: balance; }
 .nb { white-space: nowrap; }
 
 @media (max-width: 560px) {
+  .essay .drop::first-letter { float: none; font: inherit; color: inherit; padding: 0; }
   .topc { grid-template-columns: 34px 1fr; gap: 0 10px; padding: 14px 14px 12px; }
   .topc .rk, .topc:nth-child(n+4) .rk { font-size: 32px; }
   .essay p, .feature p { font-size: 16.5px; }
