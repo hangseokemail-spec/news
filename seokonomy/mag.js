@@ -394,7 +394,7 @@
     </article>`;
   }
   function numBox(d) {
-    return `<aside class="numbox"><h5>${esc(d.numbers_title || '숫자로 보기')}</h5><div class="tbox"><table class="tbl"><tbody>${d.numbers.map((n) => `<tr><th scope="row">${esc(n.label)}</th><td class="${chg(n.value)}"><b>${esc(n.value)}</b></td><td class="read">${esc(n.note || '')}</td></tr>`).join('')}</tbody></table></div></aside>`;
+    return `<aside class="numbox"><h5>${esc(d.numbers_title || '숫자로 보기')}</h5><div class="tbox"><table class="tbl"><tbody>${d.numbers.map((n) => `<tr><th scope="row">${esc(n.label)}</th><td class="${chg(n.value)}"><b>${esc(n.value)}</b></td><td class="read">${withRefs(n.note || '', d.refs)}</td></tr>`).join('')}</tbody></table></div></aside>`;
   }
 
   function footer(m) {
