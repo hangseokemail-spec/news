@@ -68,7 +68,7 @@
   function withRefs(text, refs) {
     const map = {}; (refs || []).forEach((r) => { map[r.n] = r; });
     // 근거 번호는 앞 낱말에 붙여 한 덩어리로 — 번호만 다음 줄 맨 앞으로 떨어지지 않게
-    return esc(text).replace(/(\S*)\s*\[(\d+(?:\s*[,·]\s*\d+)*)\]/g, (all, pre, g) => `<span class="nb">${pre}${g.split(/\s*[,·]\s*/).map((n) => {
+    return esc(text).replace(/([^\s\[]*)\s*\[(\d+(?:\s*[,·]\s*\d+)*)\]/g, (all, pre, g) => `<span class="nb">${pre}${g.split(/\s*[,·]\s*/).map((n) => {
       const r = map[n];
       return r && r.url ? `<sup class="fn"><a href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc(r.title)} — ${esc(r.source || '')}">${n}</a></sup>` : `<sup class="fn"><a href="#ref-${n}">${n}</a></sup>`;
     }).join('')}</span>`);
